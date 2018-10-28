@@ -88,7 +88,7 @@ namespace UnityStandardAssets.Vehicles.Car
             }
             skidding = false;
             m_SkidTrail.parent = skidTrailsDetachedParent;
-            Destroy(m_SkidTrail.gameObject, 10);
+            Destroy(m_SkidTrail.gameObject, 50);
         }
     }
 }
