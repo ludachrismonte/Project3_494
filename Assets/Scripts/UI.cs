@@ -36,6 +36,9 @@ public class UI : MonoBehaviour {
         if(Input.GetKey(KeyCode.Escape)){
             StartCoroutine(changeScence()); 
         }
+        if(health[0].health<=0 && health[1].health <= 0 && health[2].health <= 0 && health[3].health <= 0){
+            StartCoroutine(changeScence()); 
+        }
 
         //Timer
         float timeTillEnd = allotedTime - (Time.time - startTime);
