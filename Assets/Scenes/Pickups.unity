@@ -221,6 +221,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &632725963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1528931888873764, guid: 776e7c545358a4c80990bca243d2981c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1129761020}
 --- !u!1 &676915607
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +382,7 @@ Prefab:
         type: 2}
       propertyPath: carBodyObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 632725963}
     - target: {fileID: 65378121271975902, guid: 776e7c545358a4c80990bca243d2981c,
         type: 2}
       propertyPath: m_Material
