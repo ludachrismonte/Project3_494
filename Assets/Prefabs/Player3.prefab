@@ -423,6 +423,7 @@ GameObject:
   - component: {fileID: 114825696808646066}
   - component: {fileID: 65594980302304878}
   - component: {fileID: 114539788053137674}
+  - component: {fileID: 114335887456094932}
   m_Layer: 0
   m_Name: Player3
   m_TagString: Player
@@ -2498,6 +2499,19 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.3
   m_BrakeTorque: 20000
+--- !u!114 &114335887456094932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1547373280775570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f60f0e995e5450e9e369ba785bfce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damageMult: 1
 --- !u!114 &114383431050760006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2535,7 +2549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52acccf8f5c14169bf75de1ddcc2e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carBodyObject: {fileID: 0}
+  carBodyObject: {fileID: 1692825608715222}
 --- !u!114 &114662744029069918
 MonoBehaviour:
   m_ObjectHideFlags: 1
