@@ -9,8 +9,8 @@ public class UI : MonoBehaviour
     public Text timer;
     public Text winner;
     public RawImage winnerBackground;
-    public Text[] speedometer;
-    public Text[] healthText;
+    public GameObject[] speedometer;
+    //public Text[] healthText;
     //public Button quit;
     public float allotedTime; //Length of round in seconds
     float startTime;
@@ -73,18 +73,18 @@ public class UI : MonoBehaviour
 
         //SpeedoMeter
         //Player1
-        string speed = ((int)carRb[0].velocity.magnitude * 3.6f).ToString("f2");
-        speedometer[0].text = speed + " " + kmPerHour;
+        float speed = carRb[0].velocity.magnitude * 3.6f;
+        speedometer[0].transform.eulerAngles = new Vector3(0, 0, 515 - speed);
         //Player2
-        speed = ((int)carRb[1].velocity.magnitude * 3.6f).ToString("f2");
-        speedometer[1].text = speed + " " + kmPerHour;
+        speed = carRb[1].velocity.magnitude * 3.6f;
+        speedometer[1].transform.eulerAngles = new Vector3(0, 0, 515 - speed);
         //Player3
-        speed = ((int)carRb[2].velocity.magnitude * 3.6f).ToString("f2");
-        speedometer[2].text = speed + " " + kmPerHour;
+        speed = carRb[2].velocity.magnitude * 3.6f;
+        speedometer[2].transform.eulerAngles = new Vector3(0, 0, 515 - speed);
         //Player4
-        speed = ((int)carRb[3].velocity.magnitude * 3.6f).ToString("f2");
-        speedometer[3].text = speed + " " + kmPerHour;
-
+        speed = carRb[3].velocity.magnitude * 3.6f;
+        speedometer[3].transform.eulerAngles = new Vector3(0, 0, 515 - speed);
+        /*
         //Health
         //Player1
         if (health[0].health > 0)
@@ -134,7 +134,7 @@ public class UI : MonoBehaviour
             healthText[3].color = Color.red;
             dead[3] = true;
         }
-
+        */
 
 
     }
