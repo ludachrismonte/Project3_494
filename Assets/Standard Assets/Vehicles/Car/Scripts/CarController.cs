@@ -150,7 +150,7 @@ namespace UnityStandardAssets.Vehicles.Car
             m_WheelColliders[0].steerAngle = m_SteerAngle;
             m_WheelColliders[1].steerAngle = m_SteerAngle;
 
-            SteerHelper();
+            SteerHelp();
             ApplyDrive(accel, footbrake);
             CapSpeed();
 
@@ -235,7 +235,7 @@ namespace UnityStandardAssets.Vehicles.Car
         }
 
 
-        private void SteerHelper()
+        private void SteerHelp()
         {
             for (int i = 0; i < 4; i++)
             {
