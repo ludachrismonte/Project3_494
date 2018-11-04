@@ -2146,7 +2146,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 811a77dd1f1fc8d4facd146919fd8ba4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 30646bb2b96380744875781296e413ca, type: 3}
 --- !u!95 &793640331
 Animator:
   serializedVersion: 3
@@ -3148,6 +3148,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4380773976775744, guid: a93ff7d08bff649ff9156e975b110147, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 12.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380773976775744, guid: a93ff7d08bff649ff9156e975b110147, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.63
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a93ff7d08bff649ff9156e975b110147, type: 2}
   m_IsPrefabAsset: 0
@@ -3194,6 +3202,10 @@ Prefab:
     - target: {fileID: 4135588106413454, guid: aad2ad28224c2477681e1744c10383ce, type: 2}
       propertyPath: m_RootOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281949836214594, guid: aad2ad28224c2477681e1744c10383ce, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 12.73
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aad2ad28224c2477681e1744c10383ce, type: 2}
