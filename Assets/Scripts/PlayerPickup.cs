@@ -26,7 +26,6 @@ public class PlayerPickup : MonoBehaviour
 
         if (other.tag == "ScoreZone")
         {
-            Debug.Log("Hit it");
             GameObject zone = GameObject.FindWithTag("ScoreZone");
             if (zone == null) {
                 Debug.Log("didnt find it");

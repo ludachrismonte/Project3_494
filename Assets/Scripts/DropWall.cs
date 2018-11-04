@@ -9,7 +9,6 @@ public class DropWall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         counter -= Time.deltaTime;
-        Debug.Log(counter);
         if (counter < 0) {
             transform.Translate(new Vector3(0, 0, -5) * Time.deltaTime);
         }
