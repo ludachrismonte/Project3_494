@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
     public GameObject build_timer;
-    public Text countdown;
-    public Text countdown_parent;
+    public Text[] countdown;
+    public GameObject countdown_parent;
     public GameObject wall;
 
     private float timer;
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         timer += Time.deltaTime;
-        if (timer < 6) {
+        if (timer < 4) {
             if (timer % 2 < 1) {
                 build_timer.transform.localScale += new Vector3(0.01F, 0.01F, 0);
             }
@@ -30,18 +30,28 @@ public class GameManager : MonoBehaviour {
             return;
         }
         build_timer.SetActive(false);
-        if (timer > 15)
+        if (timer > 15 && timer < 19)
         {
+            countdown_parent.SetActive(true);
             float time = 20 - timer;
-            countdown.text = "Wall Drops In: " + time.ToString();
+            countdown[0].text = "Wall Drops In: " + time.ToString("#");
+            countdown[1].text = "Wall Drops In: " + time.ToString("#");
+            return;
         }
-        if (timer > 20)
+        countdown_parent.SetActive(false);
+        if (timer > 20 && timer < 30)
         {
             wall.transform.Translate(new Vector3(0, 0, -5) * Time.deltaTime);
+            return;
         }
         if (timer > 30)
         {
             Destroy(wall.gameObject);
         }
     }
+
+    public void Win(string s) {
+
+    }
+
 }
