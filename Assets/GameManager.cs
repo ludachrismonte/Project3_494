@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 
     public GameObject build_timer;
     public Text countdown;
+    public Text countdown_parent;
     public GameObject wall;
 
     private float timer;
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour {
         if (timer > 15)
         {
             float time = 20 - timer;
-            countdown.text = "Wall Drops In:" + time.ToString();
+            countdown.text = "Wall Drops In: " + time.ToString();
         }
         if (timer > 20)
         {
