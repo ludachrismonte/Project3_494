@@ -23,14 +23,5 @@ public class PlayerPickup : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-
-        if (other.tag == "ScoreZone")
-        {
-            GameObject zone = GameObject.FindWithTag("ScoreZone");
-            if (zone == null) {
-                Debug.Log("didnt find it");
-            }
-            zone.GetComponent<RandomPlacement>().Move();
-        }
     }
 }
