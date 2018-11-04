@@ -11,7 +11,7 @@ public class DropWall : MonoBehaviour {
         counter -= Time.deltaTime;
         Debug.Log(counter);
         if (counter < 0) {
-            transform.Translate(new Vector3(0, 0, 5) * Time.deltaTime);
+            transform.Translate(new Vector3(0, 0, -5) * Time.deltaTime);
         }
         if (counter < -10)
         {
