@@ -2429,7 +2429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78696609ccaa6594ca03656b8f6b4c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: 20
 --- !u!64 &793640330
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3398,6 +3397,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114445034058393760, guid: ad8140b2e81dc406db18bce5a92b6d51,
+        type: 2}
+      propertyPath: bar
+      value: 
+      objectReference: {fileID: 1665957085}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad8140b2e81dc406db18bce5a92b6d51, type: 2}
   m_IsPrefabAsset: 0
@@ -4593,6 +4597,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1665957085 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114695838771885198, guid: 0840ae79933e14d159f2d58c3750550a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1569611945}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1667455313
 GameObject:
   m_ObjectHideFlags: 0
