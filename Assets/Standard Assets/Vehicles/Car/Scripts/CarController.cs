@@ -51,17 +51,10 @@ namespace UnityStandardAssets.Vehicles.Car
         public float BrakeInput { get; private set; }
         public float CurrentSteerAngle{ get { return m_SteerAngle; }}
         public float CurrentSpeed{ get { return m_Rigidbody.velocity.magnitude*2.23693629f; }}
-<<<<<<< HEAD
         public float MaxSpeed{get { return m_Topspeed; } set { m_Topspeed = value; } }
         public float Revs { get; private set; }
         public float AccelInput { get; private set; }
         public float SteerHelperValue { get { return m_SteerHelper; } set { m_SteerHelper = value; } }
-=======
-        public float MaxSpeed { get { return m_Topspeed; } set { m_Topspeed = value; } }
-        public float Revs { get; private set; }
-        public float AccelInput { get; private set; }
-        public float SteerHelper { get; set; }
->>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 
         // Use this for initialization
         private void Start()
@@ -157,7 +150,7 @@ namespace UnityStandardAssets.Vehicles.Car
             m_WheelColliders[0].steerAngle = m_SteerAngle;
             m_WheelColliders[1].steerAngle = m_SteerAngle;
 
-            SteerHelp();
+            SteerHelper();
             ApplyDrive(accel, footbrake);
             CapSpeed();
 
@@ -242,7 +235,7 @@ namespace UnityStandardAssets.Vehicles.Car
         }
 
 
-        private void SteerHelp()
+        private void SteerHelper()
         {
             for (int i = 0; i < 4; i++)
             {
