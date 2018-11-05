@@ -6,6 +6,7 @@ using UnityStandardAssets.Vehicles.Car;
 public class PlayerPickup : MonoBehaviour
 {
     public GameObject m_CarBodyObject;
+    public float m_SecondsToRespawnPickup = 60f;
     public PickupLevelEnum m_CarBodyLevel = PickupLevelEnum.one;
     public PickupLevelEnum m_TireLevel = PickupLevelEnum.one;
     public PickupLevelEnum m_EngineLevel = PickupLevelEnum.one;
@@ -27,6 +28,7 @@ public class PlayerPickup : MonoBehaviour
     {
         if (other.tag == "CarBodyPickup")
         {
+            print("hit");
             m_CarBodyObject.SetActive(true);
 
             PickupLevel pickupLevel = other.GetComponent<PickupLevel>();
@@ -35,7 +37,7 @@ public class PlayerPickup : MonoBehaviour
                 m_CarBodyLevel = pickupLevel.m_PickupLevel;
                 UpdateCarBody();
             }
-            Destroy(other.gameObject);
+            StartCoroutine(WaitToRespawn(other.gameObject));
         }
 
         if (other.tag == "EnginePickup")
@@ -46,8 +48,7 @@ public class PlayerPickup : MonoBehaviour
                 m_EngineLevel = pickupLevel.m_PickupLevel;
                 UpdateEngine();
             }
-
-            Destroy(other.gameObject);
+            StartCoroutine(WaitToRespawn(other.gameObject));
         }
 
         if (other.tag == "TirePickup")
@@ -58,8 +59,7 @@ public class PlayerPickup : MonoBehaviour
                 m_TireLevel = pickupLevel.m_PickupLevel;
                 UpdateTires();
             }
-
-            Destroy(other.gameObject);
+            StartCoroutine(WaitToRespawn(other.gameObject));
         }
 
         if (other.tag == "ScoreZone")
@@ -132,5 +132,12 @@ public class PlayerPickup : MonoBehaviour
                 m_CarController.SteerHelperValue = 0.6f;
                 break;
         }
+    }
+
+    private IEnumerator WaitToRespawn(GameObject pickup)
+    {
+        pickup.SetActive(false);
+        yield return new WaitForSeconds(m_SecondsToRespawnPickup);
+        pickup.SetActive(true);
     }
 }

@@ -24,10 +24,13 @@ public class GameManager : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update () 
+    {
         timer += Time.deltaTime;
-        if (timer < 4) {
-            if (timer % 2 < 1) {
+        if (timer < 4) 
+        {
+            if (timer % 2 < 1) 
+            {
                 build_timer.transform.localScale += new Vector3(0.01F, 0.01F, 0);
             }
             else build_timer.transform.localScale += new Vector3(-0.01F, -0.01F, 0);
@@ -54,7 +57,8 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void Win(string s) {
+    public void Win(string s) 
+    {
         Time.timeScale = .5f;
         win_box.SetActive(true);
         win_text.text = s + " Wins!";
