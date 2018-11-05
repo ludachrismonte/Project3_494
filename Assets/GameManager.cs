@@ -11,8 +11,9 @@ public class GameManager : MonoBehaviour {
     public Text[] countdown;
     public GameObject countdown_parent;
     public GameObject wall;
-    public GameObject win_box;
     public Text win_text;
+    public GameObject win_box;
+
 
     private float timer;
 
@@ -54,16 +55,15 @@ public class GameManager : MonoBehaviour {
     }
 
     public void Win(string s) {
+        Time.timeScale = .5f;
         win_box.SetActive(true);
         win_text.text = s + " Wins!";
-        Time.timeScale = .25f;
         StartCoroutine(changeScene());
     }
 
     IEnumerator changeScene()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("MainMenu");
     }
-
 }
