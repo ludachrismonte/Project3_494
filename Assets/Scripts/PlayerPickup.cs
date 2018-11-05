@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
 
-public class PlayerPickup : MonoBehaviour 
+public class PlayerPickup : MonoBehaviour
 {
-    public GameObject carBodyObject;
+    public GameObject m_CarBodyObject;
     public PickupLevelEnum m_CarBodyLevel = PickupLevelEnum.one;
-    public PickupLevelEnum m_EngineLevel = PickupLevelEnum.one;
     public PickupLevelEnum m_TireLevel = PickupLevelEnum.one;
+    public PickupLevelEnum m_EngineLevel = PickupLevelEnum.one;
 
-    private Health m_CarHealth;
     private CarController m_CarController;
+    private Health m_CarHealth;
 
     private void Start()
     {
-        m_CarHealth = GetComponent<Health>();
         m_CarController = GetComponent<CarController>();
+        m_CarHealth = GetComponent<Health>();
 
         UpdateCarBody();
         UpdateEngine();
@@ -27,34 +27,53 @@ public class PlayerPickup : MonoBehaviour
     {
         if (other.tag == "CarBodyPickup")
         {
-            carBodyObject.SetActive(true);
+            m_CarBodyObject.SetActive(true);
+
+            PickupLevel pickupLevel = other.GetComponent<PickupLevel>();
+            if (pickupLevel.m_PickupLevel > m_CarBodyLevel)
+            {
+                m_CarBodyLevel = pickupLevel.m_PickupLevel;
+                UpdateCarBody();
+            }
             Destroy(other.gameObject);
-            UpdateCarBody();
         }
 
         if (other.tag == "EnginePickup")
         {
+            PickupLevel pickupLevel = other.GetComponent<PickupLevel>();
+            if (pickupLevel.m_PickupLevel > m_EngineLevel)
+            {
+                m_EngineLevel = pickupLevel.m_PickupLevel;
+                UpdateEngine();
+            }
+
             Destroy(other.gameObject);
-            UpdateEngine();
         }
 
         if (other.tag == "TirePickup")
         {
+            PickupLevel pickupLevel = other.GetComponent<PickupLevel>();
+            if (pickupLevel.m_PickupLevel > m_TireLevel)
+            {
+                m_TireLevel = pickupLevel.m_PickupLevel;
+                UpdateTires();
+            }
+
             Destroy(other.gameObject);
-            UpdateTires();
         }
 
         if (other.tag == "ScoreZone")
         {
             GameObject zone = GameObject.FindWithTag("ScoreZone");
-            if (zone == null) {
+            if (zone == null)
+            {
                 Debug.Log("didnt find it");
             }
             zone.GetComponent<RandomPlacement>().Move();
         }
     }
 
-    public void UpdateCarBody()
+    private void UpdateCarBody()
     {
         switch (m_CarBodyLevel)
         {

@@ -52,7 +52,8 @@ public class Health : MonoBehaviour {
             }
 
         }
-        if(!collision.gameObject.CompareTag("nonObstacle"))
+
+        if(collision.gameObject.tag != "nonObstacle")
         {
             StartCoroutine(damageEnum()); 
         }
