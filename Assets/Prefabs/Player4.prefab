@@ -2549,18 +2549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   me: Player 4
-  bar:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  score_count: 0
+  bar: {fileID: 0}
 --- !u!114 &114475192828924146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2586,7 +2575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  damageMult: 1
+  damageMultrest: 0
+  damageMultfront: 0
 --- !u!114 &114620809478219826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2598,7 +2588,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52acccf8f5c14169bf75de1ddcc2e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carBodyObject: {fileID: 1733459175115332}
+  m_CarBodyObject: {fileID: 1733459175115332}
+  m_CarBodyLevel: 1
+  m_TireLevel: 1
+  m_EngineLevel: 1
 --- !u!114 &114763655085565860
 MonoBehaviour:
   m_ObjectHideFlags: 1
