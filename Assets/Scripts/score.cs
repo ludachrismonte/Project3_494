@@ -21,7 +21,8 @@ public class score : MonoBehaviour {
 
     private void Update()
     {
-        if (current_score >= score_to_win) {
+        if (current_score >= score_to_win) 
+        {
             manager.Win(me);
         }
     }
