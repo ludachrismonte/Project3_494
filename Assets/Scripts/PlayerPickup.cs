@@ -72,7 +72,7 @@ public class PlayerPickup : MonoBehaviour
         }
     }
 
-    private void UpdateCarBody()
+    public void UpdateCarBody()
     {
         switch (m_CarBodyLevel)
         {
@@ -121,19 +121,19 @@ public class PlayerPickup : MonoBehaviour
         switch (m_TireLevel)
         {
             case PickupLevelEnum.two:
-                m_CarController.SteerHelper = 0.7f;
+                m_CarController.SteerHelperValue = 0.7f;
                 break;
             case PickupLevelEnum.three:
-                m_CarController.SteerHelper = 0.8f;
+                m_CarController.SteerHelperValue = 0.8f;
                 break;
             case PickupLevelEnum.four:
-                m_CarController.SteerHelper = 0.9f;
+                m_CarController.SteerHelperValue = 0.9f;
                 break;
             case PickupLevelEnum.five:
-                m_CarController.SteerHelper = 1.0f;
+                m_CarController.SteerHelperValue = 1.0f;
                 break;
             default:
-                m_CarController.SteerHelper = 0.6f;
+                m_CarController.SteerHelperValue = 0.6f;
                 break;
         }
     }
