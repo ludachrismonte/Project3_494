@@ -4,7 +4,6 @@ using UnityEngine;
 
 public enum PickupLevelEnum { one = 1, two = 2, three = 3, four = 4, five = 5 };
 
-
 public class PickupLevel : MonoBehaviour 
 {
     public PickupLevelEnum m_PickupLevel;
@@ -33,7 +32,7 @@ public class PickupLevel : MonoBehaviour
                 cylinderColor = Color.grey;
                 break;
         }
-        cylinderColor.a = 0.5f;
+        cylinderColor.a = 0.25f;
         cylinderMaterial.color = cylinderColor;
         cylinderMaterial.shader = Shader.Find("Transparent/Diffuse");
 

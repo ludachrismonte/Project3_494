@@ -64,12 +64,7 @@ public class PlayerPickup : MonoBehaviour
 
         if (other.tag == "ScoreZone")
         {
-            GameObject zone = GameObject.FindWithTag("ScoreZone");
-            if (zone == null)
-            {
-                Debug.Log("didnt find it");
-            }
-            zone.GetComponent<RandomPlacement>().Move();
+            other.gameObject.GetComponent<RandomPlacement>().Move();
         }
     }
 
