@@ -15,7 +15,8 @@ public class Health : MonoBehaviour {
     private Vector3 finalVel = Vector3.zero;
     private PlayerPickup m_PlayerPickup;
 
-    void Start () {
+    void Start () 
+    {
         carRb = GetComponent<Rigidbody>();
         respawn = GetComponent<Respawn>();
         m_PlayerPickup = GetComponent<PlayerPickup>();
@@ -31,31 +32,17 @@ public class Health : MonoBehaviour {
             respawn.respawn();
             return;
         }
-        
-        if(health < (body * 10))
-        {
-            body--;
-        }
     }
 
-    //Currently assuming we can't skip body upgrades
-    public void changeBody(int i){
-        if (body < i) 
-        { 
-            health += 10;
-            body = i;
-        }
-    }
-    //Make sure the empty game objects can't collide with the car
     private void OnCollisionEnter(Collision collision)
     {
         initialVel = carRb.velocity;
-        RaycastHit hit; //RaycastHit hit2;
+        RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
-            if(hit.collider == collision.collider){
+            if(hit.collider == collision.collider)
+            {
                 Debug.Log("Point of contact is front");
-                //if(collision.gameObject.tag == )
                 damageMult = damageMultfront;
             }
             else
@@ -65,26 +52,17 @@ public class Health : MonoBehaviour {
             }
 
         }
-        if(!collision.gameObject.CompareTag("nonObstacle")){
+        if(!collision.gameObject.CompareTag("nonObstacle"))
+        {
             StartCoroutine(damageEnum()); 
         }
-
-        //if (Physics.Raycast(transform.position, (-transform.forward), out hit2))
-        //{
-        //    if (hit.collider == collision.collider)
-        //    {
-        //        Debug.Log("Point of contact is back");
-        //    }
-        //}
     }
   
     IEnumerator damageEnum()
     {
         yield return new WaitForSeconds(0.1f);
         finalVel = carRb.velocity;
-        health = health - Mathf.Abs(finalVel.magnitude - initialVel.magnitude) * damageMult;
+        health -= Mathf.Abs(finalVel.magnitude - initialVel.magnitude) * damageMult;
         initialVel = Vector3.zero;
     }
-    
-
 }

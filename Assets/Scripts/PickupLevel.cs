@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum PickupLevelEnum { one = 1, two = 2, three = 3, four = 4, five = 5 };
 
+
 public class PickupLevel : MonoBehaviour 
 {
     public PickupLevelEnum m_PickupLevel;

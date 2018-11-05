@@ -5,18 +5,18 @@ using UnityStandardAssets.Vehicles.Car;
 
 public class PlayerPickup : MonoBehaviour 
 {
-    public GameObject m_CarBodyObject;
+    public GameObject carBodyObject;
     public PickupLevelEnum m_CarBodyLevel = PickupLevelEnum.one;
-    public PickupLevelEnum m_TireLevel = PickupLevelEnum.one;
     public PickupLevelEnum m_EngineLevel = PickupLevelEnum.one;
+    public PickupLevelEnum m_TireLevel = PickupLevelEnum.one;
 
-    private CarController m_CarController;
     private Health m_CarHealth;
+    private CarController m_CarController;
 
     private void Start()
     {
-        m_CarController = GetComponent<CarController>();
         m_CarHealth = GetComponent<Health>();
+        m_CarController = GetComponent<CarController>();
 
         UpdateCarBody();
         UpdateEngine();
@@ -27,39 +27,21 @@ public class PlayerPickup : MonoBehaviour
     {
         if (other.tag == "CarBodyPickup")
         {
-            m_CarBodyObject.SetActive(true);
-
-            PickupLevel pickupLevel = other.GetComponent<PickupLevel>();
-            if (pickupLevel.m_PickupLevel > m_CarBodyLevel)
-            {
-                m_CarBodyLevel = pickupLevel.m_PickupLevel;
-                UpdateCarBody();
-            }
+            carBodyObject.SetActive(true);
             Destroy(other.gameObject);
+            UpdateCarBody();
         }
 
         if (other.tag == "EnginePickup")
         {
-            PickupLevel pickupLevel = other.GetComponent<PickupLevel>();
-            if (pickupLevel.m_PickupLevel > m_EngineLevel)
-            {
-                m_EngineLevel = pickupLevel.m_PickupLevel;
-                UpdateEngine();
-            }
-
             Destroy(other.gameObject);
+            UpdateEngine();
         }
 
         if (other.tag == "TirePickup")
         {
-            PickupLevel pickupLevel = other.GetComponent<PickupLevel>();
-            if (pickupLevel.m_PickupLevel > m_TireLevel)
-            {
-                m_TireLevel = pickupLevel.m_PickupLevel;
-                UpdateTires();
-            }
-
             Destroy(other.gameObject);
+            UpdateTires();
         }
 
         if (other.tag == "ScoreZone")
