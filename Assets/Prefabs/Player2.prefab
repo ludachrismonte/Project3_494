@@ -320,7 +320,6 @@ GameObject:
   - component: {fileID: 114800944531367050}
   - component: {fileID: 114058812661621646}
   - component: {fileID: 114155013817319498}
-  - component: {fileID: 114566559437339874}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -2830,30 +2829,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.3
   m_BrakeTorque: 20000
---- !u!114 &114566559437339874
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1578005107302926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b427040b05063454b936e72fa721caec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  me: Player 2
-  bar:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  score_count: 0
 --- !u!114 &114567843220839952
 MonoBehaviour:
   m_ObjectHideFlags: 1

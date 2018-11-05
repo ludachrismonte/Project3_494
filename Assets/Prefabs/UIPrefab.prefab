@@ -11,21 +11,6 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1517953688112042}
   m_IsPrefabAsset: 1
---- !u!1 &1007515841401862
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4728183665165632}
-  m_Layer: 0
-  m_Name: Player2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1022525510020566
 GameObject:
   m_ObjectHideFlags: 1
@@ -94,7 +79,7 @@ GameObject:
   m_IsActive: 0
 --- !u!1 &1130940173396498
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
@@ -109,7 +94,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1148163217060550
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
@@ -141,6 +126,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!1 &1259663585251558
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,9 +172,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+=======
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 --- !u!1 &1326655670029974
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
@@ -198,21 +186,6 @@ GameObject:
   - component: {fileID: 114170682887286282}
   m_Layer: 0
   m_Name: spedometer_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1338966813343578
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4861406531148882}
-  m_Layer: 0
-  m_Name: ScoreBar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +210,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1363435047662768
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
@@ -267,94 +240,190 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1402387849626056
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 224815032443281336}
-  - component: {fileID: 222800505012044486}
-  - component: {fileID: 114175288829419644}
-  m_Layer: 0
-  m_Name: Blue 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1429852633542120
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 224571685579677786}
-  - component: {fileID: 222005894945770218}
-  - component: {fileID: 114382482308407134}
-  m_Layer: 0
-  m_Name: Bar 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1496111259093768
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 224152141191783340}
-  - component: {fileID: 222158739853139570}
-  - component: {fileID: 114695838771885198}
-  m_Layer: 0
-  m_Name: Blue 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1504045238412286
+--- !u!1 &1413535751254228
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4701130911893160}
+<<<<<<< HEAD
+  - component: {fileID: 224815032443281336}
+  - component: {fileID: 222800505012044486}
+  - component: {fileID: 114175288829419644}
+=======
+  - component: {fileID: 224012337375166524}
+  - component: {fileID: 222178698762954762}
+  - component: {fileID: 114686497346000332}
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
   m_Layer: 0
-  m_Name: Player1
+  m_Name: spedometer_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1515348887433216
+<<<<<<< HEAD
+--- !u!1 &1429852633542120
+=======
+--- !u!1 &1517953688112042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224508170009640496}
+  - component: {fileID: 223912274061865940}
+  - component: {fileID: 114586649063950120}
+  - component: {fileID: 114117832880956040}
+  - component: {fileID: 114826756340232300}
+  m_Layer: 5
+  m_Name: UIPrefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1560737126517438
 GameObject:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 224940570895072054}
-  - component: {fileID: 222198903511269160}
-  - component: {fileID: 114412463425181128}
+  - component: {fileID: 224867784211731268}
+  - component: {fileID: 222200664804863040}
+  - component: {fileID: 114289351301387202}
   m_Layer: 0
-  m_Name: Bar 4
+  m_Name: spedometer_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1515417916091420
+--- !u!1 &1745639878597366
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4140651166721634}
+  m_Layer: 0
+  m_Name: Race Starts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD
+--- !u!1 &1496111259093768
+=======
+--- !u!1 &1760148999966348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4570777780078116}
+  m_Layer: 0
+  m_Name: needle_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1766488712046024
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 GameObject:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+<<<<<<< HEAD
+  - component: {fileID: 224152141191783340}
+  - component: {fileID: 222158739853139570}
+  - component: {fileID: 114695838771885198}
+  m_Layer: 0
+  m_Name: Blue 4
+=======
+  - component: {fileID: 224422913359903906}
+  - component: {fileID: 222583224922508572}
+  - component: {fileID: 114802849376835320}
+  m_Layer: 0
+  m_Name: spedometer_1 (1)
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD
+--- !u!1 &1504045238412286
+=======
+--- !u!1 &1801804423821042
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4307917885883882}
+  m_Layer: 0
+  m_Name: needle_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< HEAD
+--- !u!1 &1515348887433216
+GameObject:
+=======
+--- !u!1 &1882944195540788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224135254510626370}
+  - component: {fileID: 222530114180447298}
+  - component: {fileID: 114678365309559500}
+  m_Layer: 0
+  m_Name: spedometer_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4140651166721634
+Transform:
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1745639878597366}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.05, y: 0.96999997, z: 1}
+  m_Children:
+  - {fileID: 224187437004548596}
+  - {fileID: 224716580676038262}
+  m_Father: {fileID: 224508170009640496}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4166246229960504
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4448251915142306}
@@ -634,7 +703,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1130940173396498}
   m_LocalRotation: {x: -0, y: -0, z: -0.97759986, w: -0.2104721}
-  m_LocalPosition: {x: 359.6, y: -211.7, z: 0}
+  m_LocalPosition: {x: 359.6, y: -185, z: 0}
   m_LocalScale: {x: 0.5291005, y: 0.5291005, z: 0.52910054}
   m_Children:
   - {fileID: 224996115063773638}
@@ -707,7 +776,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760148999966348}
   m_LocalRotation: {x: -0, y: -0, z: -0.97759986, w: -0.2104721}
-  m_LocalPosition: {x: -40.189995, y: -211.7, z: 0}
+  m_LocalPosition: {x: -40.189995, y: -185, z: 0}
   m_LocalScale: {x: 0.5291004, y: 0.5291004, z: 0.52910054}
   m_Children:
   - {fileID: 224528459407987466}
@@ -767,7 +836,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1338966813343578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -365, y: -199.246, z: -0.8198552}
+  m_LocalPosition: {x: -365, y: -175, z: -0.8198552}
   m_LocalScale: {x: 0.8583691, y: 0.8583691, z: 0.8583691}
   m_Children:
   - {fileID: 224129949399353942}
@@ -949,6 +1018,180 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+=======
+  m_GameObject: {fileID: 1130940173396498}
+  m_LocalRotation: {x: -0, y: 0, z: -0.97759986, w: -0.2104721}
+  m_LocalPosition: {x: 359.6, y: -211.7, z: 0}
+  m_LocalScale: {x: 0.52910054, y: 0.52910054, z: 0.52910054}
+  m_Children:
+  - {fileID: 224996115063773638}
+  m_Father: {fileID: 224508170009640496}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 515.7}
+--- !u!4 &4307917885883882
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1801804423821042}
+  m_LocalRotation: {x: -0, y: -0, z: -0.97759986, w: -0.2104721}
+  m_LocalPosition: {x: 359.60004, y: 41.6, z: 0}
+  m_LocalScale: {x: 0.5291005, y: 0.5291005, z: 0.52910054}
+  m_Children:
+  - {fileID: 224867784211731268}
+  m_Father: {fileID: 224508170009640496}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 515.7}
+--- !u!4 &4425251980572306
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1116738009564018}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.05, y: 0.97, z: 1}
+  m_Children:
+  - {fileID: 224047446461557726}
+  - {fileID: 224895545091231224}
+  m_Father: {fileID: 224508170009640496}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4570777780078116
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760148999966348}
+  m_LocalRotation: {x: -0, y: -0, z: -0.97759986, w: -0.2104721}
+  m_LocalPosition: {x: -40.19, y: -211.7, z: 0}
+  m_LocalScale: {x: 0.5291005, y: 0.5291005, z: 0.52910054}
+  m_Children:
+  - {fileID: 224528459407987466}
+  m_Father: {fileID: 224508170009640496}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 515.7}
+--- !u!4 &4596603317053356
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363435047662768}
+  m_LocalRotation: {x: -0, y: -0, z: -0.97759986, w: -0.2104721}
+  m_LocalPosition: {x: -40.1, y: 41.3, z: 0}
+  m_LocalScale: {x: 0.5291005, y: 0.5291005, z: 0.52910054}
+  m_Children:
+  - {fileID: 224422913359903906}
+  m_Father: {fileID: 224508170009640496}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 515.7}
+--- !u!114 &114012453351394020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1342434468486604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 2800000, guid: 842b24fa1288d734fa19468f2b3b5e13, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!114 &114117832880956040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517953688112042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &114139426739261664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1104671266506208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0.009897232, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 41
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 226
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Wall Drops In:'
+--- !u!114 &114170682887286282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1326655670029974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 2800000, guid: 09a92d949a79bb449a2f069f1ce285dd, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!114 &114195145935636708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
   m_GameObject: {fileID: 1148163217060550}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -970,6 +1213,7 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+<<<<<<< HEAD
 --- !u!114 &114228430623940850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1480,31 +1724,323 @@ CanvasRenderer:
   m_GameObject: {fileID: 1624350402614134}
   m_CullTransparentMesh: 0
 --- !u!222 &222583224922508572
-CanvasRenderer:
+=======
+--- !u!114 &114289351301387202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560737126517438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 2800000, guid: 842b24fa1288d734fa19468f2b3b5e13, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!114 &114385404637640436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1061150667156394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.96142375, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 52
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 226
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Start Building!
+--- !u!114 &114567676473793926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1391903077953464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 2800000, guid: 842b24fa1288d734fa19468f2b3b5e13, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!114 &114586649063950120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517953688112042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!114 &114678365309559500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882944195540788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 2800000, guid: 09a92d949a79bb449a2f069f1ce285dd, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!114 &114686497346000332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1413535751254228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 2800000, guid: 09a92d949a79bb449a2f069f1ce285dd, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!114 &114771184589327814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1022525510020566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0.009897232, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 226
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Start Building!
+--- !u!114 &114802849376835320
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1766488712046024}
-  m_CullTransparentMesh: 0
---- !u!222 &222687755738156938
-CanvasRenderer:
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 2800000, guid: 842b24fa1288d734fa19468f2b3b5e13, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!114 &114826756340232300
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1544779714965050}
-  m_CullTransparentMesh: 0
---- !u!222 &222738692982973140
-CanvasRenderer:
+  m_GameObject: {fileID: 1517953688112042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6208225311f7e42940ed15599b40aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 0}
+  winner: {fileID: 0}
+  winnerBackground: {fileID: 0}
+  speedometer:
+  - {fileID: 1363435047662768}
+  - {fileID: 1801804423821042}
+  - {fileID: 1760148999966348}
+  - {fileID: 1130940173396498}
+  allotedTime: 240
+--- !u!114 &114835845204748040
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1227769167932960}
-  m_CullTransparentMesh: 0
---- !u!222 &222760983169930126
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.96142375, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 226
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Wall Drops In:'
+--- !u!222 &222178698762954762
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1766488712046024}
+  m_CullTransparentMesh: 0
+--- !u!222 &222687755738156938
+=======
+  m_GameObject: {fileID: 1413535751254228}
+  m_CullTransparentMesh: 0
+--- !u!222 &222200664804863040
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1544779714965050}
+  m_CullTransparentMesh: 0
+--- !u!222 &222738692982973140
+=======
+  m_GameObject: {fileID: 1560737126517438}
+  m_CullTransparentMesh: 0
+--- !u!222 &222280488334294374
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1227769167932960}
+  m_CullTransparentMesh: 0
+--- !u!222 &222760983169930126
+=======
+  m_GameObject: {fileID: 1391903077953464}
+  m_CullTransparentMesh: 0
+--- !u!222 &222380004986014718
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1342434468486604}
   m_CullTransparentMesh: 0
 --- !u!222 &222800505012044486
@@ -1522,17 +2058,29 @@ CanvasRenderer:
   m_GameObject: {fileID: 1061150667156394}
   m_CullTransparentMesh: 0
 --- !u!222 &222848394587623630
+=======
+  m_GameObject: {fileID: 1104671266506208}
+  m_CullTransparentMesh: 0
+--- !u!222 &222501739310095698
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1022525510020566}
   m_CullTransparentMesh: 0
 --- !u!222 &222883007862841636
+=======
+  m_GameObject: {fileID: 1326655670029974}
+  m_CullTransparentMesh: 0
+--- !u!222 &222530114180447298
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1148163217060550}
   m_CullTransparentMesh: 0
 --- !u!223 &223912274061865940
@@ -1588,7 +2136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -463.58063, y: -306.8966}
+  m_AnchoredPosition: {x: 5.1, y: -9.7}
   m_SizeDelta: {x: 32, y: 677}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224129949399353942
@@ -1624,7 +2172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.2, y: -207}
+  m_AnchoredPosition: {x: -45.2, y: -180}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224152141191783340
@@ -1664,10 +2212,78 @@ RectTransform:
   m_SizeDelta: {x: 286.4, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224422913359903906
+=======
+  m_GameObject: {fileID: 1882944195540788}
+  m_CullTransparentMesh: 0
+--- !u!222 &222583224922508572
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1766488712046024}
+  m_CullTransparentMesh: 0
+--- !u!222 &222738692982973140
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1227769167932960}
+  m_CullTransparentMesh: 0
+--- !u!222 &222760983169930126
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1342434468486604}
+  m_CullTransparentMesh: 0
+--- !u!222 &222821153227607236
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1061150667156394}
+  m_CullTransparentMesh: 0
+--- !u!222 &222848394587623630
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1022525510020566}
+  m_CullTransparentMesh: 0
+--- !u!222 &222883007862841636
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148163217060550}
+  m_CullTransparentMesh: 0
+--- !u!223 &223912274061865940
+Canvas:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517953688112042}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &224012337375166524
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 RectTransform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1766488712046024}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1682,10 +2298,27 @@ RectTransform:
   m_SizeDelta: {x: 7, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224466666765453612
+=======
+  m_GameObject: {fileID: 1413535751254228}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224508170009640496}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 355.2, y: -207.00003}
+  m_SizeDelta: {x: 90, y: 90}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224047446461557726
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 RectTransform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1624350402614134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.9551313}
@@ -1700,10 +2333,27 @@ RectTransform:
   m_SizeDelta: {x: 50, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224508170009640496
+=======
+  m_GameObject: {fileID: 1022525510020566}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.46875, y: 1.46875, z: 1.46875}
+  m_Children: []
+  m_Father: {fileID: 4425251980572306}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1000, y: 1000}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224135254510626370
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 RectTransform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1517953688112042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1724,34 +2374,74 @@ RectTransform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &224513478390033658
+=======
+  m_GameObject: {fileID: 1882944195540788}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224508170009640496}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -45.2, y: -207}
+  m_SizeDelta: {x: 90, y: 90}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224187437004548596
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 RectTransform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1619314856119056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4131040925219244}
+=======
+  m_GameObject: {fileID: 1104671266506208}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.46875, y: 1.46875, z: 1.46875}
+  m_Children: []
+  m_Father: {fileID: 4140651166721634}
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 355.2, y: -207.00003}
+<<<<<<< HEAD
+  m_AnchoredPosition: {x: 355.2, y: -180}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224528459407987466
+=======
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 286.4, y: 1000}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224422913359903906
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 RectTransform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1391903077953464}
+=======
+  m_GameObject: {fileID: 1766488712046024}
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.89, y: 1.89, z: 1.89}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 4570777780078116}
+=======
+  m_Father: {fileID: 4596603317053356}
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1759,11 +2449,16 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 22.25}
   m_SizeDelta: {x: 7, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
 --- !u!224 &224536948765622826
+=======
+--- !u!224 &224508170009640496
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 RectTransform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1148163217060550}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1778,10 +2473,37 @@ RectTransform:
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224571685579677786
+=======
+  m_GameObject: {fileID: 1517953688112042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 224791968369299392}
+  - {fileID: 224536948765622826}
+  - {fileID: 224135254510626370}
+  - {fileID: 224012337375166524}
+  - {fileID: 4596603317053356}
+  - {fileID: 4307917885883882}
+  - {fileID: 4570777780078116}
+  - {fileID: 4166246229960504}
+  - {fileID: 4425251980572306}
+  - {fileID: 4140651166721634}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!224 &224528459407987466
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 RectTransform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1429852633542120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.9551313}
@@ -1796,28 +2518,61 @@ RectTransform:
   m_SizeDelta: {x: 50, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224716580676038262
+=======
+  m_GameObject: {fileID: 1391903077953464}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.89, y: 1.89, z: 1.89}
+  m_Children: []
+  m_Father: {fileID: 4570777780078116}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 22.25}
+  m_SizeDelta: {x: 7, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224536948765622826
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 RectTransform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1227769167932960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.46875, y: 1.46875, z: 1.46875}
   m_Children: []
   m_Father: {fileID: 4140651166721634}
+=======
+  m_GameObject: {fileID: 1148163217060550}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224508170009640496}
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 286.4, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224791968369299392
+=======
+  m_AnchoredPosition: {x: 355.2, y: 45.22}
+  m_SizeDelta: {x: 90, y: 90}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224716580676038262
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 RectTransform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1326655670029974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1832,22 +2587,52 @@ RectTransform:
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224815032443281336
+=======
+  m_GameObject: {fileID: 1227769167932960}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.46875, y: 1.46875, z: 1.46875}
+  m_Children: []
+  m_Father: {fileID: 4140651166721634}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 286.4, y: 1000}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224791968369299392
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 RectTransform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1402387849626056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.9551313}
   m_LocalScale: {x: 1.1650001, y: 0.09319999, z: 1.1650001}
   m_Children: []
   m_Father: {fileID: 4218127953514686}
+=======
+  m_GameObject: {fileID: 1326655670029974}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224508170009640496}
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.9999876, y: -306.8966}
+<<<<<<< HEAD
+  m_AnchoredPosition: {x: 4.9999876, y: -10}
   m_SizeDelta: {x: 32, y: 677}
+=======
+  m_AnchoredPosition: {x: -45.200073, y: 45.22}
+  m_SizeDelta: {x: 90, y: 90}
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224867784211731268
 RectTransform:
@@ -1867,6 +2652,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 22.25}
   m_SizeDelta: {x: 7, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
 --- !u!224 &224873687017241848
 RectTransform:
   m_ObjectHideFlags: 1
@@ -1885,6 +2671,8 @@ RectTransform:
   m_AnchoredPosition: {x: 7.088899, y: -9.033425}
   m_SizeDelta: {x: 50, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
+=======
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 --- !u!224 &224895545091231224
 RectTransform:
   m_ObjectHideFlags: 1
@@ -1903,6 +2691,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
 --- !u!224 &224940570895072054
 RectTransform:
   m_ObjectHideFlags: 1
@@ -1921,6 +2710,8 @@ RectTransform:
   m_AnchoredPosition: {x: 7.088899, y: -9.033425}
   m_SizeDelta: {x: 50, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
+=======
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
 --- !u!224 &224996115063773638
 RectTransform:
   m_ObjectHideFlags: 1

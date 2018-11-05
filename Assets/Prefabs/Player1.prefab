@@ -480,7 +480,6 @@ GameObject:
   - component: {fileID: 114722034062054946}
   - component: {fileID: 114038501247139276}
   - component: {fileID: 114580416001665612}
-  - component: {fileID: 114689202586587950}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -2804,30 +2803,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 0
---- !u!114 &114689202586587950
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1704907735798148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b427040b05063454b936e72fa721caec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  me: Player 1
-  bar:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  score_count: 0
 --- !u!114 &114722034062054946
 MonoBehaviour:
   m_ObjectHideFlags: 1
