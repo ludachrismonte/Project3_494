@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour {
@@ -10,6 +11,9 @@ public class GameManager : MonoBehaviour {
     public Text[] countdown;
     public GameObject countdown_parent;
     public GameObject wall;
+    public Text win_text;
+    public GameObject win_box;
+
 
     private float timer;
 
@@ -55,7 +59,15 @@ public class GameManager : MonoBehaviour {
 
     public void Win(string s) 
     {
-
+        Time.timeScale = .5f;
+        win_box.SetActive(true);
+        win_text.text = s + " Wins!";
+        StartCoroutine(changeScene());
     }
 
+    IEnumerator changeScene()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("MainMenu");
+    }
 }
