@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class score : MonoBehaviour {
 
     public string me = "Player";
-    public Image bar;
+    public Image bar = null;
     private float score_to_win = 10f;
     private float current_score;
 
@@ -15,7 +15,7 @@ public class score : MonoBehaviour {
     private void Start()
     {
         current_score = 0f;
-        bar.fillAmount = 0f;
+        if (bar != null) { bar.fillAmount = 0f; }
         manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
     }
 
@@ -30,7 +30,7 @@ public class score : MonoBehaviour {
     {
         if (other.tag == "ScoreZone") {
             current_score++;
-            bar.fillAmount = current_score / score_to_win;
+            if (bar != null) { bar.fillAmount = current_score / score_to_win; }
             other.gameObject.GetComponent<RandomPlacement>().Move();
         }
     }

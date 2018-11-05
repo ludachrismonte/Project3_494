@@ -61,11 +61,6 @@ public class PlayerPickup : MonoBehaviour
             }
             StartCoroutine(WaitToRespawn(other.gameObject));
         }
-
-        if (other.tag == "ScoreZone")
-        {
-            other.gameObject.GetComponent<RandomPlacement>().Move();
-        }
     }
 
     private void UpdateCarBody()
