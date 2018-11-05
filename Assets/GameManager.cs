@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     public Text[] countdown;
     public GameObject countdown_parent;
     public GameObject wall;
+    public GameObject score_zone;
     public Text win_text;
     public GameObject win_box;
 
@@ -37,21 +38,29 @@ public class GameManager : MonoBehaviour {
             return;
         }
         build_timer.SetActive(false);
-        if (timer > 15 && timer < 19)
+        if (timer > 25 && timer < 29)
         {
             countdown_parent.SetActive(true);
-            float time = 20 - timer;
+            float time = 30 - timer;
             countdown[0].text = "Wall Drops In: " + time.ToString("#");
             countdown[1].text = "Wall Drops In: " + time.ToString("#");
             return;
         }
+
         countdown_parent.SetActive(false);
-        if (timer > 20 && timer < 30)
+
+        if (timer > 30 && timer < 40)
         {
+            if (!score_zone.gameObject.activeSelf)
+            {
+                score_zone.SetActive(true);
+                score_zone.GetComponent<RandomPlacement>().Move();
+            }
+
             wall.transform.Translate(new Vector3(0, 0, -5) * Time.deltaTime);
             return;
         }
-        if (timer > 30)
+        if (timer > 40)
         {
             Destroy(wall.gameObject);
         }
