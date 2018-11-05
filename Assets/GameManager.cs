@@ -68,6 +68,6 @@ public class GameManager : MonoBehaviour {
     IEnumerator changeScene()
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Menu");
     }
 }
