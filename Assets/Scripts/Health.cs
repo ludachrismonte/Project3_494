@@ -26,12 +26,14 @@ public class Health : MonoBehaviour {
     
     void Update () 
     {
-        if(health <= 0)
-        {
-            health = 10;
-            respawn.respawn();
-            return;
-        }
+        // TODO: reimplment health
+
+        //if(health <= 0)
+        //{
+        //    health = 10;
+        //    respawn.respawn();
+        //    return;
+        //}
     }
 
     private void OnCollisionEnter(Collision collision)
