@@ -64,7 +64,15 @@ public class PlayerPickup : MonoBehaviour
 
         if (other.tag == "ScoreZone")
         {
+<<<<<<< HEAD
             other.gameObject.GetComponent<RandomPlacement>().Move();
+=======
+            GameObject zone = GameObject.FindWithTag("ScoreZone");
+            if (zone == null) {
+                Debug.Log("didnt find it");
+            }
+            zone.GetComponent<RandomPlacement>().Move();
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
         }
     }
 
@@ -117,6 +125,7 @@ public class PlayerPickup : MonoBehaviour
         switch (m_TireLevel)
         {
             case PickupLevelEnum.two:
+<<<<<<< HEAD
                 m_CarController.SteerHelperValue = 0.7f;
                 break;
             case PickupLevelEnum.three:
@@ -130,6 +139,21 @@ public class PlayerPickup : MonoBehaviour
                 break;
             default:
                 m_CarController.SteerHelperValue = 0.6f;
+=======
+                m_CarController.SteerHelper = 0.7f;
+                break;
+            case PickupLevelEnum.three:
+                m_CarController.SteerHelper = 0.8f;
+                break;
+            case PickupLevelEnum.four:
+                m_CarController.SteerHelper = 0.9f;
+                break;
+            case PickupLevelEnum.five:
+                m_CarController.SteerHelper = 1.0f;
+                break;
+            default:
+                m_CarController.SteerHelper = 0.6f;
+>>>>>>> parent of 6fac596... Merge branch 'master' of https://github.com/ludachrismonte/Project3_494
                 break;
         }
     }
