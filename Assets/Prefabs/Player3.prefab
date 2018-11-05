@@ -2633,8 +2633,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  damageMultrest: 0
-  damageMultfront: 0
+  damageMultrest: 1
+  damageMultfront: 1
 --- !u!114 &114211394318725982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2672,6 +2672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CarBodyObject: {fileID: 1495939585673682}
+  m_SecondsToRespawnPickup: 60
   m_CarBodyLevel: 1
   m_TireLevel: 1
   m_EngineLevel: 1
