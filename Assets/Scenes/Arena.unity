@@ -297,6 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 65020576}
   - component: {fileID: 65020575}
+  - component: {fileID: 65020577}
   m_Layer: 0
   m_Name: Manager
   m_TagString: GameManager
@@ -334,6 +335,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &65020577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 65020574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58529992acf4e49e6ad38437e59c600b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &65504762 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1116738009564018, guid: 0840ae79933e14d159f2d58c3750550a,
@@ -3840,25 +3852,9 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224053101899970164, guid: 0840ae79933e14d159f2d58c3750550a,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 5.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224053101899970164, guid: 0840ae79933e14d159f2d58c3750550a,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -9.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 224815032443281336, guid: 0840ae79933e14d159f2d58c3750550a,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114695838771885198, guid: 0840ae79933e14d159f2d58c3750550a,
-        type: 2}
-      propertyPath: m_FillAmount
-      value: 1
+    - target: {fileID: 4448251915142306, guid: 0840ae79933e14d159f2d58c3750550a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -175
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0840ae79933e14d159f2d58c3750550a, type: 2}
