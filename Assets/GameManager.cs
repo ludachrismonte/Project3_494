@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour {
     IEnumerator changeScene()
     {
         yield return new WaitForSeconds(2f);
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("Menu");
     }
 }
