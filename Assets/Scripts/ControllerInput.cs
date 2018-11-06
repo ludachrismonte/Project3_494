@@ -7,11 +7,12 @@ public class ControllerInput : MonoBehaviour {
 
     public int playerNum;
     private UnityStandardAssets.Vehicles.Car.CarController car;
-    public WeaponManager weapon_manager = null; 
+    private WeaponManager weapon_manager; 
 
 	void Start ()
     {
         car = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
+        weapon_manager = GetComponent<WeaponManager>();
 	}
 	
 	// Update is called once per frame
@@ -43,7 +44,7 @@ public class ControllerInput : MonoBehaviour {
             // Weapons
 
             float fire = player.Action2.Value;
-            if (weapon_manager != null && fire != 0.0f) { weapon_manager.fire(); }
+            if (fire != 0.0f) { weapon_manager.fire(); }
         }
     }
 }

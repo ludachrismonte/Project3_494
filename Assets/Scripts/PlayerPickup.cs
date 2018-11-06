@@ -61,6 +61,11 @@ public class PlayerPickup : MonoBehaviour
             }
             StartCoroutine(WaitToRespawn(other.gameObject));
         }
+
+        if (other.tag == "RocketPickup")
+        {
+            GetComponent<WeaponManager>().get_rocket();
+        }
     }
 
     private void UpdateCarBody()

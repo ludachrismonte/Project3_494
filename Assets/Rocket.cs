@@ -4,25 +4,42 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour {
 
-    private GameObject target;
-    private Transform rootNode;
+    private Transform target;
+    public float turnplier;
+    public float rocketSpeed;
+
+    private float timerSinceLaunch;
+    private float objectLifeTimerValue;
 
     // Use this for initialization
-    void Start () {
-        target = null;
-        rootNode = GetComponent<Transform>();
+    void Start()
+    {
+        rocketSpeed = 20f;
+
+        timerSinceLaunch = 0;
+        objectLifeTimerValue = 100;
     }
 
     // Update is called once per frame
-    void Update () {
-        if (target != null) {
-            transform.LookAt(target.transform.position);
-            transform.Translate(Vector3.forward * 30 * Time.deltaTime);
+    void LateUpdate()
+    {
+        transform.LookAt(target);
+        transform.position += transform.forward * rocketSpeed * Time.deltaTime;
+        
+        if (timerSinceLaunch > objectLifeTimerValue)
+        {
+            Destroy(transform.gameObject, 1);
         }
-	}
+    }
 
-    public void fire(GameObject t) {
-        target = t;
-        rootNode.parent = null;
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == target.tag) {
+            Destroy(gameObject);
+        }
+    }
+
+    public void SetTarget(GameObject t) {
+        target = t.transform;
     }
 }
