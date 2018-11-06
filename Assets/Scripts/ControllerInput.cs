@@ -7,17 +7,32 @@ public class ControllerInput : MonoBehaviour {
 
     public int playerNum;
     private UnityStandardAssets.Vehicles.Car.CarController car;
-    private WeaponManager weapon_manager; 
+    private WeaponManager weapon_manager;
 
-	void Start ()
+    private Transform player_one;
+    private Transform player_two;
+    private Transform player_three;
+    private Transform player_four;
+    private int target_loc;
+    public GameObject targeter = null;
+    private float cooldown = .2f;
+    
+    void Start ()
     {
         car = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
         weapon_manager = GetComponent<WeaponManager>();
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () 
+        player_one = GameObject.FindGameObjectWithTag("Player").transform;
+        player_two = GameObject.FindGameObjectWithTag("Player2").transform;
+        player_three = GameObject.FindGameObjectWithTag("Player3").transform;
+        player_four = GameObject.FindGameObjectWithTag("Player4").transform;
+        target_loc = -1;
+        targeter.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () 
     {
+        cooldown -= Time.deltaTime;
         var player = (InputManager.Devices.Count > playerNum) ? InputManager.Devices[playerNum] : null;
         if (player == null)
         {
@@ -43,8 +58,38 @@ public class ControllerInput : MonoBehaviour {
 
             // Weapons
 
-            float fire = player.Action2.Value;
-            if (fire != 0.0f) { weapon_manager.fire(); }
+            bool fire = player.Action2.WasPressed;
+            if (fire) { weapon_manager.fire(); }
+
+            float target = player.Action4.Value;
+            if (target != 0 && targeter != null && cooldown <= 0.0f) {
+                ToggleTarget();
+                Debug.Log(target_loc);
+            }
+        }
+    }
+
+    private void ToggleTarget() {
+        cooldown = .2f;
+        targeter.SetActive(true);
+        target_loc++;
+        if (target_loc % 4 == playerNum) {
+            targeter.SetActive(false);
+        }
+        if (target_loc % 4 == 0) {
+            targeter.transform.position = player_one.transform.position;
+        }
+        else if (target_loc % 4 == 1)
+        {
+            targeter.transform.position = player_two.transform.position;
+        }
+        else if (target_loc % 4 == 2)
+        {
+            targeter.transform.position = player_three.transform.position;
+        }
+        else if (target_loc % 4 == 3)
+        {
+            targeter.transform.position = player_four.transform.position;
         }
     }
 }
