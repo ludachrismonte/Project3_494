@@ -9,7 +9,6 @@ public class UI : MonoBehaviour
 
     public GameObject[] speedometer;
     Rigidbody[] carRb;
-    string kmPerHour = "km/hr";
 
     // Use this for initialization
     void Start()
