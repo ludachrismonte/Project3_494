@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.Vehicles.Car;
 
 public class PlayerPickup : MonoBehaviour
@@ -10,14 +11,27 @@ public class PlayerPickup : MonoBehaviour
     public PickupLevelEnum m_CarBodyLevel = PickupLevelEnum.one;
     public PickupLevelEnum m_TireLevel = PickupLevelEnum.one;
     public PickupLevelEnum m_EngineLevel = PickupLevelEnum.one;
+    public GameObject UIObjects;
 
     private CarController m_CarController;
     private Health m_CarHealth;
+
+    private RawImage spedometer_1;
+    private RawImage spedometer_2;
+    private RawImage spedometer_3;
+    private RawImage spedometer_4;
+    private RawImage spedometer_5;
 
     private void Start()
     {
         m_CarController = GetComponent<CarController>();
         m_CarHealth = GetComponent<Health>();
+
+        spedometer_1 = UIObjects.transform.Find("spedometer_1").gameObject.GetComponent<RawImage>();
+        spedometer_2 = UIObjects.transform.Find("spedometer_2").gameObject.GetComponent<RawImage>();
+        spedometer_3 = UIObjects.transform.Find("spedometer_3").gameObject.GetComponent<RawImage>();
+        spedometer_4 = UIObjects.transform.Find("spedometer_4").gameObject.GetComponent<RawImage>();
+        spedometer_5 = UIObjects.transform.Find("spedometer_5").gameObject.GetComponent<RawImage>();
 
         UpdateCarBody();
         UpdateEngine();
@@ -92,22 +106,33 @@ public class PlayerPickup : MonoBehaviour
 
     private void UpdateEngine()
     {
+        spedometer_1.enabled = false;
+        spedometer_2.enabled = false;
+        spedometer_3.enabled = false;
+        spedometer_4.enabled = false;
+        spedometer_5.enabled = false;
+
         switch (m_EngineLevel)
         {
             case PickupLevelEnum.two:
                 m_CarController.MaxSpeed = 75;
+                spedometer_2.enabled = true;
                 break;
             case PickupLevelEnum.three:
-                m_CarController.MaxSpeed = 75;
+                m_CarController.MaxSpeed = 100;
+                spedometer_3.enabled = true;
                 break;
             case PickupLevelEnum.four:
-                m_CarController.MaxSpeed = 100;
+                m_CarController.MaxSpeed = 125;
+                spedometer_4.enabled = true;
                 break;
             case PickupLevelEnum.five:
                 m_CarController.MaxSpeed = 150;
+                spedometer_5.enabled = true;
                 break;
             default:
                 m_CarController.MaxSpeed = 50;
+                spedometer_1.enabled = true;
                 break;
         }
     }
