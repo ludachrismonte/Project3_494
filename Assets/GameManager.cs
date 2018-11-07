@@ -42,11 +42,14 @@ public class GameManager : MonoBehaviour {
     void Update () 
     {
         timer += Time.deltaTime;
-        if (timer > 4 && timer < 5) {
-            player1.GetComponent<ControllerInput>().enabled = true;
-            player2.GetComponent<ControllerInput>().enabled = true;
-            player3.GetComponent<ControllerInput>().enabled = true;
-            player4.GetComponent<ControllerInput>().enabled = true;
+        if (timer < 5) {
+            if (timer > 4) {
+                player1.GetComponent<ControllerInput>().enabled = true;
+                player2.GetComponent<ControllerInput>().enabled = true;
+                player3.GetComponent<ControllerInput>().enabled = true;
+                player4.GetComponent<ControllerInput>().enabled = true;
+            }
+            return;
         }
         if (timer > 5 && timer < 10) 
         {
