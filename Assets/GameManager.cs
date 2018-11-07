@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour {
                 score_zone.GetComponent<RandomPlacement>().Move();
             }
 
-            wall.transform.Translate(new Vector3(0, 0, -5) * Time.deltaTime);
+            wall.transform.Translate(new Vector3(0, -5, 0) * Time.deltaTime);
             return;
         }
         if (timer > 40)

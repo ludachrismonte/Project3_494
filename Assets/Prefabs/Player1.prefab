@@ -783,7 +783,7 @@ Transform:
   m_Children:
   - {fileID: 4951990704464746}
   m_Father: {fileID: 4217033698801554}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4092730652915920
 Transform:
@@ -895,8 +895,8 @@ Transform:
   - {fileID: 4564595337254400}
   - {fileID: 4574843902170960}
   - {fileID: 4897442999437004}
-  - {fileID: 4049498775928224}
   - {fileID: 4786908821127676}
+  - {fileID: 4049498775928224}
   - {fileID: 4359638404597316}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1163,7 +1163,7 @@ Transform:
   m_Children:
   - {fileID: 4179368688358976}
   m_Father: {fileID: 4217033698801554}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4800802815359178
 Transform:
@@ -2121,7 +2121,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &65091367638843896
 BoxCollider:
   m_ObjectHideFlags: 1
