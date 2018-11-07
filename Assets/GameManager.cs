@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour {
     public Text win_text;
     public GameObject win_box;
 
+    private GameObject player1;
+    private GameObject player2;
+    private GameObject player3;
+    private GameObject player4;
 
     private float timer;
 
@@ -22,13 +26,29 @@ public class GameManager : MonoBehaviour {
 	void Start () {
         timer = 0;
         build_timer.SetActive(true);
+        player1 = GameObject.FindGameObjectWithTag("Player");
+        player2 = GameObject.FindGameObjectWithTag("Player2");
+        player3 = GameObject.FindGameObjectWithTag("Player3");
+        player4 = GameObject.FindGameObjectWithTag("Player4");
+
+        player1.GetComponent<ControllerInput>().enabled = false;
+        player2.GetComponent<ControllerInput>().enabled = false;
+        player3.GetComponent<ControllerInput>().enabled = false;
+        player4.GetComponent<ControllerInput>().enabled = false;
+
     }
 
     // Update is called once per frame
     void Update () 
     {
         timer += Time.deltaTime;
-        if (timer < 4) 
+        if (timer > 4 && timer < 5) {
+            player1.GetComponent<ControllerInput>().enabled = true;
+            player2.GetComponent<ControllerInput>().enabled = true;
+            player3.GetComponent<ControllerInput>().enabled = true;
+            player4.GetComponent<ControllerInput>().enabled = true;
+        }
+        if (timer > 5 && timer < 10) 
         {
             if (timer % 2 < 1) 
             {
