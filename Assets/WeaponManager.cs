@@ -43,6 +43,7 @@ public class WeaponManager : MonoBehaviour {
         if (has_left && cooldown <= 0.0f) {
             GameObject bullet;
             bullet = Instantiate(projectile, left.transform.position, left.transform.rotation) as GameObject;
+            target = GetComponent<ControllerInput>().getTargeted();
             bullet.GetComponent<Rocket>().SetTarget(target);
             has_left = false;
             left.SetActive(false);
@@ -51,6 +52,7 @@ public class WeaponManager : MonoBehaviour {
         else if (has_right && cooldown <= 0.0f)
         {
             GameObject bullet = Instantiate(projectile, right.transform.position, right.transform.rotation) as GameObject;
+            target = GetComponent<ControllerInput>().getTargeted();
             bullet.GetComponent<Rocket>().SetTarget(target);
             has_right = false;
             right.SetActive(false);

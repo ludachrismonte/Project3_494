@@ -101,4 +101,9 @@ public class ControllerInput : MonoBehaviour {
             to_follow = player_four;
         }
     }
+
+    public GameObject getTargeted()
+    {
+        return to_follow.gameObject;
+    }
 }

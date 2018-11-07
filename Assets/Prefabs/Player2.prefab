@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 33002149185521724}
   - component: {fileID: 23746804270537344}
   - component: {fileID: 95057737524730990}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: arrow 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4613304160277986}
   - component: {fileID: 114422816576375582}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1214,7 +1214,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1335
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
