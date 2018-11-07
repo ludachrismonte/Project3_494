@@ -13,7 +13,9 @@ public class ControllerInput : MonoBehaviour {
     private Transform player_two;
     private Transform player_three;
     private Transform player_four;
+    private Transform to_follow;
     private int target_loc;
+    private Vector3 offset;
     public GameObject targeter = null;
     private float cooldown = .2f;
     
@@ -27,6 +29,7 @@ public class ControllerInput : MonoBehaviour {
         player_four = GameObject.FindGameObjectWithTag("Player4").transform;
         target_loc = -1;
         targeter.SetActive(false);
+        offset = new Vector3(0, 5, 0);
     }
 
     // Update is called once per frame
@@ -66,6 +69,11 @@ public class ControllerInput : MonoBehaviour {
                 ToggleTarget();
                 Debug.Log(target_loc);
             }
+
+            if (to_follow != null) {
+
+                targeter.transform.position = to_follow.transform.position + offset;
+            }
         }
     }
 
@@ -74,22 +82,23 @@ public class ControllerInput : MonoBehaviour {
         targeter.SetActive(true);
         target_loc++;
         if (target_loc % 4 == playerNum) {
+            to_follow = null;
             targeter.SetActive(false);
         }
         if (target_loc % 4 == 0) {
-            targeter.transform.position = player_one.transform.position;
+            to_follow = player_one;
         }
         else if (target_loc % 4 == 1)
         {
-            targeter.transform.position = player_two.transform.position;
+            to_follow = player_two;
         }
         else if (target_loc % 4 == 2)
         {
-            targeter.transform.position = player_three.transform.position;
+            to_follow = player_three;
         }
         else if (target_loc % 4 == 3)
         {
-            targeter.transform.position = player_four.transform.position;
+            to_follow = player_four;
         }
     }
 }
