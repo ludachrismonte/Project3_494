@@ -82,8 +82,7 @@ public class ControllerInput : MonoBehaviour {
         targeter.SetActive(true);
         target_loc++;
         if (target_loc % 4 == playerNum) {
-            to_follow = null;
-            targeter.SetActive(false);
+            target_loc++;
         }
         if (target_loc % 4 == 0) {
             to_follow = player_one;
