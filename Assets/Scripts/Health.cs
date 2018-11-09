@@ -5,6 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour {
     
     public float health;
+    public float maxHealth;
     public float damageMultrest;
     public float damageMultfront;
     public int body = 0;
@@ -37,7 +38,8 @@ public class Health : MonoBehaviour {
     //Currently assuming we can't skip body upgrades
     public void changeBody(int i){
         if (body < i) { 
-            health += 10;
+            health = 10*i + 10;
+            maxHealth = 10 * i + 10;
             body = i;
         }
     }
