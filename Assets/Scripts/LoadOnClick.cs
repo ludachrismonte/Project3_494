@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadOnClick : MonoBehaviour {
-
-    public void LoadScene(string name){
+public class LoadOnClick : MonoBehaviour 
+{
+    public void LoadScene(string name)
+    {
         SceneManager.LoadScene(name);
     }
 
-    public void ExitGame(){
+    public void ExitGame()
+    {
         Application.Quit();
     }
 }

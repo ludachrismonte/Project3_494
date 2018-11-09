@@ -11,8 +11,13 @@ TagManager:
   - Player3
   - Player4
   - ScoreZone
+<<<<<<< HEAD
   - nonObstacle
   - InnerBar
+=======
+  - GameManager
+  - RocketPickup
+>>>>>>> 24d95925563071d6b11f0836c9c7bffc890f1f24
   layers:
   - Default
   - TransparentFX
@@ -23,10 +28,10 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
+  - Player 1 Only
+  - Player 2 Only
+  - Player 3 Only
+  - Player 4 Only
   - 
   - 
   - 
