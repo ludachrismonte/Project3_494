@@ -5,6 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour {
     
     public float health;
+    public float maxHealth;
     public float damageMultrest;
     public float damageMultfront;
 
@@ -36,6 +37,18 @@ public class Health : MonoBehaviour {
         //}
     }
 
+<<<<<<< HEAD
+    //Currently assuming we can't skip body upgrades
+    public void changeBody(int i){
+        if (body < i) { 
+            health = 10*i + 10;
+            maxHealth = 10 * i + 10;
+            body = i;
+        }
+    }
+    //Make sure the empty game objects can't collide with the car
+=======
+>>>>>>> 24d95925563071d6b11f0836c9c7bffc890f1f24
     private void OnCollisionEnter(Collision collision)
     {
         initialVel = carRb.velocity;
