@@ -915,7 +915,7 @@ Transform:
   m_GameObject: {fileID: 1260533491363780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.28461647, y: 0.12, z: 0}
-  m_LocalScale: {x: 0.47436076, y: 0.9007792, z: 0.51292574}
+  m_LocalScale: {x: 0.47436076, y: 0.4743608, z: 0.4743608}
   m_Children:
   - {fileID: 4185218877123418}
   m_Father: {fileID: 4920745048194316}
@@ -1164,7 +1164,7 @@ Transform:
   m_GameObject: {fileID: 1277427624247008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.28461647, y: 0.11999982, z: 0}
-  m_LocalScale: {x: 0.47436076, y: 0.9007792, z: 0.51292574}
+  m_LocalScale: {x: 0.47436076, y: 0.4743608, z: 0.4743608}
   m_Children:
   - {fileID: 4179368688358976}
   m_Father: {fileID: 4920745048194316}
@@ -2696,12 +2696,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1704907735798148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7608467e49d2d1f4dbdec60d02247aba, type: 3}
+  m_Script: {fileID: 11500000, guid: c1f60f0e995e5450e9e369ba785bfce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damageMultrest: 1
-  damageMultfront: 1
+  health: 0
+  maxHealth: 0
+  damageMultrest: 0
+  damageMultfront: 0
 --- !u!114 &114151170103491044
 MonoBehaviour:
   m_ObjectHideFlags: 1

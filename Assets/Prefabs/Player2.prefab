@@ -2785,12 +2785,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1523622056327674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7608467e49d2d1f4dbdec60d02247aba, type: 3}
+  m_Script: {fileID: 11500000, guid: c1f60f0e995e5450e9e369ba785bfce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damageMultrest: 1
-  damageMultfront: 1
+  health: 0
+  maxHealth: 0
+  damageMultrest: 0
+  damageMultfront: 0
 --- !u!114 &114929983570558052
 MonoBehaviour:
   m_ObjectHideFlags: 1
