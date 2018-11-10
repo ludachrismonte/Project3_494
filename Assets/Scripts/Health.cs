@@ -37,14 +37,6 @@ public class Health : MonoBehaviour {
         //}
     }
 
-    //Currently assuming we can't skip body upgrades
-    public void changeBody(int i){
-        if (body < i) { 
-            health = 10*i + 10;
-            maxHealth = 10 * i + 10;
-            body = i;
-        }
-    }
     //Make sure the empty game objects can't collide with the car
 
     private void OnCollisionEnter(Collision collision)
