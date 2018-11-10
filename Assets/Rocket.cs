@@ -14,8 +14,6 @@ public class Rocket : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        rocketSpeed = 20f;
-
         timerSinceLaunch = 0;
         objectLifeTimerValue = 100;
     }
