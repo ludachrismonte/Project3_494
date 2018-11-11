@@ -594,6 +594,7 @@ GameObject:
   - component: {fileID: 20910232946279752}
   - component: {fileID: 124747968797348286}
   - component: {fileID: 81851352610659498}
+  - component: {fileID: 114148611790976144}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1466,8 +1467,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: e1dfef2d5564c409c96964890f46ee4e, type: 2}
-  - {fileID: 2100000, guid: e1dfef2d5564c409c96964890f46ee4e, type: 2}
+  - {fileID: 2100000, guid: 2270a8f986ca4fa4b9d4575fd0d619b4, type: 2}
+  - {fileID: 2100000, guid: 2270a8f986ca4fa4b9d4575fd0d619b4, type: 2}
   - {fileID: 2100004, guid: ee7bb3c688d6e914cba9b42525e74629, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -2684,6 +2685,20 @@ MonoBehaviour:
   maxHealth: 0
   damageMultrest: 0
   damageMultfront: 0
+--- !u!114 &114148611790976144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1830812979631154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbc21a0701082d499a41b4e107a39b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisShakeMin: {x: 0, y: 0, z: 0}
+  axisShakeMax: {x: 1, y: 1, z: 1}
+  timeOfShake: 2
 --- !u!114 &114151170103491044
 MonoBehaviour:
   m_ObjectHideFlags: 1
