@@ -47,21 +47,21 @@ public class ControllerInput : MonoBehaviour {
             float h = player.LeftStick.Vector.x;
 
             // Acceleration
-            float v = player.RightTrigger.Value;
+            float v = player.Action1.Value;
 
             if (v <= 0.0f)
             {
-                v = -player.LeftTrigger.Value;
+                v = -player.Action2.Value;
             }
 
-            float handbrake = player.Action3.Value;
+            //float handbrake = player.Action3.Value;
 
             // Move car based on inputs
-            car.Move(h, v, v, handbrake);
+            car.Move(h, v, v, 0);
 
             // Weapons
 
-            bool fire = player.Action2.WasPressed;
+            bool fire = player.Action3.WasPressed;
             if (fire) { weapon_manager.fire(); }
 
             float target = player.Action4.Value;
@@ -103,6 +103,9 @@ public class ControllerInput : MonoBehaviour {
 
     public GameObject getTargeted()
     {
-        return to_follow.gameObject;
+        if (to_follow) {
+            return to_follow.gameObject;
+        }
+        return null;
     }
 }
