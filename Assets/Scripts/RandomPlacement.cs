@@ -16,6 +16,18 @@ public class RandomPlacement : MonoBehaviour {
                 arrow.SetActive(true);
             }
         }
+        else
+        {
+            GameObject player1 = GameObject.FindGameObjectWithTag("Player");
+            GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
+            GameObject player3 = GameObject.FindGameObjectWithTag("Player3");
+            GameObject player4 = GameObject.FindGameObjectWithTag("Player4");
+
+            player1.transform.Find("Arrow").gameObject.SetActive(true);
+            player2.transform.Find("Arrow").gameObject.SetActive(true);
+            player3.transform.Find("Arrow").gameObject.SetActive(true);
+            player4.transform.Find("Arrow").gameObject.SetActive(true);
+        }
     }
 
     public void Move()
