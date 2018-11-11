@@ -628,9 +628,9 @@ GameObject:
   - component: {fileID: 114374913012578648}
   - component: {fileID: 65136690752023108}
   - component: {fileID: 114620809478219826}
-  - component: {fileID: 114559404681119276}
-  - component: {fileID: 114445034058393760}
+  - component: {fileID: 114474039314134100}
   - component: {fileID: 114897136621729664}
+  - component: {fileID: 114445034058393760}
   m_Layer: 0
   m_Name: Player4
   m_TagString: Player4
@@ -2565,6 +2565,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   me: Player 4
   bar: {fileID: 0}
+--- !u!114 &114474039314134100
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1990267783747410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f60f0e995e5450e9e369ba785bfce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 0
+  damageMultrest: 0
+  damageMultfront: 0
 --- !u!114 &114475192828924146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2578,20 +2593,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
---- !u!114 &114559404681119276
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1990267783747410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7608467e49d2d1f4dbdec60d02247aba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
-  damageMultrest: 1
-  damageMultfront: 1
 --- !u!114 &114620809478219826
 MonoBehaviour:
   m_ObjectHideFlags: 1
