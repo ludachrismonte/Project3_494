@@ -14,8 +14,6 @@ public class Rocket : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        rocketSpeed = 20f;
-
         timerSinceLaunch = 0;
         objectLifeTimerValue = 100;
     }
@@ -34,7 +32,7 @@ public class Rocket : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == target.tag) {
+        if (target != null && collision.gameObject.tag == target.tag) {
             Destroy(gameObject);
         }
     }

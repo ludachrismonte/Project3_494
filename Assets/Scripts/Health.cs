@@ -5,6 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour {
     
     public float health;
+    public float maxHealth;
     public float damageMultrest;
     public float damageMultfront;
 
@@ -35,6 +36,8 @@ public class Health : MonoBehaviour {
         //    return;
         //}
     }
+
+    //Make sure the empty game objects can't collide with the car
 
     private void OnCollisionEnter(Collision collision)
     {
