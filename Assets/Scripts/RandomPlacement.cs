@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class RandomPlacement : MonoBehaviour {
 
-    public int radius;
+    public int m_Radius;
+    public GameObject[] m_Arrows;
+
+    private void Start()
+    {
+        if (m_Arrows != null)
+        {
+            foreach (GameObject arrow in m_Arrows)
+            {
+                arrow.SetActive(true);
+            }
+        }
+    }
 
     public void Move()
     {
-        Vector2 pos = Random.insideUnitCircle * radius;
+        Vector2 pos = Random.insideUnitCircle * m_Radius;
         Vector3 newpos = new Vector3(pos[0], 0, pos[1]);
         transform.position = newpos;
     }
