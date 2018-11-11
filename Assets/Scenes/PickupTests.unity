@@ -4974,7 +4974,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1192265571474716, guid: c06bf2e04afb243eb94e7a5e048e9bf4, type: 2}
       propertyPath: m_Name
-      value: CarBodyPickup4
+      value: CarBodyPickup5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114940220297222908, guid: c06bf2e04afb243eb94e7a5e048e9bf4,
+        type: 2}
+      propertyPath: m_PickupLevel
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c06bf2e04afb243eb94e7a5e048e9bf4, type: 2}
@@ -14592,7 +14597,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1634151269786590, guid: a93ff7d08bff649ff9156e975b110147, type: 2}
       propertyPath: m_Name
-      value: EnginePickup2
+      value: EnginePickup3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a93ff7d08bff649ff9156e975b110147, type: 2}
@@ -14779,13 +14784,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1634151269786590, guid: a93ff7d08bff649ff9156e975b110147, type: 2}
       propertyPath: m_Name
-      value: EnginePickup1
+      value: EnginePickup2
       objectReference: {fileID: 0}
     - target: {fileID: 114667535815339286, guid: a93ff7d08bff649ff9156e975b110147,
         type: 2}
       propertyPath: m_PickupLevel
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114667535815339286, guid: a93ff7d08bff649ff9156e975b110147,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: eda7a87849aff471c96af222f57437b5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a93ff7d08bff649ff9156e975b110147, type: 2}
   m_IsPrefabAsset: 0
@@ -14915,7 +14925,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1634151269786590, guid: a93ff7d08bff649ff9156e975b110147, type: 2}
       propertyPath: m_Name
-      value: EnginePickup4
+      value: EnginePickup5
       objectReference: {fileID: 0}
     - target: {fileID: 114667535815339286, guid: a93ff7d08bff649ff9156e975b110147,
         type: 2}
@@ -29177,7 +29187,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1634151269786590, guid: a93ff7d08bff649ff9156e975b110147, type: 2}
       propertyPath: m_Name
-      value: EnginePickup3
+      value: EnginePickup4
       objectReference: {fileID: 0}
     - target: {fileID: 114667535815339286, guid: a93ff7d08bff649ff9156e975b110147,
         type: 2}
@@ -38767,7 +38777,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1074765181993618, guid: aad2ad28224c2477681e1744c10383ce, type: 2}
       propertyPath: m_Name
-      value: TirePickup2
+      value: TirePickup3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aad2ad28224c2477681e1744c10383ce, type: 2}
@@ -53902,7 +53912,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1192265571474716, guid: c06bf2e04afb243eb94e7a5e048e9bf4, type: 2}
       propertyPath: m_Name
-      value: CarBodyPickup2
+      value: CarBodyPickup3
       objectReference: {fileID: 0}
     - target: {fileID: 114940220297222908, guid: c06bf2e04afb243eb94e7a5e048e9bf4,
         type: 2}
@@ -53958,8 +53968,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1192265571474716, guid: c06bf2e04afb243eb94e7a5e048e9bf4, type: 2}
       propertyPath: m_Name
-      value: CarBodyPickup1
+      value: CarBodyPickup2
       objectReference: {fileID: 0}
+    - target: {fileID: 114940220297222908, guid: c06bf2e04afb243eb94e7a5e048e9bf4,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: eda7a87849aff471c96af222f57437b5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c06bf2e04afb243eb94e7a5e048e9bf4, type: 2}
   m_IsPrefabAsset: 0
@@ -59299,7 +59314,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1074765181993618, guid: aad2ad28224c2477681e1744c10383ce, type: 2}
       propertyPath: m_Name
-      value: TirePickup1
+      value: TirePickup2
       objectReference: {fileID: 0}
     - target: {fileID: 114255313702384898, guid: aad2ad28224c2477681e1744c10383ce,
         type: 2}
@@ -78203,7 +78218,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1192265571474716, guid: c06bf2e04afb243eb94e7a5e048e9bf4, type: 2}
       propertyPath: m_Name
-      value: CarBodyPickup3
+      value: CarBodyPickup4
       objectReference: {fileID: 0}
     - target: {fileID: 114940220297222908, guid: c06bf2e04afb243eb94e7a5e048e9bf4,
         type: 2}
@@ -78468,7 +78483,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1074765181993618, guid: aad2ad28224c2477681e1744c10383ce, type: 2}
       propertyPath: m_Name
-      value: TirePickup3
+      value: TirePickup4
       objectReference: {fileID: 0}
     - target: {fileID: 114255313702384898, guid: aad2ad28224c2477681e1744c10383ce,
         type: 2}
