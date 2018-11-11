@@ -6,19 +6,21 @@ public class WeaponManager : MonoBehaviour {
 
     public GameObject left = null;
     public GameObject right = null;
+    public MeshRenderer targeter = null;
+    public GameObject shooter;
+    public GameObject projectile;
+
     private bool has_left = false;
     private bool has_right = false;
     private GameObject target;
-    public GameObject shooter;
-
-    public GameObject projectile;
-
     private float cooldown = 1;
 
 	// Use this for initialization
 	void Start () {
         right.SetActive(false);
         left.SetActive(false);
+        shooter.GetComponent<MeshRenderer>().enabled = false;
+        if (targeter) { targeter.enabled = false; }
     }
 
     private void Update()
@@ -34,21 +36,14 @@ public class WeaponManager : MonoBehaviour {
     }
 
     public void get_rocket() {
-        Debug.Log("got a rocket");
+        shooter.GetComponent<MeshRenderer>().enabled = true;
         if (!has_left && !has_right) {
             StartCoroutine(raise());
         }
-        if (!has_left)
-        {
-            Debug.Log("act left");
-            has_left = true;
-            left.SetActive(true);
-        }
-        else {
-            Debug.Log("act right");
-            has_right = true;
-            right.SetActive(true);
-        }
+        has_left = true;
+        left.SetActive(true);
+        has_right = true;
+        right.SetActive(true);
     }
 
     public void fire() {
@@ -77,6 +72,9 @@ public class WeaponManager : MonoBehaviour {
     }
 
     private IEnumerator raise() {
+        if (targeter) {
+            targeter.enabled = true;
+        }
         for (float i = .6f; i < 1.5f; i += .05f) {
             shooter.transform.position += new Vector3(0, .05f, 0);
             yield return new WaitForSeconds(0);
@@ -85,11 +83,16 @@ public class WeaponManager : MonoBehaviour {
 
     private IEnumerator lower()
     {
+        if (targeter)
+        {
+            targeter.enabled = false;
+        }
         yield return new WaitForSeconds(.3f);
         for (float i = .6f; i < 1.5f; i += .05f)
         {
             shooter.transform.position -= new Vector3(0, .05f, 0);
             yield return new WaitForSeconds(0);
         }
+        shooter.GetComponent<MeshRenderer>().enabled = false;
     }
 }

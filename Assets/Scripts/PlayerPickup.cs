@@ -79,6 +79,7 @@ public class PlayerPickup : MonoBehaviour
         if (other.tag == "RocketPickup")
         {
             GetComponent<WeaponManager>().get_rocket();
+            Destroy(other.transform.parent.transform.parent.gameObject);
         }
     }
 
