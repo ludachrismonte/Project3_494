@@ -7,9 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-    public GameObject build_timer;
-    public Text[] countdown;
-    public GameObject countdown_parent;
+    public GameObject m_StartBuilding;
+    public Text m_WallDropsText;
     public GameObject wall;
     public GameObject score_zone;
     public Text win_text;
@@ -25,7 +24,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         timer = 0;
-        build_timer.SetActive(true);
+        m_StartBuilding.SetActive(true);
         player1 = GameObject.FindGameObjectWithTag("Player");
         player2 = GameObject.FindGameObjectWithTag("Player2");
         player3 = GameObject.FindGameObjectWithTag("Player3");
@@ -35,7 +34,6 @@ public class GameManager : MonoBehaviour {
         player2.GetComponent<ControllerInput>().enabled = false;
         player3.GetComponent<ControllerInput>().enabled = false;
         player4.GetComponent<ControllerInput>().enabled = false;
-
     }
 
     // Update is called once per frame
@@ -55,22 +53,23 @@ public class GameManager : MonoBehaviour {
         {
             if (timer % 2 < 1) 
             {
-                build_timer.transform.localScale += new Vector3(0.01F, 0.01F, 0);
+                m_StartBuilding.transform.localScale += new Vector3(0.01F, 0.01F, 0);
             }
-            else build_timer.transform.localScale += new Vector3(-0.01F, -0.01F, 0);
-            return;
-        }
-        build_timer.SetActive(false);
-        if (timer > 25 && timer < 29)
-        {
-            countdown_parent.SetActive(true);
-            float time = 30 - timer;
-            countdown[0].text = "Wall Drops In: " + time.ToString("#");
-            countdown[1].text = "Wall Drops In: " + time.ToString("#");
+            else m_StartBuilding.transform.localScale += new Vector3(-0.01F, -0.01F, 0);
             return;
         }
 
-        countdown_parent.SetActive(false);
+        m_StartBuilding.SetActive(false);
+
+        if (timer > 25 && timer < 30)
+        {
+            m_WallDropsText.gameObject.SetActive(true);
+            int time = 30 - (int)timer;
+            m_WallDropsText.text = "wall drops in: " + time.ToString();
+            return;
+        }
+
+        m_WallDropsText.gameObject.SetActive(false);
 
         if (timer > 30 && timer < 40)
         {

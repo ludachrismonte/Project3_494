@@ -7,34 +7,32 @@ public enum PickupLevelEnum { one = 1, two = 2, three = 3, four = 4, five = 5 };
 public class PickupLevel : MonoBehaviour 
 {
     public PickupLevelEnum m_PickupLevel;
-    
+
     private void Start()
     {
-        GameObject cylinder = transform.Find("PickupCylinder").gameObject;
-        Material cylinderMaterial = cylinder.GetComponent<Renderer>().material;
-        Color cylinderColor;
-
+        Material newMaterial;
         switch (m_PickupLevel)
         {
             case PickupLevelEnum.two:
-                cylinderColor = Color.green;
+                newMaterial = Resources.Load("PickupParticlesLevel2", typeof(Material)) as Material;
                 break;
             case PickupLevelEnum.three:
-                cylinderColor = Color.blue;
+                newMaterial = Resources.Load("PickupParticlesLevel3", typeof(Material)) as Material;
                 break;
             case PickupLevelEnum.four:
-                cylinderColor = Color.magenta;
+                newMaterial = Resources.Load("PickupParticlesLevel4", typeof(Material)) as Material;
                 break;
             case PickupLevelEnum.five:
-                cylinderColor = Color.yellow;
+                newMaterial = Resources.Load("PickupParticlesLevel5", typeof(Material)) as Material;
                 break;
             default:
-                cylinderColor = Color.grey;
+                newMaterial = Resources.Load("PickupParticlesLevel1", typeof(Material)) as Material;
                 break;
         }
-        cylinderColor.a = 0.25f;
-        cylinderMaterial.color = cylinderColor;
-        cylinderMaterial.shader = Shader.Find("Transparent/Diffuse");
 
+        if (newMaterial != null)
+        {
+            gameObject.GetComponent<ParticleSystemRenderer>().material = newMaterial;
+        }
     }
 }
