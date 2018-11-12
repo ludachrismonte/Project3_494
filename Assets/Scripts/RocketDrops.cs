@@ -11,13 +11,6 @@ public class RocketDrops : MonoBehaviour
     private int m_CurrentDrops = 0;
     private float m_Timer;
 
-	private void Start () {
-        Spawn();
-        Spawn();
-        Spawn();
-        Spawn();
-    }
-
     private void Update () 
     {
         m_Timer += Time.deltaTime;
