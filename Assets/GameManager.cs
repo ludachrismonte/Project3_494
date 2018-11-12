@@ -7,8 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-    public GameObject m_StartBuilding;
-    public Text m_WallDropsText;
+    public Text m_text;
     public GameObject wall;
     public GameObject score_zone;
     public Text win_text;
@@ -24,7 +23,6 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         timer = 0;
-        m_StartBuilding.SetActive(true);
         player1 = GameObject.FindGameObjectWithTag("Player");
         player2 = GameObject.FindGameObjectWithTag("Player2");
         player3 = GameObject.FindGameObjectWithTag("Player3");
@@ -41,6 +39,21 @@ public class GameManager : MonoBehaviour {
     {
         timer += Time.deltaTime;
         if (timer < 5) {
+            if (timer < 1) {
+                m_text.text = "";
+            }
+            else if (timer < 2)
+            {
+                m_text.text = "on your mark...";
+            }
+            else if (timer < 3)
+            {
+                m_text.text = "get set...";
+            }
+            else if (timer < 4)
+            {
+                m_text.text = "build!";
+            }
             if (timer > 4) {
                 player1.GetComponent<ControllerInput>().enabled = true;
                 player2.GetComponent<ControllerInput>().enabled = true;
@@ -49,28 +62,14 @@ public class GameManager : MonoBehaviour {
             }
             return;
         }
-        if (timer > 5 && timer < 10) 
-        {
-            if (timer % 2 < 1) 
-            {
-                m_StartBuilding.transform.localScale += new Vector3(0.01F, 0.01F, 0);
-            }
-            else m_StartBuilding.transform.localScale += new Vector3(-0.01F, -0.01F, 0);
-            return;
-        }
-
-        m_StartBuilding.SetActive(false);
-
+        m_text.text = "";
         if (timer > 25 && timer < 30)
         {
-            m_WallDropsText.gameObject.SetActive(true);
             int time = 30 - (int)timer;
-            m_WallDropsText.text = "wall drops in: " + time.ToString();
+            m_text.text = "wall drops in: " + time.ToString();
             return;
         }
-
-        m_WallDropsText.gameObject.SetActive(false);
-
+        m_text.text = "";
         if (timer > 30 && timer < 40)
         {
             if (!score_zone.gameObject.activeSelf)
@@ -92,7 +91,7 @@ public class GameManager : MonoBehaviour {
     {
         Time.timeScale = .5f;
         win_box.SetActive(true);
-        win_text.text = s + " Wins!";
+        win_text.text = s + " wins!";
         StartCoroutine(changeScene());
     }
 
