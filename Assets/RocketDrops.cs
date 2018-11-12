@@ -2,30 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketDrops : MonoBehaviour {
-
-    private float time_delay = 5;
-    private float timer;
+public class RocketDrops : MonoBehaviour 
+{
     public GameObject drop;
+    public int m_MaxDrops = 15;
+    public float m_TimeDelay = 10;
 
-	void Start () {
+    private int m_CurrentDrops = 0;
+    private float m_Timer;
+
+	private void Start () {
         Spawn();
         Spawn();
         Spawn();
         Spawn();
     }
 
-    void Update () {
-        timer += Time.deltaTime;
-        if (timer > time_delay) {
+    private void Update () 
+    {
+        m_Timer += Time.deltaTime;
+        if (m_Timer > m_TimeDelay) 
+        {
             Spawn();
-            timer = 0.0f;
+            m_Timer = 0;
         }
     }
 
-    void Spawn() {
-        Vector2 pos = Random.insideUnitCircle * 220;
-        Vector3 newpos = new Vector3(pos[0], 30, pos[1]);
-        Instantiate(drop, newpos, Quaternion.identity);
+    private void Spawn() 
+    {
+        if (m_CurrentDrops <= m_MaxDrops)
+        {
+            Vector2 pos = Random.insideUnitCircle * 220;
+            Vector3 newpos = new Vector3(pos[0], 30, pos[1]);
+            Instantiate(drop, newpos, Quaternion.identity);
+            ++m_CurrentDrops;
+        }
+    }
+
+    public void DropPickedUp()
+    {
+        --m_CurrentDrops;
     }
 }
