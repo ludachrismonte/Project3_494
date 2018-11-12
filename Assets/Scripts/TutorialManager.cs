@@ -1,42 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour {
 
-    public GameObject Pickups;
-    public GameObject Gate;
-    public GameObject Players;
+    public GameObject[] Scenes;
     public float scene_rate;
-
-    private float timer;
-
+    
 	// Use this for initialization
 	void Start () {
-        timer = 0;
-        Pickups.SetActive(false);
-        Gate.SetActive(false);
-        Players.SetActive(false);
+        for (int i = 0; i < Scenes.Length; i++) {
+            Scenes[i].SetActive(false);
+        }
+        StartCoroutine(Play());
     }
 
-    // Update is called once per frame
-    void Update () {
-        timer += Time.deltaTime;
-        if (timer > 0 && timer < scene_rate) {
-            Pickups.SetActive(true);
-            return;
-        }
-        Pickups.SetActive(false);
-        if (timer > scene_rate && timer < scene_rate * 2)
+    IEnumerator Play() {
+        for (int i = 0; i < Scenes.Length; i++)
         {
-            Gate.SetActive(true);
-            return;
+            Scenes[i].SetActive(true);
+            yield return new WaitForSeconds(scene_rate);
+            Scenes[i].SetActive(false);
         }
-        Gate.SetActive(false);
-        if (timer > scene_rate * 2)
-        {
-            Players.SetActive(true);
-            Destroy(this);
-        }
+        SceneManager.LoadScene("Arena");
     }
 }
