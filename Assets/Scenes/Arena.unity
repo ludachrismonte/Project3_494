@@ -318,6 +318,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop: {fileID: 1621460087550842, guid: 1c4e89bcf12385741b43f5e37a2809b6, type: 2}
+  m_MaxDrops: 15
+  m_TimeDelay: 10
 --- !u!1 &75866572
 GameObject:
   m_ObjectHideFlags: 0
