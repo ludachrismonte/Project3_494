@@ -2536,11 +2536,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b427040b05063454b936e72fa721caec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progress: 0
-  complete: 0
   me: Player 4
   bar: {fileID: 0}
-  zone_capture: {fileID: 0}
+  zone_bar: {fileID: 0}
 --- !u!114 &114474039314134100
 MonoBehaviour:
   m_ObjectHideFlags: 1
