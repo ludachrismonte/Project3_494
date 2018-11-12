@@ -7,6 +7,7 @@ public class Rocket : MonoBehaviour
     public float rocketSpeed;
     public float objectLifeTimeValue = 100;
     public GameObject m_ExplosionPrefab;
+    public AudioClip explode;
 
     private float timerSinceLaunch;
     private Transform target;
@@ -34,6 +35,7 @@ public class Rocket : MonoBehaviour
     {
         if (target != null && collision.gameObject.tag == target.gameObject.tag) 
         {
+            AudioSource.PlayClipAtPoint(explode, transform.position);
             Destroy(gameObject);
             collision.gameObject.GetComponent<Health>().AlterHealth(-20f);
             Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
