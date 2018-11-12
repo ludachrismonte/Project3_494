@@ -76,7 +76,7 @@ public class WeaponManager : MonoBehaviour {
             targeter.enabled = true;
         }
         for (float i = .6f; i < 1.5f; i += .05f) {
-            shooter.transform.position += new Vector3(0, .05f, 0);
+            shooter.transform.localPosition += new Vector3(0, .05f, 0);
             yield return new WaitForSeconds(0);
         }
     }
@@ -90,7 +90,7 @@ public class WeaponManager : MonoBehaviour {
         yield return new WaitForSeconds(.3f);
         for (float i = .6f; i < 1.5f; i += .05f)
         {
-            shooter.transform.position -= new Vector3(0, .05f, 0);
+            shooter.transform.localPosition -= new Vector3(0, .05f, 0);
             yield return new WaitForSeconds(0);
         }
         shooter.GetComponent<MeshRenderer>().enabled = false;
