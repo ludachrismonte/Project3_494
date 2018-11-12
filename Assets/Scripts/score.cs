@@ -14,6 +14,7 @@ public class score : MonoBehaviour {
     private float progress;
     private float complete = 1;
     private GameManager manager;
+    private bool can_score;
 
     private void Start()
     {
@@ -34,6 +35,7 @@ public class score : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        can_score = true;
         if (other.tag == "ScoreZone")
         {
             zone_bar.SetActive(true);
@@ -47,6 +49,7 @@ public class score : MonoBehaviour {
         {
             zone_bar.SetActive(false);
             progress = 0;
+            can_score = false;
         }
     }
 
@@ -56,9 +59,10 @@ public class score : MonoBehaviour {
         {
             progress += Time.deltaTime;
             if (zone_capture != null) { zone_capture.fillAmount = progress / complete; }
-            if (progress >= complete)
+            if (progress >= complete && can_score)
             {
                 current_score++;
+                can_score = false;
                 bar.fillAmount = current_score / score_to_win;
                 other.gameObject.GetComponent<RandomPlacement>().Move();
             }

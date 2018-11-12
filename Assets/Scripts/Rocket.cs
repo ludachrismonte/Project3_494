@@ -22,7 +22,6 @@ public class Rocket : MonoBehaviour
     void LateUpdate()
     {
         transform.LookAt(target);
-        Debug.Log("my target is " + target.gameObject.tag);
         transform.position += transform.forward * rocketSpeed * Time.deltaTime;
         
         if (timerSinceLaunch > objectLifeTimeValue)
@@ -36,7 +35,7 @@ public class Rocket : MonoBehaviour
         if (target != null && collision.gameObject.tag == target.gameObject.tag) 
         {
             Destroy(gameObject);
-            collision.gameObject.GetComponent<Health>().AlterHealth(-5f);
+            collision.gameObject.GetComponent<Health>().AlterHealth(-20f);
             Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
         }
     }
