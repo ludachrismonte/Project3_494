@@ -25,7 +25,7 @@ public class HealthBar : MonoBehaviour {
     void UpdateBarHealth()
     {
         //Debug.Log(currHealth / maxHealth);
-        currHealth = player.GetComponent<Health>().health;
+        currHealth = player.GetComponent<Health>().GetHealth();
         healthBar.transform.localScale = new Vector3(currHealth / maxHealth, 1, 1);
     }
 }

@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 33632974966252192}
   - component: {fileID: 23742748976201330}
   m_Layer: 0
-  m_Name: FrameCar
+  m_Name: FrameCar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2462,6 +2462,12 @@ MonoBehaviour:
   damageMultfront: 0
   health_bar: {fileID: 0}
   cam: {fileID: 1974541954105366}
+  m_CarBodyLevel:
+  - {fileID: 1725209174899912}
+  - {fileID: 1495939585673682}
+  - {fileID: 1495939585673682}
+  - {fileID: 1495939585673682}
+  - {fileID: 1495939585673682}
 --- !u!114 &114211394318725982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2499,6 +2505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CarBodyObject: {fileID: 1495939585673682}
+  m_CarFrameObject: {fileID: 1725209174899912}
   m_SecondsToRespawnPickup: 60
   m_CarBodyLevel: 1
   m_TireLevel: 1
