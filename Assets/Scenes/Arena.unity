@@ -363,6 +363,11 @@ MonoBehaviour:
   score_zone: {fileID: 21409411}
   win_text: {fileID: 1196402830}
   win_box: {fileID: 1407463930}
+  m_Placements:
+  - {fileID: 885835839}
+  - {fileID: 259867561}
+  - {fileID: 1348950106}
+  - {fileID: 168772907}
 --- !u!4 &65020576
 Transform:
   m_ObjectHideFlags: 0
@@ -591,6 +596,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &168772907 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114801655066268398, guid: 0840ae79933e14d159f2d58c3750550a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2054978252}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &173027695
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,6 +824,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c4e89bcf12385741b43f5e37a2809b6, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &259867561 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114818981376680886, guid: 0840ae79933e14d159f2d58c3750550a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2054978252}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &275688891
 GameObject:
   m_ObjectHideFlags: 0
@@ -2730,6 +2747,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40,
     type: 2}
   m_PrefabInternal: {fileID: 843773242}
+--- !u!114 &885835839 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114538945831200452, guid: 0840ae79933e14d159f2d58c3750550a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2054978252}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &893952639
 Prefab:
   m_ObjectHideFlags: 0
@@ -3857,6 +3880,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7,
     type: 2}
   m_PrefabInternal: {fileID: 1336986127}
+--- !u!114 &1348950106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114929463956741174, guid: 0840ae79933e14d159f2d58c3750550a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2054978252}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1354517551
 GameObject:
   m_ObjectHideFlags: 0

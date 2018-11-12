@@ -5,20 +5,28 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
-public class GameManager : MonoBehaviour {
-
+public class GameManager : MonoBehaviour 
+{
     public Text m_text;
     public GameObject wall;
     public GameObject score_zone;
     public Text win_text;
     public GameObject win_box;
 
+    public Text[] m_Placements = new Text[4];
+
     private GameObject player1;
     private GameObject player2;
     private GameObject player3;
     private GameObject player4;
 
+    private score m_P1Score;
+    private score m_P2Score;
+    private score m_P3Score;
+    private score m_P4Score;
+
     private float timer;
+    private bool m_GameOver = false;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +40,16 @@ public class GameManager : MonoBehaviour {
         player2.GetComponent<ControllerInput>().enabled = false;
         player3.GetComponent<ControllerInput>().enabled = false;
         player4.GetComponent<ControllerInput>().enabled = false;
+
+        m_P1Score = player1.GetComponent<score>();
+        m_P2Score = player2.GetComponent<score>();
+        m_P3Score = player3.GetComponent<score>();
+        m_P4Score = player4.GetComponent<score>();
+
+        m_Placements[0].text = "#1";
+        m_Placements[1].text = "#1";
+        m_Placements[2].text = "#1";
+        m_Placements[3].text = "#1";
     }
 
     // Update is called once per frame
@@ -89,6 +107,7 @@ public class GameManager : MonoBehaviour {
 
     public void Win(string s) 
     {
+        m_GameOver = true;
         Time.timeScale = .5f;
         win_box.SetActive(true);
         win_text.text = s + " wins!";
@@ -100,5 +119,43 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(2f);
         Time.timeScale = 1.0f;
         SceneManager.LoadScene("Menu");
+    }
+
+    public void UpdateScore()
+    {
+        SortedDictionary<int, List<int>> scores = new SortedDictionary<int, List<int>>();
+        int p1Score = m_P1Score.GetCurrentScore();
+        int p2Score = m_P2Score.GetCurrentScore();
+        int p3Score = m_P3Score.GetCurrentScore();
+        int p4Score = m_P4Score.GetCurrentScore();
+
+        scores.Add(p1Score, new List<int>{ 1 });
+
+        if (scores.ContainsKey(p2Score))
+            scores[p2Score].Add(2);
+        else
+            scores.Add(p2Score, new List<int> { 2 });
+
+        if (scores.ContainsKey(p3Score))
+            scores[p3Score].Add(3);
+        else
+            scores.Add(p3Score, new List<int> { 3 });
+
+        if (scores.ContainsKey(p4Score))
+            scores[p4Score].Add(4);
+        else
+            scores.Add(p4Score, new List<int> { 4 });
+
+        int place = scores.Keys.Count;
+
+        foreach (KeyValuePair<int, List<int>> entry in scores)
+        {
+            foreach (int player in entry.Value)
+            {
+                m_Placements[player - 1].text = "#" + place;
+            }
+            --place;
+        }
+        scores.Clear();
     }
 }
