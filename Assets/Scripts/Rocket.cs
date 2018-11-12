@@ -35,7 +35,7 @@ public class Rocket : MonoBehaviour
         if (target != null && collision.gameObject.tag == target.gameObject.tag) 
         {
             Destroy(gameObject);
-            collision.gameObject.GetComponent<Health>().AlterHealth(-5f);
+            collision.gameObject.GetComponent<Health>().AlterHealth(-20f);
             Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
         }
     }
