@@ -10,12 +10,10 @@ public class WaveGen : MonoBehaviour
 
     private Vector3[] baseHeight;
     private Mesh mesh;
-    private MeshCollider collider;
 
     private void Start()
     {
         mesh = GetComponent<MeshFilter>().mesh;
-        collider = GetComponent<MeshCollider>();
     }
 
     void Update()
@@ -33,7 +31,5 @@ public class WaveGen : MonoBehaviour
         }
         mesh.vertices = vertices;
         mesh.RecalculateNormals();
-
-        collider.sharedMesh = mesh;
     }
 }
