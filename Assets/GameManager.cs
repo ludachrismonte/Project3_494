@@ -92,10 +92,10 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = .5f;
         win_box.SetActive(true);
         win_text.text = s + " wins!";
-        StartCoroutine(changeScene());
+        StartCoroutine(EndGame());
     }
 
-    IEnumerator changeScene()
+    IEnumerator EndGame()
     {
         yield return new WaitForSeconds(2f);
         Time.timeScale = 1.0f;
