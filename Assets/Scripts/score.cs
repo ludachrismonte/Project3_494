@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class score : MonoBehaviour {
 
-    public string me = "Player";
+    public string me = "player";
     public Image bar = null;
     public GameObject zone_bar = null;
     public int m_ScoreToWin = 10;
