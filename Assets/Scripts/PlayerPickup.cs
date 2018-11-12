@@ -6,7 +6,6 @@ using UnityStandardAssets.Vehicles.Car;
 
 public class PlayerPickup : MonoBehaviour
 {
-    public GameObject m_CarBodyObject;
     public float m_SecondsToRespawnPickup = 60f;
     public PickupLevelEnum m_CarBodyLevel = PickupLevelEnum.one;
     public PickupLevelEnum m_TireLevel = PickupLevelEnum.one;
@@ -42,9 +41,6 @@ public class PlayerPickup : MonoBehaviour
     {
         if (other.tag == "CarBodyPickup")
         {
-            print("hit");
-            m_CarBodyObject.SetActive(true);
-
             PickupLevel pickupLevel = other.GetComponent<PickupLevel>();
             if (pickupLevel.m_PickupLevel > m_CarBodyLevel)
             {
@@ -88,19 +84,19 @@ public class PlayerPickup : MonoBehaviour
         switch (m_CarBodyLevel)
         {
             case PickupLevelEnum.two:
-                m_CarHealth.health = 20;
+                m_CarHealth.SetHealth(20);
                 break;
             case PickupLevelEnum.three:
-                m_CarHealth.health = 30;
+                m_CarHealth.SetHealth(30);
                 break;
             case PickupLevelEnum.four:
-                m_CarHealth.health = 40;
+                m_CarHealth.SetHealth(40);
                 break;
             case PickupLevelEnum.five:
-                m_CarHealth.health = 50;
+                m_CarHealth.SetHealth(50);
                 break;
             default:
-                m_CarHealth.health = 10;
+                m_CarHealth.SetHealth(10);
                 break;
         }
     }
@@ -167,7 +163,8 @@ public class PlayerPickup : MonoBehaviour
         pickup.SetActive(true);
     }
 
-    public void Respawn() {
+    public void Respawn() 
+    {
         m_CarBodyLevel = PickupLevelEnum.one;
         UpdateCarBody();
         m_TireLevel = PickupLevelEnum.one;
