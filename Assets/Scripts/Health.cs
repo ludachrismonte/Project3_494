@@ -17,9 +17,11 @@ public class Health : MonoBehaviour {
     //private Vector3 initialVel = Vector3.zero;
     //private Vector3 finalVel = Vector3.zero;
     private GameObject m_CurrentCarBody;
+    private PlayerPickup m_PlayerPickup;
 
     private void Start () 
     {
+        m_PlayerPickup = GetComponent<PlayerPickup>();
         m_CurrentCarBody = m_CarBodyLevel[0];
     }
     
@@ -57,30 +59,37 @@ public class Health : MonoBehaviour {
             m_CurrentCarBody.SetActive(false);
             m_CarBodyLevel[0].SetActive(true);
             m_CurrentCarBody = m_CarBodyLevel[0];
+            m_PlayerPickup.m_CarBodyLevel = PickupLevelEnum.one;
         }
         else if (m_Health <= 20)
         {
             m_CurrentCarBody.SetActive(false);
             m_CarBodyLevel[1].SetActive(true);
             m_CurrentCarBody = m_CarBodyLevel[1];
+            m_PlayerPickup.m_CarBodyLevel = PickupLevelEnum.two;
         }
         else if (m_Health <= 30)
         {
             m_CurrentCarBody.SetActive(false);
             m_CarBodyLevel[2].SetActive(true);
             m_CurrentCarBody = m_CarBodyLevel[2];
+            m_PlayerPickup.m_CarBodyLevel = PickupLevelEnum.three;
         }
         else if (m_Health <= 40)
         {
             m_CurrentCarBody.SetActive(false);
             m_CarBodyLevel[3].SetActive(true);
             m_CurrentCarBody = m_CarBodyLevel[3];
+            m_PlayerPickup.m_CarBodyLevel = PickupLevelEnum.four;
+
         }
         else
         {
             m_CurrentCarBody.SetActive(false);
             m_CarBodyLevel[4].SetActive(true);
             m_CurrentCarBody = m_CarBodyLevel[4];
+            m_PlayerPickup.m_CarBodyLevel = PickupLevelEnum.five;
+
         }
     }
 

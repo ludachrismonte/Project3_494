@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 114257966442243364}
   - component: {fileID: 54458645907414538}
   - component: {fileID: 114261508087923372}
-  - component: {fileID: 136516844474726644}
   - component: {fileID: 65044288008288946}
+  - component: {fileID: 65445407699657614}
   - component: {fileID: 199800652465899732}
   - component: {fileID: 198185775331389264}
   m_Layer: 0
@@ -151,6 +151,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 4, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65445407699657614
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1338941612224622}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95435002322001752
 Animator:
   serializedVersion: 3
@@ -193,19 +205,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PickupLevel: 2
---- !u!136 &136516844474726644
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1338941612224622}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 2
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198185775331389264
 ParticleSystem:
   m_ObjectHideFlags: 1
