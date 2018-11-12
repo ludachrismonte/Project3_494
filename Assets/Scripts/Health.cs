@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour {
     
     public float health;
-    public float maxHealth;
     public float damageMultrest;
     public float damageMultfront;
+    public Image health_bar;
+    public GameObject cam;
 
+    private Vector3 origin;
+    private Vector3 cam_origin;
     private float damageMult;
     private Rigidbody carRb;
     private Respawn respawn;
@@ -18,6 +22,8 @@ public class Health : MonoBehaviour {
 
     void Start () 
     {
+        origin = gameObject.transform.position;
+        cam_origin = cam.transform.position;
         carRb = GetComponent<Rigidbody>();
         respawn = GetComponent<Respawn>();
         m_PlayerPickup = GetComponent<PlayerPickup>();
@@ -27,14 +33,12 @@ public class Health : MonoBehaviour {
     
     void Update () 
     {
-        // TODO: reimplment health
-
-        //if(health <= 0)
-        //{
-        //    health = 10;
-        //    respawn.respawn();
-        //    return;
-        //}
+        health_bar.fillAmount = health / 50;
+        if(health <= 0)
+        {
+            gameObject.transform.position = origin;
+            cam.transform.position = cam_origin;
+        }
     }
 
     //Make sure the empty game objects can't collide with the car
@@ -57,11 +61,6 @@ public class Health : MonoBehaviour {
             }
 
         }
-
-        if(collision.gameObject.tag != "nonObstacle")
-        {
-            StartCoroutine(damageEnum()); 
-        }
     }
   
     IEnumerator damageEnum()
@@ -70,5 +69,9 @@ public class Health : MonoBehaviour {
         finalVel = carRb.velocity;
         health -= Mathf.Abs(finalVel.magnitude - initialVel.magnitude) * damageMult;
         initialVel = Vector3.zero;
+    }
+
+    public void take_damage(float amt) {
+        health -= amt;
     }
 }

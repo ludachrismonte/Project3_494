@@ -22,6 +22,7 @@ public class Rocket : MonoBehaviour {
     void LateUpdate()
     {
         transform.LookAt(target);
+        Debug.Log("my target is " + target.gameObject.tag);
         transform.position += transform.forward * rocketSpeed * Time.deltaTime;
         
         if (timerSinceLaunch > objectLifeTimerValue)
@@ -32,8 +33,12 @@ public class Rocket : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (target != null && collision.gameObject.tag == target.tag) {
+        Debug.Log("target: " + target.gameObject.tag);
+        Debug.Log("hit: " + collision.gameObject.name);
+        Destroy(collision.gameObject);
+        if (target != null && collision.gameObject.tag == target.gameObject.tag) {
             Destroy(gameObject);
+            collision.gameObject.GetComponent<Health>().take_damage(5f);
         }
     }
 

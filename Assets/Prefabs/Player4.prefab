@@ -140,7 +140,6 @@ GameObject:
   - component: {fileID: 4301220356319556}
   - component: {fileID: 20244215437470794}
   - component: {fileID: 124626284208483052}
-  - component: {fileID: 81003517404571974}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -861,7 +860,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990267783747410}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.4, y: 14.6, z: -68.74}
+  m_LocalPosition: {x: -2.4, y: 13.040001, z: -68.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4108970954359224}
@@ -1855,13 +1854,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!81 &81003517404571974
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1203215388947046}
-  m_Enabled: 1
 --- !u!82 &82384597448450484
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2563,8 +2555,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b427040b05063454b936e72fa721caec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progress: 0
+  complete: 0
   me: Player 4
   bar: {fileID: 0}
+  zone_capture: {fileID: 0}
 --- !u!114 &114474039314134100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2577,9 +2572,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 0
   damageMultrest: 0
   damageMultfront: 0
+  health_bar: {fileID: 0}
 --- !u!114 &114475192828924146
 MonoBehaviour:
   m_ObjectHideFlags: 1
