@@ -166,4 +166,13 @@ public class PlayerPickup : MonoBehaviour
         yield return new WaitForSeconds(m_SecondsToRespawnPickup);
         pickup.SetActive(true);
     }
+
+    public void Respawn() {
+        m_CarBodyLevel = PickupLevelEnum.one;
+        UpdateCarBody();
+        m_TireLevel = PickupLevelEnum.one;
+        UpdateTires();
+        m_EngineLevel = PickupLevelEnum.one;
+        UpdateEngine();
+    }
 }
