@@ -26,7 +26,6 @@ public class Health : MonoBehaviour {
     private void Update () 
     {
         health_bar.fillAmount = m_Health / 50;
-
     }
 
     public void AlterHealth(float amt)
