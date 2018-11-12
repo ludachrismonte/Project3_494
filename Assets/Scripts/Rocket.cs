@@ -22,7 +22,6 @@ public class Rocket : MonoBehaviour
     void LateUpdate()
     {
         transform.LookAt(target);
-        Debug.Log("my target is " + target.gameObject.tag);
         transform.position += transform.forward * rocketSpeed * Time.deltaTime;
         
         if (timerSinceLaunch > objectLifeTimeValue)

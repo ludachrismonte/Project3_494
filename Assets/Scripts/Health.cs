@@ -49,6 +49,7 @@ public class Health : MonoBehaviour {
     {
         if (m_Health <= 0)
         {
+            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             gameObject.GetComponent<PlayerPickup>().Respawn();
             StartCoroutine(GameObject.FindWithTag("GameManager").GetComponent<DeathMaster>().Die(gameObject));
         }
