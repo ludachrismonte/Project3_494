@@ -14,10 +14,10 @@ public class UI : MonoBehaviour
     void Start()
     {
         carRb = new Rigidbody[4];
-        carRb[0] = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
-        carRb[1] = GameObject.FindWithTag("Player2").GetComponent<Rigidbody>();
-        carRb[2] = GameObject.FindWithTag("Player3").GetComponent<Rigidbody>();
-        carRb[3] = GameObject.FindWithTag("Player4").GetComponent<Rigidbody>();
+        carRb[0] = GameObject.FindWithTag("Player").gameObject.GetComponent<Rigidbody>();
+        carRb[1] = GameObject.FindWithTag("Player2").gameObject.GetComponent<Rigidbody>();
+        carRb[2] = GameObject.FindWithTag("Player3").gameObject.GetComponent<Rigidbody>();
+        carRb[3] = GameObject.FindWithTag("Player4").gameObject.GetComponent<Rigidbody>();
     }
     // Update is called once per frame
     void Update()
