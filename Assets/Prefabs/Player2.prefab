@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 114586368091238236}
   - component: {fileID: 136721401933998442}
   - component: {fileID: 65879624073247358}
+  - component: {fileID: 114605428154470410}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -2709,6 +2710,17 @@ MonoBehaviour:
   targeter: {fileID: 0}
   shooter: {fileID: 1040794646442320}
   projectile: {fileID: 1376979691465780, guid: f218cd1c6cab35746b51fe6353f5c803, type: 2}
+--- !u!114 &114605428154470410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1523622056327674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87e6ab85be9a9a439f3629f48c11155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114618330990957962
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -712,6 +712,7 @@ GameObject:
   - component: {fileID: 114973973328378130}
   - component: {fileID: 136957599578121134}
   - component: {fileID: 65829203355837092}
+  - component: {fileID: 114526206658664052}
   m_Layer: 0
   m_Name: Player4
   m_TagString: Player4
@@ -2833,9 +2834,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f60f0e995e5450e9e369ba785bfce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  damageMultrest: 0
-  damageMultfront: 0
   health_bar: {fileID: 0}
   cam: {fileID: 1165613880166122}
   m_CarBodyLevel:
@@ -2857,6 +2855,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
+--- !u!114 &114526206658664052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1990267783747410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87e6ab85be9a9a439f3629f48c11155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114620809478219826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2868,8 +2877,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52acccf8f5c14169bf75de1ddcc2e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CarBodyObject: {fileID: 1733459175115332}
-  m_CarFrameObject: {fileID: 1896509901882028}
   m_SecondsToRespawnPickup: 60
   m_CarBodyLevel: 1
   m_TireLevel: 1
