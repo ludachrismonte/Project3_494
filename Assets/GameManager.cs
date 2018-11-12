@@ -18,10 +18,14 @@ public class GameManager : MonoBehaviour {
     private GameObject player3;
     private GameObject player4;
 
+    private AudioSource source;
+
     private float timer;
 
 	// Use this for initialization
 	void Start () {
+        source = GetComponent<AudioSource>();
+        source.Play(0);
         timer = 0;
         player1 = GameObject.FindGameObjectWithTag("Player");
         player2 = GameObject.FindGameObjectWithTag("Player2");

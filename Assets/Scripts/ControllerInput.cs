@@ -33,7 +33,7 @@ public class ControllerInput : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void FixedUpdate () 
+    void LateUpdate () 
     {
         cooldown -= Time.deltaTime;
         var player = (InputManager.Devices.Count > playerNum) ? InputManager.Devices[playerNum] : null;
