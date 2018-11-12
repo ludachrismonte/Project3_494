@@ -11,8 +11,6 @@ public class Health : MonoBehaviour {
     public Image health_bar;
     public GameObject cam;
 
-    private Vector3 origin;
-    private Vector3 cam_origin;
     private float damageMult;
     private Rigidbody carRb;
     private Respawn respawn;
@@ -22,8 +20,6 @@ public class Health : MonoBehaviour {
 
     void Start () 
     {
-        origin = gameObject.transform.position;
-        cam_origin = cam.transform.position;
         carRb = GetComponent<Rigidbody>();
         respawn = GetComponent<Respawn>();
         m_PlayerPickup = GetComponent<PlayerPickup>();
@@ -36,8 +32,8 @@ public class Health : MonoBehaviour {
         health_bar.fillAmount = health / 50;
         if(health <= 0)
         {
-            gameObject.transform.position = origin;
-            cam.transform.position = cam_origin;
+            gameObject.GetComponent<PlayerPickup>().Respawn();
+            StartCoroutine(GameObject.FindWithTag("GameManager").GetComponent<DeathMaster>().Die(gameObject));
         }
     }
 

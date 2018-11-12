@@ -31,11 +31,8 @@ public class Rocket : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("target: " + target.gameObject.tag);
-        Debug.Log("hit: " + collision.gameObject.name);
-        Destroy(collision.gameObject);
         if (target != null && collision.gameObject.tag == target.gameObject.tag) {
             Destroy(gameObject);
             collision.gameObject.GetComponent<Health>().take_damage(5f);

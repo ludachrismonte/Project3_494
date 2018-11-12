@@ -67,7 +67,6 @@ public class ControllerInput : MonoBehaviour {
             float target = player.Action4.Value;
             if (target != 0 && targeter != null && cooldown <= 0.0f) {
                 ToggleTarget();
-                Debug.Log(target_loc);
             }
 
             if (to_follow != null) {
