@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class WeaponManager : MonoBehaviour {
     public MeshRenderer targeter = null;
     public GameObject shooter;
     public GameObject projectile;
+    public Text text;
 
     private bool has_left = false;
     private bool has_right = false;
@@ -17,6 +19,7 @@ public class WeaponManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        text.text = "";
         right.SetActive(false);
         left.SetActive(false);
         shooter.GetComponent<MeshRenderer>().enabled = false;
@@ -32,7 +35,13 @@ public class WeaponManager : MonoBehaviour {
         if (target != null)
         {
             shooter.transform.LookAt(target.transform);
+            if (target.tag == "Player") { text.text = "targeting: blue"; text.color = Color.cyan; }
+            else if (target.tag == "Player2") { text.text = "targeting: red"; text.color = Color.red; }
+            else if (target.tag == "Player3") { text.text = "targeting: green"; text.color = Color.green; }
+            else if (target.tag == "Player4") { text.text = "targeting: yellow"; text.color = Color.yellow; }
+
         }
+        if (!has_left && !has_right) { text.text = ""; }
     }
 
     public void get_rocket() {
