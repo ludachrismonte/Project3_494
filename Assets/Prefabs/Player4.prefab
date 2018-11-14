@@ -2823,6 +2823,7 @@ MonoBehaviour:
   me: player 4
   bar: {fileID: 0}
   zone_bar: {fileID: 0}
+  m_ScoreToWin: 10
 --- !u!114 &114474039314134100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2842,6 +2843,8 @@ MonoBehaviour:
   - {fileID: 1733459175115332}
   - {fileID: 1733459175115332}
   - {fileID: 1733459175115332}
+  m_ExplosionPrefab: {fileID: 1993916257408734, guid: 920d1770727e2427282a301ff117a0ce,
+    type: 2}
 --- !u!114 &114475192828924146
 MonoBehaviour:
   m_ObjectHideFlags: 1
