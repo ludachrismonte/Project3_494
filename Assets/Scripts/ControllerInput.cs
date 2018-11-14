@@ -46,12 +46,13 @@ public class ControllerInput : MonoBehaviour {
             // Horizontal (left/right)
             float h = player.LeftStick.Vector.x;
 
-            // Acceleration
+            // Acceleration (A button)
             float v = player.Action1.Value;
 
+            // Braking/reverse (X button)
             if (v <= 0.0f)
             {
-                v = -player.Action2.Value;
+                v = -player.Action3.Value;
             }
 
             //float handbrake = player.Action3.Value;
@@ -61,12 +62,21 @@ public class ControllerInput : MonoBehaviour {
 
             // Weapons
 
-            bool fire = player.Action3.WasPressed;
+            bool fire = player.Action2.WasPressed;
+            //bool fire = player.RightTrigger.WasPressed;
             if (fire) { weapon_manager.fire(); }
 
-            float target = player.Action4.Value;
-            if (target != 0 && targeter != null && cooldown <= 0.0f) {
-                ToggleTarget();
+            float targetLeft = player.LeftBumper.Value;     // Left bumper
+            float targetRight = player.RightBumper.Value;   // Right bumper
+
+            if ((targetLeft != 0 || targetRight != 0) && targeter != null && cooldown <= 0.0f) {
+                if (targetLeft != 0)
+                {
+                    ToggleTarget(true);     // Toggle left
+                }
+                else{
+                    ToggleTarget(false);    // Toggle right
+                }
             }
 
             if (to_follow != null) {
@@ -76,13 +86,36 @@ public class ControllerInput : MonoBehaviour {
         }
     }
 
-    private void ToggleTarget() {
+    private void ToggleTarget(bool left) {
+        Debug.Log("Toggle " + target_loc);
         cooldown = .2f;
         targeter.SetActive(true);
-        target_loc++;
-        if (target_loc % 4 == playerNum) {
+        if (left)
+        {
+            target_loc--;
+            if (target_loc < 0){
+                target_loc = 3;
+            }
+        }
+        else
+        {
             target_loc++;
         }
+        if (target_loc % 4 == playerNum) {
+            if (left)
+            {
+                target_loc--;
+                if (target_loc < 0){
+                    target_loc = 3;
+                }
+            }
+            else
+            {
+                target_loc++;
+            }
+        }
+
+        // Assign target based on player num
         if (target_loc % 4 == 0) {
             to_follow = player_one;
         }
@@ -96,6 +129,7 @@ public class ControllerInput : MonoBehaviour {
         }
         else if (target_loc % 4 == 3)
         {
+
             to_follow = player_four;
         }
     }
