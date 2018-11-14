@@ -8,6 +8,7 @@ public class Rocket : MonoBehaviour
     public float objectLifeTimeValue = 100;
     public GameObject m_ExplosionPrefab;
     public AudioClip explode;
+    public float m_RocketDamage = 10f;
 
     private float timerSinceLaunch;
     private Transform target;
@@ -37,7 +38,7 @@ public class Rocket : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(explode, transform.position);
             Destroy(gameObject);
-            collision.gameObject.GetComponent<Health>().AlterHealth(-20f);
+            collision.gameObject.GetComponent<Health>().AlterHealth(m_RocketDamage);
             Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
         }
     }
