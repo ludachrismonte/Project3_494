@@ -17,6 +17,13 @@ public class score : MonoBehaviour {
     private GameManager manager;
     private bool can_score;
 
+    // Reference to the actual scorezone
+    public GameObject ScoreZone;
+    public GameObject FlagZone;
+
+    // Bool to keep track of if the player has the flag
+    private bool hasFlag = false;
+
     private void Start()
     {
         zone_capture = zone_bar.transform.Find("InnerBar").GetComponent<Image>();
@@ -37,7 +44,7 @@ public class score : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         can_score = true;
-        if (other.tag == "ScoreZone")
+        if ((other.tag == "ScoreZone") || (other.tag == "FlagZone"))
         {
             zone_bar.SetActive(true);
             progress = 0;
@@ -46,7 +53,7 @@ public class score : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "ScoreZone")
+        if ((other.tag == "ScoreZone") || (other.tag == "FlagZone"))
         {
             zone_bar.SetActive(false);
             progress = 0;
@@ -56,17 +63,64 @@ public class score : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "ScoreZone")
+
+        // If the player is colliding with the scorezone
+        if ((other.tag == "ScoreZone") && (hasFlag))
         {
             progress += Time.deltaTime;
+
+            // Fill UI bar
             if (zone_capture != null) { zone_capture.fillAmount = progress / complete; }
+
+            // Add to players score if necessary
             if (progress >= complete && can_score)
             {
                 current_score++;
                 can_score = false;
                 bar.fillAmount = current_score / (float)m_ScoreToWin;
-                other.gameObject.GetComponent<RandomPlacement>().Move();
+                ScoreZone.SetActive(false);
+                FlagZone.SetActive(true);
+                //other.gameObject.GetComponent<RandomPlacement>().Move();
                 manager.UpdateScore();
+
+                // Reset flag
+                hasFlag = false;
+
+                // CHange arrow
+                GetComponentInChildren<LookAtObject>().target = FlagZone;
+
+                // Reset values, since triggerexit isn't called
+                zone_bar.SetActive(false);
+                progress = 0;
+                can_score = false;
+            }
+        }
+
+        else if (other.tag == "FlagZone"){
+
+            progress += Time.deltaTime;
+
+            // Fill UI bar
+            if (zone_capture != null) { zone_capture.fillAmount = progress / complete; }
+
+            // Add to players score if necessary
+            if (progress >= complete && can_score)
+            {
+                can_score = false;
+                FlagZone.GetComponent<RandomPlacement>().Move();
+                FlagZone.SetActive(false);
+                ScoreZone.SetActive(true);
+                //Debug.Log("Deactivated flag zone");
+                // Collect flag
+                hasFlag = true;
+
+                // CHange arrow
+                GetComponentInChildren<LookAtObject>().target = ScoreZone;
+
+                // Reset values, since triggerexit isn't called
+                zone_bar.SetActive(false);
+                progress = 0;
+                can_score = false;
             }
         }
     }

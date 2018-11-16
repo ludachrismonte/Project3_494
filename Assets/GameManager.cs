@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public Text m_text;
     public GameObject wall;
     public GameObject score_zone;
+    public GameObject flag_zone;
     public Text win_text;
     public GameObject win_box;
 
@@ -90,10 +91,10 @@ public class GameManager : MonoBehaviour
         m_text.text = "";
         if (timer > 30 && timer < 40)
         {
-            if (!score_zone.gameObject.activeSelf)
+            if (!flag_zone.gameObject.activeSelf)
             {
-                score_zone.SetActive(true);
-                score_zone.GetComponent<RandomPlacement>().Move();
+                flag_zone.SetActive(true);
+                flag_zone.GetComponent<RandomPlacement>().Move();
             }
 
             wall.transform.Translate(new Vector3(0, -5, 0) * Time.deltaTime);
