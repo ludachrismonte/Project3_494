@@ -3,19 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Health : MonoBehaviour {
-    
-    //public float damageMultrest;
-    //public float damageMultfront;
+public class Health : MonoBehaviour 
+{
     public Image health_bar;
     public GameObject cam;
     public GameObject[] m_CarBodyLevel;
+    public GameObject m_ExplosionPrefab;
 
     private float m_Health;
-    //private Rigidbody carRb;
-    //private Respawn respawn;
-    //private Vector3 initialVel = Vector3.zero;
-    //private Vector3 finalVel = Vector3.zero;
     private GameObject m_CurrentCarBody;
     private PlayerPickup m_PlayerPickup;
 
@@ -56,7 +51,10 @@ public class Health : MonoBehaviour {
                 gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             }
             gameObject.GetComponent<PlayerPickup>().Respawn();
-            StartCoroutine(GameObject.FindWithTag("GameManager").GetComponent<DeathMaster>().Die(gameObject));
+            Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
+            Instantiate(m_ExplosionPrefab, transform.position + (transform.forward * 2), Quaternion.identity);
+            Instantiate(m_ExplosionPrefab, transform.position - (transform.forward * 2), Quaternion.identity);
+            StartCoroutine(Die(gameObject));
         }
         else if (m_Health <= 10)
         {
@@ -97,33 +95,20 @@ public class Health : MonoBehaviour {
         }
     }
 
-    //Make sure the empty game objects can't collide with the car
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    initialVel = carRb.velocity;
-    //    RaycastHit hit;
-    //    if (Physics.Raycast(transform.position, transform.forward, out hit))
-    //    {
-    //        if(hit.collider == collision.collider)
-    //        {
-    //            Debug.Log("Point of contact is front");
-    //            damageMult = damageMultfront;
-    //        }
-    //        else
-    //        {
-    //            Debug.Log("Point of contact is not front");
-    //            damageMult = damageMultrest;
-    //        }
-
-    //    }
-    //}
-
-    //IEnumerator damageEnum()
-    //{
-    //    yield return new WaitForSeconds(0.1f);
-    //    finalVel = carRb.velocity;
-    //    health -= Mathf.Abs(finalVel.magnitude - initialVel.magnitude) * damageMult;
-    //    initialVel = Vector3.zero;
-    //}
+    private IEnumerator Die(GameObject player)
+    {
+        player.GetComponent<ControllerInput>().enabled = false;
+        GameObject car = player.transform.Find("SkyCar").gameObject;
+        car.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        for (int i = 0; i < 4; i++)
+        {
+            car.SetActive(true);
+            yield return new WaitForSeconds(.15f);
+            car.SetActive(false);
+            yield return new WaitForSeconds(.15f);
+        }
+        car.SetActive(true);
+        player.GetComponent<ControllerInput>().enabled = true;
+    }
 }
