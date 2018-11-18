@@ -38,8 +38,13 @@ public class Rocket : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(explode, transform.position);
             Destroy(gameObject);
-            collision.gameObject.GetComponent<Health>().AlterHealth(m_RocketDamage);
             Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
+            GameObject shield = target.gameObject.transform.Find("Shield").gameObject;
+
+            if (shield.activeSelf)
+                shield.SetActive(false);
+            else
+                collision.gameObject.GetComponent<Health>().AlterHealth(m_RocketDamage);
         }
     }
 

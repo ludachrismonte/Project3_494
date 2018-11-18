@@ -79,6 +79,13 @@ public class PlayerPickup : MonoBehaviour
             RocketDrops rocketDrops = GameObject.Find("Manager").GetComponent<RocketDrops>();
             rocketDrops.DropPickedUp();
         }
+
+        if (other.tag == "ShieldPickup")
+        {
+            transform.Find("Shield").gameObject.SetActive(true);
+            Destroy(other.gameObject);
+            StartCoroutine(WaitToRespawn(other.gameObject));
+        }
     }
 
     private void UpdateCarBody()
@@ -167,6 +174,9 @@ public class PlayerPickup : MonoBehaviour
 
     public void Respawn()
     {
+        GameObject shield = transform.Find("Shield").gameObject;
+        shield.SetActive(false);
+
         m_CarBodyLevel = PickupLevelEnum.one;
         UpdateCarBody();
         m_TireLevel = PickupLevelEnum.one;
