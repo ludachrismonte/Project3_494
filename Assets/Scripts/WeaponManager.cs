@@ -18,7 +18,8 @@ public class WeaponManager : MonoBehaviour {
     private float cooldown = 1;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
         text.text = "";
         right.SetActive(false);
         left.SetActive(false);
@@ -44,7 +45,8 @@ public class WeaponManager : MonoBehaviour {
         if (!has_left && !has_right) { text.text = ""; }
     }
 
-    public void get_rocket() {
+    public void get_rocket() 
+    {
         shooter.GetComponent<MeshRenderer>().enabled = true;
         if (!has_left && !has_right) {
             StartCoroutine(raise());
@@ -80,7 +82,8 @@ public class WeaponManager : MonoBehaviour {
         }
     }
 
-    private IEnumerator raise() {
+    private IEnumerator raise() 
+    {
         if (targeter) {
             targeter.enabled = true;
         }
