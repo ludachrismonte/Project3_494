@@ -58,8 +58,13 @@ public class ControllerInput : MonoBehaviour
             float vertInput = player.LeftStick.Vector.y;
             float gasInput = player.Action1.Value; // A button
             float brakeInput = player.Action3.Value; // X button
-
-            print(IsGrounded());
+            
+            bool reset = player.Action4.WasPressed;
+            if (reset && this.GetComponent<RespawnReset>().stuck) 
+            { 
+                GetComponent<RespawnReset>().ResetCar();
+                return;
+            }
 
             if (!IsGrounded())
             {
