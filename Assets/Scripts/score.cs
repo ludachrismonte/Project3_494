@@ -7,10 +7,11 @@ public class score : MonoBehaviour {
 
     public string me = "player";
     public int m_ScoreToWin = 10;
+    public Image ScoreBar;
     private MeshRenderer Flag = null;
-
     private int current_score;
     private GameManager manager;
+    private RingSwitcher Rings;
 
     // Bool to keep track of if the player has the flag
     private bool hasFlag = false;
@@ -18,8 +19,10 @@ public class score : MonoBehaviour {
     private void Start()
     {
         Flag = transform.Find("flag").gameObject.GetComponent<MeshRenderer>();
-        current_score = 0;
+        Rings = GameObject.FindWithTag("FireRings").GetComponent<RingSwitcher>();
         manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        current_score = 0;
+        ScoreBar.fillAmount = 0.0f;
     }
 
     private void Update()
@@ -39,10 +42,12 @@ public class score : MonoBehaviour {
             hasFlag = true;
         }
         if (other.tag == "FireRing" && hasFlag){
+            Rings.Switch();
             Flag.enabled = false;
             current_score++;
+            ScoreBar.fillAmount = (float)current_score / (float)m_ScoreToWin;
+            Debug.Log(current_score);
             manager.UpdateScore();
-
             hasFlag = false;
         }
     }
