@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour
     private float timer;
     private bool m_GameOver = false;
 
+    //public IEnumerator StartTheGame()
+    //{
+
+    //}
+
 	// Use this for initialization
 	void Start () {
         timer = 0;
@@ -69,7 +74,7 @@ public class GameManager : MonoBehaviour
             }
             else if (timer < 4)
             {
-                m_text.text = "build!";
+                m_text.text = "race!";
             }
             if (timer > 4) {
                 player1.GetComponent<ControllerInput>().enabled = true;
@@ -80,13 +85,13 @@ public class GameManager : MonoBehaviour
             return;
         }
         m_text.text = "";
-        if (timer > 25 && timer < 30)
-        {
-            int time = 30 - (int)timer;
-            m_text.text = "wall drops in: " + time.ToString();
-            return;
-        }
-        m_text.text = "";
+        //if (timer > 25 && timer < 30)
+        //{
+        //    int time = 30 - (int)timer;
+        //    m_text.text = "wall drops in: " + time.ToString();
+        //    return;
+        //}
+        //m_text.text = "";
     }
 
     public void Win(string s) 

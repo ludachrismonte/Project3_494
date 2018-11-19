@@ -5,29 +5,34 @@ using UnityEngine;
 public class RingSwitcher : MonoBehaviour {
 
     public GameObject[] Rings;
+    public bool m_IsFlags;
 
     private int index_active;
 
     private void Start()
     {
-        for (int i = 0; i < Rings.Length; i++) {
+        for (int i = 0; i < Rings.Length; i++) 
+        {
             Rings[i].SetActive(false);
         }
         index_active = (int)Random.Range(0, Rings.Length);
         Rings[index_active].SetActive(true);
     }
 
-    public void Switch () {
+    public void Switch () 
+    {
         Rings[index_active].SetActive(false);
         int temp = (int)Random.Range(0, Rings.Length);
-        while (temp == index_active) {
+        while (temp == index_active) 
+        {
             temp = (int)Random.Range(0, Rings.Length);
         }
         index_active = temp;
         Rings[index_active].SetActive(true);
     }
 
-    public Transform Get_Active() {
+    public Transform Get_Active() 
+    {
         return Rings[index_active].transform;
     }
 }
