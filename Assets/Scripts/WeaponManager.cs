@@ -32,7 +32,7 @@ public class WeaponManager : MonoBehaviour {
         if (cooldown > 0) {
             cooldown -= Time.deltaTime;
         }
-        target = GetComponent<ControllerInput>().getTargeted();
+        target = GetComponent<ControllerInput>().GetTargeted();
         if (target != null)
         {
             shooter.transform.LookAt(target.transform);

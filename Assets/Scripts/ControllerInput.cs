@@ -3,22 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using InControl;
 
-public class ControllerInput : MonoBehaviour {
-
+public class ControllerInput : MonoBehaviour
+{
     public int playerNum;
+    public float m_Speed;
+
     private UnityStandardAssets.Vehicles.Car.CarController car;
     private WeaponManager weapon_manager;
-
     private Transform player_one;
     private Transform player_two;
     private Transform player_three;
     private Transform player_four;
     private Transform to_follow;
+
+    private Rigidbody m_Rigidbody;
+
     private int target_loc;
     private Vector3 offset;
+    private Collider m_Collider;
     public GameObject targeter = null;
     private float cooldown = .2f;
-    
+
+    private float distToGround = 2f;
+
     void Start ()
     {
         car = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
@@ -30,6 +37,10 @@ public class ControllerInput : MonoBehaviour {
         target_loc = -1;
         targeter.SetActive(false);
         offset = new Vector3(0, 5, 0);
+
+        m_Collider = GetComponent<Collider>();
+        m_Rigidbody = GetComponent<Rigidbody>();
+        distToGround = m_Collider.bounds.extents.y;
     }
 
     // Update is called once per frame
@@ -43,22 +54,42 @@ public class ControllerInput : MonoBehaviour {
         }
         else
         {
-            // Horizontal (left/right)
-            float h = player.LeftStick.Vector.x;
+            float horizInput = player.LeftStick.Vector.x;
+            float vertInput = player.LeftStick.Vector.y;
+            float gasInput = player.Action1.Value; // A button
+            float brakeInput = player.Action3.Value; // X button
 
-            // Acceleration (A button)
-            float v = player.Action1.Value;
+            print(IsGrounded());
 
-            // Braking/reverse (X button)
-            if (v <= 0.0f)
+            if (!IsGrounded())
             {
-                v = -player.Action3.Value;
+                print("In the air");
+                //Vector3 movement = new Vector3(horizInput, 0.0f, vertInput);
+
+                if (Mathf.Approximately(0.0f, horizInput))
+                {
+                    transform.Rotate(Vector3.up, horizInput * m_Speed * Time.deltaTime);
+                }
+                if (Mathf.Approximately(0.0f, vertInput))
+                {
+                    transform.Rotate(Vector3.right, vertInput * m_Speed * Time.deltaTime);
+                }
+
+                //m_Rigidbody.AddForce(movement * m_Speed);
+            }
+            else
+            {
+                //if (gasInput <= 0.0f)
+                //{
+                //    gasInput = -player.Action3.Value; // X button
+                //}
+
+                //float handbrake = player.Action3.Value;
+
+                car.Move(horizInput, gasInput, brakeInput, 0);
             }
 
-            //float handbrake = player.Action3.Value;
 
-            // Move car based on inputs
-            car.Move(h, v, v, 0);
 
             // Weapons
 
@@ -116,7 +147,8 @@ public class ControllerInput : MonoBehaviour {
         }
 
         // Assign target based on player num
-        if (target_loc % 4 == 0) {
+        if (target_loc % 4 == 0) 
+        {
             to_follow = player_one;
         }
         else if (target_loc % 4 == 1)
@@ -129,16 +161,17 @@ public class ControllerInput : MonoBehaviour {
         }
         else if (target_loc % 4 == 3)
         {
-
             to_follow = player_four;
         }
     }
 
-    public GameObject getTargeted()
+    public GameObject GetTargeted()
     {
-        if (to_follow) {
-            return to_follow.gameObject;
-        }
-        return null;
+        return to_follow ? to_follow.gameObject : null;
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
     }
 }
