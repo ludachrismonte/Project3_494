@@ -57,7 +57,11 @@ public class ControllerInput : MonoBehaviour
             float horizInput = player.LeftStick.Vector.x;
             float vertInput = player.LeftStick.Vector.y;
             float gasInput = player.Action1.Value; // A button
-            float brakeInput = player.Action3.Value; // X button
+            // Braking/reverse (X button)
+            if (gasInput <= 0.0f)
+            {
+                gasInput = -player.Action3.Value;
+            }
 
             bool reset = player.Action4.WasPressed;
             if (reset && this.GetComponent<RespawnReset>().stuck)
@@ -68,18 +72,18 @@ public class ControllerInput : MonoBehaviour
 
             if (!IsGrounded())
             {
-                if (Mathf.Approximately(0.0f, horizInput))
+                if (!Mathf.Approximately(0.0f, horizInput))
                 {
                     transform.Rotate(Vector3.up, horizInput * m_Speed * Time.deltaTime);
                 }
-                if (Mathf.Approximately(0.0f, vertInput))
+                if (!Mathf.Approximately(0.0f, vertInput))
                 {
                     transform.Rotate(Vector3.right, vertInput * m_Speed * Time.deltaTime);
                 }
             }
             else
             {
-                car.Move(horizInput, gasInput, brakeInput, 0);
+                car.Move(horizInput, gasInput, gasInput, 0);
             }
 
             // Weapons

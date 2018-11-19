@@ -11,7 +11,7 @@ public class OpenDoor : MonoBehaviour {
         timer = 0;
 	}
 	
-	void Update () {
+	public void Open () {
         timer += Time.deltaTime;
         if (timer < 4) {
             transform.Rotate(reverse * Vector3.forward, 30f * Time.deltaTime);
