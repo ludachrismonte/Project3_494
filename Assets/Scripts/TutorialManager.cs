@@ -117,7 +117,7 @@ public class TutorialManager : MonoBehaviour
         if (current == "ctf" && (alldone() || timer > 120))
         {
             current = "";
-            set_text("Good Luck!");
+            set_text("good luck!");
         }
         if (timer > 124)
         {
