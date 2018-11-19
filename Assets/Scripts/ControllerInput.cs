@@ -91,7 +91,7 @@ public class ControllerInput : MonoBehaviour
             if (fire) { weapon_manager.fire(); }
 
             float targetLeft = player.LeftBumper.Value;     // Left bumper
-            float targetRight = player.RightBumper.Value;   // Right bumper
+            float targetRight = player.RightBumper.Value;   // Right bumpers
 
             if ((!Mathf.Approximately(0.0f, targetLeft) || !Mathf.Approximately(0.0f, targetRight)) &&
                 targeter != null && cooldown <= 0.0f)
