@@ -10,7 +10,7 @@ public class WeaponManager : MonoBehaviour {
     public MeshRenderer targeter = null;
     public GameObject shooter;
     public GameObject projectile;
-    public Text text;
+    public Text text = null;
 
     private bool has_left = false;
     private bool has_right = false;
@@ -20,7 +20,7 @@ public class WeaponManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        text.text = "";
+        if (text) { text.text = ""; }
         right.SetActive(false);
         left.SetActive(false);
         shooter.GetComponent<MeshRenderer>().enabled = false;
@@ -42,7 +42,7 @@ public class WeaponManager : MonoBehaviour {
             else if (target.tag == "Player4") { text.text = "targeting: yellow"; text.color = Color.yellow; }
 
         }
-        if (!has_left && !has_right) { text.text = ""; }
+        if (!has_left && !has_right && text) { text.text = ""; }
     }
 
     public void get_rocket() 
