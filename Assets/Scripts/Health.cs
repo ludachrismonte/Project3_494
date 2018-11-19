@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     public GameObject cam;
     public GameObject[] m_CarBodyLevel;
     public GameObject m_ExplosionPrefab;
+    public bool m_TestDeath = false;
 
     private float m_Health;
     private GameObject m_CurrentCarBody;
@@ -27,6 +28,11 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
+        if (m_TestDeath)
+        {
+            SetHealth(0);
+            m_TestDeath = false;
+        }
         health_bar.fillAmount = m_Health / 50;
     }
 
@@ -58,7 +64,11 @@ public class Health : MonoBehaviour
                     gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
                     FlagMgr.DropFlag(false);
                 }
-                else FlagMgr.DropFlag(true);
+                else
+                {
+                    FlagMgr.DropFlag(true);
+                }
+
                 gameObject.GetComponent<PlayerPickup>().Respawn();
                 Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
                 Instantiate(m_ExplosionPrefab, transform.position + (transform.forward * 2), Quaternion.identity);

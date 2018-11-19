@@ -138,12 +138,8 @@ public class RespawnReset : MonoBehaviour
         checkingStuck = true;
         //Vector3 pos = transform.position;
         float vel = carRb.velocity.magnitude;
-        Debug.Log("in helper!");
-        Debug.Log(vel);
         yield return new WaitForSeconds((int)waitTime / 2);
         float vel2 = carRb.velocity.magnitude;
-        Debug.Log(vel2);
-        Debug.Log(carRb.velocity);
         yield return new WaitForSeconds((int)waitTime / 2);
         if ((int)vel == (int)carRb.velocity.magnitude && (int)vel == 0 && (int)vel == (int)vel2)
         {

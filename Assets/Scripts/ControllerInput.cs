@@ -68,11 +68,11 @@ public class ControllerInput : MonoBehaviour
 
             if (!IsGrounded())
             {
-                if (Mathf.Approximately(0.0f, horizInput))
+                if (!Mathf.Approximately(0.0f, horizInput))
                 {
                     transform.Rotate(Vector3.up, horizInput * m_Speed * Time.deltaTime);
                 }
-                if (Mathf.Approximately(0.0f, vertInput))
+                if (!Mathf.Approximately(0.0f, vertInput))
                 {
                     transform.Rotate(Vector3.right, vertInput * m_Speed * Time.deltaTime);
                 }
@@ -87,7 +87,7 @@ public class ControllerInput : MonoBehaviour
             if (fire) { weapon_manager.fire(); }
 
             float targetLeft = player.LeftBumper.Value;     // Left bumper
-            float targetRight = player.RightBumper.Value;   // Right bumper
+            float targetRight = player.RightBumper.Value;   // Right bumpers
 
             if ((!Mathf.Approximately(0.0f, targetLeft) || !Mathf.Approximately(0.0f, targetRight)) &&
                 targeter != null && cooldown <= 0.0f)

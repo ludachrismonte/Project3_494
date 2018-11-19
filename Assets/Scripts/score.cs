@@ -60,19 +60,28 @@ public class score : MonoBehaviour
         return current_score;
     }
 
-    public void DropFlag(bool reset) {
+    public void DropFlag(bool reset) 
+    {
         Flag.enabled = false;
         if (hasFlag) {
             hasFlag = false;
             if (reset)
             {
-                Debug.Log("resetting flag");
                 Instantiate(flag_object, Flags.Get_Active().position, Flags.Get_Active().rotation);
             }
-            else {
-                Debug.Log("dropping flag");
-                Instantiate(flag_object, transform.position, Flags.Get_Active().rotation);
+            else 
+            {
+                StartCoroutine(DropFlagAfterDelay());
+
             }
         }
+    }
+
+    private IEnumerator DropFlagAfterDelay()
+    {
+        yield return new WaitForSeconds(2);
+        Instantiate(flag_object,
+                    new Vector3(transform.position.x, transform.position.y + 4, transform.position.z), 
+                    Flags.Get_Active().rotation);
     }
 }
