@@ -44,37 +44,17 @@ public class score : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         can_score = true;
-        if ((other.tag == "ScoreZone") || (other.tag == "FlagZone"))
+        if (other.tag == "FlagZone")
         {
             zone_bar.SetActive(true);
             progress = 0;
         }
-    }
+        if (other.tag == "FireRing"){
 
-    private void OnTriggerExit(Collider other)
-    {
-        if ((other.tag == "ScoreZone") || (other.tag == "FlagZone"))
-        {
-            zone_bar.SetActive(false);
-            progress = 0;
-            can_score = false;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-
-        // If the player is colliding with the scorezone
-        if ((other.tag == "ScoreZone") && (hasFlag))
-        {
-            progress += Time.deltaTime;
-
-            // Fill UI bar
-            if (zone_capture != null) { zone_capture.fillAmount = progress / complete; }
-
-            // Add to players score if necessary
-            if (progress >= complete && can_score)
+            // If the player is colliding with the scorezone
+            if (hasFlag)
             {
+            
                 current_score++;
                 can_score = false;
                 bar.fillAmount = current_score / (float)m_ScoreToWin;
@@ -95,8 +75,24 @@ public class score : MonoBehaviour {
                 can_score = false;
             }
         }
+    }
 
-        else if (other.tag == "FlagZone"){
+    private void OnTriggerExit(Collider other)
+    {
+        if ((other.tag == "ScoreZone") || (other.tag == "FlagZone"))
+        {
+            zone_bar.SetActive(false);
+            progress = 0;
+            can_score = false;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+
+
+
+        if (other.tag == "FlagZone"){
 
             progress += Time.deltaTime;
 
