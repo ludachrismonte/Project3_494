@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class score : MonoBehaviour {
-
+public class score : MonoBehaviour 
+{
     public string me = "player";
     public int m_ScoreToWin = 10;
     public Image ScoreBar;

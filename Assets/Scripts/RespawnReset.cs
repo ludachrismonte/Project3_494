@@ -69,7 +69,6 @@ public class RespawnReset : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(checkingStuck);
         CheckifStuck();
     }
 
@@ -77,7 +76,6 @@ public class RespawnReset : MonoBehaviour
     {
         if (!checkingStuck)
         {
-            Debug.Log("inside check");
             StartCoroutine(CheckifStuckHelper());
         }
     }
@@ -123,10 +121,10 @@ public class RespawnReset : MonoBehaviour
         //car.SetActive(false);
         RespawnHelper();
         cameraParent.GetComponent<CameraController>().enabled = true;
-        this.transform.Find("SkyCar").gameObject.SetActive(true);
-        this.transform.Find("Arrow").gameObject.SetActive(true);
-        if(i==0){ gameObject.GetComponent<PlayerPickup>().Respawn(); }
-        yield return new WaitForSeconds(5);
+        transform.Find("SkyCar").gameObject.SetActive(true);
+        transform.Find("Arrow").gameObject.SetActive(true);
+        if(i == 0){ gameObject.GetComponent<PlayerPickup>().Respawn(); }
+        yield return new WaitForSeconds(2);
         //car.SetActive(true);
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         gameObject.GetComponent<ControllerInput>().enabled = true;
@@ -167,10 +165,8 @@ public class RespawnReset : MonoBehaviour
     IEnumerator ResetEnum()
     {
         //have car flash
-        Debug.Log("inside enum for reset car!");
         for (int i = 0; i < 4; i++)
         {
-            Debug.Log("flashing!");
             this.transform.Find("SkyCar").gameObject.SetActive(true);
             yield return new WaitForSeconds(.15f);
             this.transform.Find("SkyCar").gameObject.SetActive(false);
