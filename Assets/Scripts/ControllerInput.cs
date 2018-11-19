@@ -68,9 +68,6 @@ public class ControllerInput : MonoBehaviour
 
             if (!IsGrounded())
             {
-                print("In the air");
-                //Vector3 movement = new Vector3(horizInput, 0.0f, vertInput);
-
                 if (Mathf.Approximately(0.0f, horizInput))
                 {
                     transform.Rotate(Vector3.up, horizInput * m_Speed * Time.deltaTime);
@@ -79,57 +76,44 @@ public class ControllerInput : MonoBehaviour
                 {
                     transform.Rotate(Vector3.right, vertInput * m_Speed * Time.deltaTime);
                 }
-
-                //m_Rigidbody.AddForce(movement * m_Speed);
             }
             else
             {
-                //if (gasInput <= 0.0f)
-                //{
-                //    gasInput = -player.Action3.Value; // X button
-                //}
-
-                //float handbrake = player.Action3.Value;
-
                 car.Move(horizInput, gasInput, brakeInput, 0);
             }
 
-
-
             // Weapons
-
             bool fire = player.Action2.WasPressed;
-            //bool fire = player.RightTrigger.WasPressed;
             if (fire) { weapon_manager.fire(); }
 
             float targetLeft = player.LeftBumper.Value;     // Left bumper
             float targetRight = player.RightBumper.Value;   // Right bumper
 
-            if ((targetLeft != 0 || targetRight != 0) && targeter != null && cooldown <= 0.0f) {
-                if (targetLeft != 0)
-                {
-                    ToggleTarget(true);     // Toggle left
-                }
-                else{
-                    ToggleTarget(false);    // Toggle right
-                }
+            if ((!Mathf.Approximately(0.0f, targetLeft) || !Mathf.Approximately(0.0f, targetRight)) && 
+                targeter != null && cooldown <= 0.0f) 
+            {
+                if (!Mathf.Approximately(0.0f, targetLeft))
+                    ToggleTarget(true);    
+                else
+                    ToggleTarget(false);
             }
 
-            if (to_follow != null) {
-
+            if (to_follow != null) 
+            {
                 targeter.transform.position = to_follow.transform.position + offset;
             }
         }
     }
 
-    private void ToggleTarget(bool left) {
-        Debug.Log("Toggle " + target_loc);
+    private void ToggleTarget(bool left) 
+    {
         cooldown = .2f;
         targeter.SetActive(true);
         if (left)
         {
             target_loc--;
-            if (target_loc < 0){
+            if (target_loc < 0)
+            {
                 target_loc = 3;
             }
         }
@@ -137,11 +121,14 @@ public class ControllerInput : MonoBehaviour
         {
             target_loc++;
         }
-        if (target_loc % 4 == playerNum) {
+
+        if (target_loc % 4 == playerNum) 
+        {
             if (left)
             {
                 target_loc--;
-                if (target_loc < 0){
+                if (target_loc < 0)
+                {
                     target_loc = 3;
                 }
             }
