@@ -11,6 +11,7 @@ public class RespawnReset : MonoBehaviour
     public GameObject cameraMain;
     Rigidbody carRb;
     bool checkingStuck = false;
+    public bool stuck = false;
 
     // Use this for initialization
 
@@ -83,6 +84,7 @@ public class RespawnReset : MonoBehaviour
 
     public void ResetCar()
     {
+        stuck = false;
         StartCoroutine(ResetEnum()); //ResetEnum
     }
     public void ChangeRespawn()
@@ -96,9 +98,9 @@ public class RespawnReset : MonoBehaviour
         //}
     }
 
-    public void Respawn()
+    public void Respawn(int i)
     {
-        StartCoroutine(RespawnEnum());
+        StartCoroutine(RespawnEnum(i));
     }
 
     void RespawnHelper()
@@ -113,8 +115,9 @@ public class RespawnReset : MonoBehaviour
         transform.rotation = respawnStruct.respawnRotate;
     }
 
-    IEnumerator RespawnEnum()
+    IEnumerator RespawnEnum(int i)
     {
+        //if i ==1 this is a reset
         gameObject.GetComponent<ControllerInput>().enabled = false;
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         //car.SetActive(false);
@@ -122,12 +125,13 @@ public class RespawnReset : MonoBehaviour
         cameraParent.GetComponent<CameraController>().enabled = true;
         this.transform.Find("SkyCar").gameObject.SetActive(true);
         this.transform.Find("Arrow").gameObject.SetActive(true);
-        gameObject.GetComponent<PlayerPickup>().Respawn();
+        if(i==0){ gameObject.GetComponent<PlayerPickup>().Respawn(); }
         yield return new WaitForSeconds(5);
         //car.SetActive(true);
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         gameObject.GetComponent<ControllerInput>().enabled = true;
         checkingStuck = false;
+        stuck = false;
     }
 
     IEnumerator CheckifStuckHelper()
@@ -146,7 +150,8 @@ public class RespawnReset : MonoBehaviour
         if ((int)vel == (int)carRb.velocity.magnitude && (int)vel == 0 && (int)vel == (int)vel2)
         {
             Debug.Log("resetting car!");
-            ResetCar();
+            stuck = true;
+            //ResetCar();
         }
         else
         {
@@ -175,7 +180,7 @@ public class RespawnReset : MonoBehaviour
         resetStruct.Set(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
         RespawnStruct temp = respawnStruct;
         respawnStruct = resetStruct2;
-        Respawn();
+        Respawn(1);
         respawnStruct = temp;
         resetStruct = temp;
         resetStruct2 = temp;

@@ -49,6 +49,10 @@ public class ControllerInput : MonoBehaviour {
             // Acceleration (A button)
             float v = player.Action1.Value;
 
+            // Reverse (B button)
+            bool reset = player.Action4.WasPressed;
+            if (reset && this.GetComponent<RespawnReset>().stuck) { this.GetComponent<RespawnReset>().ResetCar(); }
+
             // Braking/reverse (X button)
             if (v <= 0.0f)
             {

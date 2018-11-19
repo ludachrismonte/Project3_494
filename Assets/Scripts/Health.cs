@@ -107,7 +107,7 @@ public class Health : MonoBehaviour
         player.transform.Find("Arrow").gameObject.SetActive(false);
         invincible = true;
         yield return new WaitForSeconds(2f);
-        respawnReset.Respawn();
+        respawnReset.Respawn(0);
         invincible = false;
         //for (int i = 0; i < 4; i++)
         //{
