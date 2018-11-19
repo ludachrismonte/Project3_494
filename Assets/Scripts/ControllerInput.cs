@@ -26,7 +26,7 @@ public class ControllerInput : MonoBehaviour
 
     private float distToGround = 2f;
 
-    void Start ()
+    void Start()
     {
         car = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
         weapon_manager = GetComponent<WeaponManager>();
@@ -44,7 +44,7 @@ public class ControllerInput : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate () 
+    void LateUpdate()
     {
         cooldown -= Time.deltaTime;
         var player = (InputManager.Devices.Count > playerNum) ? InputManager.Devices[playerNum] : null;
@@ -58,10 +58,10 @@ public class ControllerInput : MonoBehaviour
             float vertInput = player.LeftStick.Vector.y;
             float gasInput = player.Action1.Value; // A button
             float brakeInput = player.Action3.Value; // X button
-            
+
             bool reset = player.Action4.WasPressed;
-            if (reset && this.GetComponent<RespawnReset>().stuck) 
-            { 
+            if (reset && this.GetComponent<RespawnReset>().stuck)
+            {
                 GetComponent<RespawnReset>().ResetCar();
                 return;
             }
@@ -89,23 +89,23 @@ public class ControllerInput : MonoBehaviour
             float targetLeft = player.LeftBumper.Value;     // Left bumper
             float targetRight = player.RightBumper.Value;   // Right bumper
 
-            if ((!Mathf.Approximately(0.0f, targetLeft) || !Mathf.Approximately(0.0f, targetRight)) && 
-                targeter != null && cooldown <= 0.0f) 
+            if ((!Mathf.Approximately(0.0f, targetLeft) || !Mathf.Approximately(0.0f, targetRight)) &&
+                targeter != null && cooldown <= 0.0f)
             {
                 if (!Mathf.Approximately(0.0f, targetLeft))
-                    ToggleTarget(true);    
+                    ToggleTarget(true);
                 else
                     ToggleTarget(false);
             }
 
-            if (to_follow != null) 
+            if (to_follow != null)
             {
                 targeter.transform.position = to_follow.transform.position + offset;
             }
         }
     }
 
-    private void ToggleTarget(bool left) 
+    private void ToggleTarget(bool left)
     {
         cooldown = .2f;
         targeter.SetActive(true);
@@ -122,7 +122,7 @@ public class ControllerInput : MonoBehaviour
             target_loc++;
         }
 
-        if (target_loc % 4 == playerNum) 
+        if (target_loc % 4 == playerNum)
         {
             if (left)
             {
@@ -139,7 +139,7 @@ public class ControllerInput : MonoBehaviour
         }
 
         // Assign target based on player num
-        if (target_loc % 4 == 0) 
+        if (target_loc % 4 == 0)
         {
             to_follow = player_one;
         }
