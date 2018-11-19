@@ -8,10 +8,12 @@ public class score : MonoBehaviour {
     public string me = "player";
     public int m_ScoreToWin = 10;
     public Image ScoreBar;
+    public GameObject flag_object;
     private MeshRenderer Flag = null;
     private int current_score;
     private GameManager manager;
     private RingSwitcher Rings;
+    private RingSwitcher Flags;
 
     // Bool to keep track of if the player has the flag
     private bool hasFlag = false;
@@ -20,6 +22,7 @@ public class score : MonoBehaviour {
     {
         Flag = transform.Find("flag").gameObject.GetComponent<MeshRenderer>();
         Rings = GameObject.FindWithTag("FireRings").GetComponent<RingSwitcher>();
+        Flags = GameObject.FindWithTag("Flags").GetComponent<RingSwitcher>();
         manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         current_score = 0;
         ScoreBar.fillAmount = 0.0f;
@@ -37,16 +40,16 @@ public class score : MonoBehaviour {
     {
         if (other.tag == "Flag")
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             Flag.enabled = true;
             hasFlag = true;
         }
         if (other.tag == "FireRing" && hasFlag){
             Rings.Switch();
+            Flags.Switch();
             Flag.enabled = false;
             current_score++;
             ScoreBar.fillAmount = (float)current_score / (float)m_ScoreToWin;
-            Debug.Log(current_score);
             manager.UpdateScore();
             hasFlag = false;
         }
@@ -55,5 +58,21 @@ public class score : MonoBehaviour {
     public int GetCurrentScore()
     {
         return current_score;
+    }
+
+    public void DropFlag(bool reset) {
+        Flag.enabled = false;
+        if (hasFlag) {
+            hasFlag = false;
+            if (reset)
+            {
+                Debug.Log("resetting flag");
+                Instantiate(flag_object, Flags.Get_Active().position, Flags.Get_Active().rotation);
+            }
+            else {
+                Debug.Log("dropping flag");
+                Instantiate(flag_object, transform.position, Flags.Get_Active().rotation);
+            }
+        }
     }
 }

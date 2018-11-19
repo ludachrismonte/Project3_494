@@ -269,6 +269,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1353703320342552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4922670511606358}
+  - component: {fileID: 33056427907300558}
+  - component: {fileID: 23473136484976534}
+  m_Layer: 0
+  m_Name: flag
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1390268041764180
 GameObject:
   m_ObjectHideFlags: 1
@@ -384,6 +401,7 @@ GameObject:
   - component: {fileID: 136721401933998442}
   - component: {fileID: 65879624073247358}
   - component: {fileID: 114605428154470410}
+  - component: {fileID: 114293301157093902}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -806,6 +824,7 @@ Transform:
   - {fileID: 4106201786378326}
   - {fileID: 4613304160277986}
   - {fileID: 4726690277152186}
+  - {fileID: 4922670511606358}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 83.340004, z: 0}
@@ -1147,6 +1166,19 @@ Transform:
   m_Father: {fileID: 4263994568133100}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4922670511606358
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353703320342552}
+  m_LocalRotation: {x: -0.8167269, y: -0.072181046, z: -0.36724278, w: 0.43918082}
+  m_LocalPosition: {x: 1.39, y: 1.46, z: -1.68}
+  m_LocalScale: {x: 0.0182756, y: 0.0182756, z: 0.9894828}
+  m_Children: []
+  m_Father: {fileID: 4263994568133100}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: -129.61, y: -57.293, z: 18.723999}
 --- !u!4 &4933926393770048
 Transform:
   m_ObjectHideFlags: 1
@@ -1504,6 +1536,42 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23473136484976534
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353703320342552}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 9cd0ae68590b74040bb5a5371dfdea51, type: 3}
+  - {fileID: 2100002, guid: 9cd0ae68590b74040bb5a5371dfdea51, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &23498924912149874
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -1806,6 +1874,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1914967210516206}
   m_Mesh: {fileID: 4300038, guid: e6fec471c20b9d148b1f87910e67bea4, type: 3}
+--- !u!33 &33056427907300558
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353703320342552}
+  m_Mesh: {fileID: 4300000, guid: 9cd0ae68590b74040bb5a5371dfdea51, type: 3}
 --- !u!33 &33226389827171652
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2538,6 +2613,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
+--- !u!114 &114293301157093902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1523622056327674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cf1fb5f4fa040598c4ce3be714a7fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitTime: 3
+  cameraParent: {fileID: 1488009432482140}
+  cameraMain: {fileID: 1808958944934742}
+  stuck: 0
 --- !u!114 &114326653068251858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2574,11 +2664,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   me: player 2
-  bar: {fileID: 0}
-  zone_bar: {fileID: 0}
   m_ScoreToWin: 10
-  ScoreZone: {fileID: 0}
-  FlagZone: {fileID: 0}
+  ScoreBar: {fileID: 0}
+  flag_object: {fileID: 0}
 --- !u!114 &114502946046681190
 MonoBehaviour:
   m_ObjectHideFlags: 1

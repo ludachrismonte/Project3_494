@@ -15,8 +15,11 @@ public class Health : MonoBehaviour
     private PlayerPickup m_PlayerPickup;
     private RespawnReset respawnReset;
     private bool invincible = false;
+    private score FlagMgr;
+
     private void Awake()
     {
+        FlagMgr = GetComponent<score>();
         m_PlayerPickup = GetComponent<PlayerPickup>();
         m_CurrentCarBody = m_CarBodyLevel[0];
         respawnReset = GetComponent<RespawnReset>();
@@ -53,7 +56,9 @@ public class Health : MonoBehaviour
                 if (transform.position.y > 2.5)
                 {
                     gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    FlagMgr.DropFlag(false);
                 }
+                else FlagMgr.DropFlag(true);
                 gameObject.GetComponent<PlayerPickup>().Respawn();
                 Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
                 Instantiate(m_ExplosionPrefab, transform.position + (transform.forward * 2), Quaternion.identity);
@@ -95,7 +100,6 @@ public class Health : MonoBehaviour
                 m_CarBodyLevel[4].SetActive(true);
                 m_CurrentCarBody = m_CarBodyLevel[4];
                 m_PlayerPickup.m_CarBodyLevel = PickupLevelEnum.five;
-
             }
         }
     }
