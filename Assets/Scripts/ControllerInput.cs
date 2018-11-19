@@ -26,7 +26,7 @@ public class ControllerInput : MonoBehaviour
 
     private float distToGround = 2f;
 
-    void Start ()
+    void Start()
     {
         car = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
         weapon_manager = GetComponent<WeaponManager>();
@@ -44,7 +44,7 @@ public class ControllerInput : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate () 
+    void LateUpdate()
     {
         cooldown -= Time.deltaTime;
         var player = (InputManager.Devices.Count > playerNum) ? InputManager.Devices[playerNum] : null;
@@ -58,78 +58,62 @@ public class ControllerInput : MonoBehaviour
             float vertInput = player.LeftStick.Vector.y;
             float gasInput = player.Action1.Value; // A button
             float brakeInput = player.Action3.Value; // X button
-            
+
             bool reset = player.Action4.WasPressed;
-            if (reset && this.GetComponent<RespawnReset>().stuck) 
-            { 
+            if (reset && this.GetComponent<RespawnReset>().stuck)
+            {
                 GetComponent<RespawnReset>().ResetCar();
                 return;
             }
 
             if (!IsGrounded())
             {
-                print("In the air");
-                //Vector3 movement = new Vector3(horizInput, 0.0f, vertInput);
-
-                if (!Mathf.Approximately(0.0f, horizInput))
+                if (Mathf.Approximately(0.0f, horizInput))
                 {
                     transform.Rotate(Vector3.up, horizInput * m_Speed * Time.deltaTime);
                 }
-                if (!Mathf.Approximately(0.0f, vertInput))
+                if (Mathf.Approximately(0.0f, vertInput))
                 {
                     transform.Rotate(Vector3.right, vertInput * m_Speed * Time.deltaTime);
                 }
-
-                //m_Rigidbody.AddForce(movement * m_Speed);
             }
             else
             {
-                //if (gasInput <= 0.0f)
-                //{
-                //    gasInput = -player.Action3.Value; // X button
-                //}
-
-                //float handbrake = player.Action3.Value;
-
                 car.Move(horizInput, gasInput, brakeInput, 0);
             }
 
-
-
             // Weapons
-
             bool fire = player.Action2.WasPressed;
-            //bool fire = player.RightTrigger.WasPressed;
             if (fire) { weapon_manager.fire(); }
 
             float targetLeft = player.LeftBumper.Value;     // Left bumper
             float targetRight = player.RightBumper.Value;   // Right bumper
 
-            if ((targetLeft != 0 || targetRight != 0) && targeter != null && cooldown <= 0.0f) {
-                if (targetLeft != 0)
-                {
-                    ToggleTarget(true);     // Toggle left
-                }
-                else{
-                    ToggleTarget(false);    // Toggle right
-                }
+            if ((!Mathf.Approximately(0.0f, targetLeft) || !Mathf.Approximately(0.0f, targetRight)) &&
+                targeter != null && cooldown <= 0.0f)
+            {
+                if (!Mathf.Approximately(0.0f, targetLeft))
+                    ToggleTarget(true);
+                else
+                    ToggleTarget(false);
             }
 
-            if (to_follow != null) {
-
+            if (to_follow != null)
+            {
                 targeter.transform.position = to_follow.transform.position + offset;
             }
         }
     }
 
-    private void ToggleTarget(bool left) {
-        Debug.Log("Toggle " + target_loc);
+    private void ToggleTarget(bool left)
+    {
         cooldown = .2f;
         targeter.SetActive(true);
         if (left)
         {
             target_loc--;
-            if (target_loc < 0){
+            if (target_loc < 0)
+            {
                 target_loc = 3;
             }
         }
@@ -137,11 +121,14 @@ public class ControllerInput : MonoBehaviour
         {
             target_loc++;
         }
-        if (target_loc % 4 == playerNum) {
+
+        if (target_loc % 4 == playerNum)
+        {
             if (left)
             {
                 target_loc--;
-                if (target_loc < 0){
+                if (target_loc < 0)
+                {
                     target_loc = 3;
                 }
             }
@@ -152,7 +139,7 @@ public class ControllerInput : MonoBehaviour
         }
 
         // Assign target based on player num
-        if (target_loc % 4 == 0) 
+        if (target_loc % 4 == 0)
         {
             to_follow = player_one;
         }
