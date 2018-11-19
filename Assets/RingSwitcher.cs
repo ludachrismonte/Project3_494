@@ -27,4 +27,8 @@ public class RingSwitcher : MonoBehaviour {
         index_active = temp;
         Rings[index_active].SetActive(true);
     }
+
+    public Transform Get_Active() {
+        return Rings[index_active].transform;
+    }
 }
