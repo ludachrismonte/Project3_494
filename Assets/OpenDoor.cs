@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour {
 
-    private float timer;
     public int reverse = 1;
 
     void Start () {
-        timer = 0;
 	}
 	
 	public void Open () {
-        timer += Time.deltaTime;
-        if (timer < 4) {
+        StartCoroutine(open());
+    }
+
+    private IEnumerator open() {
+        for (float i = 0.0f; i < 4; i += Time.deltaTime) {
             transform.Rotate(reverse * Vector3.forward, 30f * Time.deltaTime);
+            yield return null;
         }
     }
 }
