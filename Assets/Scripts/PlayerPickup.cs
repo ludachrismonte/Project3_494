@@ -21,12 +21,6 @@ public class PlayerPickup : MonoBehaviour
     private RawImage spedometer_4;
     private RawImage spedometer_5;
 
-    private MeshRenderer car_1;
-    private MeshRenderer car_2;
-    private MeshRenderer car_3;
-    private MeshRenderer car_4;
-    private MeshRenderer car_5;
-
     private void Start()
     {
         m_CarController = GetComponent<CarController>();
@@ -37,12 +31,6 @@ public class PlayerPickup : MonoBehaviour
         spedometer_3 = UIObjects.transform.Find("spedometer_3").gameObject.GetComponent<RawImage>();
         spedometer_4 = UIObjects.transform.Find("spedometer_4").gameObject.GetComponent<RawImage>();
         spedometer_5 = UIObjects.transform.Find("spedometer_5").gameObject.GetComponent<RawImage>();
-
-        car_1 = transform.Find("car_1").gameObject.GetComponent<MeshRenderer>();
-        car_2 = transform.Find("car_2").gameObject.GetComponent<MeshRenderer>();
-        car_3 = transform.Find("car_3").gameObject.GetComponent<MeshRenderer>();
-        car_4 = transform.Find("car_4").gameObject.GetComponent<MeshRenderer>();
-        car_5 = transform.Find("car_5").gameObject.GetComponent<MeshRenderer>();
 
         UpdateCarBody();
         UpdateEngine();
@@ -91,38 +79,33 @@ public class PlayerPickup : MonoBehaviour
             RocketDrops rocketDrops = GameObject.Find("Manager").GetComponent<RocketDrops>();
             rocketDrops.DropPickedUp();
         }
+
+        if (other.tag == "ShieldPickup")
+        {
+            transform.Find("Shield").gameObject.SetActive(true);
+            Destroy(other.gameObject);
+            StartCoroutine(WaitToRespawn(other.gameObject));
+        }
     }
 
     private void UpdateCarBody()
     {
-        car_1.enabled = false;
-        car_2.enabled = false;
-        car_3.enabled = false;
-        car_4.enabled = false;
-        car_5.enabled = false;
-
-
         switch (m_CarBodyLevel)
         {
             case PickupLevelEnum.two:
                 m_CarHealth.SetHealth(20);
-                car_2.enabled = true;
                 break;
             case PickupLevelEnum.three:
                 m_CarHealth.SetHealth(30);
-                car_3.enabled = true;
                 break;
             case PickupLevelEnum.four:
                 m_CarHealth.SetHealth(40);
-                car_4.enabled = true;
                 break;
             case PickupLevelEnum.five:
                 m_CarHealth.SetHealth(50);
-                car_5.enabled = true;
                 break;
             default:
                 m_CarHealth.SetHealth(10);
-                car_1.enabled = true;
                 break;
         }
     }
@@ -191,6 +174,9 @@ public class PlayerPickup : MonoBehaviour
 
     public void Respawn()
     {
+        GameObject shield = transform.Find("Shield").gameObject;
+        shield.SetActive(false);
+
         m_CarBodyLevel = PickupLevelEnum.one;
         UpdateCarBody();
         m_TireLevel = PickupLevelEnum.one;
