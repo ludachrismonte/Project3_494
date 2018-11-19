@@ -3090,6 +3090,7 @@ MonoBehaviour:
   - {fileID: 1757137062476134}
   m_ExplosionPrefab: {fileID: 1993916257408734, guid: 920d1770727e2427282a301ff117a0ce,
     type: 2}
+  m_TestDeath: 0
 --- !u!114 &114130730956903900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3291,6 +3292,7 @@ MonoBehaviour:
   ScoreBar: {fileID: 0}
   flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
     type: 2}
+  m_ObjectiveTracker: {fileID: 0}
 --- !u!114 &114722034062054946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3330,7 +3332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd90e2cb82a6604d99f0e869bfe483e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!114 &114827659079242174
 MonoBehaviour:
   m_ObjectHideFlags: 1
