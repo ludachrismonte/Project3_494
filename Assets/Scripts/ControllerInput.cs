@@ -71,11 +71,11 @@ public class ControllerInput : MonoBehaviour
                 print("In the air");
                 //Vector3 movement = new Vector3(horizInput, 0.0f, vertInput);
 
-                if (Mathf.Approximately(0.0f, horizInput))
+                if (!Mathf.Approximately(0.0f, horizInput))
                 {
                     transform.Rotate(Vector3.up, horizInput * m_Speed * Time.deltaTime);
                 }
-                if (Mathf.Approximately(0.0f, vertInput))
+                if (!Mathf.Approximately(0.0f, vertInput))
                 {
                     transform.Rotate(Vector3.right, vertInput * m_Speed * Time.deltaTime);
                 }

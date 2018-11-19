@@ -17,7 +17,6 @@ public class RingSwitcher : MonoBehaviour {
         Rings[index_active].SetActive(true);
     }
 
-    // Update is called once per frame
     public void Switch () {
         Rings[index_active].SetActive(false);
         int temp = (int)Random.Range(0, Rings.Length);
