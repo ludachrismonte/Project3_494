@@ -471,15 +471,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4217033698801554, guid: b97a02ba666a344df93584bf126619ac, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -495.08
+      value: -109.9
       objectReference: {fileID: 0}
     - target: {fileID: 4217033698801554, guid: b97a02ba666a344df93584bf126619ac, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 116.87
+      value: 15.8
       objectReference: {fileID: 0}
     - target: {fileID: 4217033698801554, guid: b97a02ba666a344df93584bf126619ac, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -26.63
+      value: -52.4
       objectReference: {fileID: 0}
     - target: {fileID: 4217033698801554, guid: b97a02ba666a344df93584bf126619ac, type: 2}
       propertyPath: m_LocalRotation.x
@@ -572,6 +572,15 @@ Prefab:
     - target: {fileID: 1590863156251226, guid: b97a02ba666a344df93584bf126619ac, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842212477488632, guid: b97a02ba666a344df93584bf126619ac, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114580416001665612, guid: b97a02ba666a344df93584bf126619ac,
+        type: 2}
+      propertyPath: torque
+      value: 50000
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 95642885142090254, guid: b97a02ba666a344df93584bf126619ac, type: 2}
@@ -16507,7 +16516,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: -2.2080214
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: 8dd1297b8987ba34caf442c3ebde388e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8dd1297b8987ba34caf442c3ebde388e, type: 3}
   m_IsPrefabAsset: 0
 --- !u!4 &1726005330 stripped
@@ -17489,7 +17499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1829060871}
   m_Layer: 0
-  m_Name: Scene Objects (1)
+  m_Name: Scene Objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
