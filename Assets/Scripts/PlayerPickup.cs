@@ -77,7 +77,7 @@ public class PlayerPickup : MonoBehaviour
             GetComponent<WeaponManager>().get_rocket();
             Destroy(other.transform.parent.transform.parent.gameObject);
             RocketDrops rocketDrops = GameObject.Find("Manager").GetComponent<RocketDrops>();
-            rocketDrops.DropPickedUp();
+            rocketDrops.RocketPickedUp();
         }
 
         if (other.tag == "ShieldPickup")

@@ -3105,7 +3105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd90e2cb82a6604d99f0e869bfe483e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!114 &114336256522289742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3208,6 +3207,7 @@ MonoBehaviour:
   ScoreBar: {fileID: 0}
   flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
     type: 2}
+  m_ObjectiveTracker: {fileID: 0}
 --- !u!114 &114474039314134100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3229,6 +3229,7 @@ MonoBehaviour:
   - {fileID: 1036266542637552}
   m_ExplosionPrefab: {fileID: 1993916257408734, guid: 920d1770727e2427282a301ff117a0ce,
     type: 2}
+  m_TestDeath: 0
 --- !u!114 &114475192828924146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3264,8 +3265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52acccf8f5c14169bf75de1ddcc2e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SecondsToRespawnPickup: 60
-  m_CarBodyLevel: 1
+  m_SecondsToRespawnPickup: 30
+  m_CarBodyLevel: 3
   m_TireLevel: 1
   m_EngineLevel: 1
   UIObjects: {fileID: 0}
