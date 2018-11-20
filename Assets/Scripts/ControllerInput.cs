@@ -7,6 +7,7 @@ public class ControllerInput : MonoBehaviour
 {
     public int playerNum;
     public float m_Speed;
+    private float torque = 15000.0f;
 
     private UnityStandardAssets.Vehicles.Car.CarController car;
     private WeaponManager weapon_manager;
@@ -74,11 +75,11 @@ public class ControllerInput : MonoBehaviour
             {
                 if (!Mathf.Approximately(0.0f, horizInput))
                 {
-                    transform.Rotate(Vector3.up, horizInput * m_Speed * Time.deltaTime);
+                    m_Rigidbody.AddRelativeTorque(Vector3.back * horizInput * torque);
                 }
                 if (!Mathf.Approximately(0.0f, vertInput))
                 {
-                    transform.Rotate(Vector3.right, vertInput * m_Speed * Time.deltaTime);
+                    m_Rigidbody.AddRelativeTorque(Vector3.right * vertInput * torque);
                 }
             }
             else
