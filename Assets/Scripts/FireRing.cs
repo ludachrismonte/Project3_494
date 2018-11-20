@@ -6,8 +6,12 @@ public class FireRing : MonoBehaviour {
 
     private Vector3 init_scale;
 
+    private AudioSource whoosh;
+
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
+        whoosh = GetComponent<AudioSource>();
         init_scale = transform.localScale;
 	}
 	
@@ -17,13 +21,13 @@ public class FireRing : MonoBehaviour {
 	}
 
     public void Activate() {
-        GetComponent<AudioSource>().Play();
+        whoosh.Play();
         StartCoroutine(grow());
     }
 
     public void Deactivate()
     {
-        GetComponent<AudioSource>().Play();
+        whoosh.Play();
         StartCoroutine(shrink());
     }
 
