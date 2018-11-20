@@ -501,31 +501,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114802533939189952, guid: b97a02ba666a344df93584bf126619ac,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114722034062054946, guid: b97a02ba666a344df93584bf126619ac,
-        type: 2}
-      propertyPath: UIObjects
-      value: 
-      objectReference: {fileID: 1548953865}
-    - target: {fileID: 114038501247139276, guid: b97a02ba666a344df93584bf126619ac,
-        type: 2}
-      propertyPath: health_bar
-      value: 
-      objectReference: {fileID: 316246031}
-    - target: {fileID: 114580416001665612, guid: b97a02ba666a344df93584bf126619ac,
-        type: 2}
-      propertyPath: targeter
-      value: 
-      objectReference: {fileID: 1148596574}
-    - target: {fileID: 114689202586587950, guid: b97a02ba666a344df93584bf126619ac,
-        type: 2}
-      propertyPath: ScoreBar
-      value: 
-      objectReference: {fileID: 316246032}
     - target: {fileID: 114360978835776654, guid: b97a02ba666a344df93584bf126619ac,
         type: 2}
       propertyPath: targeter
@@ -536,56 +511,37 @@ Prefab:
       propertyPath: text
       value: 
       objectReference: {fileID: 316246030}
-    - target: {fileID: 23963695737876224, guid: b97a02ba666a344df93584bf126619ac,
+    - target: {fileID: 114689202586587950, guid: b97a02ba666a344df93584bf126619ac,
         type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1994012481480486, guid: b97a02ba666a344df93584bf126619ac, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1390161741921628, guid: b97a02ba666a344df93584bf126619ac, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1589351447643540, guid: b97a02ba666a344df93584bf126619ac, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1355573079283676, guid: b97a02ba666a344df93584bf126619ac, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1818237185644080, guid: b97a02ba666a344df93584bf126619ac, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1609376507790718, guid: b97a02ba666a344df93584bf126619ac, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1037864844584700, guid: b97a02ba666a344df93584bf126619ac, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1590863156251226, guid: b97a02ba666a344df93584bf126619ac, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1842212477488632, guid: b97a02ba666a344df93584bf126619ac, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: ScoreBar
+      value: 
+      objectReference: {fileID: 316246032}
     - target: {fileID: 114580416001665612, guid: b97a02ba666a344df93584bf126619ac,
         type: 2}
-      propertyPath: torque
-      value: 50000
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 95642885142090254, guid: b97a02ba666a344df93584bf126619ac, type: 2}
-    - {fileID: 95331218104128680, guid: b97a02ba666a344df93584bf126619ac, type: 2}
-    - {fileID: 95125046499299094, guid: b97a02ba666a344df93584bf126619ac, type: 2}
+      propertyPath: targeter
+      value: 
+      objectReference: {fileID: 1148596574}
+    - target: {fileID: 114038501247139276, guid: b97a02ba666a344df93584bf126619ac,
+        type: 2}
+      propertyPath: health_bar
+      value: 
+      objectReference: {fileID: 316246031}
+    - target: {fileID: 114722034062054946, guid: b97a02ba666a344df93584bf126619ac,
+        type: 2}
+      propertyPath: UIObjects
+      value: 
+      objectReference: {fileID: 1548953865}
+    - target: {fileID: 114496216154560476, guid: b97a02ba666a344df93584bf126619ac,
+        type: 2}
+      propertyPath: m_WheelMeshes.Array.data[2]
+      value: 
+      objectReference: {fileID: 580499177}
+    - target: {fileID: 114496216154560476, guid: b97a02ba666a344df93584bf126619ac,
+        type: 2}
+      propertyPath: m_WheelMeshes.Array.data[3]
+      value: 
+      objectReference: {fileID: 865922591}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b97a02ba666a344df93584bf126619ac, type: 2}
   m_IsPrefabAsset: 0
 --- !u!114 &42346002 stripped
@@ -6233,6 +6189,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4102641815237352, guid: 006d5f11867704d798d67fc2b57abf65,
     type: 2}
   m_PrefabInternal: {fileID: 6339505}
+--- !u!1 &580499177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1118559572887960, guid: b97a02ba666a344df93584bf126619ac,
+    type: 2}
+  m_PrefabInternal: {fileID: 42130731}
 --- !u!1001 &583895286
 Prefab:
   m_ObjectHideFlags: 0
@@ -8554,6 +8515,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &865922591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1241689753511818, guid: b97a02ba666a344df93584bf126619ac,
+    type: 2}
+  m_PrefabInternal: {fileID: 42130731}
 --- !u!1001 &882158298
 Prefab:
   m_ObjectHideFlags: 0
