@@ -118,12 +118,14 @@ public class TutorialManager : MonoBehaviour
         {
             current = "";
             set_text("good luck!");
+            StartCoroutine(GoodLuckText());
         }
-        if (timer > 124)
-        {
-            current = "";
-            set_text("");
-        }
+    }
+
+    private IEnumerator GoodLuckText()
+    {
+        yield return new WaitForSeconds(4);
+        set_text("");
     }
 
     private void set_text(string t) {

@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour
     private float timer;
     private bool m_GameOver = false;
 
+    //public IEnumerator StartTheGame()
+    //{
+
+    //}
+
 	// Use this for initialization
 	void Start () {
         timer = 0;

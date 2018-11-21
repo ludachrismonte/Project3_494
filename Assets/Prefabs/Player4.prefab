@@ -354,7 +354,6 @@ GameObject:
   - component: {fileID: 4825484476654820}
   - component: {fileID: 33027528915640418}
   - component: {fileID: 23133095483417344}
-  - component: {fileID: 95873998526272814}
   m_Layer: 12
   m_Name: arrow 1
   m_TagString: Untagged
@@ -1133,8 +1132,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990267783747410}
-  m_LocalRotation: {x: 0, y: 0.9242132, z: 0, w: 0.38187706}
-  m_LocalPosition: {x: -489.44, y: 116.95, z: 33.32}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 185}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4108970954359224}
@@ -1149,7 +1148,7 @@ Transform:
   - {fileID: 4518253262926842}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 135.1, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4546075807081760
 Transform:
   m_ObjectHideFlags: 1
@@ -1619,7 +1618,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1441042886999670}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2957,24 +2956,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!95 &95873998526272814
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1441042886999670}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e5699fb81c34da748a0938a6b7580d52, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95894913567610766
 Animator:
   serializedVersion: 3
@@ -3105,7 +3086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd90e2cb82a6604d99f0e869bfe483e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!114 &114336256522289742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3208,6 +3188,7 @@ MonoBehaviour:
   ScoreBar: {fileID: 0}
   flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
     type: 2}
+  m_ObjectiveTracker: {fileID: 0}
 --- !u!114 &114474039314134100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3229,6 +3210,7 @@ MonoBehaviour:
   - {fileID: 1036266542637552}
   m_ExplosionPrefab: {fileID: 1993916257408734, guid: 920d1770727e2427282a301ff117a0ce,
     type: 2}
+  m_TestDeath: 0
 --- !u!114 &114475192828924146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3264,8 +3246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52acccf8f5c14169bf75de1ddcc2e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SecondsToRespawnPickup: 60
-  m_CarBodyLevel: 1
+  m_SecondsToRespawnPickup: 30
+  m_CarBodyLevel: 3
   m_TireLevel: 1
   m_EngineLevel: 1
   UIObjects: {fileID: 0}

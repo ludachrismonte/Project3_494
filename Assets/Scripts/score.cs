@@ -9,6 +9,8 @@ public class score : MonoBehaviour
     public int m_ScoreToWin = 10;
     public Image ScoreBar;
     public GameObject flag_object;
+    public ObjectiveTracker m_ObjectiveTracker;
+
     private MeshRenderer Flag = null;
     private int current_score;
     private GameManager manager;
@@ -43,15 +45,42 @@ public class score : MonoBehaviour
             other.gameObject.SetActive(false);
             Flag.enabled = true;
             hasFlag = true;
+
+            switch (me)
+            {
+                case "player 1":
+                    m_ObjectiveTracker.SetFlagHolder(FlagHolder.p1);
+                    break;
+                case "player 2":
+                    m_ObjectiveTracker.SetFlagHolder(FlagHolder.p2);
+                    break;
+                case "player 3":
+                    m_ObjectiveTracker.SetFlagHolder(FlagHolder.p3);
+                    break;
+                case "player 4":
+                    m_ObjectiveTracker.SetFlagHolder(FlagHolder.p4);
+                    break;
+                default:
+                    Debug.Log("ERROR IN Score.cs: player not set");
+                    Application.Quit();
+                    break;
+            }
         }
-        if (other.tag == "FireRing" && hasFlag){
+        if (other.tag == "FireRing" && hasFlag)
+        {
             Rings.Switch();
             Flags.Switch();
+
             Flag.enabled = false;
+
             current_score++;
+
             ScoreBar.fillAmount = (float)current_score / (float)m_ScoreToWin;
+
             manager.UpdateScore();
+
             hasFlag = false;
+            m_ObjectiveTracker.SetFlagHolder(FlagHolder.none);
         }
     }
 
@@ -65,6 +94,7 @@ public class score : MonoBehaviour
         Flag.enabled = false;
         if (hasFlag) {
             hasFlag = false;
+            m_ObjectiveTracker.SetFlagHolder(FlagHolder.none);
             if (reset)
             {
                 Instantiate(flag_object, Flags.Get_Active().position, Flags.Get_Active().rotation);
@@ -72,7 +102,6 @@ public class score : MonoBehaviour
             else 
             {
                 StartCoroutine(DropFlagAfterDelay());
-
             }
         }
     }
@@ -83,5 +112,10 @@ public class score : MonoBehaviour
         Instantiate(flag_object,
                     new Vector3(transform.position.x, transform.position.y + 4, transform.position.z), 
                     Flags.Get_Active().rotation);
+    }
+
+    public bool DoesUserHaveFlag()
+    {
+        return hasFlag;
     }
 }
