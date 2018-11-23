@@ -68,7 +68,6 @@ public class Health : MonoBehaviour
                 {
                     FlagMgr.DropFlag(true);
                 }
-
                 gameObject.GetComponent<PlayerPickup>().Respawn();
                 Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
                 Instantiate(m_ExplosionPrefab, transform.position + (transform.forward * 2), Quaternion.identity);

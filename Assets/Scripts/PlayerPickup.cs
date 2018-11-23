@@ -86,6 +86,12 @@ public class PlayerPickup : MonoBehaviour
             Destroy(other.gameObject);
             StartCoroutine(WaitToRespawn(other.gameObject));
         }
+
+        if (other.tag == "LandminePickup")
+        {
+            GetComponent<WeaponManager>().get_landmine();
+            Destroy(other.gameObject);
+        }
     }
 
     private void UpdateCarBody()

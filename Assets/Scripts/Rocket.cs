@@ -8,7 +8,7 @@ public class Rocket : MonoBehaviour
     public float objectLifeTimeValue = 100;
     public GameObject m_ExplosionPrefab;
     public AudioClip explode;
-    public float m_RocketDamage = 10f;
+    public float m_RocketDamage = 5f;
 
     private float timerSinceLaunch;
     private Transform target;

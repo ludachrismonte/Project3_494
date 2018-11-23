@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54792784955279236}
   - component: {fileID: 135241540003076504}
   - component: {fileID: 65884103153593330}
+  - component: {fileID: 114044320795384716}
   m_Layer: 0
   m_Name: landmine
   m_TagString: Untagged
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1413299180077768}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -28.533068, y: 14.69, z: 72.38782}
+  m_LocalPosition: {x: -112.8, y: 15.3, z: 25.8}
   m_LocalScale: {x: 1, y: 1, z: 0.22323704}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,6 +116,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.1882238, y: 2.0370204, z: 2.1851897}
   m_Center: {x: -0.075601995, y: 0, z: 0.092594534}
+--- !u!114 &114044320795384716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1413299180077768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2317aef65b1d6df4784dc59e50c9d889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExplosionPrefab: {fileID: 1993916257408734, guid: 920d1770727e2427282a301ff117a0ce,
+    type: 2}
+  explode: {fileID: 8300000, guid: 9af5884e548742e40b010c4b88e432bc, type: 3}
+  exp_power: 600000
+  exp_radius: 10
 --- !u!135 &135241540003076504
 SphereCollider:
   m_ObjectHideFlags: 1

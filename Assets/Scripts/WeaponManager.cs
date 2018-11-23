@@ -12,10 +12,14 @@ public class WeaponManager : MonoBehaviour {
     public GameObject projectile;
     public Text text = null;
 
+    public GameObject landmine;
+
     private bool has_left = false;
     private bool has_right = false;
     private GameObject target;
     private float cooldown = 1;
+
+    private string current_equipped = "none";
 
 	// Use this for initialization
 	void Start () 
@@ -47,14 +51,26 @@ public class WeaponManager : MonoBehaviour {
 
     public void get_rocket() 
     {
-        shooter.GetComponent<MeshRenderer>().enabled = true;
-        if (!has_left && !has_right) {
-            StartCoroutine(raise());
+        if (current_equipped == "none")
+        {
+            shooter.GetComponent<MeshRenderer>().enabled = true;
+            if (!has_left && !has_right)
+            {
+                StartCoroutine(raise());
+            }
+            has_left = true;
+            left.SetActive(true);
+            has_right = true;
+            right.SetActive(true);
         }
-        has_left = true;
-        left.SetActive(true);
-        has_right = true;
-        right.SetActive(true);
+    }
+
+    public void get_landmine()
+    {
+        if (current_equipped == "none") {
+            transform.Find("Landmine").gameObject.SetActive(true);
+            current_equipped = "landmine";
+        }
     }
 
     public void fire() {
@@ -66,7 +82,10 @@ public class WeaponManager : MonoBehaviour {
                 left.SetActive(false);
                 cooldown = 1f;
             }
-            if (!has_left && !has_right) { StartCoroutine(lower()); }
+            if (!has_left && !has_right) {
+                current_equipped = "none";
+                StartCoroutine(lower());
+            }
         }
         else if (has_right && cooldown <= 0.0f)
         {
@@ -78,7 +97,17 @@ public class WeaponManager : MonoBehaviour {
                 right.SetActive(false);
                 cooldown = 1f;
             }
-            if (!has_left && !has_right) { StartCoroutine(lower()); }
+            if (!has_left && !has_right)
+            {
+                current_equipped = "none";
+                StartCoroutine(lower());
+            }
+        }
+        else if (current_equipped == "landmine")
+        {
+            Instantiate(landmine, transform.Find("Landmine").gameObject.transform.position, transform.Find("Landmine").gameObject.transform.rotation);
+            transform.Find("Landmine").gameObject.SetActive(false);
+            current_equipped = "none";
         }
     }
 

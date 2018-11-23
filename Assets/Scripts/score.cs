@@ -6,17 +6,17 @@ using UnityEngine.UI;
 public class score : MonoBehaviour 
 {
     public string me = "player";
-    public int m_ScoreToWin = 10;
     public Image ScoreBar;
     public GameObject flag_object;
     public ObjectiveTracker m_ObjectiveTracker;
 
+    private int m_ScoreToWin = 60;
     private MeshRenderer Flag = null;
     private int current_score;
     private GameManager manager;
-    private RingSwitcher Rings;
     private RingSwitcher Flags;
-
+    private RingSwitcher Rings;
+    private float timer;
     // Bool to keep track of if the player has the flag
     private bool hasFlag = false;
 
@@ -28,14 +28,27 @@ public class score : MonoBehaviour
         manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         current_score = 0;
         ScoreBar.fillAmount = 0.0f;
+        timer = 0.0f;
     }
 
     private void Update()
     {
+        if (hasFlag) {
+            timer += Time.deltaTime;
+            if (timer > 1) {
+                timer = 0.0f;
+                add_score(1);
+            }
+        }
         if (current_score >= m_ScoreToWin) 
         {
             manager.Win(me);
         }
+    }
+
+    private void add_score(int amt) {
+        current_score += amt;
+        ScoreBar.fillAmount = current_score / (float)m_ScoreToWin;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -66,20 +79,15 @@ public class score : MonoBehaviour
                     break;
             }
         }
+        
         if (other.tag == "FireRing" && hasFlag)
         {
             Rings.Switch();
-            Flags.Switch();
 
-            Flag.enabled = false;
-
-            current_score++;
-
-            ScoreBar.fillAmount = (float)current_score / (float)m_ScoreToWin;
+            add_score(10);
 
             manager.UpdateScore();
 
-            hasFlag = false;
             m_ObjectiveTracker.SetFlagHolder(FlagHolder.none);
         }
     }
