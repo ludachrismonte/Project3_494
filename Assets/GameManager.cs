@@ -7,8 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour 
 {
-    public Text win_text;
-    public GameObject win_box;
+    public GameObject UI;
+
+    private Text win_text;
+    private GameObject win_box;
+    private Image black;
 
     public Text[] m_Placements = new Text[4];
 
@@ -25,13 +28,13 @@ public class GameManager : MonoBehaviour
     private float timer;
     private bool m_GameOver = false;
 
-    //public IEnumerator StartTheGame()
-    //{
+	void Awake () {
+        win_text = UI.transform.Find("VictoryText").GetComponent<Text>();
+        win_box = UI.transform.Find("WinBox").gameObject;
+        black = UI.transform.Find("black").GetComponent<Image>();
+        black.color = new Color(black.color.r, black.color.g, black.color.b, 1f);
+        StartCoroutine(FadeIn());
 
-    //}
-
-	// Use this for initialization
-	void Start () {
         timer = 0;
         player1 = GameObject.FindGameObjectWithTag("Player");
         player2 = GameObject.FindGameObjectWithTag("Player2");
@@ -47,6 +50,14 @@ public class GameManager : MonoBehaviour
         m_Placements[1].text = "#1";
         m_Placements[2].text = "#1";
         m_Placements[3].text = "#1";
+    }
+
+    private IEnumerator FadeIn() {
+        for (float i = 2f; i > 0f; i -= Time.deltaTime)
+        {
+            black.color = new Color(black.color.r, black.color.g, black.color.b, i/2);
+            yield return null;
+        }
     }
 
     public void Win(string s) 
