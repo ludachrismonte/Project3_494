@@ -894,8 +894,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1083286382683238}
-  m_LocalRotation: {x: 0.642814, y: 0.29460186, z: -0.29460186, w: 0.642814}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.77, z: -0.27}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 4531089990639248}
@@ -3184,7 +3184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   me: player 4
-  m_ScoreToWin: 5
   ScoreBar: {fileID: 0}
   flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
     type: 2}
@@ -3359,6 +3358,7 @@ MonoBehaviour:
   shooter: {fileID: 1720441597536790}
   projectile: {fileID: 1376979691465780, guid: f218cd1c6cab35746b51fe6353f5c803, type: 2}
   text: {fileID: 0}
+  landmine: {fileID: 0}
 --- !u!124 &124626284208483052
 Behaviour:
   m_ObjectHideFlags: 1

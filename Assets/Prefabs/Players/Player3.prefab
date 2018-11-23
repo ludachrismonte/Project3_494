@@ -214,7 +214,6 @@ GameObject:
   - component: {fileID: 4897643732476834}
   - component: {fileID: 33511724767767344}
   - component: {fileID: 23874785740113640}
-  - component: {fileID: 95843331868575892}
   m_Layer: 11
   m_Name: arrow 1
   m_TagString: Untagged
@@ -825,8 +824,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1730103915930298}
-  m_LocalRotation: {x: 0.66285306, y: -0.2462231, z: 0.2462231, w: 0.66285306}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.77, z: -0.27}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 4752114307554440}
@@ -1256,8 +1255,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349768124842162}
-  m_LocalRotation: {x: 0, y: 0.84320384, z: 0, w: 0.537594}
-  m_LocalPosition: {x: -498.58, y: 116.98, z: 18.71}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 185, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4162980861052824}
@@ -1272,7 +1271,7 @@ Transform:
   - {fileID: 4297334534648266}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 114.96, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4762517971451796
 Transform:
   m_ObjectHideFlags: 1
@@ -2201,7 +2200,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370625294623536}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2957,24 +2956,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!95 &95843331868575892
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1370625294623536}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e5699fb81c34da748a0938a6b7580d52, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95910280442419786
 Animator:
   serializedVersion: 3
@@ -3179,6 +3160,7 @@ MonoBehaviour:
   shooter: {fileID: 1471923815307140}
   projectile: {fileID: 1376979691465780, guid: f218cd1c6cab35746b51fe6353f5c803, type: 2}
   text: {fileID: 0}
+  landmine: {fileID: 0}
 --- !u!114 &114283077752141620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3261,7 +3243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   me: player 3
-  m_ScoreToWin: 5
   ScoreBar: {fileID: 0}
   flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
     type: 2}

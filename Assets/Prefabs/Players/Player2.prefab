@@ -861,8 +861,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1523622056327674}
-  m_LocalRotation: {x: -0, y: 0.6648374, z: -0, w: 0.7469882}
-  m_LocalPosition: {x: -503.50433, y: 116.87, z: -5.9963408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 15, z: -185}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4310181898185350}
@@ -876,7 +876,7 @@ Transform:
   - {fileID: 4922670511606358}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 83.340004, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4286129117941718
 Transform:
   m_ObjectHideFlags: 1
@@ -1196,8 +1196,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1639550454849208}
-  m_LocalRotation: {x: 0.6760368, y: -0.20730263, z: 0.20730263, w: 0.6760368}
-  m_LocalPosition: {x: 21.62284, y: 0.76999664, z: 5.75076}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.77, z: -0.27}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 4263994568133100}
@@ -1939,7 +1939,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1082919400921570}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2863,7 +2863,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   me: player 2
-  m_ScoreToWin: 5
   ScoreBar: {fileID: 0}
   flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
     type: 2}
@@ -2933,6 +2932,7 @@ MonoBehaviour:
   shooter: {fileID: 1040794646442320}
   projectile: {fileID: 1376979691465780, guid: f218cd1c6cab35746b51fe6353f5c803, type: 2}
   text: {fileID: 0}
+  landmine: {fileID: 0}
 --- !u!114 &114605428154470410
 MonoBehaviour:
   m_ObjectHideFlags: 1
