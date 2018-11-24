@@ -33,8 +33,7 @@ public class Score : MonoBehaviour
 
     private void Update()
     {
-        if (hasFlag) 
-        {
+        if (hasFlag) {
             timer += Time.deltaTime;
             if (timer > 1) {
                 timer = 0.0f;
@@ -47,10 +46,56 @@ public class Score : MonoBehaviour
         }
     }
 
-    private void add_score(int amt) 
+    private void get_flag() {
+        Flag.enabled = true;
+        hasFlag = true;
+        switch (me)
+        {
+            case "player 1":
+                m_ObjectiveTracker.SetFlagHolder(FlagHolder.p1);
+                break;
+            case "player 2":
+                m_ObjectiveTracker.SetFlagHolder(FlagHolder.p2);
+                break;
+            case "player 3":
+                m_ObjectiveTracker.SetFlagHolder(FlagHolder.p3);
+                break;
+            case "player 4":
+                m_ObjectiveTracker.SetFlagHolder(FlagHolder.p4);
+                break;
+            default:
+                Debug.Log("ERROR IN Score.cs: player not set");
+                Application.Quit();
+                break;
+        }
+    }
+
+    public void lose_flag()
     {
+        Flag.enabled = false;
+        hasFlag = false;
+        m_ObjectiveTracker.SetFlagHolder(FlagHolder.none);
+    }
+
+    private void add_score(int amt) {
         current_score += amt;
         ScoreBar.fillAmount = current_score / (float)m_ScoreToWin;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        string temp = collision.gameObject.tag;
+        if (temp == "Player" || temp == "Player2" || temp == "Player3" || temp == "Player4") {
+            Debug.Log("STEAL?");
+            if (collision.relativeVelocity.magnitude > 3f) {
+                Debug.Log("STEAL!");
+                score other_score = collision.gameObject.GetComponent<score>();
+                if (other_score.DoesUserHaveFlag()) {
+                    get_flag();
+                    other_score.lose_flag();
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -58,39 +103,14 @@ public class Score : MonoBehaviour
         if (other.tag == "Flag")
         {
             other.gameObject.SetActive(false);
-            Flag.enabled = true;
-            hasFlag = true;
-
-            switch (me)
-            {
-                case "player 1":
-                    m_ObjectiveTracker.SetFlagHolder(FlagHolder.p1);
-                    break;
-                case "player 2":
-                    m_ObjectiveTracker.SetFlagHolder(FlagHolder.p2);
-                    break;
-                case "player 3":
-                    m_ObjectiveTracker.SetFlagHolder(FlagHolder.p3);
-                    break;
-                case "player 4":
-                    m_ObjectiveTracker.SetFlagHolder(FlagHolder.p4);
-                    break;
-                default:
-                    Debug.Log("ERROR IN Score.cs: player not set");
-                    Application.Quit();
-                    break;
-            }
+            get_flag();
         }
-        
         if (other.tag == "FireRing" && hasFlag)
         {
+            lose_flag();
             Rings.Switch();
-
             add_score(10);
-
             manager.UpdateScore();
-
-            m_ObjectiveTracker.SetFlagHolder(FlagHolder.none);
         }
     }
 
@@ -101,11 +121,8 @@ public class Score : MonoBehaviour
 
     public void DropFlag(bool reset) 
     {
-        Flag.enabled = false;
-        if (hasFlag) 
-        {
-            hasFlag = false;
-            m_ObjectiveTracker.SetFlagHolder(FlagHolder.none);
+        if (hasFlag) {
+            lose_flag();
             if (reset)
             {
                 Instantiate(flag_object, Flags.Get_Active().position, Flags.Get_Active().rotation);
