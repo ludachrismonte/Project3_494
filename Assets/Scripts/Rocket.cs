@@ -13,14 +13,12 @@ public class Rocket : MonoBehaviour
     private float timerSinceLaunch;
     private Transform target;
 
-    // Use this for initialization
     void Start()
     {
         timerSinceLaunch = 0;
         objectLifeTimeValue = 100;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         transform.LookAt(target);
@@ -48,7 +46,8 @@ public class Rocket : MonoBehaviour
         }
     }
 
-    public void SetTarget(GameObject t) {
+    public void SetTarget(GameObject t) 
+    {
         target = t.transform;
     }
 }
