@@ -564,14 +564,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f2b1a06f392654298ae09c0d7d6822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheels: {fileID: 446051390}
-  bodies: {fileID: 611341251}
-  engines: {fileID: 318824218}
-  rockets: {fileID: 1308884475}
-  ctf: {fileID: 151452616}
-  Left: {fileID: 1426868593}
-  Right: {fileID: 2079642965}
-  UIObjects: {fileID: 1907145135}
 --- !u!4 &15267160
 Transform:
   m_ObjectHideFlags: 0
@@ -34914,14 +34906,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f2b1a06f392654298ae09c0d7d6822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheels: {fileID: 1666788188}
-  bodies: {fileID: 1246289680}
-  engines: {fileID: 999646837}
-  rockets: {fileID: 1114201858}
-  ctf: {fileID: 521586112}
-  Left: {fileID: 276576774}
-  Right: {fileID: 1470485535}
-  UIObjects: {fileID: 1907145135}
 --- !u!4 &717157261
 Transform:
   m_ObjectHideFlags: 0
@@ -36998,6 +36982,11 @@ Prefab:
       propertyPath: text
       value: 
       objectReference: {fileID: 316246030}
+    - target: {fileID: 114966960486122618, guid: b97a02ba666a344df93584bf126619ac,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b97a02ba666a344df93584bf126619ac, type: 2}
   m_IsPrefabAsset: 0
@@ -76808,11 +76797,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4567077183915698, guid: 64fd6da5ef059324a91a0bc4f37362a7,
     type: 2}
   m_PrefabInternal: {fileID: 1898863731}
---- !u!1 &1907145135 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1125872229513844, guid: 0840ae79933e14d159f2d58c3750550a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1972108886}
 --- !u!1001 &1908500825
 Prefab:
   m_ObjectHideFlags: 0
@@ -83758,14 +83742,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f2b1a06f392654298ae09c0d7d6822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheels: {fileID: 869861336}
-  bodies: {fileID: 187412107}
-  engines: {fileID: 447146525}
-  rockets: {fileID: 1515347755}
-  ctf: {fileID: 2128134740}
-  Left: {fileID: 822350618}
-  Right: {fileID: 1566812903}
-  UIObjects: {fileID: 1907145135}
 --- !u!4 &2009754762
 Transform:
   m_ObjectHideFlags: 0
@@ -84156,14 +84132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f2b1a06f392654298ae09c0d7d6822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheels: {fileID: 2109116853}
-  bodies: {fileID: 1700768928}
-  engines: {fileID: 1707179551}
-  rockets: {fileID: 604103020}
-  ctf: {fileID: 695607534}
-  Left: {fileID: 1205401800}
-  Right: {fileID: 1393705594}
-  UIObjects: {fileID: 1907145135}
 --- !u!4 &2022616724
 Transform:
   m_ObjectHideFlags: 0
@@ -85220,14 +85188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f2b1a06f392654298ae09c0d7d6822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheels: {fileID: 1356532263}
-  bodies: {fileID: 1150850965}
-  engines: {fileID: 1598726690}
-  rockets: {fileID: 1679303177}
-  ctf: {fileID: 847563379}
-  Left: {fileID: 447758122}
-  Right: {fileID: 654544206}
-  UIObjects: {fileID: 1907145135}
 --- !u!4 &2053733258
 Transform:
   m_ObjectHideFlags: 0
