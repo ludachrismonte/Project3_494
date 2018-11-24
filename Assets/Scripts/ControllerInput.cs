@@ -75,7 +75,7 @@ public class ControllerInput : MonoBehaviour
             {
                 if (!Mathf.Approximately(0.0f, horizInput))
                 {
-                    m_Rigidbody.AddRelativeTorque(Vector3.back * horizInput * torque);
+                    m_Rigidbody.AddRelativeTorque(Vector3.up * horizInput * torque);
                 }
                 if (!Mathf.Approximately(0.0f, vertInput))
                 {
