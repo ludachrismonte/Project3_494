@@ -58,6 +58,30 @@ public class GameManager : MonoBehaviour
 
         foreach (Text text in m_Placements)
             text.text = "#1";
+
+        StartCoroutine(GameStart());
+    }
+
+    private IEnumerator GameStart()
+    {
+        player1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        player2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        player3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        player4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
+        win_text.text = "ready...";
+        yield return new WaitForSeconds(2);
+        win_text.text = "set...";
+        yield return new WaitForSeconds(2);
+        win_text.text = "go!";
+
+        player1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        player2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        player3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        player4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+
+        yield return new WaitForSeconds(2);
+        win_text.text = "";
     }
 
     private IEnumerator FadeIn() 
