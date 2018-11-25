@@ -93,10 +93,12 @@ public class Score : MonoBehaviour
         string temp = collision.gameObject.tag;
         if (temp == "Player" || temp == "Player2" || temp == "Player3" || temp == "Player4") {
             Debug.Log("STEAL?");
-            if (collision.relativeVelocity.magnitude > 3f) {
+            if (collision.relativeVelocity.magnitude > 3f) 
+            {
                 Debug.Log("STEAL!");
                 Score other_score = collision.gameObject.GetComponent<Score>();
-                if (other_score.DoesUserHaveFlag()) {
+                if (other_score.DoesUserHaveFlag()) 
+                {
                     get_flag();
                     other_score.lose_flag();
                 }
