@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum WeaponType { rocket, landmine, none };
+
 public class WeaponManager : MonoBehaviour 
 {
     public GameObject m_LeftRocket = null;
@@ -15,8 +17,7 @@ public class WeaponManager : MonoBehaviour
     public GameObject m_CarLandmine;
     public GameObject m_LandminePrefab;
 
-    private enum WeaponType { rocket, landmine, none };
-    
+    private RocketTargeter m_RocketTargeter;
     private bool m_HasTwoRockets = false;
     private GameObject m_RocketTarget;
     private WeaponType m_CurrentWeapon = WeaponType.none;
@@ -32,6 +33,8 @@ public class WeaponManager : MonoBehaviour
             m_TargetingText.text = "";
         }
 
+        m_RocketTargeter = GetComponent<RocketTargeter>();
+
         m_RightRocket.SetActive(false);
         m_LeftRocket.SetActive(false);
         m_RocketShooter.GetComponent<MeshRenderer>().enabled = false;
@@ -45,7 +48,7 @@ public class WeaponManager : MonoBehaviour
     {
         if (m_CurrentWeapon == WeaponType.rocket) 
         {
-            m_RocketTarget = GetComponent<ControllerInput>().GetTargeted();
+            m_RocketTarget = m_RocketTargeter.GetTarget();
             if (m_RocketTarget != null)
             {
                 m_RocketShooter.transform.LookAt(m_RocketTarget.transform);
@@ -177,4 +180,10 @@ public class WeaponManager : MonoBehaviour
         yield return new WaitForSeconds(4);
         m_CarLandmine.SetActive(false);
     }
+
+    public WeaponType GetCurrentWeapon()
+    {
+        return m_CurrentWeapon;
+    }
+
 }

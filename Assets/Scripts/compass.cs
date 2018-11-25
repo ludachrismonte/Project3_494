@@ -71,6 +71,7 @@ public class Compass : MonoBehaviour {
         {
             float left = Vector3.Distance(left_loc.position, img.transform.position);
             float right = Vector3.Distance(right_loc.position, img.transform.position);
+
             img.transform.position = left < right ? left_loc.position : right_loc.position;
         }
     }

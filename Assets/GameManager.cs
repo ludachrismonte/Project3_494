@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+public enum PlayerNumber { one, two, three, four };
+
 public class GameManager : MonoBehaviour 
 {
     public static GameManager instance;
