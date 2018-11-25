@@ -3034,7 +3034,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LeftRocket: {fileID: 1457528776527918}
   m_RightRocket: {fileID: 1842668397837748}
-  m_Targeter: {fileID: 0}
   m_RocketShooter: {fileID: 1040794646442320}
   m_RocketPrefab: {fileID: 1376979691465780, guid: f218cd1c6cab35746b51fe6353f5c803,
     type: 2}
@@ -3065,7 +3064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SecondsToRespawnPickup: 30
-  m_CarBodyLevel: 3
+  m_CarBodyLevel: 1
   m_TireLevel: 1
   m_EngineLevel: 1
   m_Speedometers:
@@ -3110,7 +3109,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 1
-  targeter: {fileID: 0}
 --- !u!114 &114906380051670286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3133,6 +3131,7 @@ MonoBehaviour:
   m_ExplosionPrefab: {fileID: 1993916257408734, guid: 920d1770727e2427282a301ff117a0ce,
     type: 2}
   m_TestDeath: 0
+  m_PlayerMainText: {fileID: 0}
 --- !u!114 &114929983570558052
 MonoBehaviour:
   m_ObjectHideFlags: 1

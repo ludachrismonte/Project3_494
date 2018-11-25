@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     public GameObject[] m_CarBodyLevel;
     public GameObject m_ExplosionPrefab;
     public bool m_TestDeath = false;
+    public Text m_PlayerMainText;
 
     private float m_Health;
     private GameObject m_CurrentCarBody;
@@ -17,13 +18,16 @@ public class Health : MonoBehaviour
     private RespawnReset respawnReset;
     private bool invincible = false;
     private Score FlagMgr;
+    private Rigidbody m_Rigidbody;
 
     private void Awake()
     {
         FlagMgr = GetComponent<Score>();
         m_PlayerPickup = GetComponent<PlayerPickup>();
-        m_CurrentCarBody = m_CarBodyLevel[0];
+        m_Rigidbody = GetComponent<Rigidbody>();
         respawnReset = GetComponent<RespawnReset>();
+
+        m_CurrentCarBody = m_CarBodyLevel[(int)m_PlayerPickup.m_CarBodyLevel - 1];
     }
 
     private void Update()
@@ -66,7 +70,6 @@ public class Health : MonoBehaviour
             {
                 if (transform.position.y > 2.5)
                 {
-                    gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
                     FlagMgr.DropFlag(false);
                 }
                 else
@@ -74,10 +77,7 @@ public class Health : MonoBehaviour
                     FlagMgr.DropFlag(true);
                 }
                 gameObject.GetComponent<PlayerPickup>().Respawn();
-                Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
-                Instantiate(m_ExplosionPrefab, transform.position + (transform.forward * 2), Quaternion.identity);
-                Instantiate(m_ExplosionPrefab, transform.position - (transform.forward * 2), Quaternion.identity);
-                StartCoroutine(Die(gameObject));
+                StartCoroutine(Die());
             }
             else if (m_Health <= 10)
             {
@@ -118,13 +118,20 @@ public class Health : MonoBehaviour
         }
     }
 
-    private IEnumerator Die(GameObject player)
+    private IEnumerator Die()
     {
-        //player.GetComponent<ControllerInput>().enabled = false;
-        player.transform.Find("SkyCar").gameObject.SetActive(false);
-        player.transform.Find("Arrow").gameObject.SetActive(false);
+        Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
+        Instantiate(m_ExplosionPrefab, transform.position + (transform.forward * 2), Quaternion.identity);
+        Instantiate(m_ExplosionPrefab, transform.position - (transform.forward * 2), Quaternion.identity);
+
+        transform.Find("SkyCar").gameObject.SetActive(false);
+
         invincible = true;
+        m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        m_PlayerMainText.text = "knocked out!";
         yield return new WaitForSeconds(2f);
+        m_PlayerMainText.text = "";
+        m_Rigidbody.constraints = RigidbodyConstraints.None;
         respawnReset.Respawn(0);
         invincible = false;
     }

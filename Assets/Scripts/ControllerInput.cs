@@ -6,7 +6,6 @@ using InControl;
 public class ControllerInput : MonoBehaviour
 {
     public int playerNum;
-    public GameObject targeter = null;
 
     private readonly float torque = 15000.0f;
 
@@ -34,7 +33,6 @@ public class ControllerInput : MonoBehaviour
         player_three = GameObject.FindGameObjectWithTag("Player3").transform;
         player_four = GameObject.FindGameObjectWithTag("Player4").transform;
         target_loc = -1;
-        targeter.SetActive(false);
         offset = new Vector3(0, 5, 0);
 
         m_Collider = GetComponent<Collider>();
