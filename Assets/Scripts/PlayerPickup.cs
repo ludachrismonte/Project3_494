@@ -168,6 +168,8 @@ public class PlayerPickup : MonoBehaviour
 
     public void Respawn()
     {
+        m_WeaponManager.UnEquipRockets();
+        m_WeaponManager.UnequipLandmine();
         GameObject shield = transform.Find("Shield").gameObject;
         shield.SetActive(false);
 

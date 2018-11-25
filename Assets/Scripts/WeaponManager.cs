@@ -84,10 +84,15 @@ public class WeaponManager : MonoBehaviour
         {
             m_CurrentWeapon = WeaponType.rocket;
             StartCoroutine(RaiseRocketShooter());
+        }
+    }
 
-            m_HasTwoRockets = true;
-            m_LeftRocket.SetActive(true);
-            m_RightRocket.SetActive(true);
+    public void UnEquipRockets()
+    {
+        if (m_CurrentWeapon == WeaponType.rocket)
+        {
+            m_CurrentWeapon = WeaponType.none;
+            StartCoroutine(LowerRocketShooter());
         }
     }
 
@@ -97,6 +102,15 @@ public class WeaponManager : MonoBehaviour
         {
             m_CurrentWeapon = WeaponType.landmine;
             m_CarLandmine.SetActive(true);
+        }
+    }
+
+    public void UnequipLandmine()
+    {
+        if (m_CurrentWeapon == WeaponType.landmine)
+        {
+            m_CurrentWeapon = WeaponType.none;
+            m_CarLandmine.SetActive(false);
         }
     }
 
@@ -138,6 +152,10 @@ public class WeaponManager : MonoBehaviour
 
     private IEnumerator RaiseRocketShooter() 
     {
+        m_HasTwoRockets = true;
+        m_LeftRocket.SetActive(true);
+        m_RightRocket.SetActive(true);
+
         m_RocketShooter.GetComponent<MeshRenderer>().enabled = true;
         for (float i = .6f; i < 1.5f; i += .05f) 
         {
@@ -148,6 +166,10 @@ public class WeaponManager : MonoBehaviour
 
     private IEnumerator LowerRocketShooter()
     {
+        m_HasTwoRockets = false;
+        m_LeftRocket.SetActive(false);
+        m_RightRocket.SetActive(false);
+
         yield return new WaitForSeconds(.3f);
         for (float i = .6f; i < 1.5f; i += .05f)
         {
