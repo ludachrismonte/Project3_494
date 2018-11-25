@@ -29,26 +29,36 @@ public class Compass : MonoBehaviour {
     private void Start()
     {
         manager = GameManager.instance.GetComponent<ObjectiveTracker>();
+
         left_loc = UI_Folder.transform.Find("Left").transform;
         left_bound = left_loc.position.x;
         right_loc = UI_Folder.transform.Find("Right").transform;
         right_bound = right_loc.position.x;
+
         player1 = GameObject.FindWithTag("Player").transform;
         player2 = GameObject.FindWithTag("Player2").transform;
         player3 = GameObject.FindWithTag("Player3").transform;
         player4 = GameObject.FindWithTag("Player4").transform;
+
         i1 = UI_Folder.transform.Find("i1").GetComponent<Image>();
         i2 = UI_Folder.transform.Find("i2").GetComponent<Image>();
         i3 = UI_Folder.transform.Find("i3").GetComponent<Image>();
         i4 = UI_Folder.transform.Find("i4").GetComponent<Image>();
+
         flag = UI_Folder.transform.Find("flag").GetComponent<Image>();
-        if (my_num == 1) { i1.gameObject.SetActive(false); }
-        if (my_num == 2) { i2.gameObject.SetActive(false); }
-        if (my_num == 3) { i3.gameObject.SetActive(false); }
-        if (my_num == 4) { i4.gameObject.SetActive(false); }
+
+        if (my_num == 1) 
+            i1.gameObject.SetActive(false); 
+        if (my_num == 2) 
+            i2.gameObject.SetActive(false); 
+        if (my_num == 3) 
+            i3.gameObject.SetActive(false); 
+        if (my_num == 4) 
+            i4.gameObject.SetActive(false); 
     }
 
-    private void track(Image img, Transform player) {
+    private void Track(Image img, Transform player) 
+    {
         Vector3 pos = cam.WorldToScreenPoint(player.transform.position);
         Vector2 targetDir = new Vector2(player.position.x - cam.transform.position.x, player.position.z - cam.transform.position.z);
         Vector2 newForward = new Vector2(cam.transform.forward.x, cam.transform.forward.z);
@@ -61,11 +71,7 @@ public class Compass : MonoBehaviour {
         {
             float left = Vector3.Distance(left_loc.position, img.transform.position);
             float right = Vector3.Distance(right_loc.position, img.transform.position);
-            if (left < right)
-            {
-                img.transform.position = left_loc.position;
-            }
-            else img.transform.position = right_loc.position;
+            img.transform.position = left < right ? left_loc.position : right_loc.position;
         }
     }
 
@@ -76,34 +82,42 @@ public class Compass : MonoBehaviour {
         i3.enabled = true;
         i4.enabled = true;
         flag.enabled = false;
-        if (my_num != 1 && manager.getFlagHolder() == FlagHolder.p1) {
+        if (my_num != 1 && manager.getFlagHolder() == FlagHolder.p1) 
+        {
             flag.enabled = true;
             i1.enabled = false;
             flag.color = Color.cyan;
-            track(flag, player1);
+            Track(flag, player1);
         }
-        if (my_num != 2 && manager.getFlagHolder() == FlagHolder.p2) {
+        if (my_num != 2 && manager.getFlagHolder() == FlagHolder.p2) 
+        {
             flag.enabled = true;
             i2.enabled = false;
             flag.color = Color.red;
-            track(flag, player2);
+            Track(flag, player2);
         }
-        if (my_num != 3 && manager.getFlagHolder() == FlagHolder.p3) {
+        if (my_num != 3 && manager.getFlagHolder() == FlagHolder.p3) 
+        {
             flag.enabled = true;
             i3.enabled = false;
             flag.color = Color.green;
-            track(flag, player3);
+            Track(flag, player3);
         }
-        if (my_num != 4 && manager.getFlagHolder() == FlagHolder.p4) {
+        if (my_num != 4 && manager.getFlagHolder() == FlagHolder.p4) 
+        {
             flag.enabled = true;
             i4.enabled = false;
             flag.color = Color.yellow;
-            track(flag, player4);
+            Track(flag, player4);
         }
 
-        if (my_num != 1) { track(i1, player1); }
-        if (my_num != 2) { track(i2, player2); }
-        if (my_num != 3) { track(i3, player3); }
-        if (my_num != 4) { track(i4, player4); }
+        if (my_num != 1) 
+            Track(i1, player1); 
+        if (my_num != 2) 
+        Track(i2, player2); 
+        if (my_num != 3) 
+            Track(i3, player3);
+        if (my_num != 4) 
+            Track(i4, player4);
     }
 }

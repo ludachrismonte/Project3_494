@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 114130730956903900}
   - component: {fileID: 114023660671437594}
   - component: {fileID: 114726609255222652}
-  - component: {fileID: 114184613384051484}
+  - component: {fileID: 114314529573887906}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -3182,20 +3182,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 1761754582015672}
---- !u!114 &114184613384051484
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1704907735798148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 085058f019a13e94489661b44d1e1e1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_Folder: {fileID: 0}
-  my_num: 1
-  cam: {fileID: 20910232946279752}
 --- !u!114 &114196213451039104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3222,6 +3208,20 @@ MonoBehaviour:
   rotationThreshold: 1
   cameraStickiness: 10
   cameraRotationSpeed: 5
+--- !u!114 &114314529573887906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1704907735798148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c516e3e86b04491688998353915edab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Folder: {fileID: 0}
+  my_num: 1
+  cam: {fileID: 20910232946279752}
 --- !u!114 &114352216780038664
 MonoBehaviour:
   m_ObjectHideFlags: 1
