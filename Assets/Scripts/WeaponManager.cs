@@ -9,7 +9,6 @@ public class WeaponManager : MonoBehaviour
 {
     public GameObject m_LeftRocket = null;
     public GameObject m_RightRocket = null;
-    public MeshRenderer m_Targeter = null;
     public GameObject m_RocketShooter;
     public GameObject m_RocketPrefab;
     public Text m_TargetingText = null;
@@ -38,10 +37,6 @@ public class WeaponManager : MonoBehaviour
         m_RightRocket.SetActive(false);
         m_LeftRocket.SetActive(false);
         m_RocketShooter.GetComponent<MeshRenderer>().enabled = false;
-        if (m_Targeter) 
-        {
-            m_Targeter.enabled = false; 
-        }
     }
 
     private void Update()
@@ -144,12 +139,6 @@ public class WeaponManager : MonoBehaviour
     private IEnumerator RaiseRocketShooter() 
     {
         m_RocketShooter.GetComponent<MeshRenderer>().enabled = true;
-
-        if (m_Targeter) 
-        {
-            m_Targeter.enabled = true;
-        }
-
         for (float i = .6f; i < 1.5f; i += .05f) 
         {
             m_RocketShooter.transform.localPosition += new Vector3(0, .05f, 0);
@@ -159,10 +148,6 @@ public class WeaponManager : MonoBehaviour
 
     private IEnumerator LowerRocketShooter()
     {
-        if (m_Targeter)
-        {
-            m_Targeter.enabled = false;
-        }
         yield return new WaitForSeconds(.3f);
         for (float i = .6f; i < 1.5f; i += .05f)
         {

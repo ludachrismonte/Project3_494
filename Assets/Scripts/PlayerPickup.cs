@@ -71,9 +71,7 @@ public class PlayerPickup : MonoBehaviour
                 break;
             case "RocketPickup":
                 m_WeaponManager.EquipRocket();
-                Destroy(other.transform.parent.transform.parent.gameObject);
-                RocketDrops rocketDrops = GameObject.Find("Manager").GetComponent<RocketDrops>();
-                rocketDrops.RocketPickedUp();
+                Destroy(other.gameObject);
                 break;
             case "ShieldPickup":
                 transform.Find("Shield").gameObject.SetActive(true);

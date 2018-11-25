@@ -34,10 +34,9 @@ public class DropBox : MonoBehaviour
         }
     }
 
-    private IEnumerator Destroy() {
+    private IEnumerator Destroy() 
+    {
         yield return new WaitForSeconds(5);
         Destroy(gameObject);
     }
-
-
 }
