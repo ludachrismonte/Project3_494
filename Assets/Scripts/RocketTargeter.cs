@@ -30,10 +30,10 @@ public class RocketTargeter : MonoBehaviour
                 Vector3 targetDirection = otherPlayer.position - transform.position;
                 float angle = Mathf.Abs(Vector3.Angle(targetDirection, transform.forward));
 
-                if (angle < 60)
+                if (angle < 45)
                 {
                     float distToOtherPlayer = Vector3.Distance(transform.position, otherPlayer.position);
-                    if (distToOtherPlayer >= m_TargetingRange &&
+                    if (distToOtherPlayer <= m_TargetingRange &&
                         (Mathf.Approximately(closestDistToTarget, -1) || 
                          distToOtherPlayer < closestDistToTarget))
                     {

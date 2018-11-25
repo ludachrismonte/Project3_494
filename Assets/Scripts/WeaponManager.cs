@@ -55,25 +55,30 @@ public class WeaponManager : MonoBehaviour
                 switch (m_RocketTarget.tag)
                 {
                     case "Player":
-                        m_TargetingText.text = "targeting: blue";
+                        m_TargetingText.text = "rocket lock: blue";
                         m_TargetingText.color = Color.blue;
                         break;
                     case "Player2":
-                        m_TargetingText.text = "targeting: red";
+                        m_TargetingText.text = "rocket lock: red";
                         m_TargetingText.color = Color.red;
                         break;
                     case "Player3":
-                        m_TargetingText.text = "targeting: green";
+                        m_TargetingText.text = "rocket lock: green";
                         m_TargetingText.color = Color.green;
                         break;
                     case "Player4":
-                        m_TargetingText.text = "targeting: yellow";
+                        m_TargetingText.text = "rocket lock: yellow";
                         m_TargetingText.color = Color.yellow;
                         break;
                     default:
                         Debug.LogError("ERROR in WeaponManager.cs: invalid target.");
                         break;
                 }
+            }
+            else
+            {
+                m_TargetingText.text = "no rocket lock";
+                m_TargetingText.color = Color.white;
             }
         }
     }
