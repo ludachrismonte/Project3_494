@@ -67,19 +67,6 @@ public class GameManager : MonoBehaviour
             text.text = "#1";
     }
 
-    private void Update()
-    {
-        //switch (GameState)
-        //{
-        //    case GameStateEnum.tutorial:
-        //        break;
-        //    case GameStateEnum.gameplay:
-        //        break;
-        //    default:
-        //        break;
-        //}
-    }
-
     private IEnumerator FadeIn() 
     {
         for (float i = 2f; i > 0f; i -= Time.deltaTime)
@@ -159,14 +146,5 @@ public class GameManager : MonoBehaviour
             --place;
         }
         scores.Clear();
-    }
-
-    public void PlayerReady()
-    {
-        ++m_PlayersReady;
-        if (m_PlayersReady == 4)
-        {
-            GameState = GameStateEnum.gameplay;
-        }
     }
 }

@@ -130,9 +130,9 @@ public class PlayerPickup : MonoBehaviour
                 Destroy(other.gameObject);
                 break;
             case "TutFireRing":
-                m_PlayerMainText.text = "ready!";
-                m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-                GameManager.instance.PlayerReady();
+                //m_PlayerMainText.text = "ready!";
+                //m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+                //GameManager.instance.PlayerReady();
                 break;
         }
     }
