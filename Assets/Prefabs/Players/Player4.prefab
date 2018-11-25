@@ -792,12 +792,13 @@ GameObject:
   - component: {fileID: 114620809478219826}
   - component: {fileID: 114474039314134100}
   - component: {fileID: 114897136621729664}
-  - component: {fileID: 114445034058393760}
   - component: {fileID: 114973973328378130}
   - component: {fileID: 136957599578121134}
   - component: {fileID: 65829203355837092}
   - component: {fileID: 114526206658664052}
   - component: {fileID: 114084945867477202}
+  - component: {fileID: 114090840921117192}
+  - component: {fileID: 114030726189950900}
   m_Layer: 0
   m_Name: Player4
   m_TagString: Player4
@@ -3060,6 +3061,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 1730299575131854}
+--- !u!114 &114030726189950900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1990267783747410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085058f019a13e94489661b44d1e1e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Folder: {fileID: 0}
+  my_num: 4
+  cam: {fileID: 20244215437470794}
 --- !u!114 &114084945867477202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3075,6 +3090,22 @@ MonoBehaviour:
   cameraParent: {fileID: 1165613880166122}
   cameraMain: {fileID: 1203215388947046}
   stuck: 0
+--- !u!114 &114090840921117192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1990267783747410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b427040b05063454b936e72fa721caec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  me: player 4
+  ScoreBar: {fileID: 0}
+  flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
+    type: 2}
+  m_ObjectiveTracker: {fileID: 0}
 --- !u!114 &114248826323685114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3172,22 +3203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96468c245ae8e0d4f8f1c7a7b8b0542e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114445034058393760
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1990267783747410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b427040b05063454b936e72fa721caec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  me: player 4
-  ScoreBar: {fileID: 0}
-  flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
-    type: 2}
-  m_ObjectiveTracker: {fileID: 0}
 --- !u!114 &114474039314134100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3250,6 +3265,7 @@ MonoBehaviour:
   m_TireLevel: 1
   m_EngineLevel: 1
   UIObjects: {fileID: 0}
+  m_TutorialDoor: {fileID: 0}
 --- !u!114 &114763655085565860
 MonoBehaviour:
   m_ObjectHideFlags: 1

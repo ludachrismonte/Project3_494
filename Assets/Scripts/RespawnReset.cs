@@ -54,12 +54,10 @@ public class RespawnReset : MonoBehaviour
     RespawnStruct respawnStruct;
     RespawnStruct resetStruct;
     RespawnStruct resetStruct2;
-    //RespawnStruct resetStruct;
+
     void Awake()
     {
         carRb = GetComponent<Rigidbody>();
-        //cameraParent = this.transform.Find("CameraParent").gameObject;
-        //cameraMain = this.transform.Find("MainCamera").gameObject;
         respawnStruct = new RespawnStruct(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
         resetStruct = new RespawnStruct(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
         resetStruct2 = new RespawnStruct(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);

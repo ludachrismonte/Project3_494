@@ -16,11 +16,11 @@ public class Health : MonoBehaviour
     private PlayerPickup m_PlayerPickup;
     private RespawnReset respawnReset;
     private bool invincible = false;
-    private score FlagMgr;
+    private Score FlagMgr;
 
     private void Awake()
     {
-        FlagMgr = GetComponent<score>();
+        FlagMgr = GetComponent<Score>();
         m_PlayerPickup = GetComponent<PlayerPickup>();
         m_CurrentCarBody = m_CarBodyLevel[0];
         respawnReset = GetComponent<RespawnReset>();
@@ -127,14 +127,5 @@ public class Health : MonoBehaviour
         yield return new WaitForSeconds(2f);
         respawnReset.Respawn(0);
         invincible = false;
-        //for (int i = 0; i < 4; i++)
-        //{
-        //    car.SetActive(true);
-        //    yield return new WaitForSeconds(.15f);
-        //    car.SetActive(false);
-        //    yield return new WaitForSeconds(.15f);
-        //}
-        //car.SetActive(true);
-        //player.GetComponent<ControllerInput>().enabled = true;
     }
 }

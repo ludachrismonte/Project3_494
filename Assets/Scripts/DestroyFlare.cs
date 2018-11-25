@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyFlare : MonoBehaviour {
-
+public class DestroyFlare : MonoBehaviour 
+{
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "DropBox") {
+        if (collision.gameObject.tag == "DropBox") 
+        {
             Destroy(gameObject);
         }
     }

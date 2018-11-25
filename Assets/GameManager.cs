@@ -4,55 +4,84 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+public enum GameStateEnum { tutorial, gameplay, endGame };
 
 public class GameManager : MonoBehaviour 
 {
+    public static GameManager instance;
     public GameObject UI;
+    public Text[] m_Placements = new Text[4];
 
+    public GameStateEnum GameState { get; set; } 
+    
     private Text win_text;
     private GameObject win_box;
     private Image black;
-
-    public Text[] m_Placements = new Text[4];
 
     private GameObject player1;
     private GameObject player2;
     private GameObject player3;
     private GameObject player4;
 
-    private score m_P1Score;
-    private score m_P2Score;
-    private score m_P3Score;
-    private score m_P4Score;
+    private Score m_P1Score;
+    private Score m_P2Score;
+    private Score m_P3Score;
+    private Score m_P4Score;
 
-    private float timer;
-    private bool m_GameOver = false;
+    private int m_PlayersReady;
+    
+	private void Awake () 
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
-	void Awake () {
-        win_text = UI.transform.Find("VictoryText").GetComponent<Text>();
+    private void Start()
+    {
+        GameState = GameStateEnum.tutorial;
+        m_PlayersReady = 0;
+
+        win_text = UI.transform.Find("MainText").GetComponent<Text>();
         win_box = UI.transform.Find("WinBox").gameObject;
         black = UI.transform.Find("black").GetComponent<Image>();
         black.color = new Color(black.color.r, black.color.g, black.color.b, 1f);
         StartCoroutine(FadeIn());
 
-        timer = 0;
         player1 = GameObject.FindGameObjectWithTag("Player");
         player2 = GameObject.FindGameObjectWithTag("Player2");
         player3 = GameObject.FindGameObjectWithTag("Player3");
         player4 = GameObject.FindGameObjectWithTag("Player4");
 
-        m_P1Score = player1.GetComponent<score>();
-        m_P2Score = player2.GetComponent<score>();
-        m_P3Score = player3.GetComponent<score>();
-        m_P4Score = player4.GetComponent<score>();
+        m_P1Score = player1.GetComponent<Score>();
+        m_P2Score = player2.GetComponent<Score>();
+        m_P3Score = player3.GetComponent<Score>(); 
+        m_P4Score = player4.GetComponent<Score>();
 
-        m_Placements[0].text = "#1";
-        m_Placements[1].text = "#1";
-        m_Placements[2].text = "#1";
-        m_Placements[3].text = "#1";
+        foreach (Text text in m_Placements)
+            text.text = "#1";
     }
 
-    private IEnumerator FadeIn() {
+    private void Update()
+    {
+        //switch (GameState)
+        //{
+        //    case GameStateEnum.tutorial:
+        //        break;
+        //    case GameStateEnum.gameplay:
+        //        break;
+        //    default:
+        //        break;
+        //}
+    }
+
+    private IEnumerator FadeIn() 
+    {
         for (float i = 2f; i > 0f; i -= Time.deltaTime)
         {
             black.color = new Color(black.color.r, black.color.g, black.color.b, i/2);
@@ -62,7 +91,6 @@ public class GameManager : MonoBehaviour
 
     public void Win(string s) 
     {
-        m_GameOver = true;
         Time.timeScale = .5f;
         win_box.SetActive(true);
         win_text.text = s + " wins!";
@@ -107,10 +135,38 @@ public class GameManager : MonoBehaviour
         {
             foreach (int player in entry.Value)
             {
+                switch (place)
+                {
+                    case 1:
+                        m_Placements[player - 1].color = Color.yellow;
+                        break;
+                    case 2:
+                        m_Placements[player - 1].color = Color.magenta;
+                        break;
+                    case 3:
+                        m_Placements[player - 1].color = Color.blue;
+                        break;
+                    case 4:
+                        m_Placements[player - 1].color = Color.green;
+                        break;
+                    default:
+                        Debug.LogError("ERROR: Placement is out of range [1,4].");
+                        Application.Quit();
+                        break;
+                }
                 m_Placements[player - 1].text = "#" + place;
             }
             --place;
         }
         scores.Clear();
+    }
+
+    public void PlayerReady()
+    {
+        ++m_PlayersReady;
+        if (m_PlayersReady == 4)
+        {
+            GameState = GameStateEnum.gameplay;
+        }
     }
 }

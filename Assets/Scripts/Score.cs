@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class score : MonoBehaviour 
+public class Score : MonoBehaviour 
 {
     public string me = "player";
     public Image ScoreBar;
     public GameObject flag_object;
     public ObjectiveTracker m_ObjectiveTracker;
 
-    private int m_ScoreToWin = 60;
+    private readonly int m_ScoreToWin = 60;
     private MeshRenderer Flag = null;
     private int current_score;
     private GameManager manager;
@@ -25,13 +25,13 @@ public class score : MonoBehaviour
         Flag = transform.Find("flag").gameObject.GetComponent<MeshRenderer>();
         Rings = GameObject.FindWithTag("FireRings").GetComponent<RingSwitcher>();
         Flags = GameObject.FindWithTag("Flags").GetComponent<RingSwitcher>();
-        manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        manager = GameManager.instance;
         current_score = 0;
         ScoreBar.fillAmount = 0.0f;
         timer = 0.0f;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (hasFlag) {
             timer += Time.deltaTime;
@@ -89,7 +89,7 @@ public class score : MonoBehaviour
             Debug.Log("STEAL?");
             if (collision.relativeVelocity.magnitude > 3f) {
                 Debug.Log("STEAL!");
-                score other_score = collision.gameObject.GetComponent<score>();
+                Score other_score = collision.gameObject.GetComponent<Score>();
                 if (other_score.DoesUserHaveFlag()) {
                     get_flag();
                     other_score.lose_flag();

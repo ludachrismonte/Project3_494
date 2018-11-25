@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropBox : MonoBehaviour {
-
+public class DropBox : MonoBehaviour 
+{
     public GameObject[] pickups;
 
     private GameObject parachute;
@@ -11,7 +11,8 @@ public class DropBox : MonoBehaviour {
     private GameObject open_crate;
     private bool open;
 
-	void Start () {
+	void Start () 
+    {
         parachute = transform.Find("parachute").gameObject;
         closed_crate = transform.Find("closed_crate").gameObject;
         open_crate = transform.Find("open_crate").gameObject;
@@ -20,13 +21,23 @@ public class DropBox : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!open) {
+        if (!open) 
+        {
             open = true;
             closed_crate.SetActive(false);
             parachute.SetActive(false);
             open_crate.SetActive(true);
+            GetComponent<BoxCollider>().enabled = false;
             int spawn = (int)Random.Range(0, pickups.Length);
             Instantiate(pickups[spawn], open_crate.transform.position, Quaternion.identity);
+            StartCoroutine(Destroy());
         }
     }
+
+    private IEnumerator Destroy() {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
+    }
+
+
 }
