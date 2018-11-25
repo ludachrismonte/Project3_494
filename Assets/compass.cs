@@ -26,9 +26,9 @@ public class compass : MonoBehaviour {
     private Image i4;
     private Image flag;
 
-    private void Awake()
+    private void Start()
     {
-        manager = GameObject.FindWithTag("GameManager").GetComponent<ObjectiveTracker>();
+        manager = GameManager.instance.GetComponent<ObjectiveTracker>();
         left_loc = UI_Folder.transform.Find("Left").transform;
         left_bound = left_loc.position.x;
         right_loc = UI_Folder.transform.Find("Right").transform;

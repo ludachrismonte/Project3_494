@@ -10,41 +10,27 @@ public class PlayerPickup : MonoBehaviour
     public PickupLevelEnum m_CarBodyLevel = PickupLevelEnum.one;
     public PickupLevelEnum m_TireLevel = PickupLevelEnum.one;
     public PickupLevelEnum m_EngineLevel = PickupLevelEnum.one;
-    public GameObject UIObjects;
-
-    public GameObject m_TutorialDoor;
+    public RawImage[] m_Speedometers;
 
     private CarController m_CarController;
     private Health m_CarHealth;
     private Rigidbody m_Rigidbody;
+    private WeaponManager m_WeaponManager;
 
-    private RawImage spedometer_1;
-    private RawImage spedometer_2;
-    private RawImage spedometer_3;
-    private RawImage spedometer_4;
-    private RawImage spedometer_5;
+    private RawImage m_CurrentSpeedometer;
 
     private void Start()
     {
-        if (UIObjects == null)
-        {
-            Debug.LogError("ERROR: UIObjects not set in PlayerPickup.cs");
-        }
-        else if (m_TutorialDoor == null)
-        {
-            Debug.LogError("ERROR: m_TutorialDoor not set in PlayerPickup.cs");
-        }
-
         m_CarController = GetComponent<CarController>();
         m_CarHealth = GetComponent<Health>();
         m_Rigidbody = GetComponent<Rigidbody>();
+        m_WeaponManager = GetComponent<WeaponManager>();
 
-        // TODO: fix this, this is not effiecient... use a public variable array
-        spedometer_1 = UIObjects.transform.Find("spedometer_1").gameObject.GetComponent<RawImage>();
-        spedometer_2 = UIObjects.transform.Find("spedometer_2").gameObject.GetComponent<RawImage>();
-        spedometer_3 = UIObjects.transform.Find("spedometer_3").gameObject.GetComponent<RawImage>();
-        spedometer_4 = UIObjects.transform.Find("spedometer_4").gameObject.GetComponent<RawImage>();
-        spedometer_5 = UIObjects.transform.Find("spedometer_5").gameObject.GetComponent<RawImage>();
+        foreach (RawImage speedometer in m_Speedometers)
+            speedometer.enabled = false;
+
+        m_CurrentSpeedometer = m_Speedometers[0];
+        m_CurrentSpeedometer.enabled = true;
 
         UpdateCarBody();
         UpdateEngine();
@@ -84,7 +70,7 @@ public class PlayerPickup : MonoBehaviour
                 StartCoroutine(WaitToRespawn(other.gameObject));
                 break;
             case "RocketPickup":
-                GetComponent<WeaponManager>().get_rocket();
+                m_WeaponManager.get_rocket();
                 Destroy(other.transform.parent.transform.parent.gameObject);
                 RocketDrops rocketDrops = GameObject.Find("Manager").GetComponent<RocketDrops>();
                 rocketDrops.RocketPickedUp();
@@ -92,10 +78,9 @@ public class PlayerPickup : MonoBehaviour
             case "ShieldPickup":
                 transform.Find("Shield").gameObject.SetActive(true);
                 Destroy(other.gameObject);
-                StartCoroutine(WaitToRespawn(other.gameObject));
                 break;
             case "LandminePickup":
-                GetComponent<WeaponManager>().get_landmine();
+                m_WeaponManager.get_landmine();
                 Destroy(other.gameObject);
                 break;
         }
@@ -125,35 +110,33 @@ public class PlayerPickup : MonoBehaviour
 
     private void UpdateEngine()
     {
-        spedometer_1.enabled = false;
-        spedometer_2.enabled = false;
-        spedometer_3.enabled = false;
-        spedometer_4.enabled = false;
-        spedometer_5.enabled = false;
+        m_CurrentSpeedometer.enabled = false;
 
         switch (m_EngineLevel)
         {
             case PickupLevelEnum.two:
                 m_CarController.MaxSpeed = 75;
-                spedometer_2.enabled = true;
+                m_CurrentSpeedometer = m_Speedometers[1];
                 break;
             case PickupLevelEnum.three:
                 m_CarController.MaxSpeed = 100;
-                spedometer_3.enabled = true;
+                m_CurrentSpeedometer = m_Speedometers[2];
                 break;
             case PickupLevelEnum.four:
                 m_CarController.MaxSpeed = 125;
-                spedometer_4.enabled = true;
+                m_CurrentSpeedometer = m_Speedometers[3];
                 break;
             case PickupLevelEnum.five:
+                m_CurrentSpeedometer = m_Speedometers[4];
                 m_CarController.MaxSpeed = 150;
-                spedometer_5.enabled = true;
                 break;
             default:
                 m_CarController.MaxSpeed = 50;
-                spedometer_1.enabled = true;
+                m_CurrentSpeedometer = m_Speedometers[0];
                 break;
         }
+
+        m_CurrentSpeedometer.enabled = true;
     }
 
     private void UpdateTires()

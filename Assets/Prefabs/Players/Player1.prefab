@@ -3348,8 +3348,12 @@ MonoBehaviour:
   m_CarBodyLevel: 3
   m_TireLevel: 1
   m_EngineLevel: 1
-  UIObjects: {fileID: 0}
-  m_TutorialDoor: {fileID: 0}
+  m_Speedometers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114726609255222652
 MonoBehaviour:
   m_ObjectHideFlags: 1
