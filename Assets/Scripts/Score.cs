@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,9 +23,11 @@ public class Score : MonoBehaviour
 
     private void Start()
     {
+
         Flag = transform.Find("flag").gameObject.GetComponent<MeshRenderer>();
         Rings = GameObject.FindWithTag("FireRings").GetComponent<RingSwitcher>();
         Flags = GameObject.FindWithTag("Flags").GetComponent<RingSwitcher>();
+
         manager = GameManager.instance;
         current_score = 0;
         ScoreBar.fillAmount = 0.0f;
@@ -33,7 +36,8 @@ public class Score : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (hasFlag) {
+        if (hasFlag) 
+        {
             timer += Time.deltaTime;
             if (timer > 1) {
                 timer = 0.0f;
@@ -46,7 +50,8 @@ public class Score : MonoBehaviour
         }
     }
 
-    private void get_flag() {
+    private void get_flag() 
+    {
         Flag.enabled = true;
         hasFlag = true;
         switch (me)
@@ -77,7 +82,8 @@ public class Score : MonoBehaviour
         m_ObjectiveTracker.SetFlagHolder(FlagHolder.none);
     }
 
-    private void add_score(int amt) {
+    private void add_score(int amt) 
+    {
         current_score += amt;
         ScoreBar.fillAmount = current_score / (float)m_ScoreToWin;
     }

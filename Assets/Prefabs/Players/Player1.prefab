@@ -508,12 +508,13 @@ GameObject:
   - component: {fileID: 114722034062054946}
   - component: {fileID: 114038501247139276}
   - component: {fileID: 114580416001665612}
-  - component: {fileID: 114689202586587950}
   - component: {fileID: 114360978835776654}
   - component: {fileID: 136532557307967896}
   - component: {fileID: 65391380093528038}
   - component: {fileID: 114130730956903900}
   - component: {fileID: 114023660671437594}
+  - component: {fileID: 114726609255222652}
+  - component: {fileID: 114184613384051484}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -663,7 +664,6 @@ GameObject:
   - component: {fileID: 4692372992456230}
   - component: {fileID: 20910232946279752}
   - component: {fileID: 124747968797348286}
-  - component: {fileID: 114148611790976144}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3158,20 +3158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87e6ab85be9a9a439f3629f48c11155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114148611790976144
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1830812979631154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abbc21a0701082d499a41b4e107a39b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axisShakeMin: {x: 0, y: 0, z: 0}
-  axisShakeMax: {x: 1, y: 1, z: 1}
-  timeOfShake: 2
 --- !u!114 &114151170103491044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3196,6 +3182,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 1761754582015672}
+--- !u!114 &114184613384051484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1704907735798148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085058f019a13e94489661b44d1e1e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Folder: {fileID: 0}
+  my_num: 1
+  cam: {fileID: 20910232946279752}
 --- !u!114 &114196213451039104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3333,22 +3333,6 @@ MonoBehaviour:
   playerNum: 0
   m_Speed: 100
   targeter: {fileID: 0}
---- !u!114 &114689202586587950
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1704907735798148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b427040b05063454b936e72fa721caec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  me: player 1
-  ScoreBar: {fileID: 0}
-  flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
-    type: 2}
-  m_ObjectiveTracker: {fileID: 0}
 --- !u!114 &114722034062054946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3365,6 +3349,23 @@ MonoBehaviour:
   m_TireLevel: 1
   m_EngineLevel: 1
   UIObjects: {fileID: 0}
+  m_TutorialDoor: {fileID: 0}
+--- !u!114 &114726609255222652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1704907735798148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b427040b05063454b936e72fa721caec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  me: player 1
+  ScoreBar: {fileID: 0}
+  flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
+    type: 2}
+  m_ObjectiveTracker: {fileID: 0}
 --- !u!114 &114728352897736152
 MonoBehaviour:
   m_ObjectHideFlags: 1

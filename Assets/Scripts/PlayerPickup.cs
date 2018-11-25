@@ -24,8 +24,6 @@ public class PlayerPickup : MonoBehaviour
     private RawImage spedometer_4;
     private RawImage spedometer_5;
 
-    private Text m_PlayerMainText;
-
     private void Start()
     {
         if (UIObjects == null)
@@ -47,9 +45,6 @@ public class PlayerPickup : MonoBehaviour
         spedometer_3 = UIObjects.transform.Find("spedometer_3").gameObject.GetComponent<RawImage>();
         spedometer_4 = UIObjects.transform.Find("spedometer_4").gameObject.GetComponent<RawImage>();
         spedometer_5 = UIObjects.transform.Find("spedometer_5").gameObject.GetComponent<RawImage>();
-        m_PlayerMainText = UIObjects.transform.Find("MainText").gameObject.GetComponent<Text>();
-
-        m_PlayerMainText.text = "";
 
         UpdateCarBody();
         UpdateEngine();
@@ -102,37 +97,6 @@ public class PlayerPickup : MonoBehaviour
             case "LandminePickup":
                 GetComponent<WeaponManager>().get_landmine();
                 Destroy(other.gameObject);
-                break;
-            case "TutCarBodyPickup":
-                m_PlayerMainText.text = "car body pickups increase player health!";
-                StartCoroutine(TutorialText());
-                Destroy(other.gameObject);
-                break;
-            case "TutEnginePickup":
-                m_PlayerMainText.text = "engine pickups increase player max speed!";
-                StartCoroutine(TutorialText());
-                Destroy(other.gameObject);
-                break;
-            case "TutTirePickup":
-                m_PlayerMainText.text = "tire pickups increase player traction!";
-                StartCoroutine(TutorialText());
-                Destroy(other.gameObject);
-                break;
-            case "TutFlag":
-                // TODO: fix OpenDoors
-                m_TutorialDoor.SetActive(false);
-                //OpenDoors openDoors = m_TutorialDoor.GetComponent<OpenDoors>();
-                //if (openDoors == null)
-                //{
-                //    Debug.LogError("ERROR: openDoors not set on m_TutorialDoor in PlayerPickup.cs");
-                //}
-                //openDoors.Open();
-                Destroy(other.gameObject);
-                break;
-            case "TutFireRing":
-                //m_PlayerMainText.text = "ready!";
-                //m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-                //GameManager.instance.PlayerReady();
                 break;
         }
     }
@@ -232,13 +196,5 @@ public class PlayerPickup : MonoBehaviour
         UpdateTires();
         m_EngineLevel = PickupLevelEnum.one;
         UpdateEngine();
-    }
-
-    private IEnumerator TutorialText()
-    {
-        m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-        yield return new WaitForSeconds(3);
-        m_PlayerMainText.text = "";
-        m_Rigidbody.constraints = RigidbodyConstraints.None;
     }
 }

@@ -73,8 +73,10 @@ public class WeaponManager : MonoBehaviour {
         }
     }
 
-    public void fire() {
-        if (has_left && cooldown <= 0.0f) {
+    public void fire() 
+    {
+        if (has_left && cooldown <= 0.0f) 
+        {
             if (target != null) {
                 GameObject bullet = Instantiate(projectile, left.transform.position, left.transform.rotation) as GameObject;
                 bullet.GetComponent<Rocket>().SetTarget(target);
@@ -135,5 +137,20 @@ public class WeaponManager : MonoBehaviour {
             yield return new WaitForSeconds(0);
         }
         shooter.GetComponent<MeshRenderer>().enabled = false;
+    }
+
+    public IEnumerator TutorialRocket()
+    {
+        shooter.GetComponent<MeshRenderer>().enabled = true;
+        StartCoroutine(raise());
+        yield return new WaitForSeconds(4);
+        StartCoroutine(lower());
+    }
+
+    public IEnumerator TutorialLandmine()
+    {
+        transform.Find("Landmine").gameObject.SetActive(true);
+        yield return new WaitForSeconds(4);
+        transform.Find("Landmine").gameObject.SetActive(false);
     }
 }

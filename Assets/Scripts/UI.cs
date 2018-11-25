@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
-
     public GameObject[] speedometer;
     Rigidbody[] carRb;
 

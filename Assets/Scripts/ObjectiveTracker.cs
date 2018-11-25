@@ -15,7 +15,8 @@ public class ObjectiveTracker : MonoBehaviour {
 
     private void Update()
     {
-        Debug.Log("current: " + m_FlagHolder);
+        // dont do this ever please
+        //Debug.Log("current: " + m_FlagHolder);
     }
 
     public void SetFlagHolder(FlagHolder newFlagHolder)

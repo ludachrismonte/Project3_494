@@ -4,15 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public enum GameStateEnum { tutorial, gameplay, endGame };
-
 public class GameManager : MonoBehaviour 
 {
     public static GameManager instance;
     public GameObject UI;
     public Text[] m_Placements = new Text[4];
-
-    public GameStateEnum GameState { get; set; } 
     
     private Text win_text;
     private GameObject win_box;
@@ -28,8 +24,6 @@ public class GameManager : MonoBehaviour
     private Score m_P3Score;
     private Score m_P4Score;
 
-    private int m_PlayersReady;
-    
 	private void Awake () 
     {
         if (instance == null)
@@ -44,9 +38,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        GameState = GameStateEnum.tutorial;
-        m_PlayersReady = 0;
-
         win_text = UI.transform.Find("MainText").GetComponent<Text>();
         win_box = UI.transform.Find("WinBox").gameObject;
         black = UI.transform.Find("black").GetComponent<Image>();
