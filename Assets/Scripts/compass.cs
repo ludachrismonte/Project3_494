@@ -114,7 +114,7 @@ public class Compass : MonoBehaviour {
         if (my_num != 1) 
             Track(i1, player1); 
         if (my_num != 2) 
-        Track(i2, player2); 
+            Track(i2, player2); 
         if (my_num != 3) 
             Track(i3, player3);
         if (my_num != 4) 
