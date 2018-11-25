@@ -3,154 +3,178 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WeaponManager : MonoBehaviour {
+public class WeaponManager : MonoBehaviour 
+{
+    public GameObject m_LeftRocket = null;
+    public GameObject m_RightRocket = null;
+    public MeshRenderer m_Targeter = null;
+    public GameObject m_RocketShooter;
+    public GameObject m_RocketPrefab;
+    public Text m_TargetingText = null;
 
-    public GameObject left = null;
-    public GameObject right = null;
-    public MeshRenderer targeter = null;
-    public GameObject shooter;
-    public GameObject projectile;
-    public Text text = null;
+    public GameObject m_CarLandmine;
+    public GameObject m_LandminePrefab;
 
-    public GameObject landmine;
+    private enum WeaponType { rocket, landmine, none };
+    
+    private bool m_HasTwoRockets = false;
+    private GameObject m_RocketTarget;
+    private WeaponType m_CurrentWeapon = WeaponType.none;
 
-    private bool has_left = false;
-    private bool has_right = false;
-    private GameObject target;
-    private float cooldown = 1;
-
-    private string current_equipped = "none";
-
-	// Use this for initialization
-	void Start () 
+    void Start () 
     {
-        if (text) { text.text = ""; }
-        right.SetActive(false);
-        left.SetActive(false);
-        shooter.GetComponent<MeshRenderer>().enabled = false;
-        if (targeter) { targeter.enabled = false; }
+        if (m_TargetingText == null)
+        {
+            Debug.LogError("ERROR in WeaponManager: TargetingText is null");
+        }
+        else
+        {
+            m_TargetingText.text = "";
+        }
+
+        m_RightRocket.SetActive(false);
+        m_LeftRocket.SetActive(false);
+        m_RocketShooter.GetComponent<MeshRenderer>().enabled = false;
+        if (m_Targeter) 
+        {
+            m_Targeter.enabled = false; 
+        }
     }
 
     private void Update()
     {
-        if (cooldown > 0) {
-            cooldown -= Time.deltaTime;
-        }
-        target = GetComponent<ControllerInput>().GetTargeted();
-        if (target != null)
+        if (m_CurrentWeapon == WeaponType.rocket) 
         {
-            shooter.transform.LookAt(target.transform);
-            if (target.tag == "Player") { text.text = "targeting: blue"; text.color = Color.cyan; }
-            else if (target.tag == "Player2") { text.text = "targeting: red"; text.color = Color.red; }
-            else if (target.tag == "Player3") { text.text = "targeting: green"; text.color = Color.green; }
-            else if (target.tag == "Player4") { text.text = "targeting: yellow"; text.color = Color.yellow; }
-
-        }
-        if (!has_left && !has_right && text) { text.text = ""; }
-    }
-
-    public void get_rocket() 
-    {
-        if (current_equipped == "none")
-        {
-            shooter.GetComponent<MeshRenderer>().enabled = true;
-            if (!has_left && !has_right)
+            m_RocketTarget = GetComponent<ControllerInput>().GetTargeted();
+            if (m_RocketTarget != null)
             {
-                StartCoroutine(raise());
+                m_RocketShooter.transform.LookAt(m_RocketTarget.transform);
+                switch (m_RocketTarget.tag)
+                {
+                    case "Player":
+                        m_TargetingText.text = "targeting: blue";
+                        m_TargetingText.color = Color.blue;
+                        break;
+                    case "Player2":
+                        m_TargetingText.text = "targeting: red";
+                        m_TargetingText.color = Color.red;
+                        break;
+                    case "Player3":
+                        m_TargetingText.text = "targeting: green";
+                        m_TargetingText.color = Color.green;
+                        break;
+                    case "Player4":
+                        m_TargetingText.text = "targeting: yellow";
+                        m_TargetingText.color = Color.yellow;
+                        break;
+                    default:
+                        Debug.LogError("ERROR in WeaponManager.cs: invalid target.");
+                        break;
+                }
             }
-            has_left = true;
-            left.SetActive(true);
-            has_right = true;
-            right.SetActive(true);
         }
     }
 
-    public void get_landmine()
+    public void EquipRocket() 
     {
-        if (current_equipped == "none") {
-            transform.Find("Landmine").gameObject.SetActive(true);
-            current_equipped = "landmine";
+        if (m_CurrentWeapon == WeaponType.none)
+        {
+            m_CurrentWeapon = WeaponType.rocket;
+            StartCoroutine(RaiseRocketShooter());
+
+            m_HasTwoRockets = true;
+            m_LeftRocket.SetActive(true);
+            m_RightRocket.SetActive(true);
         }
     }
 
-    public void fire() 
+    public void EquipLandmine()
     {
-        if (has_left && cooldown <= 0.0f) 
+        if (m_CurrentWeapon == WeaponType.none) 
         {
-            if (target != null) {
-                GameObject bullet = Instantiate(projectile, left.transform.position, left.transform.rotation) as GameObject;
-                bullet.GetComponent<Rocket>().SetTarget(target);
-                has_left = false;
-                left.SetActive(false);
-                cooldown = 1f;
-            }
-            if (!has_left && !has_right) {
-                current_equipped = "none";
-                StartCoroutine(lower());
-            }
+            m_CurrentWeapon = WeaponType.landmine;
+            m_CarLandmine.SetActive(true);
         }
-        else if (has_right && cooldown <= 0.0f)
+    }
+
+    public void Fire() 
+    {
+        if (m_CurrentWeapon == WeaponType.rocket && m_RocketTarget != null)
         {
-            if (target != null)
+            if (m_HasTwoRockets)
             {
-                GameObject bullet = Instantiate(projectile, right.transform.position, right.transform.rotation) as GameObject;
-                bullet.GetComponent<Rocket>().SetTarget(target);
-                has_right = false;
-                right.SetActive(false);
-                cooldown = 1f;
+                GameObject rocket = Instantiate(m_RocketPrefab, 
+                                                m_LeftRocket.transform.position, 
+                                                m_LeftRocket.transform.rotation
+                                               ) as GameObject;
+                rocket.GetComponent<Rocket>().SetTarget(m_RocketTarget);
+                m_HasTwoRockets = false;
+                m_LeftRocket.SetActive(false);
             }
-            if (!has_left && !has_right)
+            else
             {
-                current_equipped = "none";
-                StartCoroutine(lower());
+                GameObject rocket = Instantiate(m_RocketPrefab,
+                                                m_RightRocket.transform.position,
+                                                m_RightRocket.transform.rotation
+                                               ) as GameObject;
+                rocket.GetComponent<Rocket>().SetTarget(m_RocketTarget);
+                m_RightRocket.SetActive(false);
+                StartCoroutine(LowerRocketShooter());
+                m_CurrentWeapon = WeaponType.none;
             }
         }
-        else if (current_equipped == "landmine")
+        else if (m_CurrentWeapon == WeaponType.landmine)
         {
-            Instantiate(landmine, transform.Find("Landmine").gameObject.transform.position, transform.Find("Landmine").gameObject.transform.rotation);
-            transform.Find("Landmine").gameObject.SetActive(false);
-            current_equipped = "none";
+            m_CarLandmine.SetActive(true);
+            Instantiate(m_LandminePrefab, 
+                        m_CarLandmine.transform.position, 
+                        m_CarLandmine.transform.rotation);
+            m_CurrentWeapon = WeaponType.none;
         }
     }
 
-    private IEnumerator raise() 
+    private IEnumerator RaiseRocketShooter() 
     {
-        if (targeter) {
-            targeter.enabled = true;
+        m_RocketShooter.GetComponent<MeshRenderer>().enabled = true;
+
+        if (m_Targeter) 
+        {
+            m_Targeter.enabled = true;
         }
-        for (float i = .6f; i < 1.5f; i += .05f) {
-            shooter.transform.localPosition += new Vector3(0, .05f, 0);
+
+        for (float i = .6f; i < 1.5f; i += .05f) 
+        {
+            m_RocketShooter.transform.localPosition += new Vector3(0, .05f, 0);
             yield return new WaitForSeconds(0);
         }
     }
 
-    private IEnumerator lower()
+    private IEnumerator LowerRocketShooter()
     {
-        if (targeter)
+        if (m_Targeter)
         {
-            targeter.enabled = false;
+            m_Targeter.enabled = false;
         }
         yield return new WaitForSeconds(.3f);
         for (float i = .6f; i < 1.5f; i += .05f)
         {
-            shooter.transform.localPosition -= new Vector3(0, .05f, 0);
+            m_RocketShooter.transform.localPosition -= new Vector3(0, .05f, 0);
             yield return new WaitForSeconds(0);
         }
-        shooter.GetComponent<MeshRenderer>().enabled = false;
+        m_RocketShooter.GetComponent<MeshRenderer>().enabled = false;
     }
 
     public IEnumerator TutorialRocket()
     {
-        shooter.GetComponent<MeshRenderer>().enabled = true;
-        StartCoroutine(raise());
+        StartCoroutine(RaiseRocketShooter());
         yield return new WaitForSeconds(4);
-        StartCoroutine(lower());
+        StartCoroutine(LowerRocketShooter());
     }
 
     public IEnumerator TutorialLandmine()
     {
-        transform.Find("Landmine").gameObject.SetActive(true);
+        m_CarLandmine.SetActive(true);
         yield return new WaitForSeconds(4);
-        transform.Find("Landmine").gameObject.SetActive(false);
+        m_CarLandmine.SetActive(false);
     }
 }

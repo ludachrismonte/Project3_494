@@ -88,8 +88,10 @@ public class ControllerInput : MonoBehaviour
             }
 
             // Weapons
-            bool fire = player.Action2.WasPressed;
-            if (fire) { weapon_manager.fire(); }
+            if (player.Action2.WasPressed) 
+            { 
+                weapon_manager.Fire(); 
+            }
 
             float targetLeft = player.LeftBumper.Value;     // Left bumper
             float targetRight = player.RightBumper.Value;   // Right bumpers

@@ -70,7 +70,7 @@ public class PlayerPickup : MonoBehaviour
                 StartCoroutine(WaitToRespawn(other.gameObject));
                 break;
             case "RocketPickup":
-                m_WeaponManager.get_rocket();
+                m_WeaponManager.EquipRocket();
                 Destroy(other.transform.parent.transform.parent.gameObject);
                 RocketDrops rocketDrops = GameObject.Find("Manager").GetComponent<RocketDrops>();
                 rocketDrops.RocketPickedUp();
@@ -80,7 +80,7 @@ public class PlayerPickup : MonoBehaviour
                 Destroy(other.gameObject);
                 break;
             case "LandminePickup":
-                m_WeaponManager.get_landmine();
+                m_WeaponManager.EquipLandmine();
                 Destroy(other.gameObject);
                 break;
         }

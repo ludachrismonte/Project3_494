@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 23662083118665772}
   - component: {fileID: 33694785044552296}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: RocketShooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -770,7 +770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1986386599956626
 GameObject:
   m_ObjectHideFlags: 0
@@ -3246,13 +3246,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4719f993caf7d5c41a0861c20d4afcb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: {fileID: 1277427624247008}
-  right: {fileID: 1260533491363780}
-  targeter: {fileID: 0}
-  shooter: {fileID: 1432578647736054}
-  projectile: {fileID: 1376979691465780, guid: f218cd1c6cab35746b51fe6353f5c803, type: 2}
-  text: {fileID: 0}
-  landmine: {fileID: 1413299180077768, guid: 300cace429c37da46a05a06d28bd8221, type: 2}
+  m_LeftRocket: {fileID: 1277427624247008}
+  m_RightRocket: {fileID: 1260533491363780}
+  m_Targeter: {fileID: 0}
+  m_RocketShooter: {fileID: 1432578647736054}
+  m_RocketPrefab: {fileID: 1376979691465780, guid: f218cd1c6cab35746b51fe6353f5c803,
+    type: 2}
+  m_TargetingText: {fileID: 0}
+  m_CarLandmine: {fileID: 1986386599956626}
+  m_LandminePrefab: {fileID: 1413299180077768, guid: 300cace429c37da46a05a06d28bd8221,
+    type: 2}
 --- !u!114 &114404598296307552
 MonoBehaviour:
   m_ObjectHideFlags: 1
