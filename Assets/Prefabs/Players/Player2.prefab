@@ -412,12 +412,13 @@ GameObject:
   - component: {fileID: 114618330990957962}
   - component: {fileID: 114906380051670286}
   - component: {fileID: 114769169254097582}
-  - component: {fileID: 114476381316023966}
   - component: {fileID: 114586368091238236}
   - component: {fileID: 136721401933998442}
   - component: {fileID: 65879624073247358}
   - component: {fileID: 114605428154470410}
   - component: {fileID: 114293301157093902}
+  - component: {fileID: 114394164089526316}
+  - component: {fileID: 114457683043793134}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -2840,18 +2841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 1070978575647430}
---- !u!114 &114422816576375582
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1087944493781944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fd90e2cb82a6604d99f0e869bfe483e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114476381316023966
+--- !u!114 &114394164089526316
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2867,6 +2857,31 @@ MonoBehaviour:
   flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
     type: 2}
   m_ObjectiveTracker: {fileID: 0}
+--- !u!114 &114422816576375582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1087944493781944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd90e2cb82a6604d99f0e869bfe483e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114457683043793134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1523622056327674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085058f019a13e94489661b44d1e1e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Folder: {fileID: 0}
+  my_num: 2
+  cam: {fileID: 20071719291899138}
 --- !u!114 &114502946046681190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2960,6 +2975,7 @@ MonoBehaviour:
   m_TireLevel: 1
   m_EngineLevel: 1
   UIObjects: {fileID: 0}
+  m_TutorialDoor: {fileID: 0}
 --- !u!114 &114631976126045768
 MonoBehaviour:
   m_ObjectHideFlags: 1

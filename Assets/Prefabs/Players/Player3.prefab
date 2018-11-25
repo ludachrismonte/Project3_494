@@ -191,12 +191,13 @@ GameObject:
   - component: {fileID: 114308782249875692}
   - component: {fileID: 114185704065106648}
   - component: {fileID: 114948316336806756}
-  - component: {fileID: 114729979478263342}
   - component: {fileID: 114215626402031668}
   - component: {fileID: 136135591484143570}
   - component: {fileID: 65951609511653470}
   - component: {fileID: 114173291219995828}
   - component: {fileID: 114615559438504618}
+  - component: {fileID: 114564341342224906}
+  - component: {fileID: 114508624159305832}
   m_Layer: 0
   m_Name: Player3
   m_TagString: Player3
@@ -3189,6 +3190,7 @@ MonoBehaviour:
   m_TireLevel: 1
   m_EngineLevel: 1
   UIObjects: {fileID: 0}
+  m_TutorialDoor: {fileID: 0}
 --- !u!114 &114475650582498148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3203,6 +3205,36 @@ MonoBehaviour:
   rotationThreshold: 1
   cameraStickiness: 10
   cameraRotationSpeed: 5
+--- !u!114 &114508624159305832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1349768124842162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085058f019a13e94489661b44d1e1e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Folder: {fileID: 0}
+  my_num: 3
+  cam: {fileID: 20235636934578604}
+--- !u!114 &114564341342224906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1349768124842162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b427040b05063454b936e72fa721caec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  me: player 3
+  ScoreBar: {fileID: 0}
+  flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
+    type: 2}
+  m_ObjectiveTracker: {fileID: 0}
 --- !u!114 &114615559438504618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3231,22 +3263,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
---- !u!114 &114729979478263342
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1349768124842162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b427040b05063454b936e72fa721caec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  me: player 3
-  ScoreBar: {fileID: 0}
-  flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
-    type: 2}
-  m_ObjectiveTracker: {fileID: 0}
 --- !u!114 &114841995081422836
 MonoBehaviour:
   m_ObjectHideFlags: 1

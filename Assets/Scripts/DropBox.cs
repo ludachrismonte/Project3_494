@@ -27,8 +27,17 @@ public class DropBox : MonoBehaviour
             closed_crate.SetActive(false);
             parachute.SetActive(false);
             open_crate.SetActive(true);
+            GetComponent<BoxCollider>().enabled = false;
             int spawn = (int)Random.Range(0, pickups.Length);
             Instantiate(pickups[spawn], open_crate.transform.position, Quaternion.identity);
+            StartCoroutine(Destroy());
         }
     }
+
+    private IEnumerator Destroy() {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
+    }
+
+
 }
