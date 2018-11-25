@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class compass : MonoBehaviour {
+public class Compass : MonoBehaviour {
 
     public GameObject UI_Folder;
     public int my_num;
