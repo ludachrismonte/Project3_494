@@ -47,4 +47,14 @@ public class RingSwitcher : MonoBehaviour {
     {
         return ctf_objects[index_active].transform;
     }
+
+    public void Disable_Active()
+    {
+        ctf_objects[index_active].SetActive(false);
+    }
+
+    public void Enable_Active()
+    {
+        ctf_objects[index_active].SetActive(true);
+    }
 }
