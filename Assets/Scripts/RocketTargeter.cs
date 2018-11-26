@@ -14,7 +14,6 @@ public class RocketTargeter : MonoBehaviour
 	private void Start () 
     {
         m_WeaponManager = GetComponent<WeaponManager>();
-
         m_CurrentTarget = null;
 	}
 	

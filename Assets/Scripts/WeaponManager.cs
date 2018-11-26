@@ -76,6 +76,10 @@ public class WeaponManager : MonoBehaviour
                 m_TargetingText.color = Color.white;
             }
         }
+        else
+        {
+            m_TargetingText.text = "";
+        }
     }
 
     public void EquipRocket() 
