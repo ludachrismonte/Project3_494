@@ -6,6 +6,7 @@ public class RocketTargeter : MonoBehaviour
 {
     public GameObject[] m_OtherPlayers;
     public readonly float m_TargetingRange = 100f;
+    public Camera m_PlayerCamera;
 
     private WeaponManager m_WeaponManager;
     private GameObject m_CurrentTarget;
@@ -28,7 +29,7 @@ public class RocketTargeter : MonoBehaviour
                 Transform otherPlayer = player.transform;
 
                 Vector3 targetDirection = otherPlayer.position - transform.position;
-                float angle = Mathf.Abs(Vector3.Angle(targetDirection, transform.forward));
+                float angle = Mathf.Abs(Vector3.Angle(targetDirection, m_PlayerCamera.transform.forward));
 
                 if (angle < 45)
                 {

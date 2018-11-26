@@ -197,7 +197,6 @@ GameObject:
   - component: {fileID: 114173291219995828}
   - component: {fileID: 114615559438504618}
   - component: {fileID: 114564341342224906}
-  - component: {fileID: 114197496225249434}
   - component: {fileID: 114836051816449392}
   m_Layer: 0
   m_Name: Player3
@@ -1288,7 +1287,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349768124842162}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 185, y: 15, z: 0}
+  m_LocalPosition: {x: 185, y: 11.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4162980861052824}
@@ -3208,20 +3207,6 @@ MonoBehaviour:
     type: 2}
   m_TestDeath: 0
   m_PlayerMainText: {fileID: 0}
---- !u!114 &114197496225249434
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1349768124842162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c516e3e86b04491688998353915edab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_Folder: {fileID: 0}
-  my_num: 3
-  cam: {fileID: 20235636934578604}
 --- !u!114 &114211394318725982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3361,6 +3346,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  m_PlayerCamera: {fileID: 20235636934578604}
 --- !u!114 &114841995081422836
 MonoBehaviour:
   m_ObjectHideFlags: 1
