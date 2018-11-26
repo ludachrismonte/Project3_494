@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 114615559438504618}
   - component: {fileID: 114564341342224906}
   - component: {fileID: 114836051816449392}
-  - component: {fileID: 114524971406021684}
+  - component: {fileID: 114118662314321008}
   m_Layer: 0
   m_Name: Player3
   m_TagString: Player3
@@ -3162,6 +3162,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd90e2cb82a6604d99f0e869bfe483e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114118662314321008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1349768124842162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213d727809c70dd4cb63a510b6520695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Folder: {fileID: 0}
+  my_num: 3
+  cam: {fileID: 20235636934578604}
 --- !u!114 &114143528932080148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3288,20 +3302,6 @@ MonoBehaviour:
   rotationThreshold: 1
   cameraStickiness: 10
   cameraRotationSpeed: 5
---- !u!114 &114524971406021684
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1349768124842162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c516e3e86b04491688998353915edab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_Folder: {fileID: 0}
-  my_num: 3
-  cam: {fileID: 20235636934578604}
 --- !u!114 &114564341342224906
 MonoBehaviour:
   m_ObjectHideFlags: 1

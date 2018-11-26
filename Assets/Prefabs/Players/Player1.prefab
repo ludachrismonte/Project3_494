@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 114023660671437594}
   - component: {fileID: 114726609255222652}
   - component: {fileID: 114185379436908606}
-  - component: {fileID: 114852491855612510}
+  - component: {fileID: 114301676763549626}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -3226,6 +3226,20 @@ MonoBehaviour:
   rotationThreshold: 1
   cameraStickiness: 10
   cameraRotationSpeed: 5
+--- !u!114 &114301676763549626
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1704907735798148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213d727809c70dd4cb63a510b6520695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Folder: {fileID: 0}
+  my_num: 1
+  cam: {fileID: 20910232946279752}
 --- !u!114 &114352216780038664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3410,20 +3424,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
---- !u!114 &114852491855612510
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1704907735798148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c516e3e86b04491688998353915edab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_Folder: {fileID: 0}
-  my_num: 1
-  cam: {fileID: 20910232946279752}
 --- !u!114 &114939292505902960
 MonoBehaviour:
   m_ObjectHideFlags: 1

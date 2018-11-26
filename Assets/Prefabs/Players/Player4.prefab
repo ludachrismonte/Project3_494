@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 114084945867477202}
   - component: {fileID: 114090840921117192}
   - component: {fileID: 114947282255284228}
-  - component: {fileID: 114773208077005208}
+  - component: {fileID: 114690992401872228}
   m_Layer: 0
   m_Name: Player4
   m_TagString: Player4
@@ -3333,6 +3333,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &114690992401872228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1990267783747410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213d727809c70dd4cb63a510b6520695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_Folder: {fileID: 0}
+  my_num: 4
+  cam: {fileID: 20244215437470794}
 --- !u!114 &114763655085565860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3345,20 +3359,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carController: {fileID: 114340955079095008}
---- !u!114 &114773208077005208
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1990267783747410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c516e3e86b04491688998353915edab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_Folder: {fileID: 0}
-  my_num: 4
-  cam: {fileID: 20244215437470794}
 --- !u!114 &114838071161350260
 MonoBehaviour:
   m_ObjectHideFlags: 1
