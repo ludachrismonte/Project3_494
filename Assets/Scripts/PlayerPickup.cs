@@ -152,7 +152,7 @@ public class PlayerPickup : MonoBehaviour
     {
         foreach (GameObject tires in m_CarTires)
         {
-            tires.transform.GetChild((int)m_CurrentTireLevel).gameObject.SetActive(false);
+            tires.transform.GetChild((int)m_CurrentTireLevel - 1).gameObject.SetActive(false);
         }
         m_CurrentTireLevel = m_TireLevel;
 
@@ -177,7 +177,7 @@ public class PlayerPickup : MonoBehaviour
 
         foreach (GameObject tires in m_CarTires)
         {
-            tires.transform.GetChild((int)m_CurrentTireLevel).gameObject.SetActive(true);
+            tires.transform.GetChild((int)m_CurrentTireLevel - 1).gameObject.SetActive(true);
         }
     }
 
