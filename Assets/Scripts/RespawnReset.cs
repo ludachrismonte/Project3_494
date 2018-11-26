@@ -67,11 +67,11 @@ public class RespawnReset : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (stuck && Input.GetKey(KeyCode.Z))
-        {
-            ResetCar();
-            return;
-        }
+        //if (stuck && Input.GetKey(KeyCode.Z))
+        //{
+        //    ResetCar();
+        //    return;
+        //}
         Debug.Log(checkingStuck);
         CheckifStuck();
         if(gameObject.GetComponent<Rigidbody>().velocity.magnitude>15 && stuck){
