@@ -11,6 +11,7 @@ public class PlayerPickup : MonoBehaviour
     public PickupLevelEnum m_TireLevel = PickupLevelEnum.one;
     public PickupLevelEnum m_EngineLevel = PickupLevelEnum.one;
     public RawImage[] m_Speedometers;
+    public GameObject[] m_CarTires; // list of lists
 
     private CarController m_CarController;
     private Health m_CarHealth;
@@ -18,6 +19,7 @@ public class PlayerPickup : MonoBehaviour
     private WeaponManager m_WeaponManager;
 
     private RawImage m_CurrentSpeedometer;
+    private PickupLevelEnum m_CurrentTireLevel;
 
     private void Start()
     {
@@ -30,7 +32,16 @@ public class PlayerPickup : MonoBehaviour
             speedometer.enabled = false;
 
         m_CurrentSpeedometer = m_Speedometers[0];
-        m_CurrentSpeedometer.enabled = true;
+
+        foreach (GameObject tires in m_CarTires)
+        {
+            for (int i = 0; i < tires.transform.childCount; ++i)
+            {
+                tires.transform.GetChild(i).gameObject.SetActive(false);
+            }
+        }
+
+        m_CurrentTireLevel = m_TireLevel;
 
         UpdateCarBody();
         UpdateEngine();
@@ -139,6 +150,12 @@ public class PlayerPickup : MonoBehaviour
 
     private void UpdateTires()
     {
+        foreach (GameObject tires in m_CarTires)
+        {
+            tires.transform.GetChild((int)m_CurrentTireLevel).gameObject.SetActive(false);
+        }
+        m_CurrentTireLevel = m_TireLevel;
+
         switch (m_TireLevel)
         {
             case PickupLevelEnum.two:
@@ -156,6 +173,11 @@ public class PlayerPickup : MonoBehaviour
             default:
                 m_CarController.SteerHelperValue = 0.6f;
                 break;
+        }
+
+        foreach (GameObject tires in m_CarTires)
+        {
+            tires.transform.GetChild((int)m_CurrentTireLevel).gameObject.SetActive(true);
         }
     }
 
