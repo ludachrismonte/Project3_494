@@ -200,5 +200,4 @@ public class WeaponManager : MonoBehaviour
     {
         return m_CurrentWeapon;
     }
-
 }
