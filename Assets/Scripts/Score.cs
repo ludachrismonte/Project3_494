@@ -85,6 +85,7 @@ public class Score : MonoBehaviour
     private void add_score(int amt) 
     {
         current_score += amt;
+        manager.UpdateScore();
         ScoreBar.fillAmount = current_score / (float)m_ScoreToWin;
     }
 
@@ -118,7 +119,6 @@ public class Score : MonoBehaviour
             lose_flag();
             Rings.Switch();
             add_score(10);
-            manager.UpdateScore();
         }
     }
 
