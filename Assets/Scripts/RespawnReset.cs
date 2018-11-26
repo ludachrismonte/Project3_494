@@ -130,7 +130,7 @@ public class RespawnReset : MonoBehaviour
         this.transform.Find("SkyCar").gameObject.SetActive(true);
         this.transform.Find("Arrow").gameObject.SetActive(true);
         if (i == 0) { gameObject.GetComponent<PlayerPickup>().Respawn(); }
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
         //car.SetActive(true);
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         gameObject.GetComponent<ControllerInput>().enabled = true;
