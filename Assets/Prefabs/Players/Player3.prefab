@@ -4291,7 +4291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec1e45165d1f2544bff59f5a80db8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheel: {fileID: 1789146549577552}
+  wheel: {fileID: 0}
 --- !u!114 &114173291219995828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4315,6 +4315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health_bar: {fileID: 0}
+  black: {fileID: 0}
   cam: {fileID: 1974541954105366}
   m_CarBodyLevel:
   - {fileID: 1725209174899912}
@@ -4580,7 +4581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec1e45165d1f2544bff59f5a80db8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheel: {fileID: 1469831974117868}
+  wheel: {fileID: 0}
 --- !u!124 &124601786967932332
 Behaviour:
   m_ObjectHideFlags: 1
