@@ -8,7 +8,10 @@ public class ReadyUpManager : MonoBehaviour
 {
     public static ReadyUpManager instance;
 
-    private int m_PlayersReady;
+    private bool m_P1Ready;
+    private bool m_P2Ready;
+    private bool m_P3Ready;
+    private bool m_P4Ready;
 
     private void Awake()
     {
@@ -24,15 +27,33 @@ public class ReadyUpManager : MonoBehaviour
 
     private void Start () 
     {
-        m_PlayersReady = 0;
-	}
+        m_P1Ready = false;
+        m_P2Ready = false;
+        m_P3Ready = false;
+        m_P4Ready = false;
+    }
 
-    public void PlayersReadiedUp()
+    public void PlayersReadiedUp(PlayerNumber player)
     {
-        ++m_PlayersReady;
-        if (m_PlayersReady == 4)
+        switch (player)
         {
-            StartCoroutine(OpenArean());
+            case PlayerNumber.one:
+                m_P1Ready = true;
+                break;
+            case PlayerNumber.two:
+                m_P2Ready = true;
+                break;
+            case PlayerNumber.three:
+                m_P3Ready = true;
+                break;
+            case PlayerNumber.four:
+                m_P4Ready = true;
+                break;
+        }
+
+        if (m_P1Ready && m_P2Ready && m_P3Ready && m_P4Ready)
+        {
+            SceneManager.LoadScene("Arena");
         }
     }
 

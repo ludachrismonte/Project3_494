@@ -343,6 +343,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114698299507427618, guid: 67a5e1cf0ac7d4dc6b5c04e846a06892,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67a5e1cf0ac7d4dc6b5c04e846a06892, type: 2}
   m_IsPrefabAsset: 0
@@ -375,6 +380,7 @@ MonoBehaviour:
   - {fileID: 1892155062}
   m_TutorialDoor: {fileID: 328876978}
   m_Flag: {fileID: 214619010}
+  player: 1
 --- !u!23 &214619010 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 23473136484976534, guid: 67a5e1cf0ac7d4dc6b5c04e846a06892,
@@ -507,7 +513,7 @@ Prefab:
     - target: {fileID: 114966960486122618, guid: b97a02ba666a344df93584bf126619ac,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b97a02ba666a344df93584bf126619ac, type: 2}
@@ -541,6 +547,7 @@ MonoBehaviour:
   - {fileID: 1892155068}
   m_TutorialDoor: {fileID: 1590717102}
   m_Flag: {fileID: 235127126}
+  player: 0
 --- !u!23 &235127126 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 23642358015507330, guid: b97a02ba666a344df93584bf126619ac,
@@ -1037,6 +1044,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114870503730190576, guid: 77bb515709b6c4f869b5791cd86e4a6f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77bb515709b6c4f869b5791cd86e4a6f, type: 2}
   m_IsPrefabAsset: 0
@@ -1069,6 +1081,7 @@ MonoBehaviour:
   - {fileID: 1892155056}
   m_TutorialDoor: {fileID: 427497457}
   m_Flag: {fileID: 1606660843}
+  player: 2
 --- !u!23 &1606660843 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 23357305511244492, guid: 77bb515709b6c4f869b5791cd86e4a6f,
@@ -1203,6 +1216,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114427402912791650, guid: ad8140b2e81dc406db18bce5a92b6d51,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad8140b2e81dc406db18bce5a92b6d51, type: 2}
   m_IsPrefabAsset: 0
@@ -1235,6 +1253,7 @@ MonoBehaviour:
   - {fileID: 1892155055}
   m_TutorialDoor: {fileID: 1015950635}
   m_Flag: {fileID: 1640282821}
+  player: 3
 --- !u!23 &1640282821 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 23763295413562704, guid: ad8140b2e81dc406db18bce5a92b6d51,
@@ -1387,6 +1406,10 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533260373891634, guid: 8c3fb762214234dd3b78af75ea72829f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c3fb762214234dd3b78af75ea72829f, type: 2}

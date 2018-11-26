@@ -14,6 +14,7 @@ public class PlayerTutorialManager : MonoBehaviour
     public RawImage[] m_Speedometers;
     public GameObject m_TutorialDoor;
     public MeshRenderer m_Flag;
+    public PlayerNumber player;
 
     private CarController m_CarController;
     private Health m_CarHealth;
@@ -118,7 +119,7 @@ public class PlayerTutorialManager : MonoBehaviour
                 m_PlayerMainText.text = "ready!";
                 m_ReadyImage.SetActive(true);
                 m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-                ReadyUpManager.instance.PlayersReadiedUp();
+                ReadyUpManager.instance.PlayersReadiedUp(player);
                 break;
         }
     }
