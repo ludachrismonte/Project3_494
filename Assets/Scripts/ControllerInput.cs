@@ -53,6 +53,7 @@ public class ControllerInput : MonoBehaviour
         {
             float horizInput = player.LeftStick.Vector.x;
             float vertInput = player.LeftStick.Vector.y;
+            float rightHorizInput = player.RightStick.Vector.x;
             float gasInput = player.Action1.Value; // A button
             // Braking/reverse (X button)
             if (gasInput <= 0.0f)
@@ -69,14 +70,17 @@ public class ControllerInput : MonoBehaviour
 
             if (!IsGrounded())
             {
-                if (!Mathf.Approximately(0.0f, horizInput))
+                if (!Mathf.Approximately(0.0f, rightHorizInput))
                 {
-                    m_Rigidbody.AddRelativeTorque(Vector3.up * horizInput * torque);
+                    m_Rigidbody.AddRelativeTorque(Vector3.up * rightHorizInput * torque);
                 }
                 if (!Mathf.Approximately(0.0f, vertInput))
                 {
                     m_Rigidbody.AddRelativeTorque(Vector3.right * vertInput * torque);
                 }
+                /*if (!Mathf.Approximately(0.0f, horizInput)){
+                    m_Rigidbody.AddRelativeTorque(Vector3.back * horizInput * torque);
+                }*/
             }
             else
             {
