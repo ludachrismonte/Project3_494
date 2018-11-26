@@ -90,7 +90,11 @@ public class Compass : MonoBehaviour
         {
             flag.enabled = true;
             flag.color = Color.white;
-            Track(flag, FlagManager.Get_Active());
+            GameObject dropped = GameObject.Find("Dropped Flag");
+            if (dropped != null) {
+                Track(flag, dropped.transform);
+            }
+            else Track(flag, FlagManager.Get_Active());
         }
         else
         {

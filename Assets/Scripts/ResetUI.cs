@@ -10,6 +10,7 @@ public class ResetUI : MonoBehaviour
     public GameObject [] resetText;
     //public RawImage [] resetImage;
     RespawnReset[] respawnResets;
+    bool start = false;
     // Use this for initialization
     void Start()
     {
@@ -23,24 +24,27 @@ public class ResetUI : MonoBehaviour
     void Update()
     {
         //Respawn
-        //Player1
-        if (respawnResets[0].stuck) { resetText[0].GetComponent<Text>().enabled = true; }
-        else{ resetText[0].GetComponent<Text>().enabled = false; }
-        //Player2
-        if (respawnResets[1].stuck) { resetText[1].GetComponent<Text>().enabled = true; }
-        else { resetText[1].GetComponent<Text>().enabled = false; }
-        //Player3
-        if (respawnResets[2].stuck) { resetText[2].GetComponent<Text>().enabled = true; }
-        else { resetText[2].GetComponent<Text>().enabled = false; }
-        //Player4
-        if (respawnResets[3].stuck) { resetText[3].GetComponent<Text>().enabled = true; }
-        else { resetText[3].GetComponent<Text>().enabled = false; }
+        if(start){
+            //Player1
+            if (respawnResets[0].stuck) { resetText[0].GetComponent<Text>().enabled = true; }
+            else { resetText[0].GetComponent<Text>().enabled = false; }
+            //Player2
+            if (respawnResets[1].stuck) { resetText[1].GetComponent<Text>().enabled = true; }
+            else { resetText[1].GetComponent<Text>().enabled = false; }
+            //Player3
+            if (respawnResets[2].stuck) { resetText[2].GetComponent<Text>().enabled = true; }
+            else { resetText[2].GetComponent<Text>().enabled = false; }
+            //Player4
+            if (respawnResets[3].stuck) { resetText[3].GetComponent<Text>().enabled = true; }
+            else { resetText[3].GetComponent<Text>().enabled = false; } 
+        }
     }
 
-    //IEnumerator changeScene()
-    //{
-    //    yield return new WaitForSeconds(2f);
-    //    SceneManager.LoadScene("MainMenu");
-    //}
+    IEnumerator startDelay()
+    {
+        yield return new WaitForSeconds(10f);
+        //SceneManager.LoadScene("MainMenu");
+        start = true;
+    }
 
 }

@@ -117,9 +117,13 @@ public class Score : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Flag")
+        if (other.name == "Dropped Flag") {
+            Destroy(other.gameObject);
+            get_flag();
+        }
+        else if (other.tag == "Flag")
         {
-            other.gameObject.SetActive(false);
+            Flags.Disable_Active();
             get_flag();
         }
         if (other.tag == "FireRing" && hasFlag)
@@ -141,7 +145,7 @@ public class Score : MonoBehaviour
             lose_flag();
             if (reset)
             {
-                Instantiate(flag_object, Flags.Get_Active().position, Flags.Get_Active().rotation);
+                Flags.Enable_Active();
             }
             else 
             {
@@ -153,9 +157,10 @@ public class Score : MonoBehaviour
     private IEnumerator DropFlagAfterDelay()
     {
         yield return new WaitForSeconds(2);
-        Instantiate(flag_object,
+        GameObject NewFlag = (GameObject)Instantiate(flag_object,
                     new Vector3(transform.position.x, transform.position.y + 4, transform.position.z), 
                     Flags.Get_Active().rotation);
+        NewFlag.name = "Dropped Flag";
     }
 
     public bool DoesUserHaveFlag()
