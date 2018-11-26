@@ -72,7 +72,6 @@ public class RespawnReset : MonoBehaviour
         //    ResetCar();
         //    return;
         //}
-        Debug.Log(checkingStuck);
         CheckifStuck();
         if(gameObject.GetComponent<Rigidbody>().velocity.magnitude>15 && stuck){
             stuck = false;
@@ -83,7 +82,6 @@ public class RespawnReset : MonoBehaviour
     {
         if (!checkingStuck)
         {
-            Debug.Log("inside check");
             StartCoroutine(CheckifStuckHelper());
         }
     }
@@ -146,18 +144,14 @@ public class RespawnReset : MonoBehaviour
         checkingStuck = true;
         Vector3 pos1 = transform.position;
         float vel = carRb.velocity.magnitude;
-        Debug.Log("in helper!");
-        Debug.Log(vel);
         yield return new WaitForSeconds((int)waitTime / 2);
         float vel2 = carRb.velocity.magnitude;
         Vector3 pos2 = transform.position;
-        Debug.Log(vel2);
-        Debug.Log(carRb.velocity);
         yield return new WaitForSeconds((int)waitTime / 2);
         if ((int)vel == (int)carRb.velocity.magnitude && (int)vel == 0 && (int)vel == (int)vel2)
         {
-            if(Check(pos1,pos2,transform.position)){
-                Debug.Log("resetting car!");
+            if(Check(pos1,pos2,transform.position))
+            {
                 stuck = true; 
             }            
         }
@@ -187,10 +181,8 @@ public class RespawnReset : MonoBehaviour
     IEnumerator ResetEnum()
     {
         //have car flash
-        Debug.Log("inside enum for reset car!");
         for (int i = 0; i < 4; i++)
         {
-            Debug.Log("flashing!");
             this.transform.Find("SkyCar").gameObject.SetActive(true);
             yield return new WaitForSeconds(.15f);
             this.transform.Find("SkyCar").gameObject.SetActive(false);
