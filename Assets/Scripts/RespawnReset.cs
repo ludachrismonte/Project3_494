@@ -67,13 +67,23 @@ public class RespawnReset : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (stuck && Input.GetKey(KeyCode.Z))
+        //{
+        //    ResetCar();
+        //    return;
+        //}
+        Debug.Log(checkingStuck);
         CheckifStuck();
+        if(gameObject.GetComponent<Rigidbody>().velocity.magnitude>15 && stuck){
+            stuck = false;
+        }
     }
 
     void CheckifStuck()
     {
         if (!checkingStuck)
         {
+            Debug.Log("inside check");
             StartCoroutine(CheckifStuckHelper());
         }
     }
@@ -119,10 +129,10 @@ public class RespawnReset : MonoBehaviour
         //car.SetActive(false);
         RespawnHelper();
         cameraParent.GetComponent<CameraController>().enabled = true;
-        transform.Find("SkyCar").gameObject.SetActive(true);
-        transform.Find("Arrow").gameObject.SetActive(true);
-        if(i == 0){ gameObject.GetComponent<PlayerPickup>().Respawn(); }
-        yield return new WaitForSeconds(2);
+        this.transform.Find("SkyCar").gameObject.SetActive(true);
+        this.transform.Find("Arrow").gameObject.SetActive(true);
+        if (i == 0) { gameObject.GetComponent<PlayerPickup>().Respawn(); }
+        yield return new WaitForSeconds(5);
         //car.SetActive(true);
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         gameObject.GetComponent<ControllerInput>().enabled = true;
@@ -134,33 +144,53 @@ public class RespawnReset : MonoBehaviour
     {
         //Check this!!
         checkingStuck = true;
-        //Vector3 pos = transform.position;
+        Vector3 pos1 = transform.position;
         float vel = carRb.velocity.magnitude;
+        Debug.Log("in helper!");
+        Debug.Log(vel);
         yield return new WaitForSeconds((int)waitTime / 2);
         float vel2 = carRb.velocity.magnitude;
+        Vector3 pos2 = transform.position;
+        Debug.Log(vel2);
+        Debug.Log(carRb.velocity);
         yield return new WaitForSeconds((int)waitTime / 2);
         if ((int)vel == (int)carRb.velocity.magnitude && (int)vel == 0 && (int)vel == (int)vel2)
         {
-            Debug.Log("resetting car!");
-            stuck = true;
-            //ResetCar();
+            if(Check(pos1,pos2,transform.position)){
+                Debug.Log("resetting car!");
+                stuck = true; 
+            }            
         }
         else
         {
-            if (carRb.velocity.magnitude > 0)
+            if (carRb.velocity.magnitude > 15 && carRb.velocity.x>0 && carRb.velocity.z>0)
             {
                 resetStruct2 = resetStruct;
                 resetStruct.Set(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
-                checkingStuck = false;
             }
         }
+        checkingStuck = false;
+    }
+    bool Check(Vector3 pos1,Vector3 pos2,Vector3 pos3){
+        bool xStationary = false; bool zStationary = false;
+        if((int)pos1.x==(int)pos2.x && (int)pos1.x == (int)pos3.x && (int)pos3.x == (int)pos2.x ){
+            xStationary = true;
+        }
+        if ((int)pos1.z == (int)pos2.z && (int)pos1.z== (int)pos3.z && (int)pos3.z == (int)pos2.z)
+        {
+            zStationary = true;
+        }
+        if (xStationary && zStationary) { return true; }
+        return false;
     }
 
     IEnumerator ResetEnum()
     {
         //have car flash
+        Debug.Log("inside enum for reset car!");
         for (int i = 0; i < 4; i++)
         {
+            Debug.Log("flashing!");
             this.transform.Find("SkyCar").gameObject.SetActive(true);
             yield return new WaitForSeconds(.15f);
             this.transform.Find("SkyCar").gameObject.SetActive(false);
