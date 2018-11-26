@@ -21,6 +21,8 @@ public class Score : MonoBehaviour
     // Bool to keep track of if the player has the flag
     private bool hasFlag = false;
 
+    bool canLoseFlag = true;
+
     private void Start()
     {
 
@@ -54,6 +56,9 @@ public class Score : MonoBehaviour
     {
         Flag.enabled = true;
         hasFlag = true;
+
+        Debug.Log("Getting flag for: " + me);
+
         switch (me)
         {
             case "player 1":
@@ -93,15 +98,18 @@ public class Score : MonoBehaviour
     {
         string temp = collision.gameObject.tag;
         if (temp == "Player" || temp == "Player2" || temp == "Player3" || temp == "Player4") {
-            Debug.Log("STEAL?");
-            if (collision.relativeVelocity.magnitude > 3f) 
+            Debug.Log("STEAL?" + collision.relativeVelocity.magnitude);
+            if (collision.relativeVelocity.magnitude > 5f) 
             {
                 Debug.Log("STEAL!");
                 Score other_score = collision.gameObject.GetComponent<Score>();
-                if (other_score.DoesUserHaveFlag()) 
+                if (other_score.DoesUserHaveFlag() && other_score.canLoseFlag) 
                 {
+                    Debug.Log("MOVING FLAG");
+
                     get_flag();
                     other_score.lose_flag();
+                    StartCoroutine(FlagStealCooldown());
                 }
             }
         }
@@ -153,5 +161,11 @@ public class Score : MonoBehaviour
     public bool DoesUserHaveFlag()
     {
         return hasFlag;
+    }
+
+    private IEnumerator FlagStealCooldown(){
+        canLoseFlag = false;
+        yield return new WaitForSeconds(0.2f);
+        canLoseFlag = true;
     }
 }
