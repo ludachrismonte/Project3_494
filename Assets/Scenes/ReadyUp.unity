@@ -323,6 +323,16 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114461849075916212, guid: 67a5e1cf0ac7d4dc6b5c04e846a06892,
+        type: 2}
+      propertyPath: UI_Folder
+      value: 
+      objectReference: {fileID: 569009014}
+    - target: {fileID: 114906380051670286, guid: 67a5e1cf0ac7d4dc6b5c04e846a06892,
+        type: 2}
+      propertyPath: m_PlayerMainText
+      value: 
+      objectReference: {fileID: 1892155067}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67a5e1cf0ac7d4dc6b5c04e846a06892, type: 2}
   m_IsPrefabAsset: 0
@@ -353,7 +363,7 @@ MonoBehaviour:
   - {fileID: 1892155064}
   - {fileID: 1892155063}
   - {fileID: 1892155062}
-  m_TutorialDoor: {fileID: 0}
+  m_TutorialDoor: {fileID: 328876978}
 --- !u!1001 &235127123
 Prefab:
   m_ObjectHideFlags: 0
@@ -438,6 +448,16 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114314529573887906, guid: b97a02ba666a344df93584bf126619ac,
+        type: 2}
+      propertyPath: UI_Folder
+      value: 
+      objectReference: {fileID: 1402131946}
+    - target: {fileID: 114038501247139276, guid: b97a02ba666a344df93584bf126619ac,
+        type: 2}
+      propertyPath: m_PlayerMainText
+      value: 
+      objectReference: {fileID: 1892155073}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b97a02ba666a344df93584bf126619ac, type: 2}
   m_IsPrefabAsset: 0
@@ -519,6 +539,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfa303b109348452b8903ef9f71cec56, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &328876978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1197524907332506, guid: dfa303b109348452b8903ef9f71cec56,
+    type: 2}
+  m_PrefabInternal: {fileID: 286248176}
 --- !u!1001 &385884953
 Prefab:
   m_ObjectHideFlags: 0
@@ -617,6 +642,11 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300000, guid: 45b5dbb6dd3387d4cb1d636947660266,
     type: 3}
   m_PrefabInternal: {fileID: 385884953}
+--- !u!1 &427497457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1197524907332506, guid: dfa303b109348452b8903ef9f71cec56,
+    type: 2}
+  m_PrefabInternal: {fileID: 1100168799}
 --- !u!1 &511109573 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1200467149483888, guid: 8c3fb762214234dd3b78af75ea72829f,
@@ -670,6 +700,10 @@ Prefab:
     - target: {fileID: 4294761670925504, guid: e1afc0bdbcfb4445d981cffe40610947, type: 2}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628936275465790, guid: e1afc0bdbcfb4445d981cffe40610947, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1afc0bdbcfb4445d981cffe40610947, type: 2}
@@ -792,6 +826,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1187505661379630, guid: 8c3fb762214234dd3b78af75ea72829f,
     type: 2}
   m_PrefabInternal: {fileID: 1892155051}
+--- !u!1 &1015950635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1197524907332506, guid: dfa303b109348452b8903ef9f71cec56,
+    type: 2}
+  m_PrefabInternal: {fileID: 1594339795}
 --- !u!1001 &1070419525
 Prefab:
   m_ObjectHideFlags: 0
@@ -1305,6 +1344,16 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114197496225249434, guid: 77bb515709b6c4f869b5791cd86e4a6f,
+        type: 2}
+      propertyPath: UI_Folder
+      value: 
+      objectReference: {fileID: 2056666072}
+    - target: {fileID: 114185704065106648, guid: 77bb515709b6c4f869b5791cd86e4a6f,
+        type: 2}
+      propertyPath: m_PlayerMainText
+      value: 
+      objectReference: {fileID: 1892155061}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77bb515709b6c4f869b5791cd86e4a6f, type: 2}
   m_IsPrefabAsset: 0
@@ -1335,7 +1384,7 @@ MonoBehaviour:
   - {fileID: 1892155058}
   - {fileID: 1892155057}
   - {fileID: 1892155056}
-  m_TutorialDoor: {fileID: 0}
+  m_TutorialDoor: {fileID: 427497457}
 --- !u!1001 &1640282818
 Prefab:
   m_ObjectHideFlags: 0
@@ -1425,6 +1474,16 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114797960946647310, guid: ad8140b2e81dc406db18bce5a92b6d51,
+        type: 2}
+      propertyPath: UI_Folder
+      value: 
+      objectReference: {fileID: 2056666068}
+    - target: {fileID: 114474039314134100, guid: ad8140b2e81dc406db18bce5a92b6d51,
+        type: 2}
+      propertyPath: m_PlayerMainText
+      value: 
+      objectReference: {fileID: 1892155078}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad8140b2e81dc406db18bce5a92b6d51, type: 2}
   m_IsPrefabAsset: 0
@@ -1455,7 +1514,7 @@ MonoBehaviour:
   - {fileID: 1892155075}
   - {fileID: 1892155074}
   - {fileID: 1892155055}
-  m_TutorialDoor: {fileID: 0}
+  m_TutorialDoor: {fileID: 1015950635}
 --- !u!1 &1761855123 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1618762920451506, guid: 8c3fb762214234dd3b78af75ea72829f,
@@ -1563,6 +1622,26 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114569786235395578, guid: 8c3fb762214234dd3b78af75ea72829f,
+        type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114840862928133770, guid: 8c3fb762214234dd3b78af75ea72829f,
+        type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114149090528487256, guid: 8c3fb762214234dd3b78af75ea72829f,
+        type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114237074846389908, guid: 8c3fb762214234dd3b78af75ea72829f,
+        type: 2}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c3fb762214234dd3b78af75ea72829f, type: 2}

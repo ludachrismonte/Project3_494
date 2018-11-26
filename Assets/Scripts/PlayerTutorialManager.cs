@@ -108,9 +108,7 @@ public class PlayerTutorialManager : MonoBehaviour
                 break;
             case "TutFlag":
                 m_TutorialDoor.SetActive(false);
-                m_PlayerMainText.text = "to win the game you must be the first " +
-                    "player to hold the flag for 60 seconds!";
-                StartCoroutine(TutorialText());
+                StartCoroutine(GameRulesText());
                 m_CurrentMessage = "exit the arena!";
                 Destroy(other.gameObject);
                 break;
@@ -223,6 +221,19 @@ public class PlayerTutorialManager : MonoBehaviour
     private IEnumerator TutorialText()
     {
         m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        yield return new WaitForSeconds(4);
+        m_PlayerMainText.text = m_CurrentMessage;
+        m_Rigidbody.constraints = RigidbodyConstraints.None;
+    }
+
+    private IEnumerator GameRulesText()
+    {
+        m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        m_PlayerMainText.text = "to win the game you must be the first " +
+            "player to hold the flag for 60 seconds!";
+        yield return new WaitForSeconds(4);
+        m_PlayerMainText.text = "take the flag from other players by running " +
+            "into them or by knocking them out!";
         yield return new WaitForSeconds(4);
         m_PlayerMainText.text = m_CurrentMessage;
         m_Rigidbody.constraints = RigidbodyConstraints.None;
