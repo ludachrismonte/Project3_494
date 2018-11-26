@@ -95,7 +95,6 @@ public class GameManager : MonoBehaviour
 
     public void Win(string s) 
     {
-        Time.timeScale = .5f;
         win_box.SetActive(true);
         win_text.text = s + " wins!";
         StartCoroutine(EndGame());
@@ -103,6 +102,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator EndGame()
     {
+        Time.timeScale = .5f;
         yield return new WaitForSeconds(2f);
         Time.timeScale = 1.0f;
         SceneManager.LoadScene("Menu");

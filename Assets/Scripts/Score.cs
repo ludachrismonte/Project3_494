@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
     public GameObject flag_object;
     public ObjectiveTracker m_ObjectiveTracker;
 
-    private readonly int m_ScoreToWin = 60;
+    private readonly int m_ScoreToWin = 150;
     private MeshRenderer Flag = null;
     private int current_score;
     private GameManager manager;
