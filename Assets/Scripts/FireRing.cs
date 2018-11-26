@@ -4,48 +4,42 @@ using UnityEngine;
 
 public class FireRing : MonoBehaviour {
 
-    private Vector3 init_scale;
+    private Vector3 m_InitScale;
+    private AudioSource m_WhooshSound;
 
-    private AudioSource whoosh;
-
-	// Use this for initialization
 	void Start () 
     {
-        whoosh = GetComponent<AudioSource>();
-        init_scale = transform.localScale;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+        m_WhooshSound = GetComponent<AudioSource>();
+        m_InitScale = transform.localScale;
 	}
 
-    public void Activate() {
-        whoosh.Play();
-        StartCoroutine(grow());
+    public void Activate() 
+    {
+        m_WhooshSound.Play();
+        StartCoroutine(Grow());
     }
 
     public void Deactivate()
     {
-        whoosh.Play();
-        StartCoroutine(shrink());
+        m_WhooshSound.Play();
+        StartCoroutine(Shrink());
     }
 
-    private IEnumerator grow() {
+    private IEnumerator Grow() {
         transform.localScale = Vector3.zero;
         for (float i = 0; i < .75; i += Time.deltaTime)
         {
-            transform.localScale = init_scale * Mathf.Sin(i * Mathf.PI / 2) / 0.75f;
+            transform.localScale = m_InitScale * Mathf.Sin(i * Mathf.PI / 2) / 0.75f;
             yield return null;
         }
     }
 
-    private IEnumerator shrink()
+    private IEnumerator Shrink()
     {
         transform.localScale = Vector3.zero;
         for (float i = 0; i < .75; i += Time.deltaTime)
         {
-            transform.localScale = init_scale * (0.75f - Mathf.Sin(i * Mathf.PI / 2)) / 0.75f;
+            transform.localScale = m_InitScale * (0.75f - Mathf.Sin(i * Mathf.PI / 2)) / 0.75f;
             yield return null;
         }
         yield return new WaitForSeconds(2);

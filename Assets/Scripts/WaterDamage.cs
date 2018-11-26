@@ -5,8 +5,10 @@ using UnityEngine;
 public class WaterDamage : MonoBehaviour {
 	
 	// Update is called once per frame
-	void Update () {
-        if (transform.position.y < 2.5) {
+	void Update () 
+    {
+        if (transform.position.y < 2.5) 
+        {
             gameObject.GetComponent<Health>().AlterHealth(-.5f);
         }
 	}

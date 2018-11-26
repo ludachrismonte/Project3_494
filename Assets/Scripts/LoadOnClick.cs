@@ -2,16 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class LoadOnClick : MonoBehaviour 
 {
-    public void LoadScene(string name)
+    private Image black;
+    public string scene = "quit";
+
+    private void Start()
     {
-        SceneManager.LoadScene(name);
+        black = transform.Find("black").GetComponent<Image>();
+        black.color = new Color(black.color.r, black.color.g, black.color.b, 0f);
+        Button btn = gameObject.GetComponent<Button>();
+        btn.onClick.AddListener(LoadScene);
     }
 
-    public void ExitGame()
+    public void LoadScene()
     {
-        Application.Quit();
+        StartCoroutine(Fade());
     }
+
+    private IEnumerator Fade() {
+        for (float i = 0; i < 1; i += Time.deltaTime) {
+            black.color = new Color(black.color.r, black.color.g, black.color.b, (float)(i/1));
+            yield return null;
+        }
+        if (scene != "quit") { SceneManager.LoadScene(scene); }
+        else Application.Quit();
+    }
+
 }
