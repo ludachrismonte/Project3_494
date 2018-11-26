@@ -146,11 +146,10 @@ public class WeaponManager : MonoBehaviour
         }
         else if (m_CurrentWeapon == WeaponType.landmine)
         {
-            m_CarLandmine.SetActive(true);
+            UnequipLandmine();
             Instantiate(m_LandminePrefab, 
                         m_CarLandmine.transform.position, 
                         m_CarLandmine.transform.rotation);
-            m_CurrentWeapon = WeaponType.none;
         }
     }
 

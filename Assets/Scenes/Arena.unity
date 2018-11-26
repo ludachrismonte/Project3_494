@@ -957,7 +957,8 @@ Prefab:
       propertyPath: m_TargetingText
       value: 
       objectReference: {fileID: 6272981}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114329523013577586, guid: 67a5e1cf0ac7d4dc6b5c04e846a06892, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 67a5e1cf0ac7d4dc6b5c04e846a06892, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &221484661 stripped
@@ -2478,7 +2479,8 @@ Prefab:
       propertyPath: m_Speedometers.Array.data[4]
       value: 
       objectReference: {fileID: 1175544200}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114852491855612510, guid: b97a02ba666a344df93584bf126619ac, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: b97a02ba666a344df93584bf126619ac, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &834893023 stripped
@@ -5099,7 +5101,8 @@ Prefab:
       propertyPath: m_Speedometers.Array.data[4]
       value: 
       objectReference: {fileID: 878623952}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114524971406021684, guid: 77bb515709b6c4f869b5791cd86e4a6f, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 77bb515709b6c4f869b5791cd86e4a6f, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1610323204
@@ -5455,7 +5458,8 @@ Prefab:
       propertyPath: m_TargetingText
       value: 
       objectReference: {fileID: 242526844}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114773208077005208, guid: ad8140b2e81dc406db18bce5a92b6d51, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: ad8140b2e81dc406db18bce5a92b6d51, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1675604228 stripped
