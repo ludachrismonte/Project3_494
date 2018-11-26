@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.8517109, g: 0.8998194, b: 0.9542908, a: 1}
+  m_IndirectSpecularColor: {r: 0.85171926, g: 0.899808, b: 0.95429176, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DropBox: {fileID: 1030048918076552, guid: e96e764a5cdeef047a72fa6fd8cbaa5b, type: 2}
   m_Radius: 180
-  m_MaxDrops: 15
+  m_MaxDrops: 25
   m_TimeDelay: 5
   m_HeightOfDrop: 20
 --- !u!1001 &77490930

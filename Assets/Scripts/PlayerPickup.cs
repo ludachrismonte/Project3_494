@@ -81,16 +81,22 @@ public class PlayerPickup : MonoBehaviour
                 StartCoroutine(WaitToRespawn(other.gameObject));
                 break;
             case "RocketPickup":
-                m_WeaponManager.EquipRocket();
-                Destroy(other.gameObject);
+                if (m_WeaponManager.GetCurrentWeapon() == WeaponType.none)
+                {
+                    m_WeaponManager.EquipRocket();
+                    Destroy(other.gameObject);
+                }
                 break;
             case "ShieldPickup":
                 transform.Find("Shield").gameObject.SetActive(true);
                 Destroy(other.gameObject);
                 break;
             case "LandminePickup":
-                m_WeaponManager.EquipLandmine();
-                Destroy(other.gameObject);
+                if (m_WeaponManager.GetCurrentWeapon() == WeaponType.none)
+                {
+                    m_WeaponManager.EquipLandmine();
+                    Destroy(other.gameObject);
+                }
                 break;
         }
     }
