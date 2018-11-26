@@ -38,7 +38,7 @@ public class Rocket : MonoBehaviour
             if (shield.activeSelf)
                 shield.SetActive(false);
             else
-                collision.gameObject.GetComponent<Health>().AlterHealth(m_RocketDamage);
+                collision.gameObject.GetComponent<Health>().AlterHealth(-m_RocketDamage);
         }
     }
 
