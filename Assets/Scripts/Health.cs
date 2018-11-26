@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public Image health_bar;
+    public Image black;
     public GameObject cam;
     public GameObject[] m_CarBodyLevel;
     public GameObject m_ExplosionPrefab;
@@ -120,19 +121,31 @@ public class Health : MonoBehaviour
 
     private IEnumerator Die()
     {
+        invincible = true;
         Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
         Instantiate(m_ExplosionPrefab, transform.position + (transform.forward * 2), Quaternion.identity);
         Instantiate(m_ExplosionPrefab, transform.position - (transform.forward * 2), Quaternion.identity);
 
-        transform.Find("SkyCar").gameObject.SetActive(false);
+        for (float i = 0; i < 1; i += Time.deltaTime)
+        {
+            black.color = new Color(black.color.r, black.color.g, black.color.b, (float)(i / 1));
+            yield return null;
+        }
 
-        invincible = true;
+        transform.Find("SkyCar").gameObject.SetActive(false);
         m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        respawnReset.Respawn(0);
         m_PlayerMainText.text = "knocked out!";
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+
+        for (float i = 1; i > 0; i -= Time.deltaTime)
+        {
+            black.color = new Color(black.color.r, black.color.g, black.color.b, i);
+            yield return null;
+        }
+
         m_PlayerMainText.text = "";
         m_Rigidbody.constraints = RigidbodyConstraints.None;
-        respawnReset.Respawn(0);
         invincible = false;
     }
 }
