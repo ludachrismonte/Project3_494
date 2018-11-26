@@ -27,7 +27,7 @@ public class Score : MonoBehaviour
     {
 
         Flag = transform.Find("flag").gameObject.GetComponent<MeshRenderer>();
-        //Rings = GameObject.FindWithTag("FireRings").GetComponent<RingSwitcher>();
+        Rings = GameObject.FindWithTag("FireRings").GetComponent<RingSwitcher>();
         Flags = GameObject.FindWithTag("Flags").GetComponent<RingSwitcher>();
 
         manager = GameManager.instance;
@@ -128,7 +128,6 @@ public class Score : MonoBehaviour
         }
         if (other.tag == "FireRing" && hasFlag)
         {
-            lose_flag();
             Rings.Switch();
             add_score(10);
         }
