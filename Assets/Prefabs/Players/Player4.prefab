@@ -4240,7 +4240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec1e45165d1f2544bff59f5a80db8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheel: {fileID: 1038612825222410}
+  wheel: {fileID: 0}
 --- !u!114 &114084945867477202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4294,7 +4294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec1e45165d1f2544bff59f5a80db8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheel: {fileID: 1949303493676222}
+  wheel: {fileID: 0}
 --- !u!114 &114340955079095008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4381,6 +4381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health_bar: {fileID: 0}
+  black: {fileID: 0}
   cam: {fileID: 1165613880166122}
   m_CarBodyLevel:
   - {fileID: 1896509901882028}
