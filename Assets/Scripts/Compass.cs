@@ -25,10 +25,12 @@ public class Compass : MonoBehaviour {
     private Image i3;
     private Image i4;
     private Image flag;
+    private RingSwitcher FlagManager;
 
     private void Start()
     {
         manager = GameManager.instance.GetComponent<ObjectiveTracker>();
+        FlagManager = GameObject.FindWithTag("Flags").GetComponent<RingSwitcher>();
 
         left_loc = UI_Folder.transform.Find("Left").transform;
         left_bound = left_loc.position.x;
@@ -82,7 +84,17 @@ public class Compass : MonoBehaviour {
         i2.enabled = true;
         i3.enabled = true;
         i4.enabled = true;
-        flag.enabled = false;
+
+        if (manager.getFlagHolder() == FlagHolder.none)
+        {
+            flag.enabled = true;
+            flag.color = Color.white;
+            Track(flag, FlagManager.Get_Active());
+        }
+        else {
+            flag.enabled = false;
+        }
+
         if (my_num != 1 && manager.getFlagHolder() == FlagHolder.p1) 
         {
             flag.enabled = true;
