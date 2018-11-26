@@ -13,6 +13,7 @@ public class PlayerTutorialManager : MonoBehaviour
     public GameObject m_ReadyImage;
     public RawImage[] m_Speedometers;
     public GameObject m_TutorialDoor;
+    public MeshRenderer m_Flag;
 
     private CarController m_CarController;
     private Health m_CarHealth;
@@ -110,6 +111,7 @@ public class PlayerTutorialManager : MonoBehaviour
                 m_TutorialDoor.SetActive(false);
                 StartCoroutine(GameRulesText());
                 m_CurrentMessage = "exit the arena!";
+                m_Flag.enabled = true;
                 Destroy(other.gameObject);
                 break;
             case "TutFireRing":
