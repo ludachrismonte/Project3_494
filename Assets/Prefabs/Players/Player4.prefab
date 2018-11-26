@@ -815,7 +815,6 @@ GameObject:
   - component: {fileID: 114526206658664052}
   - component: {fileID: 114084945867477202}
   - component: {fileID: 114090840921117192}
-  - component: {fileID: 114797960946647310}
   - component: {fileID: 114947282255284228}
   m_Layer: 0
   m_Name: Player4
@@ -1152,7 +1151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990267783747410}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 15, z: 185}
+  m_LocalPosition: {x: 0, y: 11.6, z: 185}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4108970954359224}
@@ -3345,20 +3344,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carController: {fileID: 114340955079095008}
---- !u!114 &114797960946647310
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1990267783747410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c516e3e86b04491688998353915edab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_Folder: {fileID: 0}
-  my_num: 4
-  cam: {fileID: 20244215437470794}
 --- !u!114 &114838071161350260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3451,6 +3436,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  m_PlayerCamera: {fileID: 20244215437470794}
 --- !u!114 &114973973328378130
 MonoBehaviour:
   m_ObjectHideFlags: 1
