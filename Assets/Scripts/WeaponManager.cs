@@ -16,6 +16,7 @@ public class WeaponManager : MonoBehaviour
     public GameObject m_CarLandmine;
     public GameObject m_LandminePrefab;
 
+    private AudioSource m_MechanicalNoise;
     private RocketTargeter m_RocketTargeter;
     private bool m_HasTwoRockets = false;
     private GameObject m_RocketTarget;
@@ -31,7 +32,7 @@ public class WeaponManager : MonoBehaviour
         {
             m_TargetingText.text = "";
         }
-
+        m_MechanicalNoise = GetComponent<AudioSource>();
         m_RocketTargeter = GetComponent<RocketTargeter>();
 
         m_RightRocket.SetActive(false);
@@ -155,6 +156,7 @@ public class WeaponManager : MonoBehaviour
 
     private IEnumerator RaiseRocketShooter() 
     {
+        m_MechanicalNoise.Play();
         m_HasTwoRockets = true;
         m_LeftRocket.SetActive(true);
         m_RightRocket.SetActive(true);
@@ -165,10 +167,12 @@ public class WeaponManager : MonoBehaviour
             m_RocketShooter.transform.localPosition += new Vector3(0, .05f, 0);
             yield return new WaitForSeconds(0);
         }
+        m_MechanicalNoise.Stop();
     }
 
     private IEnumerator LowerRocketShooter()
     {
+        m_MechanicalNoise.Play();
         m_HasTwoRockets = false;
         m_LeftRocket.SetActive(false);
         m_RightRocket.SetActive(false);
@@ -179,6 +183,7 @@ public class WeaponManager : MonoBehaviour
             m_RocketShooter.transform.localPosition -= new Vector3(0, .05f, 0);
             yield return new WaitForSeconds(0);
         }
+        m_MechanicalNoise.Stop();
         m_RocketShooter.GetComponent<MeshRenderer>().enabled = false;
     }
 
