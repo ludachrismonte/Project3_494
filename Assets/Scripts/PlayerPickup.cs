@@ -12,13 +12,14 @@ public class PlayerPickup : MonoBehaviour
     public PickupLevelEnum m_EngineLevel = PickupLevelEnum.one;
     public RawImage[] m_Speedometers;
     public GameObject[] m_CarTires; // list of lists
-
+    public Camera cam;
     private CarController m_CarController;
     private Health m_CarHealth;
     private Rigidbody m_Rigidbody;
     private WeaponManager m_WeaponManager;
 
     private RawImage m_CurrentSpeedometer;
+    private RawImage m_NewSpeedometer;
     private PickupLevelEnum m_CurrentTireLevel;
 
     private void Start()
@@ -44,7 +45,7 @@ public class PlayerPickup : MonoBehaviour
         m_CurrentTireLevel = m_TireLevel;
 
         UpdateCarBody();
-        UpdateEngine();
+        UpdateEngine(transform.position);
         UpdateTires();
     }
 
@@ -67,7 +68,7 @@ public class PlayerPickup : MonoBehaviour
                 if (pickupLevel.m_PickupLevel > m_EngineLevel)
                 {
                     m_EngineLevel = pickupLevel.m_PickupLevel;
-                    UpdateEngine();
+                    UpdateEngine(other.transform.position);
                 }
                 StartCoroutine(WaitToRespawn(other.gameObject));
                 break;
@@ -123,35 +124,37 @@ public class PlayerPickup : MonoBehaviour
         }
     }
 
-    private void UpdateEngine()
+    private void UpdateEngine(Vector3 collision_origin)
     {
-        m_CurrentSpeedometer.enabled = false;
-
         switch (m_EngineLevel)
         {
             case PickupLevelEnum.two:
                 m_CarController.MaxSpeed = 75;
-                m_CurrentSpeedometer = m_Speedometers[1];
+                m_NewSpeedometer = m_Speedometers[1];
+                StartCoroutine(SpeedometerJuice(collision_origin));
                 break;
             case PickupLevelEnum.three:
                 m_CarController.MaxSpeed = 100;
-                m_CurrentSpeedometer = m_Speedometers[2];
+                m_NewSpeedometer = m_Speedometers[2];
+                StartCoroutine(SpeedometerJuice(collision_origin));
                 break;
             case PickupLevelEnum.four:
                 m_CarController.MaxSpeed = 125;
-                m_CurrentSpeedometer = m_Speedometers[3];
+                m_NewSpeedometer = m_Speedometers[3];
+                StartCoroutine(SpeedometerJuice(collision_origin));
                 break;
             case PickupLevelEnum.five:
-                m_CurrentSpeedometer = m_Speedometers[4];
                 m_CarController.MaxSpeed = 150;
+                m_NewSpeedometer = m_Speedometers[4];
+                StartCoroutine(SpeedometerJuice(collision_origin));
                 break;
             default:
                 m_CarController.MaxSpeed = 50;
+                m_CurrentSpeedometer.enabled = false;
                 m_CurrentSpeedometer = m_Speedometers[0];
+                m_CurrentSpeedometer.enabled = true;
                 break;
         }
-
-        m_CurrentSpeedometer.enabled = true;
     }
 
     private void UpdateTires()
@@ -206,6 +209,23 @@ public class PlayerPickup : MonoBehaviour
         m_TireLevel = PickupLevelEnum.one;
         UpdateTires();
         m_EngineLevel = PickupLevelEnum.one;
-        UpdateEngine();
+        UpdateEngine(transform.position);
+    }
+
+    private IEnumerator SpeedometerJuice(Vector3 collision_origin) {
+        m_NewSpeedometer.enabled = true;
+        Vector3 end_position = m_NewSpeedometer.transform.position;
+        Vector3 pos = cam.WorldToScreenPoint(collision_origin);
+        float counter = 0.0f;
+        float duration = 0.75f;
+        while (counter < duration)
+        {
+            counter += Time.deltaTime;
+            m_NewSpeedometer.transform.localScale = Vector3.Lerp(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(1f, 1f, 1f), counter / duration);
+            m_NewSpeedometer.transform.position = Vector3.Lerp(pos, end_position, counter / duration);
+            yield return null;
+        }
+        m_CurrentSpeedometer.enabled = false;
+        m_CurrentSpeedometer = m_NewSpeedometer;
     }
 }

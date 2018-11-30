@@ -10,11 +10,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject UI;
+    public GameObject GameSettings;
     public Text[] m_Placements = new Text[4];
     
     private Text win_text;
     private GameObject win_box;
-    private Image black;
+    private Image game_black;
+    private Image menu_black;
 
     private GameObject player1;
     private GameObject player2;
@@ -42,9 +44,13 @@ public class GameManager : MonoBehaviour
     {
         win_text = UI.transform.Find("MainText").GetComponent<Text>();
         win_box = UI.transform.Find("WinBox").gameObject;
-        black = UI.transform.Find("black").GetComponent<Image>();
-        black.color = new Color(black.color.r, black.color.g, black.color.b, 1f);
-        StartCoroutine(FadeIn());
+        game_black = UI.transform.Find("black").GetComponent<Image>();
+        menu_black = GameSettings.transform.Find("black").GetComponent<Image>();
+
+        game_black.color = new Color(game_black.color.r, game_black.color.g, game_black.color.b, 1f);
+        menu_black.color = new Color(menu_black.color.r, menu_black.color.g, menu_black.color.b, 1f);
+        GameSettings.SetActive(true);
+        StartCoroutine(FadeIn(menu_black));
 
         player1 = GameObject.FindGameObjectWithTag("Player");
         player2 = GameObject.FindGameObjectWithTag("Player2");
@@ -58,7 +64,15 @@ public class GameManager : MonoBehaviour
 
         foreach (Text text in m_Placements)
             text.text = "#1";
+    }
 
+    public void MenuSubmit(int score) {
+        GameSettings.SetActive(false);
+        player1.GetComponent<Score>().SetGameScore(score);
+        player2.GetComponent<Score>().SetGameScore(score);
+        player3.GetComponent<Score>().SetGameScore(score);
+        player4.GetComponent<Score>().SetGameScore(score);
+        StartCoroutine(FadeIn(game_black));
         StartCoroutine(GameStart());
     }
 
@@ -84,13 +98,14 @@ public class GameManager : MonoBehaviour
         win_text.text = "";
     }
 
-    private IEnumerator FadeIn() 
+    private IEnumerator FadeIn(Image black) 
     {
         for (float i = 2f; i > 0f; i -= Time.deltaTime)
         {
             black.color = new Color(black.color.r, black.color.g, black.color.b, i/2);
             yield return null;
         }
+        black.gameObject.SetActive(false);
     }
 
     public void Win(string s) 
