@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
     public GameObject flag_object;
     public ObjectiveTracker m_ObjectiveTracker;
 
-    private readonly int m_ScoreToWin = 150;
+    private int m_ScoreToWin = 10000;
     private MeshRenderer Flag = null;
     private int current_score;
     private GameManager manager;
@@ -22,6 +22,11 @@ public class Score : MonoBehaviour
     private bool hasFlag = false;
 
     bool canLoseFlag = true;
+
+    public void SetGameScore(int s)
+    {
+        m_ScoreToWin = s;
+    }
 
     private void Start()
     {
@@ -98,17 +103,13 @@ public class Score : MonoBehaviour
     {
         string temp = collision.gameObject.tag;
         if (temp == "Player" || temp == "Player2" || temp == "Player3" || temp == "Player4") {
-            Debug.Log("STEAL?" + collision.relativeVelocity.magnitude);
             if (collision.relativeVelocity.magnitude > 5f) 
             {
-                Debug.Log("STEAL!");
                 Score other_score = collision.gameObject.GetComponent<Score>();
                 if (other_score.DoesUserHaveFlag() && other_score.canLoseFlag) 
                 {
-                    Debug.Log("MOVING FLAG");
-
-                    get_flag();
                     other_score.lose_flag();
+                    get_flag();
                     StartCoroutine(FlagStealCooldown());
                 }
             }

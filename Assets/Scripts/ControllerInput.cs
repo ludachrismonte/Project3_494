@@ -70,17 +70,14 @@ public class ControllerInput : MonoBehaviour
 
             if (!IsGrounded())
             {
-                if (!Mathf.Approximately(0.0f, rightHorizInput))
+                if (!Mathf.Approximately(0.0f, horizInput))
                 {
-                    m_Rigidbody.AddRelativeTorque(Vector3.up * rightHorizInput * torque);
+                    m_Rigidbody.AddRelativeTorque(Vector3.up * horizInput * torque);
                 }
                 if (!Mathf.Approximately(0.0f, vertInput))
                 {
                     m_Rigidbody.AddRelativeTorque(Vector3.right * vertInput * torque);
                 }
-                /*if (!Mathf.Approximately(0.0f, horizInput)){
-                    m_Rigidbody.AddRelativeTorque(Vector3.back * horizInput * torque);
-                }*/
             }
             else
             {
