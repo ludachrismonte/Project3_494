@@ -103,17 +103,13 @@ public class Score : MonoBehaviour
     {
         string temp = collision.gameObject.tag;
         if (temp == "Player" || temp == "Player2" || temp == "Player3" || temp == "Player4") {
-            Debug.Log("STEAL?" + collision.relativeVelocity.magnitude);
             if (collision.relativeVelocity.magnitude > 5f) 
             {
-                Debug.Log("STEAL!");
                 Score other_score = collision.gameObject.GetComponent<Score>();
                 if (other_score.DoesUserHaveFlag() && other_score.canLoseFlag) 
                 {
-                    Debug.Log("MOVING FLAG");
-
-                    get_flag();
                     other_score.lose_flag();
+                    get_flag();
                     StartCoroutine(FlagStealCooldown());
                 }
             }
