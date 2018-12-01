@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public Image health_bar;
+    //public Image health_bar;
     public Image black;
     public GameObject cam;
     public GameObject[] m_CarBodyLevel;
@@ -38,7 +38,7 @@ public class Health : MonoBehaviour
             SetHealth(0);
             m_TestDeath = false;
         }
-        health_bar.fillAmount = m_Health / 50;
+        //health_bar.fillAmount = m_Health / 50;
     }
 
     public void AlterHealth(float amt)
