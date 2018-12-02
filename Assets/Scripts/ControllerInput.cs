@@ -89,6 +89,11 @@ public class ControllerInput : MonoBehaviour
             { 
                 weapon_manager.Fire(); 
             }
+
+            //if (player.Action2.Value > 0.0f)
+            //{
+            //    m_Rigidbody.AddForce(transform.forward * 300000, ForceMode.Force);
+            //}
         }
     }
 

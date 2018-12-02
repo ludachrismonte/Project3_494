@@ -25,7 +25,7 @@ public class LoadOnClick : MonoBehaviour
 
     private IEnumerator Fade() {
         for (float i = 0; i < 1; i += Time.deltaTime) {
-            black.color = new Color(black.color.r, black.color.g, black.color.b, (float)(i/1));
+            black.color = new Color(black.color.r, black.color.g, black.color.b, i);
             yield return null;
         }
         if (scene != "quit") { SceneManager.LoadScene(scene); }

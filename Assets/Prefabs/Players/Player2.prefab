@@ -4177,7 +4177,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_PlayerCamera: {fileID: 20071719291899138}
-  m_Laser: {fileID: 0}
+  m_Crosshairs: {fileID: 0}
 --- !u!114 &114394164089526316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4200,7 +4200,6 @@ MonoBehaviour:
   ScoreBar8: {fileID: 0}
   flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
     type: 2}
-  m_ObjectiveTracker: {fileID: 0}
 --- !u!114 &114422816576375582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4276,7 +4275,6 @@ MonoBehaviour:
   m_RocketShooter: {fileID: 1040794646442320}
   m_RocketPrefab: {fileID: 1376979691465780, guid: f218cd1c6cab35746b51fe6353f5c803,
     type: 2}
-  m_TargetingText: {fileID: 0}
   m_Laser: {fileID: 1463184581520620}
   m_CarLandmine: {fileID: 1017665786837924}
   m_LandminePrefab: {fileID: 1413299180077768, guid: 300cace429c37da46a05a06d28bd8221,
