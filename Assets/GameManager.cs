@@ -66,7 +66,8 @@ public class GameManager : MonoBehaviour
             text.text = "#1";
     }
 
-    public void MenuSubmit(int score) {
+    public void MenuSubmit(int score) 
+    {
         GameSettings.SetActive(false);
         player1.GetComponent<Score>().SetGameScore(score);
         player2.GetComponent<Score>().SetGameScore(score);

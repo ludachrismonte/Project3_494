@@ -17,7 +17,7 @@ public class Score : MonoBehaviour
     public Image ScoreBar8;
 
     public GameObject flag_object;
-    public ObjectiveTracker m_ObjectiveTracker;
+    private ObjectiveTracker m_ObjectiveTracker;
 
     private int m_ScoreToWin = 10000;
     private MeshRenderer Flag = null;
@@ -38,7 +38,7 @@ public class Score : MonoBehaviour
 
     private void Start()
     {
-
+        m_ObjectiveTracker = GameManager.instance.GetComponent<ObjectiveTracker>();
         Flag = transform.Find("flag").gameObject.GetComponent<MeshRenderer>();
         Rings = GameObject.FindWithTag("FireRings").GetComponent<RingSwitcher>();
         Flags = GameObject.FindWithTag("Flags").GetComponent<RingSwitcher>();

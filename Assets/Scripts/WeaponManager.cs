@@ -11,7 +11,7 @@ public class WeaponManager : MonoBehaviour
     public GameObject m_RightRocket = null;
     public GameObject m_RocketShooter;
     public GameObject m_RocketPrefab;
-    public Text m_TargetingText = null;
+    public GameObject m_Laser;
 
     public GameObject m_CarLandmine;
     public GameObject m_LandminePrefab;
@@ -24,19 +24,13 @@ public class WeaponManager : MonoBehaviour
 
     void Start () 
     {
-        if (m_TargetingText == null)
-        {
-            Debug.LogError("ERROR in WeaponManager: TargetingText is null");
-        }
-        else
-        {
-            m_TargetingText.text = "";
-        }
         m_MechanicalNoise = GetComponent<AudioSource>();
         m_RocketTargeter = GetComponent<RocketTargeter>();
 
         m_RightRocket.SetActive(false);
         m_LeftRocket.SetActive(false);
+        m_Laser.SetActive(false);
+        m_Laser.gameObject.GetComponent<LineRenderer>().startWidth = 0.5f;
         m_RocketShooter.GetComponent<MeshRenderer>().enabled = false;
     }
 
@@ -47,39 +41,17 @@ public class WeaponManager : MonoBehaviour
             m_RocketTarget = m_RocketTargeter.GetTarget();
             if (m_RocketTarget != null)
             {
+                m_Laser.SetActive(true);
                 m_RocketShooter.transform.LookAt(m_RocketTarget.transform);
-                switch (m_RocketTarget.tag)
-                {
-                    case "Player":
-                        m_TargetingText.text = "rocket lock: blue";
-                        m_TargetingText.color = Color.blue;
-                        break;
-                    case "Player2":
-                        m_TargetingText.text = "rocket lock: red";
-                        m_TargetingText.color = Color.red;
-                        break;
-                    case "Player3":
-                        m_TargetingText.text = "rocket lock: green";
-                        m_TargetingText.color = Color.green;
-                        break;
-                    case "Player4":
-                        m_TargetingText.text = "rocket lock: yellow";
-                        m_TargetingText.color = Color.yellow;
-                        break;
-                    default:
-                        Debug.LogError("ERROR in WeaponManager.cs: invalid target.");
-                        break;
-                }
             }
             else
             {
-                m_TargetingText.text = "no rocket lock";
-                m_TargetingText.color = Color.white;
+                m_Laser.SetActive(false);
             }
         }
         else
         {
-            m_TargetingText.text = "";
+            m_Laser.SetActive(false);
         }
     }
 
