@@ -7,6 +7,7 @@ public class RocketTargeter : MonoBehaviour
     public GameObject[] m_OtherPlayers;
     public readonly float m_TargetingRange = 100f;
     public Camera m_PlayerCamera;
+    public GameObject m_Laser;
 
     private WeaponManager m_WeaponManager;
     private GameObject m_CurrentTarget;
@@ -15,6 +16,7 @@ public class RocketTargeter : MonoBehaviour
     {
         m_WeaponManager = GetComponent<WeaponManager>();
         m_CurrentTarget = null;
+        m_Laser.SetActive(false);
 	}
 	
 	private void Update () 

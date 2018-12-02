@@ -12,6 +12,7 @@ public class WeaponManager : MonoBehaviour
     public GameObject m_RocketShooter;
     public GameObject m_RocketPrefab;
     public Text m_TargetingText = null;
+    public GameObject m_Laser;
 
     public GameObject m_CarLandmine;
     public GameObject m_LandminePrefab;
@@ -37,6 +38,8 @@ public class WeaponManager : MonoBehaviour
 
         m_RightRocket.SetActive(false);
         m_LeftRocket.SetActive(false);
+        m_Laser.SetActive(false);
+        //m_Laser.GetComponent<LineRenderer>().startWidth = 10;
         m_RocketShooter.GetComponent<MeshRenderer>().enabled = false;
     }
 
@@ -47,6 +50,7 @@ public class WeaponManager : MonoBehaviour
             m_RocketTarget = m_RocketTargeter.GetTarget();
             if (m_RocketTarget != null)
             {
+                m_Laser.SetActive(true);
                 m_RocketShooter.transform.LookAt(m_RocketTarget.transform);
                 switch (m_RocketTarget.tag)
                 {
@@ -73,12 +77,14 @@ public class WeaponManager : MonoBehaviour
             }
             else
             {
+                m_Laser.SetActive(false);
                 m_TargetingText.text = "no rocket lock";
                 m_TargetingText.color = Color.white;
             }
         }
         else
         {
+            m_Laser.SetActive(false);
             m_TargetingText.text = "";
         }
     }

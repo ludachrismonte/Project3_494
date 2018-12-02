@@ -62,6 +62,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1068467330328780
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4018626083072116}
+  - component: {fileID: 120707456462627424}
+  m_Layer: 0
+  m_Name: Laser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1105014663182148
 GameObject:
   m_ObjectHideFlags: 1
@@ -1093,6 +1109,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4018626083072116
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1068467330328780}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 100.000084}
+  m_Children: []
+  m_Father: {fileID: 4109168908471300}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4020046740083602
 Transform:
   m_ObjectHideFlags: 1
@@ -1170,6 +1199,7 @@ Transform:
   m_Children:
   - {fileID: 4440146549616730}
   - {fileID: 4972323894284652}
+  - {fileID: 4018626083072116}
   m_Father: {fileID: 4171364355664644}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3976,7 +4006,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a7b64cdfc90c80d43a4c656eb3328b89, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4410,7 +4440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f60f0e995e5450e9e369ba785bfce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health_bar: {fileID: 0}
   black: {fileID: 0}
   cam: {fileID: 1974541954105366}
   m_CarBodyLevel:
@@ -4453,6 +4482,7 @@ MonoBehaviour:
   m_RocketPrefab: {fileID: 1376979691465780, guid: f218cd1c6cab35746b51fe6353f5c803,
     type: 2}
   m_TargetingText: {fileID: 0}
+  m_Laser: {fileID: 1068467330328780}
   m_CarLandmine: {fileID: 1847397479967894}
   m_LandminePrefab: {fileID: 1413299180077768, guid: 300cace429c37da46a05a06d28bd8221,
     type: 2}
@@ -4494,6 +4524,7 @@ MonoBehaviour:
   - {fileID: 1489342987165458}
   - {fileID: 1469831974117868}
   - {fileID: 1840362763918892}
+  cam: {fileID: 20235636934578604}
 --- !u!114 &114475650582498148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4521,6 +4552,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   me: player 3
   ScoreBar: {fileID: 0}
+  ScoreBar2: {fileID: 0}
+  ScoreBar3: {fileID: 0}
+  ScoreBar4: {fileID: 0}
+  ScoreBar5: {fileID: 0}
+  ScoreBar6: {fileID: 0}
+  ScoreBar7: {fileID: 0}
+  ScoreBar8: {fileID: 0}
   flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
     type: 2}
   m_ObjectiveTracker: {fileID: 0}
@@ -4568,6 +4606,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_PlayerCamera: {fileID: 20235636934578604}
+  m_Laser: {fileID: 0}
 --- !u!114 &114841995081422836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4678,6 +4717,98 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 1469831974117868}
+--- !u!120 &120707456462627424
+LineRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1068467330328780}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 5df9e22e02fe14aec92f632fc4305364, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    serializedVersion: 2
+    widthMultiplier: 0.1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    generateLightingData: 0
+  m_UseWorldSpace: 0
+  m_Loop: 0
 --- !u!124 &124601786967932332
 Behaviour:
   m_ObjectHideFlags: 1
