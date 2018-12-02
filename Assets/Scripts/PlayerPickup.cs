@@ -15,7 +15,6 @@ public class PlayerPickup : MonoBehaviour
     public Camera cam;
     private CarController m_CarController;
     private Health m_CarHealth;
-    private Rigidbody m_Rigidbody;
     private WeaponManager m_WeaponManager;
 
     private RawImage m_CurrentSpeedometer;
@@ -26,7 +25,6 @@ public class PlayerPickup : MonoBehaviour
     {
         m_CarController = GetComponent<CarController>();
         m_CarHealth = GetComponent<Health>();
-        m_Rigidbody = GetComponent<Rigidbody>();
         m_WeaponManager = GetComponent<WeaponManager>();
 
         foreach (RawImage speedometer in m_Speedometers)
