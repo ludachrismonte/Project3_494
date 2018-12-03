@@ -19,7 +19,7 @@ public class Score : MonoBehaviour
     public GameObject flag_object;
     private ObjectiveTracker m_ObjectiveTracker;
     private int m_ScoreToWin = 10000;
-    private MeshRenderer Flag = null;
+    private GameObject Flag = null;
     private int current_score;
     private GameManager manager;
     private RingSwitcher Flags;
@@ -38,7 +38,8 @@ public class Score : MonoBehaviour
     private void Start()
     {
         m_ObjectiveTracker = GameManager.instance.GetComponent<ObjectiveTracker>();
-        Flag = transform.Find("flag").gameObject.GetComponent<MeshRenderer>();
+        Flag = transform.Find("flag").gameObject;
+        Flag.SetActive(false);
         Rings = GameObject.FindWithTag("FireRings").GetComponent<RingSwitcher>();
         Flags = GameObject.FindWithTag("Flags").GetComponent<RingSwitcher>();
 
@@ -103,7 +104,7 @@ public class Score : MonoBehaviour
     private void get_flag() 
     {
         manager.GetComponent<Announcer>().Trigger(me);
-        Flag.enabled = true;
+        Flag.SetActive(true);
         hasFlag = true;
 
         Debug.Log("Getting flag for: " + me);
@@ -131,7 +132,7 @@ public class Score : MonoBehaviour
 
     public void lose_flag()
     {
-        Flag.enabled = false;
+        Flag.SetActive(false);
         hasFlag = false;
         m_ObjectiveTracker.SetFlagHolder(FlagHolder.none);
     }
