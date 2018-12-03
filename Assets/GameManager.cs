@@ -87,13 +87,13 @@ public class GameManager : MonoBehaviour
         player4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 
-    public void MenuSubmit(int score) 
+    public void MenuSubmit(int score, int FirehoopPoints, int FirehoopPoints_NoFlag) 
     {
         GameSettings.SetActive(false);
-        player1.GetComponent<Score>().SetGameScore(score);
-        player2.GetComponent<Score>().SetGameScore(score);
-        player3.GetComponent<Score>().SetGameScore(score);
-        player4.GetComponent<Score>().SetGameScore(score);
+        player1.GetComponent<Score>().SetGameScore(score, FirehoopPoints, FirehoopPoints_NoFlag);
+        player2.GetComponent<Score>().SetGameScore(score, FirehoopPoints, FirehoopPoints_NoFlag);
+        player3.GetComponent<Score>().SetGameScore(score, FirehoopPoints, FirehoopPoints_NoFlag);
+        player4.GetComponent<Score>().SetGameScore(score, FirehoopPoints, FirehoopPoints_NoFlag);
         StartCoroutine(FadeIn(game_black));
         StartCoroutine(GameStart());
     }
