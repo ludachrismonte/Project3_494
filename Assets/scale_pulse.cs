@@ -7,6 +7,7 @@ public class scale_pulse : MonoBehaviour {
     private Vector3 initial;
     private float multiplier;
     private float timer;
+    public float speed = 6f;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +17,7 @@ public class scale_pulse : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timer += Time.deltaTime;
+        timer += Time.deltaTime * speed;
         multiplier = Mathf.Sin(timer);
         multiplier = (multiplier / 5) + 1;
         gameObject.transform.localScale = initial * multiplier;

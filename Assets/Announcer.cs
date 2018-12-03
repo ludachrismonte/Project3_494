@@ -77,7 +77,6 @@ public class Announcer : MonoBehaviour {
             {
                 fif_yes[i] = false;
                 StartCoroutine(Play(fifteen[i]));
-                Debug.Log("15 to winnnnn " + i);
             }
         }
 

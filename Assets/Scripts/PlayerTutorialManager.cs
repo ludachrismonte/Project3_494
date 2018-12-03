@@ -245,8 +245,7 @@ public class PlayerTutorialManager : MonoBehaviour
     private IEnumerator GameRulesText()
     {
         m_ShowingText = true;
-        m_PlayerMainText.text = "to win the game you must be the first " +
-            "player to hold the flag for 60 seconds!";
+        m_PlayerMainText.text = "hold the flag for as long as you can to win the game!";
         yield return new WaitForSeconds(4);
         m_PlayerMainText.text = "take the flag from other players by running " +
             "into them or by knocking them out!";
