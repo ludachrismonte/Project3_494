@@ -18,7 +18,6 @@ public class Score : MonoBehaviour
 
     public GameObject flag_object;
     private ObjectiveTracker m_ObjectiveTracker;
-    private int m_ScoreToWin = 10000;
     private GameObject Flag = null;
     private int current_score;
     private GameManager manager;
@@ -30,9 +29,15 @@ public class Score : MonoBehaviour
 
     bool canLoseFlag = true;
 
-    public void SetGameScore(int s)
+    private int m_ScoreToWin = 120;
+    private int m_FireHoopFlag = 20;
+    private int m_FireHoopNoFlag = 10;
+
+    public void SetGameScore(int s, int f, int nf)
     {
         m_ScoreToWin = s;
+        m_FireHoopFlag = f;
+        m_FireHoopNoFlag = nf;
     }
 
     private void Start()
@@ -107,8 +112,6 @@ public class Score : MonoBehaviour
         Flag.SetActive(true);
         hasFlag = true;
 
-        Debug.Log("Getting flag for: " + me);
-
         switch (me)
         {
             case "player 1":
@@ -182,7 +185,12 @@ public class Score : MonoBehaviour
         if (other.tag == "FireRing" && hasFlag)
         {
             m_FireRingsManager.FireRingHit(other.gameObject);
-            add_score(10);
+            add_score(m_FireHoopFlag);
+        }
+        else if (other.tag == "FireRing" && !hasFlag)
+        {
+            m_FireRingsManager.FireRingHit(other.gameObject);
+            add_score(m_FireHoopNoFlag);
         }
     }
 

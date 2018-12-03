@@ -67,6 +67,6 @@ public class GameSettings : MonoBehaviour {
     }
 
     public void Submit() {
-        manager.MenuSubmit(TimeToWin);
+        manager.MenuSubmit(TimeToWin, FirehoopPoints, FirehoopPoints_NoFlag);
     }
 }
