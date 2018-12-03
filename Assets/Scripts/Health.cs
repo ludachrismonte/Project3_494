@@ -125,6 +125,8 @@ public class Health : MonoBehaviour
         Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
         Instantiate(m_ExplosionPrefab, transform.position + (transform.forward * 2), Quaternion.identity);
         Instantiate(m_ExplosionPrefab, transform.position - (transform.forward * 2), Quaternion.identity);
+        m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        transform.Find("SkyCar").gameObject.SetActive(false);
 
         for (float i = 0; i < 1; i += Time.deltaTime)
         {
@@ -132,8 +134,6 @@ public class Health : MonoBehaviour
             yield return null;
         }
 
-        transform.Find("SkyCar").gameObject.SetActive(false);
-        m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         respawnReset.Respawn(0);
         m_PlayerMainText.text = "knocked out!";
         yield return new WaitForSeconds(1f);

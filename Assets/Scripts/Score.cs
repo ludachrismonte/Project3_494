@@ -217,14 +217,16 @@ public class Score : MonoBehaviour
 
     private IEnumerator DropFlagAfterDelay()
     {
+        Vector3 position = transform.position;
         yield return new WaitForSeconds(2);
-        GameObject NewFlag = (GameObject)Instantiate(flag_object,
-                    new Vector3(transform.position.x, transform.position.y + 4, transform.position.z), 
+        GameObject NewFlag = Instantiate(flag_object,
+                    new Vector3(position.x, position.y + 4, position.z), 
                     Flags.Get_Active().rotation);
         NewFlag.name = "Dropped Flag";
     }
 
-    private IEnumerator FlagStealCooldown(){
+    private IEnumerator FlagStealCooldown()
+    {
         canLoseFlag = false;
         yield return new WaitForSeconds(0.2f);
         canLoseFlag = true;

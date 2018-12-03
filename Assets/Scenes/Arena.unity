@@ -130,7 +130,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4102641815237352, guid: 006d5f11867704d798d67fc2b57abf65, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 168.22148
+      value: 160.5
       objectReference: {fileID: 0}
     - target: {fileID: 4102641815237352, guid: 006d5f11867704d798d67fc2b57abf65, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1505,6 +1505,11 @@ Prefab:
       propertyPath: m_Name
       value: CarBodyPickupLvl2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114913052373385430, guid: d537bb7416718401389a9b5d10f670c1,
+        type: 2}
+      propertyPath: m_PickupLevel
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
   m_IsPrefabAsset: 0
@@ -1677,6 +1682,11 @@ Prefab:
     - target: {fileID: 1649593261324842, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_Name
       value: CarBodyPickupLvl2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114913052373385430, guid: d537bb7416718401389a9b5d10f670c1,
+        type: 2}
+      propertyPath: m_PickupLevel
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
@@ -2293,7 +2303,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4102641815237352, guid: 006d5f11867704d798d67fc2b57abf65, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.5832
+      value: -7.38
       objectReference: {fileID: 0}
     - target: {fileID: 4102641815237352, guid: 006d5f11867704d798d67fc2b57abf65, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2301,7 +2311,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4102641815237352, guid: 006d5f11867704d798d67fc2b57abf65, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 165.04147
+      value: 158.26
       objectReference: {fileID: 0}
     - target: {fileID: 4102641815237352, guid: 006d5f11867704d798d67fc2b57abf65, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5825,6 +5835,11 @@ Prefab:
       propertyPath: m_Name
       value: CarBodyPickupLvl2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114913052373385430, guid: d537bb7416718401389a9b5d10f670c1,
+        type: 2}
+      propertyPath: m_PickupLevel
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
   m_IsPrefabAsset: 0
@@ -7089,6 +7104,11 @@ Prefab:
     - target: {fileID: 1649593261324842, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_Name
       value: CarBodyPickupLvl2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114913052373385430, guid: d537bb7416718401389a9b5d10f670c1,
+        type: 2}
+      propertyPath: m_PickupLevel
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
