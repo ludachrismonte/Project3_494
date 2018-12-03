@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 114257966442243364}
   - component: {fileID: 54458645907414538}
   - component: {fileID: 114261508087923372}
-  - component: {fileID: 65044288008288946}
   - component: {fileID: 65445407699657614}
   - component: {fileID: 199800652465899732}
   - component: {fileID: 198185775331389264}
@@ -58,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1338941612224622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 1, z: 50}
+  m_LocalPosition: {x: 175.71124, y: 8.2, z: 96.02768}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4427674081237134}
@@ -137,20 +136,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
---- !u!65 &65044288008288946
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1338941612224622}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0, z: 1}
-  m_Center: {x: 0, y: -2, z: 0}
 --- !u!65 &65445407699657614
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -161,8 +148,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 0, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3, y: 2.7474613, z: 3}
+  m_Center: {x: 0, y: -0.014770508, z: 0}
 --- !u!95 &95435002322001752
 Animator:
   serializedVersion: 3
