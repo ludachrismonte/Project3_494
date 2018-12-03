@@ -26,12 +26,12 @@ public class Compass : MonoBehaviour
     private Image i3;
     private Image i4;
     private Image flag;
-    private RingSwitcher FlagManager;
+    private FlagManager m_FlagManager;
 
     private void Start()
     {
         manager = GameManager.instance.GetComponent<ObjectiveTracker>();
-        FlagManager = GameObject.FindWithTag("Flags").GetComponent<RingSwitcher>();
+        m_FlagManager = GameObject.FindWithTag("Flags").GetComponent<FlagManager>();
 
         left_loc = UI_Folder.transform.Find("Left").transform;
         left_bound = left_loc.position.x;
@@ -96,7 +96,7 @@ public class Compass : MonoBehaviour
             if (dropped != null) {
                 Track(flag, dropped.transform);
             }
-            else Track(flag, FlagManager.Get_Active());
+            else Track(flag, m_FlagManager.Get_Active());
         }
         else
         {

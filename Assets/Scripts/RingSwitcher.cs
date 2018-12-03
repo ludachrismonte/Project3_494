@@ -5,8 +5,10 @@ using UnityEngine;
 public class RingSwitcher : MonoBehaviour {
 
     public GameObject[] ctf_objects;
+    public int m_SpawnAtATime;
 
     private int index_active;
+    private int m_ActiveObjects;
 
     private void Start()
     {
@@ -18,7 +20,7 @@ public class RingSwitcher : MonoBehaviour {
         ctf_objects[index_active].SetActive(true);
     }
 
-    public void Switch () 
+    public void Switch() 
     {
         if (ctf_objects[index_active].GetComponent<FireRing>())
         {
@@ -37,10 +39,10 @@ public class RingSwitcher : MonoBehaviour {
 
         index_active = temp;
         ctf_objects[index_active].SetActive(true);
-        if (ctf_objects[index_active].GetComponent<FireRing>())
-        {
-            ctf_objects[index_active].GetComponent<FireRing>().Activate();
-        }
+        //if (ctf_objects[index_active].GetComponent<FireRing>())
+        //{
+        //    ctf_objects[index_active].GetComponent<FireRing>().Activate();
+        //}
     }
 
     public Transform Get_Active() 

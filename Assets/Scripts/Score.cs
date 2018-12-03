@@ -22,8 +22,8 @@ public class Score : MonoBehaviour
     private GameObject Flag = null;
     private int current_score;
     private GameManager manager;
-    private RingSwitcher Flags;
-    private RingSwitcher Rings;
+    private FlagManager m_FlagManager;
+    private FireRingManager m_FireRingsManager;
     private float timer;
     // Bool to keep track of if the player has the flag
     private bool hasFlag = false;
@@ -40,8 +40,8 @@ public class Score : MonoBehaviour
         m_ObjectiveTracker = GameManager.instance.GetComponent<ObjectiveTracker>();
         Flag = transform.Find("flag").gameObject;
         Flag.SetActive(false);
-        Rings = GameObject.FindWithTag("FireRings").GetComponent<RingSwitcher>();
-        Flags = GameObject.FindWithTag("Flags").GetComponent<RingSwitcher>();
+        m_FireRingsManager = GameObject.FindWithTag("FireRings").GetComponent<FireRingManager>();
+        m_FlagManager = GameObject.FindWithTag("Flags").GetComponent<FlagManager>();
 
         manager = GameManager.instance;
         current_score = 0;
@@ -176,12 +176,12 @@ public class Score : MonoBehaviour
         }
         else if (other.tag == "Flag")
         {
-            Flags.Disable_Active();
+            m_FlagManager.Disable_Active();
             get_flag();
         }
         if (other.tag == "FireRing" && hasFlag)
         {
-            Rings.Switch();
+            m_FireRingsManager.FireRingHit(other.gameObject);
             add_score(10);
         }
     }
@@ -207,7 +207,7 @@ public class Score : MonoBehaviour
             lose_flag();
             if (reset)
             {
-                Flags.Enable_Active();
+                m_FlagManager.Enable_Active();
             }
             else 
             {
@@ -221,8 +221,8 @@ public class Score : MonoBehaviour
         Vector3 position = transform.position;
         yield return new WaitForSeconds(2);
         GameObject NewFlag = Instantiate(flag_object,
-                    new Vector3(position.x, position.y + 4, position.z), 
-                    Flags.Get_Active().rotation);
+                    new Vector3(position.x, position.y + 4, position.z),
+                    m_FlagManager.Get_Active().rotation);
         NewFlag.name = "Dropped Flag";
     }
 

@@ -46,8 +46,8 @@ public class PostGameManager : MonoBehaviour {
     private bool canReset = false;
 
     // Use this for initialization
-    void Start () {
-
+    void Start () 
+    {
         player1 = GameObject.FindGameObjectWithTag("Player");
         player2 = GameObject.FindGameObjectWithTag("Player2");
         player3 = GameObject.FindGameObjectWithTag("Player3");
@@ -150,8 +150,8 @@ public class PostGameManager : MonoBehaviour {
     }
 
 
-    IEnumerator EndScene (){
-
+    IEnumerator EndScene ()
+    {
         yield return new WaitForSeconds(5.0f);
         resetText.enabled = true;
         canReset = true;
@@ -166,8 +166,8 @@ public class PostGameManager : MonoBehaviour {
 
     }
 
-    public GameObject FindWinner(){
-
+    public GameObject FindWinner()
+    {
         int max = player1.GetComponent<Score>().GetCurrentScore();
         GameObject winner = player1;
 
