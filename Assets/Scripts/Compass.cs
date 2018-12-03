@@ -63,20 +63,22 @@ public class Compass : MonoBehaviour
     private void Track(Image img, Transform player)
     {
         Vector3 pos = cam.WorldToScreenPoint(player.transform.position);
+
         Vector2 targetDir = new Vector2(player.position.x - cam.transform.position.x, player.position.z - cam.transform.position.z);
         Vector2 newForward = new Vector2(cam.transform.forward.x, cam.transform.forward.z);
         float angle = Vector3.Angle(targetDir, newForward);
-        if (angle < 27)
-        {
-            img.transform.position = new Vector3(pos.x, img.transform.position.y, 0);
-        }
-        else
-        {
-            float left = Vector3.Distance(left_loc.position, img.transform.position);
-            float right = Vector3.Distance(right_loc.position, img.transform.position);
 
-            img.transform.position = left < right ? left_loc.position : right_loc.position;
-        }
+        img.transform.position = angle < 27 ? 
+            new Vector3(pos.x, img.transform.position.y, 0) : 
+            ObjectToRight(newForward, targetDir) ? 
+                right_loc.position : 
+                left_loc.position;
+    }
+
+    private bool ObjectToRight(Vector3 fwd, Vector3 targetDir)
+    {
+        Vector3 perp = Vector3.Cross(fwd, targetDir);
+        return perp.z < 0.0f;
     }
 
     void LateUpdate()
