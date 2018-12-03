@@ -18,7 +18,6 @@ public class Score : MonoBehaviour
 
     public GameObject flag_object;
     private ObjectiveTracker m_ObjectiveTracker;
-
     private int m_ScoreToWin = 10000;
     private MeshRenderer Flag = null;
     private int current_score;
@@ -103,6 +102,7 @@ public class Score : MonoBehaviour
 
     private void get_flag() 
     {
+        manager.GetComponent<Announcer>().Trigger(me);
         Flag.enabled = true;
         hasFlag = true;
 
@@ -190,6 +190,16 @@ public class Score : MonoBehaviour
         return current_score;
     }
 
+    public int GetWinScore()
+    {
+        return m_ScoreToWin;
+    }
+
+    public bool DoesUserHaveFlag()
+    {
+        return hasFlag;
+    }
+
     public void DropFlag(bool reset) 
     {
         if (hasFlag) {
@@ -212,11 +222,6 @@ public class Score : MonoBehaviour
                     new Vector3(transform.position.x, transform.position.y + 4, transform.position.z), 
                     Flags.Get_Active().rotation);
         NewFlag.name = "Dropped Flag";
-    }
-
-    public bool DoesUserHaveFlag()
-    {
-        return hasFlag;
     }
 
     private IEnumerator FlagStealCooldown(){
