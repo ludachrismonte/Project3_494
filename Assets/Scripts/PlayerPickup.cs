@@ -182,9 +182,28 @@ public class PlayerPickup : MonoBehaviour
                 break;
         }
 
+        StartCoroutine(Grow());
+
+    }
+
+    private IEnumerator Grow()
+    {
         foreach (GameObject tires in m_CarTires)
         {
             tires.transform.GetChild((int)m_CurrentTireLevel - 1).gameObject.SetActive(true);
+        }
+        Vector3 initial = m_CarTires[0].transform.GetChild((int)m_CurrentTireLevel - 1).gameObject.transform.localScale;
+        for (float i = 0f; i < 0.5f; i += Time.deltaTime)
+        {
+            foreach (GameObject tires in m_CarTires)
+            {
+                tires.transform.GetChild((int)m_CurrentTireLevel - 1).gameObject.transform.localScale = initial * (.5f + i);
+            }
+            yield return null;
+        }
+        foreach (GameObject tires in m_CarTires)
+        {
+            tires.transform.GetChild((int)m_CurrentTireLevel - 1).gameObject.transform.localScale = initial;
         }
     }
 

@@ -12,8 +12,15 @@ public class GameManager : MonoBehaviour
     public GameObject UI;
     public GameObject GameSettings;
     public Text[] m_Placements = new Text[4];
-    
-    private Text win_text;
+
+    private Image explosion;
+    private Image wood;
+    private Text main_text;
+
+    public AudioClip blow;
+    public AudioClip buzzer;
+    public AudioClip horn;
+
     private GameObject win_box;
     private Image game_black;
     private Image menu_black;
@@ -42,7 +49,16 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        win_text = UI.transform.Find("MainText").GetComponent<Text>();
+        explosion = UI.transform.Find("Explosion").GetComponent<Image>();
+        wood = UI.transform.Find("Wood").GetComponent<Image>();
+        wood.transform.localScale = Vector3.zero;
+        explosion.transform.localScale = Vector3.zero;
+        wood.gameObject.SetActive(false);
+        explosion.gameObject.SetActive(false);
+
+        main_text = UI.transform.Find("MainText").GetComponent<Text>();
+        main_text.text = "";
+
         win_box = UI.transform.Find("WinBox").gameObject;
         game_black = UI.transform.Find("black").GetComponent<Image>();
         menu_black = GameSettings.transform.Find("black").GetComponent<Image>();
@@ -64,6 +80,11 @@ public class GameManager : MonoBehaviour
 
         foreach (Text text in m_Placements)
             text.text = "";
+
+        player1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        player2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        player3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        player4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 
     public void MenuSubmit(int score) 
@@ -79,26 +100,46 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator GameStart()
     {
-        player1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        player2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        player3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        player4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        yield return new WaitForSeconds(1);
+        wood.gameObject.SetActive(true);
+        explosion.gameObject.SetActive(true);
+        AudioSource.PlayClipAtPoint(blow, Camera.main.transform.position);
+        for (float i = 0f; i < 0.5f; i += Time.deltaTime)
+        {
+            wood.transform.localScale = Vector3.one * i * 2;
+            explosion.transform.localScale = Vector3.one * i * 2;
+            yield return null;
+        }
+        wood.transform.localScale = Vector3.one;
+        explosion.transform.localScale = Vector3.one;
+        yield return new WaitForSeconds(.5f);
 
-        win_text.text = "ready...";
-        win_text.color = Color.red;
+        main_text.text = "ready...";
+        AudioSource.PlayClipAtPoint(buzzer, Camera.main.transform.position);
+        main_text.color = Color.red;
         yield return new WaitForSeconds(2);
-        win_text.text = "set...";
-        win_text.color = Color.yellow;
+        main_text.text = "set...";
+        AudioSource.PlayClipAtPoint(buzzer, Camera.main.transform.position);
+        main_text.color = Color.yellow;
         yield return new WaitForSeconds(2);
-        win_text.text = "go!";
-        win_text.color = Color.green;
+        main_text.text = "go!";
+        AudioSource.PlayClipAtPoint(horn, Camera.main.transform.position);
+        main_text.color = Color.green;
 
         player1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         player2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         player3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
         yield return new WaitForSeconds(2);
-        win_text.text = "";
+        main_text.text = "";
+
+        for (float i = 0.5f; i > 0; i -= Time.deltaTime) {
+            wood.transform.localScale = Vector3.one * i * 2;
+            explosion.transform.localScale = Vector3.one * i * 2;
+            yield return null;
+        }
+        wood.gameObject.SetActive(false);
+        explosion.gameObject.SetActive(false);
     }
 
     private IEnumerator FadeIn(Image black) 
