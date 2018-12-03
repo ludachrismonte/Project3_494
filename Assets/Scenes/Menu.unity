@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.8517109, g: 0.8998194, b: 0.9542908, a: 1}
+  m_IndirectSpecularColor: {r: 0.85171926, g: 0.899808, b: 0.95429176, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -387,7 +387,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 10.481001, y: -40.549004, z: -3.108}
 --- !u!114 &33857296
 MonoBehaviour:
@@ -1211,7 +1211,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &231745261
 GameObject:
@@ -1941,6 +1941,64 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 411529642}
   m_Mesh: {fileID: 4300000, guid: 426fe29447a2b9a4db3fe8917e67b17b, type: 3}
+--- !u!1 &448863072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 448863075}
+  - component: {fileID: 448863074}
+  - component: {fileID: 448863073}
+  m_Layer: 0
+  m_Name: InControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &448863073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448863072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5496b2b6e921d46d09633436bcec990a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &448863074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448863072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b5e8de77c5b4597ae7fbfb49a95e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logDebugInfo: 0
+  invertYAxis: 0
+  enableXInput: 0
+  useFixedUpdate: 0
+  dontDestroyOnLoad: 0
+  customProfiles: []
+--- !u!4 &448863075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448863072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &488811144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2493,7 +2551,7 @@ RectTransform:
   m_Children:
   - {fileID: 336935660}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8333,7 +8391,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &889919526
 GameObject:
@@ -8651,7 +8709,7 @@ Transform:
   - {fileID: 615190933}
   - {fileID: 1451265734}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1003481441
 GameObject:
@@ -8996,6 +9054,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_PlayerCamera: {fileID: 636803632}
+  m_Crosshairs: {fileID: 0}
 --- !u!114 &1026241115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9019,7 +9078,6 @@ MonoBehaviour:
   ScoreBar8: {fileID: 0}
   flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
     type: 2}
-  m_ObjectiveTracker: {fileID: 0}
 --- !u!114 &1026241116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9092,7 +9150,7 @@ MonoBehaviour:
   m_RocketShooter: {fileID: 1266923342}
   m_RocketPrefab: {fileID: 1376979691465780, guid: f218cd1c6cab35746b51fe6353f5c803,
     type: 2}
-  m_TargetingText: {fileID: 0}
+  m_Laser: {fileID: 0}
   m_CarLandmine: {fileID: 803137823}
   m_LandminePrefab: {fileID: 1413299180077768, guid: 300cace429c37da46a05a06d28bd8221,
     type: 2}
@@ -9276,7 +9334,7 @@ Transform:
   - {fileID: 1051964495}
   - {fileID: 74535827}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -4.9700003, y: 177.73601, z: 24.657001}
 --- !u!1 &1039588217
 GameObject:
@@ -12510,7 +12568,7 @@ Transform:
   - {fileID: 1239877819}
   - {fileID: 1669918912}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1878464934
 GameObject:

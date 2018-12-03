@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
     public void Win(string s) 
     {
         win_box.SetActive(true);
-        win_text.text = s + " wins!";
+        win_text.text = "game over";
         StartCoroutine(EndGame());
     }
 
@@ -120,7 +120,14 @@ public class GameManager : MonoBehaviour
         Time.timeScale = .5f;
         yield return new WaitForSeconds(2f);
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene("Menu");
+
+        // Keep users cars for post game screen 
+        DontDestroyOnLoad(player1);
+        DontDestroyOnLoad(player2);
+        DontDestroyOnLoad(player3);
+        DontDestroyOnLoad(player4);
+
+        SceneManager.LoadScene("PostGame");
     }
 
     public void UpdateScore()
