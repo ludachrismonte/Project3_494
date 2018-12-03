@@ -2086,6 +2086,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114647539240496430, guid: 8c3fb762214234dd3b78af75ea72829f,
+        type: 2}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: c5d56b695a6b3f1408323b6f963d57ed, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c3fb762214234dd3b78af75ea72829f, type: 2}
   m_IsPrefabAsset: 0
@@ -7140,6 +7145,22 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 600152460}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &1947922184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1032073754701656, guid: 8c3fb762214234dd3b78af75ea72829f,
+    type: 2}
+  m_PrefabInternal: {fileID: 600152460}
+--- !u!114 &1947922186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1947922184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79d26d734f66c8478e5135f86f43fe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1986327513 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114212792204977926, guid: 8c3fb762214234dd3b78af75ea72829f,
