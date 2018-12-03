@@ -33,6 +33,14 @@ public class ReadyUpManager : MonoBehaviour
         m_P4Ready = false;
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            StartCoroutine(OpenArena());
+        }
+    }
+
     public void PlayersReadiedUp(PlayerNumber player)
     {
         switch (player)
