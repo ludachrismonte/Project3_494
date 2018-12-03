@@ -571,7 +571,6 @@ MonoBehaviour:
   m_DropBox: {fileID: 1030048918076552, guid: e96e764a5cdeef047a72fa6fd8cbaa5b, type: 2}
   m_Radius: 180
   m_MaxDrops: 25
-  m_TimeDelay: 5
   m_HeightOfDrop: 20
 --- !u!1001 &77490930
 Prefab:
@@ -1934,23 +1933,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0e913d033a850894aa8d98ffd8d5d446,
     type: 3}
   m_PrefabInternal: {fileID: 585630554}
---- !u!1 &585630556 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 0e913d033a850894aa8d98ffd8d5d446,
-    type: 3}
-  m_PrefabInternal: {fileID: 585630554}
---- !u!135 &585630557
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 585630556}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: -2.71}
 --- !u!1001 &600152460
 Prefab:
   m_ObjectHideFlags: 0
@@ -5459,23 +5441,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0e913d033a850894aa8d98ffd8d5d446,
     type: 3}
   m_PrefabInternal: {fileID: 1565953171}
---- !u!1 &1565953173 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 0e913d033a850894aa8d98ffd8d5d446,
-    type: 3}
-  m_PrefabInternal: {fileID: 1565953171}
---- !u!135 &1565953174
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1565953173}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: -2.71}
 --- !u!4 &1566055070 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4579052569568638, guid: e96e764a5cdeef047a72fa6fd8cbaa5b,
@@ -5660,23 +5625,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0e913d033a850894aa8d98ffd8d5d446,
     type: 3}
   m_PrefabInternal: {fileID: 1619860285}
---- !u!1 &1619860287 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 0e913d033a850894aa8d98ffd8d5d446,
-    type: 3}
-  m_PrefabInternal: {fileID: 1619860285}
---- !u!135 &1619860288
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1619860287}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: -2.71}
 --- !u!1001 &1620797476
 Prefab:
   m_ObjectHideFlags: 0
@@ -5987,23 +5935,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0e913d033a850894aa8d98ffd8d5d446,
     type: 3}
   m_PrefabInternal: {fileID: 1679172594}
---- !u!1 &1679172596 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 0e913d033a850894aa8d98ffd8d5d446,
-    type: 3}
-  m_PrefabInternal: {fileID: 1679172594}
---- !u!135 &1679172597
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1679172596}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: -2.71}
 --- !u!1001 &1685644061
 Prefab:
   m_ObjectHideFlags: 0
@@ -6723,23 +6654,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0e913d033a850894aa8d98ffd8d5d446,
     type: 3}
   m_PrefabInternal: {fileID: 1843250326}
---- !u!1 &1843250328 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 0e913d033a850894aa8d98ffd8d5d446,
-    type: 3}
-  m_PrefabInternal: {fileID: 1843250326}
---- !u!135 &1843250329
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1843250328}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: -2.71}
 --- !u!114 &1853943058 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114934151423275396, guid: 8c3fb762214234dd3b78af75ea72829f,
