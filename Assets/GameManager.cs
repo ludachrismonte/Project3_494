@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         m_P4Score = player4.GetComponent<Score>();
 
         foreach (Text text in m_Placements)
-            text.text = "#1";
+            text.text = "";
     }
 
     public void MenuSubmit(int score) 
@@ -93,7 +93,6 @@ public class GameManager : MonoBehaviour
         player1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         player2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         player3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        player4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
         yield return new WaitForSeconds(2);
         win_text.text = "";

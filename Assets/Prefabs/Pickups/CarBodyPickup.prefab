@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 114638759687113862}
   - component: {fileID: 54179859596651156}
   - component: {fileID: 114913052373385430}
-  - component: {fileID: 65188960554929528}
   - component: {fileID: 198233264872832630}
   - component: {fileID: 199925969394892192}
+  - component: {fileID: 65486034723776886}
+  - component: {fileID: 65353790684289564}
   m_Layer: 0
   m_Name: CarBodyPickup
   m_TagString: CarBodyPickup
@@ -132,9 +133,21 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 122
   m_CollisionDetection: 0
---- !u!65 &65188960554929528
+--- !u!65 &65353790684289564
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1649593261324842}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 0, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65486034723776886
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,8 +157,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.029247, y: 2.002262, z: 2.3259888}
-  m_Center: {x: -0.16033101, y: 0.01969719, z: -0.11010742}
+  m_Size: {x: 1, y: 0, z: 1}
+  m_Center: {x: 0, y: -2, z: 0}
 --- !u!95 &95355486850925028
 Animator:
   serializedVersion: 3
