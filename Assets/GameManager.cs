@@ -155,8 +155,8 @@ public class GameManager : MonoBehaviour
     public void Win(string s) 
     {
         win_box.SetActive(true);
-        win_text.text = "game over";
-        win_text.color = Color.yellow;
+        //win_text.text = "game over";
+        //win_text.color = Color.yellow;
         StartCoroutine(EndGame());
     }
 
