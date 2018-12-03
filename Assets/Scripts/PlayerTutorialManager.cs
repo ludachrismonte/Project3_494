@@ -24,6 +24,7 @@ public class PlayerTutorialManager : MonoBehaviour
     private RawImage m_CurrentSpeedometer;
     private string m_CurrentMessage;
     private bool m_HasMoved = false;
+    private bool m_ShowingText = false;
     
     private void Start()
     {
@@ -58,8 +59,21 @@ public class PlayerTutorialManager : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        Pickup(other);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        Pickup(other);
+    }
+
+    private void Pickup(Collider other)
+    {
+        if (m_ShowingText)
+            return;
+
         PickupLevel pickupLevel;
         switch (other.tag)
         {
@@ -109,7 +123,6 @@ public class PlayerTutorialManager : MonoBehaviour
                 Destroy(other.gameObject);
                 break;
             case "TutFlag":
-                m_TutorialDoor.SetActive(false);
                 StartCoroutine(GameRulesText());
                 m_CurrentMessage = "exit the arena!";
                 m_Flag.enabled = true;
@@ -223,23 +236,24 @@ public class PlayerTutorialManager : MonoBehaviour
 
     private IEnumerator TutorialText()
     {
-        m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        m_ShowingText = true;
         yield return new WaitForSeconds(4);
         m_PlayerMainText.text = m_CurrentMessage;
-        m_Rigidbody.constraints = RigidbodyConstraints.None;
+        m_ShowingText = false;
     }
 
     private IEnumerator GameRulesText()
     {
-        m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        m_ShowingText = true;
         m_PlayerMainText.text = "to win the game you must be the first " +
             "player to hold the flag for 60 seconds!";
         yield return new WaitForSeconds(4);
         m_PlayerMainText.text = "take the flag from other players by running " +
             "into them or by knocking them out!";
         yield return new WaitForSeconds(4);
+        m_TutorialDoor.SetActive(false);
         m_PlayerMainText.text = m_CurrentMessage;
-        m_Rigidbody.constraints = RigidbodyConstraints.None;
+        m_ShowingText = false;
     }
 
     private IEnumerator TutorialShield()

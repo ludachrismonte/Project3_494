@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         m_P4Score = player4.GetComponent<Score>();
 
         foreach (Text text in m_Placements)
-            text.text = "#1";
+            text.text = "";
     }
 
     public void MenuSubmit(int score) 

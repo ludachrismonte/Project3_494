@@ -53,11 +53,11 @@ public class ReadyUpManager : MonoBehaviour
 
         if (m_P1Ready && m_P2Ready && m_P3Ready && m_P4Ready)
         {
-            SceneManager.LoadScene("Arena");
+            StartCoroutine(OpenArena());
         }
     }
 
-    private IEnumerator OpenArean()
+    private IEnumerator OpenArena()
     {
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("Arena");
