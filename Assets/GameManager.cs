@@ -85,10 +85,13 @@ public class GameManager : MonoBehaviour
         player4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
         win_text.text = "ready...";
+        win_text.color = Color.red;
         yield return new WaitForSeconds(2);
         win_text.text = "set...";
+        win_text.color = Color.yellow;
         yield return new WaitForSeconds(2);
         win_text.text = "go!";
+        win_text.color = Color.green;
 
         player1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         player2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;

@@ -73,12 +73,10 @@ public class Announcer : MonoBehaviour {
         //15 Seconds to wins
         for (int i = 0; i < 4; i++)
         {
-            Debug.Log(scoretowin - scores[i]);
             if (scoretowin - scores[i] == 15 && fif_yes[i])
             {
                 fif_yes[i] = false;
                 StartCoroutine(Play(fifteen[i]));
-                Debug.Log("15 to winnnnn " + i);
             }
         }
 
