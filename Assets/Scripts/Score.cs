@@ -33,7 +33,6 @@ public class Score : MonoBehaviour
     private int m_FireHoopFlag = 20;
     private int m_FireHoopNoFlag = 10;
 
-
     public void SetGameScore(int s, int f, int nf)
     {
         m_ScoreToWin = s;
@@ -113,8 +112,6 @@ public class Score : MonoBehaviour
         Flag.SetActive(true);
         hasFlag = true;
 
-        Debug.Log("Getting flag for: " + me);
-
         switch (me)
         {
             case "player 1":
@@ -188,12 +185,12 @@ public class Score : MonoBehaviour
         if (other.tag == "FireRing" && hasFlag)
         {
             Rings.Switch();
-            add_score(10);
+            add_score(m_FireHoopFlag);
         }
         else if (other.tag == "FireRing" && !hasFlag)
         {
             Rings.Switch();
-            add_score(10);
+            add_score(m_FireHoopNoFlag);
         }
     }
 
