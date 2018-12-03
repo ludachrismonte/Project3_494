@@ -25,12 +25,12 @@ public class Credits : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (position.transform.position.y < 700)
-        {
-            stuff.velocity = new Vector3(0f, 1f, 0f) * speed;
-        }
-        else {
-            stuff.velocity = Vector3.zero;
+        stuff.velocity = new Vector3(0f, 1f, 0f) * speed;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Finish") {
             StartCoroutine(Out());
         }
     }
