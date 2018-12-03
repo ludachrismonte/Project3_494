@@ -13,6 +13,8 @@ public class Health : MonoBehaviour
     public bool m_TestDeath = false;
     public Text m_PlayerMainText;
 
+    private Vector3[] sizes = new Vector3[5];
+
     private float m_Health;
     private GameObject m_CurrentCarBody;
     private PlayerPickup m_PlayerPickup;
@@ -27,6 +29,12 @@ public class Health : MonoBehaviour
         m_PlayerPickup = GetComponent<PlayerPickup>();
         m_Rigidbody = GetComponent<Rigidbody>();
         respawnReset = GetComponent<RespawnReset>();
+
+        sizes[0] = m_CarBodyLevel[0].transform.localScale;
+        sizes[1] = m_CarBodyLevel[1].transform.localScale;
+        sizes[2] = m_CarBodyLevel[2].transform.localScale;
+        sizes[3] = m_CarBodyLevel[3].transform.localScale;
+        sizes[4] = m_CarBodyLevel[4].transform.localScale;
 
         m_CurrentCarBody = m_CarBodyLevel[(int)m_PlayerPickup.m_CarBodyLevel - 1];
     }
@@ -82,38 +90,27 @@ public class Health : MonoBehaviour
             }
             else if (m_Health <= 10)
             {
-                m_CurrentCarBody.SetActive(false);
-                m_CarBodyLevel[0].SetActive(true);
-                m_CurrentCarBody = m_CarBodyLevel[0];
+                StartCoroutine(Grow(0));
                 m_PlayerPickup.m_CarBodyLevel = PickupLevelEnum.one;
             }
             else if (m_Health <= 20)
             {
-                m_CurrentCarBody.SetActive(false);
-                m_CarBodyLevel[1].SetActive(true);
-                m_CurrentCarBody = m_CarBodyLevel[1];
+                StartCoroutine(Grow(1));
                 m_PlayerPickup.m_CarBodyLevel = PickupLevelEnum.two;
             }
             else if (m_Health <= 30)
             {
-                m_CurrentCarBody.SetActive(false);
-                m_CarBodyLevel[2].SetActive(true);
-                m_CurrentCarBody = m_CarBodyLevel[2];
+                StartCoroutine(Grow(2));
                 m_PlayerPickup.m_CarBodyLevel = PickupLevelEnum.three;
             }
             else if (m_Health <= 40)
             {
-                m_CurrentCarBody.SetActive(false);
-                m_CarBodyLevel[3].SetActive(true);
-                m_CurrentCarBody = m_CarBodyLevel[3];
+                StartCoroutine(Grow(3));
                 m_PlayerPickup.m_CarBodyLevel = PickupLevelEnum.four;
-
             }
             else
             {
-                m_CurrentCarBody.SetActive(false);
-                m_CarBodyLevel[4].SetActive(true);
-                m_CurrentCarBody = m_CarBodyLevel[4];
+                StartCoroutine(Grow(4));
                 m_PlayerPickup.m_CarBodyLevel = PickupLevelEnum.five;
             }
         }
@@ -132,7 +129,7 @@ public class Health : MonoBehaviour
             yield return null;
         }
 
-        transform.Find("SkyCar").gameObject.SetActive(false);
+        //transform.Find("SkyCar").gameObject.SetActive(false);
         m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         respawnReset.Respawn(0);
         m_PlayerMainText.text = "knocked out!";
@@ -147,5 +144,21 @@ public class Health : MonoBehaviour
         m_PlayerMainText.text = "";
         m_Rigidbody.constraints = RigidbodyConstraints.None;
         invincible = false;
+    }
+
+    private IEnumerator Grow(int level) {
+        m_CarBodyLevel[level].SetActive(true);
+        Vector3 initial = m_CurrentCarBody.transform.localScale;
+        for (float i = 0f; i < 0.5f; i += Time.deltaTime)
+        {
+            m_CurrentCarBody.transform.localScale = initial * (1 - i);
+            m_CarBodyLevel[level].transform.localScale = sizes[level] * (.5f + i);
+            yield return null;
+        }
+        m_CurrentCarBody.transform.localScale = initial;
+        m_CarBodyLevel[level].transform.localScale = sizes[level];
+        m_CurrentCarBody.SetActive(false);
+        m_CurrentCarBody = m_CarBodyLevel[level];
+        m_CurrentCarBody.SetActive(true);
     }
 }
