@@ -188,7 +188,7 @@ public class RespawnReset : MonoBehaviour
             this.transform.Find("SkyCar").gameObject.SetActive(false);
             yield return new WaitForSeconds(.15f);
         }
-        yield return new WaitForSeconds(2);
+        //yield return new WaitForSeconds(2);
         resetStruct.Set(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
         RespawnStruct temp = respawnStruct;
         respawnStruct = resetStruct2;
