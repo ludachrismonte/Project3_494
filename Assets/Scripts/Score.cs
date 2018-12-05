@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour 
 {
     public string me = "player";
-
     public GameObject flag_object;
+    public float m_FlagStealCooldown = 1f;
+
     private ObjectiveTracker m_ObjectiveTracker;
     private GameObject Flag = null;
     private int current_score;
@@ -184,7 +185,7 @@ public class Score : MonoBehaviour
     private IEnumerator FlagStealCooldown()
     {
         canLoseFlag = false;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(m_FlagStealCooldown);
         canLoseFlag = true;
     }
 }
