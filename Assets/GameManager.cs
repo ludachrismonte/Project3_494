@@ -125,6 +125,7 @@ public class GameManager : MonoBehaviour
         player1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         player2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         player3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        player4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
         yield return new WaitForSeconds(2);
         main_text.text = "";

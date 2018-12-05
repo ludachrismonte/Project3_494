@@ -46,7 +46,6 @@ public class Health : MonoBehaviour
             SetHealth(0);
             m_TestDeath = false;
         }
-        //health_bar.fillAmount = m_Health / 50;
     }
 
     public void AlterHealth(float amt)
@@ -145,7 +144,8 @@ public class Health : MonoBehaviour
         invincible = false;
     }
 
-    private IEnumerator Grow(int level) {
+    private IEnumerator Grow(int level) 
+    {
         m_CarBodyLevel[level].SetActive(true);
         Vector3 initial = m_CurrentCarBody.transform.localScale;
         for (float i = 0f; i < 0.5f; i += Time.deltaTime)

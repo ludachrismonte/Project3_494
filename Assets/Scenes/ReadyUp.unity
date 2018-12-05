@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.8517109, g: 0.8998194, b: 0.9542908, a: 1}
+  m_IndirectSpecularColor: {r: 0.85171926, g: 0.899808, b: 0.95429176, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1523,6 +1523,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1010778590684300, guid: 67a5e1cf0ac7d4dc6b5c04e846a06892, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67a5e1cf0ac7d4dc6b5c04e846a06892, type: 2}
   m_IsPrefabAsset: 0
@@ -1554,7 +1558,7 @@ MonoBehaviour:
   - {fileID: 1892155066}
   - {fileID: 1892155065}
   m_TutorialDoor: {fileID: 328876978}
-  m_Flag: {fileID: 0}
+  m_Flag: {fileID: 398070208}
   player: 1
 --- !u!20 &214619011 stripped
 Camera:
@@ -2512,6 +2516,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 392660944}
   m_CullTransparentMesh: 0
+--- !u!23 &398070208 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23458980141655494, guid: 67a5e1cf0ac7d4dc6b5c04e846a06892,
+    type: 2}
+  m_PrefabInternal: {fileID: 214619007}
 --- !u!1 &407384862
 GameObject:
   m_ObjectHideFlags: 0
@@ -7239,7 +7248,7 @@ MonoBehaviour:
   - {fileID: 1892155078}
   - {fileID: 1892155077}
   m_TutorialDoor: {fileID: 427497457}
-  m_Flag: {fileID: 0}
+  m_Flag: {fileID: 1992779111}
   player: 2
 --- !u!114 &1606660844
 MonoBehaviour:
@@ -7553,7 +7562,7 @@ MonoBehaviour:
   - {fileID: 1892155088}
   - {fileID: 1892155087}
   m_TutorialDoor: {fileID: 1015950635}
-  m_Flag: {fileID: 0}
+  m_Flag: {fileID: 1955178357}
   player: 3
 --- !u!114 &1640282822
 MonoBehaviour:
@@ -10150,6 +10159,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1954396911}
   m_CullTransparentMesh: 0
+--- !u!23 &1955178357 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23530596542188978, guid: ad8140b2e81dc406db18bce5a92b6d51,
+    type: 2}
+  m_PrefabInternal: {fileID: 1640282818}
 --- !u!1 &1970960016
 GameObject:
   m_ObjectHideFlags: 0
@@ -10368,6 +10382,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1989540243}
   m_CullTransparentMesh: 0
+--- !u!23 &1992779111 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23264408687363940, guid: 77bb515709b6c4f869b5791cd86e4a6f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1606660840}
 --- !u!1 &1993186900
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,8 @@ public class ResetUI : MonoBehaviour
         respawnResets[1] = GameObject.FindWithTag("Player2").gameObject.GetComponent<RespawnReset>();
         respawnResets[2] = GameObject.FindWithTag("Player3").gameObject.GetComponent<RespawnReset>();
         respawnResets[3] = GameObject.FindWithTag("Player4").gameObject.GetComponent<RespawnReset>();
+
+        StartCoroutine(startDelay());
     }
     // Update is called once per frame
     void Update()
@@ -26,23 +28,39 @@ public class ResetUI : MonoBehaviour
         //Respawn
         if(start){
             //Player1
-            if (respawnResets[0].stuck) { resetText[0].GetComponent<Text>().enabled = true; }
-            else { resetText[0].GetComponent<Text>().enabled = false; }
+            if (respawnResets[0].stuck) {
+                resetText[0].GetComponent<Text>().enabled = true;
+            }
+            else {
+                resetText[0].GetComponent<Text>().enabled = false;
+            }
             //Player2
-            if (respawnResets[1].stuck) { resetText[1].GetComponent<Text>().enabled = true; }
-            else { resetText[1].GetComponent<Text>().enabled = false; }
+            if (respawnResets[1].stuck) {
+                resetText[1].GetComponent<Text>().enabled = true;
+            }
+            else { 
+                resetText[1].GetComponent<Text>().enabled = false;
+            }
             //Player3
-            if (respawnResets[2].stuck) { resetText[2].GetComponent<Text>().enabled = true; }
-            else { resetText[2].GetComponent<Text>().enabled = false; }
+            if (respawnResets[2].stuck) {
+                resetText[2].GetComponent<Text>().enabled = true;
+            }
+            else {
+                resetText[2].GetComponent<Text>().enabled = false;
+            }
             //Player4
-            if (respawnResets[3].stuck) { resetText[3].GetComponent<Text>().enabled = true; }
-            else { resetText[3].GetComponent<Text>().enabled = false; } 
+            if (respawnResets[3].stuck) {
+                resetText[3].GetComponent<Text>().enabled = true;
+            }
+            else {
+                resetText[3].GetComponent<Text>().enabled = false;
+            } 
         }
     }
 
     IEnumerator startDelay()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(15f);
         //SceneManager.LoadScene("MainMenu");
         start = true;
     }
