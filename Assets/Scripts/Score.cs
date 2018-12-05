@@ -36,7 +36,7 @@ public class Score : MonoBehaviour
     private void Start()
     {
         m_ObjectiveTracker = GameManager.instance.GetComponent<ObjectiveTracker>();
-        Flag = transform.Find("flag").gameObject;
+        Flag = transform.Find("OnCarFlag").gameObject;
         Flag.SetActive(false);
         m_FireRingsManager = GameObject.FindWithTag("FireRings").GetComponent<FireRingManager>();
         m_FlagManager = GameObject.FindWithTag("Flags").GetComponent<FlagManager>();

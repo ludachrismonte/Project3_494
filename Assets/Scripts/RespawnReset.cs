@@ -128,7 +128,6 @@ public class RespawnReset : MonoBehaviour
         RespawnHelper();
         cameraParent.GetComponent<CameraController>().enabled = true;
         this.transform.Find("SkyCar").gameObject.SetActive(true);
-        this.transform.Find("Arrow").gameObject.SetActive(true);
         if (i == 0) { gameObject.GetComponent<PlayerPickup>().Respawn(); }
         yield return new WaitForSeconds(1);
         //car.SetActive(true);
