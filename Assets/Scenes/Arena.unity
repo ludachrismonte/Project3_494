@@ -4352,22 +4352,42 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114076071202183468, guid: 8c3fb762214234dd3b78af75ea72829f,
+    - target: {fileID: 114442152881879836, guid: 8c3fb762214234dd3b78af75ea72829f,
         type: 2}
       propertyPath: MyScore
       value: 
-      objectReference: {fileID: 1464426078}
-    - target: {fileID: 114076071202183468, guid: 8c3fb762214234dd3b78af75ea72829f,
+      objectReference: {fileID: 1908603565}
+    - target: {fileID: 114442152881879836, guid: 8c3fb762214234dd3b78af75ea72829f,
         type: 2}
       propertyPath: OtherScore1
       value: 
-      objectReference: {fileID: 1127052426}
-    - target: {fileID: 114076071202183468, guid: 8c3fb762214234dd3b78af75ea72829f,
+      objectReference: {fileID: 1464426078}
+    - target: {fileID: 114442152881879836, guid: 8c3fb762214234dd3b78af75ea72829f,
         type: 2}
       propertyPath: OtherScore2
       value: 
+      objectReference: {fileID: 1127052426}
+    - target: {fileID: 114442152881879836, guid: 8c3fb762214234dd3b78af75ea72829f,
+        type: 2}
+      propertyPath: OtherScore3
+      value: 
       objectReference: {fileID: 2003546799}
-    - target: {fileID: 114076071202183468, guid: 8c3fb762214234dd3b78af75ea72829f,
+    - target: {fileID: 114606754891280126, guid: 8c3fb762214234dd3b78af75ea72829f,
+        type: 2}
+      propertyPath: MyScore
+      value: 
+      objectReference: {fileID: 2003546799}
+    - target: {fileID: 114606754891280126, guid: 8c3fb762214234dd3b78af75ea72829f,
+        type: 2}
+      propertyPath: OtherScore1
+      value: 
+      objectReference: {fileID: 1464426078}
+    - target: {fileID: 114606754891280126, guid: 8c3fb762214234dd3b78af75ea72829f,
+        type: 2}
+      propertyPath: OtherScore2
+      value: 
+      objectReference: {fileID: 1127052426}
+    - target: {fileID: 114606754891280126, guid: 8c3fb762214234dd3b78af75ea72829f,
         type: 2}
       propertyPath: OtherScore3
       value: 
@@ -4392,46 +4412,26 @@ Prefab:
       propertyPath: OtherScore3
       value: 
       objectReference: {fileID: 1908603565}
-    - target: {fileID: 114606754891280126, guid: 8c3fb762214234dd3b78af75ea72829f,
+    - target: {fileID: 114076071202183468, guid: 8c3fb762214234dd3b78af75ea72829f,
         type: 2}
       propertyPath: MyScore
       value: 
-      objectReference: {fileID: 2003546799}
-    - target: {fileID: 114606754891280126, guid: 8c3fb762214234dd3b78af75ea72829f,
+      objectReference: {fileID: 1464426078}
+    - target: {fileID: 114076071202183468, guid: 8c3fb762214234dd3b78af75ea72829f,
         type: 2}
       propertyPath: OtherScore1
       value: 
-      objectReference: {fileID: 1464426078}
-    - target: {fileID: 114606754891280126, guid: 8c3fb762214234dd3b78af75ea72829f,
+      objectReference: {fileID: 1127052426}
+    - target: {fileID: 114076071202183468, guid: 8c3fb762214234dd3b78af75ea72829f,
         type: 2}
       propertyPath: OtherScore2
       value: 
-      objectReference: {fileID: 1127052426}
-    - target: {fileID: 114606754891280126, guid: 8c3fb762214234dd3b78af75ea72829f,
+      objectReference: {fileID: 2003546799}
+    - target: {fileID: 114076071202183468, guid: 8c3fb762214234dd3b78af75ea72829f,
         type: 2}
       propertyPath: OtherScore3
       value: 
       objectReference: {fileID: 1908603565}
-    - target: {fileID: 114442152881879836, guid: 8c3fb762214234dd3b78af75ea72829f,
-        type: 2}
-      propertyPath: MyScore
-      value: 
-      objectReference: {fileID: 1908603565}
-    - target: {fileID: 114442152881879836, guid: 8c3fb762214234dd3b78af75ea72829f,
-        type: 2}
-      propertyPath: OtherScore1
-      value: 
-      objectReference: {fileID: 1464426078}
-    - target: {fileID: 114442152881879836, guid: 8c3fb762214234dd3b78af75ea72829f,
-        type: 2}
-      propertyPath: OtherScore2
-      value: 
-      objectReference: {fileID: 1127052426}
-    - target: {fileID: 114442152881879836, guid: 8c3fb762214234dd3b78af75ea72829f,
-        type: 2}
-      propertyPath: OtherScore3
-      value: 
-      objectReference: {fileID: 2003546799}
     - target: {fileID: 1374827420220506, guid: 8c3fb762214234dd3b78af75ea72829f, type: 2}
       propertyPath: m_Name
       value: 'UI '
