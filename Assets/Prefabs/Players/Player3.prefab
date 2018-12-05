@@ -1351,7 +1351,7 @@ Transform:
   m_GameObject: {fileID: 1266955820577658}
   m_LocalRotation: {x: -0.8167269, y: -0.072181046, z: -0.36724278, w: 0.43918082}
   m_LocalPosition: {x: 1.39, y: 1.46, z: -1.68}
-  m_LocalScale: {x: 0.0182756, y: 0.0182756, z: 0.9894828}
+  m_LocalScale: {x: 0.0365512, y: 0.0365512, z: 0.9894828}
   m_Children:
   - {fileID: 4958858359641244}
   m_Father: {fileID: 4752114307554440}
@@ -4581,16 +4581,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   me: player 3
-  ScoreBar: {fileID: 0}
-  ScoreBar2: {fileID: 0}
-  ScoreBar3: {fileID: 0}
-  ScoreBar4: {fileID: 0}
-  ScoreBar5: {fileID: 0}
-  ScoreBar6: {fileID: 0}
-  ScoreBar7: {fileID: 0}
-  ScoreBar8: {fileID: 0}
   flag_object: {fileID: 1866657466525830, guid: dff0e4ad61952f045b717a07554de502,
     type: 2}
+  m_FlagStealCooldown: 1
 --- !u!114 &114615559438504618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4791,8 +4784,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
+        time: 0.0625
+        value: 0.2560978
         inSlope: 0
         outSlope: 0
         tangentMode: 0
