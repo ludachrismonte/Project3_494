@@ -7,14 +7,6 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour 
 {
     public string me = "player";
-    public Image ScoreBar;
-    public Image ScoreBar2;
-    public Image ScoreBar3;
-    public Image ScoreBar4;
-    public Image ScoreBar5;
-    public Image ScoreBar6;
-    public Image ScoreBar7;
-    public Image ScoreBar8;
 
     public GameObject flag_object;
     private ObjectiveTracker m_ObjectiveTracker;
@@ -50,23 +42,6 @@ public class Score : MonoBehaviour
 
         manager = GameManager.instance;
         current_score = 0;
-        ScoreBar.fillAmount = 0.0f;
-        ScoreBar2.fillAmount = 0.0f;
-        ScoreBar3.fillAmount = 0.0f;
-        ScoreBar4.fillAmount = 0.0f;
-        ScoreBar5.fillAmount = 0.0f;
-        ScoreBar6.fillAmount = 0.0f;
-        ScoreBar7.fillAmount = 0.0f;
-        ScoreBar8.fillAmount = 0.0f;
-
-        ScoreBar.enabled = false;
-        ScoreBar2.enabled = false;
-        ScoreBar3.enabled = false;
-        ScoreBar4.enabled = false;
-        ScoreBar5.enabled = false;
-        ScoreBar6.enabled = false;
-        ScoreBar7.enabled = false;
-        ScoreBar8.enabled = false;
 
         timer = 0.0f;
     }
@@ -75,30 +50,11 @@ public class Score : MonoBehaviour
     {
         if (hasFlag) 
         {
-            ScoreBar.enabled = true;
-            ScoreBar2.enabled = true;
-            ScoreBar3.enabled = true;
-            ScoreBar4.enabled = true;
-            ScoreBar5.enabled = true;
-            ScoreBar6.enabled = true;
-            ScoreBar7.enabled = true;
-            ScoreBar8.enabled = true;
             timer += Time.deltaTime;
             if (timer > 1) {
                 timer = 0.0f;
                 add_score(1);
             }
-        }
-        else if (!hasFlag)
-        {
-            ScoreBar.enabled = false;
-            ScoreBar2.enabled = false;
-            ScoreBar3.enabled = false;
-            ScoreBar4.enabled = false;
-            ScoreBar5.enabled = false;
-            ScoreBar6.enabled = false;
-            ScoreBar7.enabled = false;
-            ScoreBar8.enabled = false;
         }
         if (current_score >= m_ScoreToWin) 
         {
@@ -143,15 +99,6 @@ public class Score : MonoBehaviour
     private void add_score(int amt) 
     {
         current_score += amt;
-        manager.UpdateScore();
-        ScoreBar.fillAmount = current_score / (float)m_ScoreToWin;
-        ScoreBar2.fillAmount = ScoreBar.fillAmount;
-        ScoreBar3.fillAmount = ScoreBar.fillAmount;
-        ScoreBar4.fillAmount = ScoreBar.fillAmount;
-        ScoreBar5.fillAmount = ScoreBar.fillAmount;
-        ScoreBar6.fillAmount = ScoreBar.fillAmount;
-        ScoreBar7.fillAmount = ScoreBar.fillAmount;
-        ScoreBar8.fillAmount = ScoreBar.fillAmount;
     }
 
     private void OnCollisionEnter(Collision collision)

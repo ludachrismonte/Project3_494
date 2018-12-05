@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject UI;
     public GameObject GameSettings;
-    public Text[] m_Placements = new Text[4];
 
     private Image explosion;
     private Image wood;
@@ -77,9 +76,6 @@ public class GameManager : MonoBehaviour
         m_P2Score = player2.GetComponent<Score>();
         m_P3Score = player3.GetComponent<Score>(); 
         m_P4Score = player4.GetComponent<Score>();
-
-        foreach (Text text in m_Placements)
-            text.text = "";
 
         player1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         player2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
@@ -155,8 +151,6 @@ public class GameManager : MonoBehaviour
     public void Win(string s) 
     {
         win_box.SetActive(true);
-        //win_text.text = "game over";
-        //win_text.color = Color.yellow;
         StartCoroutine(EndGame());
     }
 
@@ -173,62 +167,5 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(player4);
 
         SceneManager.LoadScene("PostGame");
-    }
-
-    public void UpdateScore()
-    {
-        SortedDictionary<int, List<int>> scores = new SortedDictionary<int, List<int>>();
-        int p1Score = m_P1Score.GetCurrentScore();
-        int p2Score = m_P2Score.GetCurrentScore();
-        int p3Score = m_P3Score.GetCurrentScore();
-        int p4Score = m_P4Score.GetCurrentScore();
-
-        scores.Add(p1Score, new List<int>{ 1 });
-
-        if (scores.ContainsKey(p2Score))
-            scores[p2Score].Add(2);
-        else
-            scores.Add(p2Score, new List<int> { 2 });
-
-        if (scores.ContainsKey(p3Score))
-            scores[p3Score].Add(3);
-        else
-            scores.Add(p3Score, new List<int> { 3 });
-
-        if (scores.ContainsKey(p4Score))
-            scores[p4Score].Add(4);
-        else
-            scores.Add(p4Score, new List<int> { 4 });
-
-        int place = scores.Keys.Count;
-
-        foreach (KeyValuePair<int, List<int>> entry in scores)
-        {
-            foreach (int player in entry.Value)
-            {
-                switch (place)
-                {
-                    case 1:
-                        m_Placements[player - 1].color = Color.yellow;
-                        break;
-                    case 2:
-                        m_Placements[player - 1].color = Color.magenta;
-                        break;
-                    case 3:
-                        m_Placements[player - 1].color = Color.blue;
-                        break;
-                    case 4:
-                        m_Placements[player - 1].color = Color.green;
-                        break;
-                    default:
-                        Debug.LogError("ERROR: Placement is out of range [1,4].");
-                        Application.Quit();
-                        break;
-                }
-                m_Placements[player - 1].text = "#" + place;
-            }
-            --place;
-        }
-        scores.Clear();
     }
 }
