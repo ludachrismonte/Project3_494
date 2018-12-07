@@ -43,16 +43,11 @@ public class WeaponManager : MonoBehaviour
             {
                 m_Laser.SetActive(true);
                 m_RocketShooter.transform.LookAt(m_RocketTarget.transform);
-            }
-            else
-            {
-                m_Laser.SetActive(false);
+                return;
             }
         }
-        else
-        {
-            m_Laser.SetActive(false);
-        }
+        m_RocketShooter.transform.localRotation = Quaternion.identity;
+        m_Laser.SetActive(false);
     }
 
     public void EquipRocket() 
