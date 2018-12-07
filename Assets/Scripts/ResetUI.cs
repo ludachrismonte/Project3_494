@@ -19,7 +19,6 @@ public class ResetUI : MonoBehaviour
         respawnResets[1] = GameObject.FindWithTag("Player2").gameObject.GetComponent<RespawnReset>();
         respawnResets[2] = GameObject.FindWithTag("Player3").gameObject.GetComponent<RespawnReset>();
         respawnResets[3] = GameObject.FindWithTag("Player4").gameObject.GetComponent<RespawnReset>();
-
         StartCoroutine(startDelay());
     }
     // Update is called once per frame

@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
     private GameObject m_CurrentCarBody;
     private PlayerPickup m_PlayerPickup;
     private RespawnReset respawnReset;
-    private bool invincible = false;
+    public bool invincible = false;
     private Score FlagMgr;
     private Rigidbody m_Rigidbody;
 
@@ -133,7 +133,7 @@ public class Health : MonoBehaviour
         m_PlayerMainText.text = "knocked out!";
         yield return new WaitForSeconds(1f);
 
-        for (float i = 1; i > 0; i -= Time.deltaTime)
+        for (float i = 1.7f; i > 0; i -= Time.deltaTime)
         {
             black.color = new Color(black.color.r, black.color.g, black.color.b, i);
             yield return null;
