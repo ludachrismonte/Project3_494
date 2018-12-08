@@ -156,14 +156,6 @@ public class RespawnReset : MonoBehaviour
                 stuck = true; 
             }            
         }
-        else
-        {
-            //if (carRb.velocity.magnitude > 15 && carRb.velocity.x>0 && carRb.velocity.z>0)
-            //{
-            //    resetStruct2 = resetStruct;
-            //    resetStruct.Set(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
-            //}
-        }
         checkingStuck = false;
     }
     IEnumerator FindResetPoint(){
