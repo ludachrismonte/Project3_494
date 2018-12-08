@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour 
 {
     public string me = "player";
-
     public GameObject flag_object;
+    public float m_FlagStealCooldown = 1f;
+
     private ObjectiveTracker m_ObjectiveTracker;
     private GameObject Flag = null;
     private int current_score;
@@ -35,7 +36,7 @@ public class Score : MonoBehaviour
     private void Start()
     {
         m_ObjectiveTracker = GameManager.instance.GetComponent<ObjectiveTracker>();
-        Flag = transform.Find("flag").gameObject;
+        Flag = transform.Find("OnCarFlag").gameObject;
         Flag.SetActive(false);
         m_FireRingsManager = GameObject.FindWithTag("FireRings").GetComponent<FireRingManager>();
         m_FlagManager = GameObject.FindWithTag("Flags").GetComponent<FlagManager>();
@@ -184,7 +185,7 @@ public class Score : MonoBehaviour
     private IEnumerator FlagStealCooldown()
     {
         canLoseFlag = false;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(m_FlagStealCooldown);
         canLoseFlag = true;
     }
 }

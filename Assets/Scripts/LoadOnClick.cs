@@ -13,6 +13,10 @@ public class LoadOnClick : MonoBehaviour
     private void Start()
     {
         Button btn = gameObject.GetComponent<Button>();
+        if (scene == "ReadyUp")
+        {
+            btn.Select();
+        }
         btn.onClick.AddListener(LoadScene);
     }
 
@@ -21,14 +25,22 @@ public class LoadOnClick : MonoBehaviour
         StartCoroutine(Fade());
     }
 
-    private IEnumerator Fade() {
+    private IEnumerator Fade() 
+    {
         black.gameObject.SetActive(true);
-        for (float i = 0; i < 1; i += Time.deltaTime) {
+        for (float i = 0; i < 1; i += Time.deltaTime) 
+        {
             black.color = new Color(black.color.r, black.color.g, black.color.b, i);
             yield return null;
         }
-        if (scene != "quit" && scene != "Quit" && scene != "QUIT") { SceneManager.LoadScene(scene); }
-        else Application.Quit();
+        if (scene != "quit") 
+        {
+            SceneManager.LoadScene(scene); 
+        }
+        else 
+        {
+            Application.Quit();
+        }
     }
 
 }

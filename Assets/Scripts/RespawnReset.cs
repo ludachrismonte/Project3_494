@@ -7,12 +7,13 @@ public class RespawnReset : MonoBehaviour
     //public Vector3 repawnPos;
     //public object respawnPos { get; private set; }
     public float waitTime = 10;
+    public float checkReset = 0.2f;
     public GameObject cameraParent;
     public GameObject cameraMain;
     Rigidbody carRb;
     bool checkingStuck = false;
     public bool stuck = false;
-
+    private Health health;
     // Use this for initialization
 
     public struct RespawnStruct
@@ -57,21 +58,22 @@ public class RespawnReset : MonoBehaviour
 
     void Awake()
     {
+        health = GetComponent<Health>();
         carRb = GetComponent<Rigidbody>();
         respawnStruct = new RespawnStruct(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
         resetStruct = new RespawnStruct(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
         resetStruct2 = new RespawnStruct(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
-
+        StartCoroutine(FindResetPoint());
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (stuck && Input.GetKey(KeyCode.Z))
-        //{
-        //    ResetCar();
-        //    return;
-        //}
+        if (stuck && Input.GetKey(KeyCode.Z))
+        {
+            ResetCar();
+            return;
+        }
         CheckifStuck();
         if(gameObject.GetComponent<Rigidbody>().velocity.magnitude>15 && stuck){
             stuck = false;
@@ -80,7 +82,7 @@ public class RespawnReset : MonoBehaviour
 
     void CheckifStuck()
     {
-        if (!checkingStuck)
+        if (!checkingStuck && gameObject.GetComponent<ControllerInput>().enabled)
         {
             StartCoroutine(CheckifStuckHelper());
         }
@@ -128,7 +130,6 @@ public class RespawnReset : MonoBehaviour
         RespawnHelper();
         cameraParent.GetComponent<CameraController>().enabled = true;
         this.transform.Find("SkyCar").gameObject.SetActive(true);
-        this.transform.Find("Arrow").gameObject.SetActive(true);
         if (i == 0) { gameObject.GetComponent<PlayerPickup>().Respawn(); }
         yield return new WaitForSeconds(1);
         //car.SetActive(true);
@@ -155,15 +156,19 @@ public class RespawnReset : MonoBehaviour
                 stuck = true; 
             }            
         }
-        else
+        checkingStuck = false;
+    }
+    IEnumerator FindResetPoint(){
+        while(true)
         {
-            if (carRb.velocity.magnitude > 15 && carRb.velocity.x>0 && carRb.velocity.z>0)
+            Debug.Log(carRb.velocity.z);
+            yield return new WaitForSeconds(checkReset);
+            if (carRb.velocity.magnitude > 7 && Mathf.Abs(carRb.velocity.x) > 2 && Mathf.Abs(carRb.velocity.z) > 2 && !stuck)
             {
                 resetStruct2 = resetStruct;
                 resetStruct.Set(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
             }
-        }
-        checkingStuck = false;
+        }       
     }
     bool Check(Vector3 pos1,Vector3 pos2,Vector3 pos3){
         bool xStationary = false; bool zStationary = false;
