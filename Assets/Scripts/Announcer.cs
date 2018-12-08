@@ -7,11 +7,17 @@ public class Announcer : MonoBehaviour {
     //blue, red, green, yellow
     public AudioClip[] leads;
     public AudioClip[] flags;
+    public AudioClip[] drops;
     public AudioClip[] fifteen;
     public AudioClip[] minute;
     public AudioClip[] wins;
     public AudioClip welcome;
+    public AudioClip knocked;
+    public AudioClip reset;
     public AudioClip gameover;
+
+    private Queue<AudioClip> toPlay = new Queue<AudioClip>();
+    private float stall;
 
     public Score p1;
     public Score p2;
@@ -29,12 +35,20 @@ public class Announcer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        stall = 0f;
         current_leader = "None";
         AudioSource.PlayClipAtPoint(welcome, Camera.main.transform.position);
     }
 
     // Update is called once per frame
     void Update () {
+        stall -= Time.deltaTime;
+        if (stall < 0 && toPlay.Count > 0) {
+            AudioClip clip = toPlay.Dequeue();
+            AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position);
+            stall = clip.length;
+        }
+
         scoretowin = p1.GetWinScore();
         scores[0] = p1.GetCurrentScore();
         scores[1] = p2.GetCurrentScore();
@@ -43,22 +57,22 @@ public class Announcer : MonoBehaviour {
 
         if (scores[0] > scores[1] && scores[0] > scores[2] && scores[0] > scores[3] && current_leader != "Player 1") {
             current_leader = "Player 1";
-            StartCoroutine(Play(leads[0]));
+            toPlay.Enqueue(leads[0]);
         }
         else if (scores[1] > scores[0] && scores[1] > scores[2] && scores[1] > scores[3] && current_leader != "Player 2")
         {
             current_leader = "Player 2";
-            StartCoroutine(Play(leads[1]));
+            toPlay.Enqueue(leads[1]);
         }
         else if (scores[2] > scores[0] && scores[2] > scores[1] && scores[2] > scores[3] && current_leader != "Player 3")
         {
             current_leader = "Player 3";
-            StartCoroutine(Play(leads[2]));
+            toPlay.Enqueue(leads[2]);
         }
         else if (scores[3] > scores[0] && scores[3] > scores[1] && scores[3] > scores[2] && current_leader != "Player 4")
         {
             current_leader = "Player 4";
-            StartCoroutine(Play(leads[3]));
+            toPlay.Enqueue(leads[3]);
         }
 
         //Minute to wins
@@ -66,7 +80,7 @@ public class Announcer : MonoBehaviour {
             if (scoretowin - scores[i] == 60 && min_yes[i])
             {
                 min_yes[i] = false;
-                StartCoroutine(Play(minute[i]));
+                toPlay.Enqueue(minute[i]);
             }
         }
 
@@ -76,7 +90,7 @@ public class Announcer : MonoBehaviour {
             if (scoretowin - scores[i] == 15 && fif_yes[i])
             {
                 fif_yes[i] = false;
-                StartCoroutine(Play(fifteen[i]));
+                toPlay.Enqueue(fifteen[i]);
             }
         }
 
@@ -86,29 +100,49 @@ public class Announcer : MonoBehaviour {
             if (scoretowin == scores[i] && win_yes[i])
             {
                 win_yes[i] = false;
-                AudioSource.PlayClipAtPoint(wins[i], Camera.main.transform.position);
+                toPlay.Enqueue(wins[i]);
             }
         }
     }
 
-    private IEnumerator Play(AudioClip clip) {
-        yield return new WaitForSeconds(2);
-        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position);
+    public void TriggerReset()
+    {
+        toPlay.Enqueue(reset);
+    }
+
+    public void TriggerDrop(string who)
+    {
+        if (who == "player 1")
+        {
+            toPlay.Enqueue(drops[0]);
+        }
+        else if (who == "player 2")
+        {
+            toPlay.Enqueue(drops[1]);
+        }
+        else if (who == "player 2")
+        {
+            toPlay.Enqueue(drops[2]);
+        }
+        else if (who == "player 2")
+        {
+            toPlay.Enqueue(drops[3]);
+        }
     }
 
     public void Trigger(string who)
     {
         if (who == "player 1") {
-            AudioSource.PlayClipAtPoint(flags[0], Camera.main.transform.position);
+            toPlay.Enqueue(flags[0]);
         }
         else if (who == "player 2") {
-            AudioSource.PlayClipAtPoint(flags[1], Camera.main.transform.position);
+            toPlay.Enqueue(flags[1]);
         }
         else if (who == "player 2") {
-            AudioSource.PlayClipAtPoint(flags[2], Camera.main.transform.position);
+            toPlay.Enqueue(flags[2]);
         }
         else if (who == "player 2") {
-            AudioSource.PlayClipAtPoint(flags[3], Camera.main.transform.position);
+            toPlay.Enqueue(flags[3]);
         }
     }
 }

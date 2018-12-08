@@ -163,10 +163,12 @@ public class Score : MonoBehaviour
             lose_flag();
             if (reset)
             {
+                manager.GetComponent<Announcer>().TriggerReset();
                 m_FlagManager.Enable_Active();
             }
             else 
             {
+                manager.GetComponent<Announcer>().TriggerDrop(me);
                 StartCoroutine(DropFlagAfterDelay());
             }
         }
