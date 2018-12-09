@@ -51,7 +51,8 @@ public class Health : MonoBehaviour
     public void AlterHealth(float amt)
     {
         GameObject shield = transform.Find("Shield").gameObject;
-        if (shield.activeSelf) {
+        if (shield.activeSelf) 
+        {
             shield.SetActive(false);
             return;
         }
