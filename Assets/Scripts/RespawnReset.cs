@@ -161,7 +161,6 @@ public class RespawnReset : MonoBehaviour
     IEnumerator FindResetPoint(){
         while(true)
         {
-            Debug.Log(carRb.velocity.z);
             yield return new WaitForSeconds(checkReset);
             if (carRb.velocity.magnitude > 7 && Mathf.Abs(carRb.velocity.x) > 2 && Mathf.Abs(carRb.velocity.z) > 2 && !stuck)
             {

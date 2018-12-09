@@ -13,7 +13,7 @@ public class PlayerTutorialManager : MonoBehaviour
     public GameObject m_ReadyImage;
     public RawImage[] m_Speedometers;
     public GameObject m_TutorialDoor;
-    public MeshRenderer m_Flag;
+    public GameObject m_Flag;
     public PlayerNumber player;
 
     private CarController m_CarController;
@@ -41,6 +41,8 @@ public class PlayerTutorialManager : MonoBehaviour
 
         m_CurrentSpeedometer = m_Speedometers[0];
         m_CurrentSpeedometer.enabled = true;
+
+        m_Flag.SetActive(false);
 
         UpdateCarBody();
         UpdateEngine();
@@ -125,7 +127,7 @@ public class PlayerTutorialManager : MonoBehaviour
             case "TutFlag":
                 StartCoroutine(GameRulesText());
                 m_CurrentMessage = "exit the arena!";
-                m_Flag.enabled = true;
+                m_Flag.SetActive(true);
                 Destroy(other.gameObject);
                 break;
             case "TutFireRing":

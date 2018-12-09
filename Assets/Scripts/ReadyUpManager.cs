@@ -8,6 +8,8 @@ public class ReadyUpManager : MonoBehaviour
 {
     public static ReadyUpManager instance;
 
+    public string m_SceneToLoad;
+
     private bool m_P1Ready;
     private bool m_P2Ready;
     private bool m_P3Ready;
@@ -27,6 +29,11 @@ public class ReadyUpManager : MonoBehaviour
 
     private void Start () 
     {
+        if (m_SceneToLoad == null)
+        {
+            m_SceneToLoad = "Menu";
+        }
+
         m_P1Ready = false;
         m_P2Ready = false;
         m_P3Ready = false;
@@ -68,6 +75,6 @@ public class ReadyUpManager : MonoBehaviour
     private IEnumerator OpenArena()
     {
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("Arena");
+        SceneManager.LoadScene(m_SceneToLoad);
     }
 }
