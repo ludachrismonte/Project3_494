@@ -23,7 +23,7 @@ public class ControllerInput : MonoBehaviour
     private Vector3 offset;
     private Collider m_Collider;
     private float cooldown = .2f;
-    private float distToGround = 2f;
+    private float distToGround = 4f;
 
     void Start()
     {
