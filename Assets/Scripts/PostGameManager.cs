@@ -59,16 +59,17 @@ public class PostGameManager : MonoBehaviour {
 
         // Deactivate controls
         player1.GetComponent<ControllerInput>().enabled = false;
-        player1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        //player1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        player1.GetComponent<Rigidbody>().isKinematic = true;
         player1.GetComponent<WaterDamage>().enabled = false;
         player2.GetComponent<ControllerInput>().enabled = false;
-        player2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        player2.GetComponent<Rigidbody>().isKinematic = true;
         player2.GetComponent<WaterDamage>().enabled = false;
         player3.GetComponent<ControllerInput>().enabled = false;
-        player3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        player3.GetComponent<Rigidbody>().isKinematic = true;
         player3.GetComponent<WaterDamage>().enabled = false;
         player4.GetComponent<ControllerInput>().enabled = false;
-        player4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        player4.GetComponent<Rigidbody>().isKinematic = true;
         player4.GetComponent<WaterDamage>().enabled = false;
 
         // Initialize player positions
