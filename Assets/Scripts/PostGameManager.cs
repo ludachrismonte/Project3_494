@@ -18,19 +18,19 @@ public class PostGameManager : MonoBehaviour {
 
     // Winner position
     // Pos (2, 2.63, -3.06)
-    private Vector3 winVec = new Vector3(2f, 2.63f, -3.06f);
+    private Vector3 winVec = new Vector3(270.63f, 53.68f, 382.48f);
     // Rot (0, 160, 0)
-    private Quaternion winRot = Quaternion.Euler(0, 160, 0);
+    private Quaternion winRot = Quaternion.Euler(0, 92.17f, 0);
 
     // Player positions and rotations
-    private Vector3 player1Pos = new Vector3(-5.2f, 0.53f, -0.11f);
-    private Quaternion player1Rot = Quaternion.Euler(180, 60, 0);
-    private Vector3 player2Pos = new Vector3(-5.5f, 0.43f, 4.75f);
-    private Quaternion player2Rot = Quaternion.Euler(180, -294.3f, 0);
-    private Vector3 player3Pos = new Vector3(-9.95f, 0.43f, 2.63f);
-    private Quaternion player3Rot = Quaternion.Euler(180, 110, 0);
-    private Vector3 player4Pos = new Vector3(-9.26f, 0.53f, 7.29f);
-    private Quaternion player4Rot = Quaternion.Euler(180, 20, 0);
+    private Vector3 player1Pos = new Vector3(277.58f, 55.07f, 373.07f);
+    private Quaternion player1Rot = Quaternion.Euler(180, 155.31f, 0);
+    private Vector3 player2Pos = new Vector3(275.12f, 55.1f, 369.86f);
+    private Quaternion player2Rot = Quaternion.Euler(180, -90, 0);
+    private Vector3 player3Pos = new Vector3(279.55f, 55.07f, 368.79f);
+    private Quaternion player3Rot = Quaternion.Euler(180, 51.05f, 0);
+    private Vector3 player4Pos = new Vector3(272.87f, 55.06f, 374.6f);
+    private Quaternion player4Rot = Quaternion.Euler(180, -235.4f, 0);
 
     public Text winText;
     public Text resetText;
