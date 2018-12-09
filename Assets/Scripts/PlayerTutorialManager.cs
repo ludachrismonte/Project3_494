@@ -10,11 +10,13 @@ public class PlayerTutorialManager : MonoBehaviour
     public PickupLevelEnum m_TireLevel = PickupLevelEnum.one;
     public PickupLevelEnum m_EngineLevel = PickupLevelEnum.one;
     public Text m_PlayerMainText;
+    public Text m_SubText;
     public GameObject m_ReadyImage;
     public RawImage[] m_Speedometers;
     public GameObject m_TutorialDoor;
     public GameObject m_Flag;
     public PlayerNumber player;
+    public bool m_IsReadyUp;
 
     private CarController m_CarController;
     private Health m_CarHealth;
@@ -25,6 +27,8 @@ public class PlayerTutorialManager : MonoBehaviour
     private string m_CurrentMessage;
     private bool m_HasMoved = false;
     private bool m_ShowingText = false;
+
+    private bool m_ReadiedUp;
     
     private void Start()
     {
@@ -33,8 +37,10 @@ public class PlayerTutorialManager : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody>();
         m_WeaponManager = GetComponent<WeaponManager>();
 
-        m_CurrentMessage = "";
+        m_CurrentMessage = m_IsReadyUp ? "grab the flag!" : "grab pickups or the flag!";
         m_PlayerMainText.text = "";
+
+        m_ReadiedUp = false;
 
         foreach (RawImage speedometer in m_Speedometers)
             speedometer.enabled = false;
@@ -49,15 +55,15 @@ public class PlayerTutorialManager : MonoBehaviour
         UpdateTires();
 
         StartCoroutine(ControlsText());
+        StartCoroutine(SwapSubText());
     }
 
     private void Update()
     {
         if (!m_HasMoved && m_Rigidbody.velocity.magnitude > 2.0f)
         {
+            m_PlayerMainText.text = "";
             m_HasMoved = true;
-            m_CurrentMessage = "grab pickups or the flag!";
-            m_PlayerMainText.text = m_CurrentMessage;
         }
     }
 
@@ -73,6 +79,12 @@ public class PlayerTutorialManager : MonoBehaviour
 
     private void Pickup(Collider other)
     {
+        if (other.tag == "TutFireRing")
+        {
+            ReadyUpManager.instance.PlayersReadiedUp(player, this);
+            return;
+        }
+
         if (m_ShowingText)
             return;
 
@@ -129,12 +141,6 @@ public class PlayerTutorialManager : MonoBehaviour
                 m_CurrentMessage = "exit the arena!";
                 m_Flag.SetActive(true);
                 Destroy(other.gameObject);
-                break;
-            case "TutFireRing":
-                m_PlayerMainText.text = "ready!";
-                m_ReadyImage.SetActive(true);
-                m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-                ReadyUpManager.instance.PlayersReadiedUp(player);
                 break;
         }
     }
@@ -240,27 +246,46 @@ public class PlayerTutorialManager : MonoBehaviour
     {
         m_ShowingText = true;
         yield return new WaitForSeconds(4);
-        m_PlayerMainText.text = m_CurrentMessage;
+        m_PlayerMainText.text = "";
         m_ShowingText = false;
     }
 
     private IEnumerator GameRulesText()
     {
         m_ShowingText = true;
-        m_PlayerMainText.text = "hold the flag for as long as you can to win the game!";
+        m_PlayerMainText.text = "hold the flag to earn points! jump through fire hoops to earn extra points!";
         yield return new WaitForSeconds(4);
         m_PlayerMainText.text = "take the flag from other players by running " +
             "into them or by knocking them out!";
         yield return new WaitForSeconds(4);
+        m_PlayerMainText.text = "";
         m_TutorialDoor.SetActive(false);
-        m_PlayerMainText.text = m_CurrentMessage;
         m_ShowingText = false;
     }
 
     private IEnumerator TutorialShield()
     {
-        transform.Find("Shield").gameObject.SetActive(true);
+        transform.Find("Shield").GetComponent<Shield>().Activate();
         yield return new WaitForSeconds(4);
-        transform.Find("Shield").gameObject.SetActive(false);
+    }
+
+    public void ReadyUp()
+    {
+        m_ReadiedUp = true;
+        m_PlayerMainText.text = "ready!";
+        m_ReadyImage.SetActive(true);
+        m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+    }
+
+    private IEnumerator SwapSubText()
+    {
+        while (!m_ReadiedUp)
+        {
+            m_SubText.text = "click start to skip!";
+            yield return new WaitForSeconds(2);
+            m_SubText.text = m_CurrentMessage;
+            yield return new WaitForSeconds(2);
+        }
+        m_SubText.text = "";
     }
 }

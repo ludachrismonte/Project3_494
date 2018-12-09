@@ -6,6 +6,7 @@ using InControl;
 public class ControllerInput : MonoBehaviour
 {
     public int playerNum;
+    public bool m_IsRUOrTutorial = false;
 
     private readonly float torque = 15000.0f;
 
@@ -49,51 +50,56 @@ public class ControllerInput : MonoBehaviour
         {
             return;
         }
-        else
-        {
-            float horizInput = player.LeftStick.Vector.x;
-            float vertInput = player.LeftStick.Vector.y;
-            float rightHorizInput = player.RightStick.Vector.x;
-            float gasInput = player.Action1.Value; // A button
-            // Braking/reverse (X button)
-            if (gasInput <= 0.0f)
-            {
-                gasInput = -player.Action3.Value;
-            }
 
-            bool reset = player.Action4.WasPressed;
-            if (reset && this.GetComponent<RespawnReset>().stuck)
+        if (m_IsRUOrTutorial && player.MenuWasPressed)
+        {
+            PlayerTutorialManager playerTutorialManager = GetComponent<PlayerTutorialManager>();
+            if (playerTutorialManager == null)
             {
-                GetComponent<RespawnReset>().ResetCar();
+                Debug.LogError("ERROR: PlayerTutorialMangaer does not exist");
+                Application.Quit();
                 return;
             }
+            ReadyUpManager.instance.PlayersReadiedUp((PlayerNumber)playerNum, playerTutorialManager);
+        }
 
-            if (!IsGrounded())
+        float horizInput = player.LeftStick.Vector.x;
+        float vertInput = player.LeftStick.Vector.y;
+        float rightHorizInput = player.RightStick.Vector.x;
+        float gasInput = player.Action1.Value; // A button
+        // Braking/reverse (X button)
+        if (gasInput <= 0.0f)
+        {
+            gasInput = -player.Action3.Value;
+        }
+
+        bool reset = player.Action4.WasPressed;
+        if (reset && this.GetComponent<RespawnReset>().stuck)
+        {
+            GetComponent<RespawnReset>().ResetCar();
+            return;
+        }
+
+        if (!IsGrounded())
+        {
+            if (!Mathf.Approximately(0.0f, horizInput))
             {
-                if (!Mathf.Approximately(0.0f, horizInput))
-                {
-                    m_Rigidbody.AddRelativeTorque(Vector3.up * horizInput * torque);
-                }
-                if (!Mathf.Approximately(0.0f, vertInput))
-                {
-                    m_Rigidbody.AddRelativeTorque(Vector3.right * vertInput * torque);
-                }
+                m_Rigidbody.AddRelativeTorque(Vector3.up * horizInput * torque);
             }
-            else
+            if (!Mathf.Approximately(0.0f, vertInput))
             {
-                car.Move(horizInput, gasInput, gasInput, 0);
+                m_Rigidbody.AddRelativeTorque(Vector3.right * vertInput * torque);
             }
+        }
+        else
+        {
+            car.Move(horizInput, gasInput, gasInput, 0);
+        }
 
-            // Weapons
-            if (player.Action2.WasPressed) 
-            { 
-                weapon_manager.Fire(); 
-            }
-
-            //if (player.Action2.Value > 0.0f)
-            //{
-            //    m_Rigidbody.AddForce(transform.forward * 300000, ForceMode.Force);
-            //}
+        // Weapons
+        if (player.Action2.WasPressed) 
+        { 
+            weapon_manager.Fire(); 
         }
     }
 

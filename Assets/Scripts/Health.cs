@@ -50,11 +50,8 @@ public class Health : MonoBehaviour
 
     public void AlterHealth(float amt)
     {
-        GameObject shield = transform.Find("Shield").gameObject;
-        if (shield.activeSelf) {
-            shield.SetActive(false);
-            return;
-        }
+        GameObject shield = transform.Find("ShieldCollider").gameObject;
+        if (shield.activeSelf) { return; }
         m_Health += amt;
         UpdateCarBody();
     }
