@@ -265,9 +265,8 @@ public class PlayerTutorialManager : MonoBehaviour
 
     private IEnumerator TutorialShield()
     {
-        transform.Find("Shield").gameObject.SetActive(true);
+        transform.Find("Shield").GetComponent<Shield>().Activate();
         yield return new WaitForSeconds(4);
-        transform.Find("Shield").gameObject.SetActive(false);
     }
 
     public void ReadyUp()
