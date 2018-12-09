@@ -44,12 +44,14 @@ public class ReadyUpManager : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            StartCoroutine(OpenArena());
+            SceneManager.LoadScene(m_SceneToLoad);
         }
     }
 
-    public void PlayersReadiedUp(PlayerNumber player)
+    public void PlayersReadiedUp(PlayerNumber player, PlayerTutorialManager playerTutorialManager)
     {
+        playerTutorialManager.ReadyUp();
+
         switch (player)
         {
             case PlayerNumber.one:
@@ -74,7 +76,7 @@ public class ReadyUpManager : MonoBehaviour
 
     private IEnumerator OpenArena()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene(m_SceneToLoad);
     }
 }

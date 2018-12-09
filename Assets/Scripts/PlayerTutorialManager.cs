@@ -131,10 +131,7 @@ public class PlayerTutorialManager : MonoBehaviour
                 Destroy(other.gameObject);
                 break;
             case "TutFireRing":
-                m_PlayerMainText.text = "ready!";
-                m_ReadyImage.SetActive(true);
-                m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-                ReadyUpManager.instance.PlayersReadiedUp(player);
+                ReadyUpManager.instance.PlayersReadiedUp(player, this);
                 break;
         }
     }
@@ -262,5 +259,12 @@ public class PlayerTutorialManager : MonoBehaviour
         transform.Find("Shield").gameObject.SetActive(true);
         yield return new WaitForSeconds(4);
         transform.Find("Shield").gameObject.SetActive(false);
+    }
+
+    public void ReadyUp()
+    {
+        m_PlayerMainText.text = "ready!";
+        m_ReadyImage.SetActive(true);
+        m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
     }
 }
