@@ -87,7 +87,7 @@ public class PlayerPickup : MonoBehaviour
                 }
                 break;
             case "ShieldPickup":
-                transform.Find("Shield").gameObject.SetActive(true);
+                transform.Find("Shield").gameObject.GetComponent<Shield>().Activate();
                 Destroy(other.gameObject);
                 break;
             case "LandminePickup":
