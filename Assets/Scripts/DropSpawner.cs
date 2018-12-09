@@ -7,15 +7,27 @@ public class DropSpawner : MonoBehaviour
     public GameObject m_DropBox;
     public float m_Radius = 180;
     public int m_MaxDrops = 10;
-    public float m_HeightOfDrop;
+    public float m_HeightOfDrop = 30;
+    public float m_TimeBetweenDrops = 5;
 
     private int m_CurrentDrops;
+    private float m_Timer;
+
+    private void Start()
+    {
+        m_Timer = 0;
+    }
 
     private void Update () 
     {
-        if (m_CurrentDrops < m_MaxDrops)
+        m_Timer += Time.deltaTime;
+        if (m_Timer > m_TimeBetweenDrops)
         {
-            Spawn();
+            m_Timer = 0;
+            if (m_CurrentDrops < m_MaxDrops)
+            {
+                Spawn();
+            }
         }
     }
 
