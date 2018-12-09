@@ -24,11 +24,12 @@ public class FireRingManager : MonoBehaviour
         SpawnFireRings();
 	}
 
-    public void FireRingHit(GameObject fireRingObject)
+    public IEnumerator FireRingHit(GameObject fireRingObject)
     {
         --m_NumberOfActive;
         m_ActiveFireRings[fireRingObject] = false;
         fireRingObject.GetComponent<FireRing>().Deactivate();
+        yield return new WaitForSeconds(3);
         SpawnFireRings();
     }
 
