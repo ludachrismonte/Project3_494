@@ -6584,6 +6584,7 @@ MonoBehaviour:
   m_Radius: 180
   m_MaxDrops: 25
   m_HeightOfDrop: 30
+  m_TimeBetweenDrops: 5
 --- !u!1 &67106915
 GameObject:
   m_ObjectHideFlags: 0
@@ -115415,6 +115416,76 @@ Prefab:
     - target: {fileID: 4546755478965784, guid: c85bc1d741b9e4ba89f96ef2d6e8012e, type: 2}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114627970500464158, guid: c85bc1d741b9e4ba89f96ef2d6e8012e,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114723441706738756, guid: c85bc1d741b9e4ba89f96ef2d6e8012e,
+        type: 2}
+      propertyPath: m_EffectColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114723441706738756, guid: c85bc1d741b9e4ba89f96ef2d6e8012e,
+        type: 2}
+      propertyPath: m_EffectColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114723441706738756, guid: c85bc1d741b9e4ba89f96ef2d6e8012e,
+        type: 2}
+      propertyPath: m_EffectColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114648947250648232, guid: c85bc1d741b9e4ba89f96ef2d6e8012e,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114648947250648232, guid: c85bc1d741b9e4ba89f96ef2d6e8012e,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611575135037112, guid: c85bc1d741b9e4ba89f96ef2d6e8012e,
+        type: 2}
+      propertyPath: m_EffectColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611575135037112, guid: c85bc1d741b9e4ba89f96ef2d6e8012e,
+        type: 2}
+      propertyPath: m_EffectColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611575135037112, guid: c85bc1d741b9e4ba89f96ef2d6e8012e,
+        type: 2}
+      propertyPath: m_EffectColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114948249703307216, guid: c85bc1d741b9e4ba89f96ef2d6e8012e,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114948249703307216, guid: c85bc1d741b9e4ba89f96ef2d6e8012e,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114189292822321518, guid: c85bc1d741b9e4ba89f96ef2d6e8012e,
+        type: 2}
+      propertyPath: m_EffectColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114189292822321518, guid: c85bc1d741b9e4ba89f96ef2d6e8012e,
+        type: 2}
+      propertyPath: m_EffectColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114189292822321518, guid: c85bc1d741b9e4ba89f96ef2d6e8012e,
+        type: 2}
+      propertyPath: m_EffectColor.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c85bc1d741b9e4ba89f96ef2d6e8012e, type: 2}
