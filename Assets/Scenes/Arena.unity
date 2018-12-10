@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.85171926, g: 0.899808, b: 0.95429176, a: 1}
+  m_IndirectSpecularColor: {r: 0.8517109, g: 0.8998194, b: 0.9542908, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -214,15 +214,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4102641815237352, guid: 006d5f11867704d798d67fc2b57abf65, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -43.8832
+      value: -45.23
       objectReference: {fileID: 0}
     - target: {fileID: 4102641815237352, guid: 006d5f11867704d798d67fc2b57abf65, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 25.9026
+      value: 29.85
       objectReference: {fileID: 0}
     - target: {fileID: 4102641815237352, guid: 006d5f11867704d798d67fc2b57abf65, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 160.57
+      value: 159.1
       objectReference: {fileID: 0}
     - target: {fileID: 4102641815237352, guid: 006d5f11867704d798d67fc2b57abf65, type: 2}
       propertyPath: m_LocalRotation.x
@@ -538,7 +538,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1219024944}
+    m_TransformParent: {fileID: 35069695}
     m_Modifications:
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.x
@@ -570,11 +570,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1338941612224622, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_Name
-      value: EnginePickupLvl2 (2)
+      value: EnginePickupLvl2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
@@ -883,6 +883,47 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 29877808}
   m_Mesh: {fileID: 4300010, guid: 0a7d0ab1001fe44478f74c97daa81e2d, type: 3}
+--- !u!1 &35069694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 35069695}
+  m_Layer: 0
+  m_Name: Engines
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &35069695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 35069694}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 682702390}
+  - {fileID: 8819085}
+  - {fileID: 1065015045}
+  - {fileID: 600548911}
+  - {fileID: 156901867}
+  - {fileID: 1610323205}
+  - {fileID: 770929832}
+  - {fileID: 1373790303}
+  - {fileID: 1281511009}
+  - {fileID: 1167042447}
+  - {fileID: 1294612927}
+  - {fileID: 801625413}
+  - {fileID: 1521628221}
+  m_Father: {fileID: 574485924}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &35553197
 GameObject:
   m_ObjectHideFlags: 0
@@ -7054,7 +7095,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 574485924}
+    m_TransformParent: {fileID: 1156147288}
     m_Modifications:
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.x
@@ -7086,7 +7127,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114051739575455634, guid: f28218ea529e74dceab72d9e7d446a40,
         type: 2}
@@ -7095,7 +7136,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1142031567101666, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_Name
-      value: TirePickup (1)
+      value: TirePickupLvl4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
@@ -12252,7 +12293,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1219024944}
+    m_TransformParent: {fileID: 35069695}
     m_Modifications:
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.x
@@ -12284,11 +12325,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1338941612224622, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_Name
-      value: EnginePickupLvl2
+      value: EnginePickupLvl3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114261508087923372, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75,
+        type: 2}
+      propertyPath: m_PickupLevel
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
@@ -13542,7 +13588,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1219024944}
+    m_TransformParent: {fileID: 1156147288}
     m_Modifications:
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.x
@@ -13574,11 +13620,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1142031567101666, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_Name
-      value: TirePickupLvl2 (1)
+      value: TirePickupLvl2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
@@ -17630,19 +17676,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1219024944}
+    m_TransformParent: {fileID: 1382293486}
     m_Modifications:
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -100
+      value: -0.13
       objectReference: {fileID: 0}
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 11.48
+      value: 17.31
       objectReference: {fileID: 0}
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -100
+      value: -29.64
       objectReference: {fileID: 0}
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalRotation.x
@@ -17662,11 +17708,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1649593261324842, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_Name
-      value: CarBodyPickupLvl2 (1)
+      value: CarBodyPickupLvl4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
@@ -18173,7 +18219,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1219024944}
+    m_TransformParent: {fileID: 1382293486}
     m_Modifications:
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -18210,6 +18256,11 @@ Prefab:
     - target: {fileID: 1649593261324842, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_Name
       value: CarBodyPickupLvl2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114913052373385430, guid: d537bb7416718401389a9b5d10f670c1,
+        type: 2}
+      propertyPath: m_PickupLevel
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
@@ -19073,12 +19124,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1219024944}
-  - {fileID: 2012994332}
-  - {fileID: 1341884755}
-  - {fileID: 1270572772}
-  - {fileID: 1966023037}
-  - {fileID: 401726275}
+  - {fileID: 1156147288}
+  - {fileID: 1382293486}
+  - {fileID: 35069695}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -28839,7 +28887,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1219024944}
+    m_TransformParent: {fileID: 35069695}
     m_Modifications:
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.x
@@ -28847,7 +28895,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 15
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.z
@@ -28871,11 +28919,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1338941612224622, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_Name
-      value: EnginePickupLvl2 (3)
+      value: EnginePickupLvl2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
@@ -30274,7 +30322,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1219024944}
+    m_TransformParent: {fileID: 1156147288}
     m_Modifications:
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.x
@@ -30306,11 +30354,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1142031567101666, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_Name
-      value: TirePickupLvl2 (2)
+      value: TirePickupLvl2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
@@ -30603,7 +30651,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1219024944}
+    m_TransformParent: {fileID: 35069695}
     m_Modifications:
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.x
@@ -30635,11 +30683,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1338941612224622, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_Name
-      value: EnginePickupLvl2 (1)
+      value: EnginePickupLvl2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
@@ -32221,7 +32269,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2012994332}
+    m_TransformParent: {fileID: 35069695}
     m_Modifications:
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.x
@@ -32253,12 +32301,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114261508087923372, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75,
         type: 2}
       propertyPath: m_PickupLevel
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338941612224622, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
+      propertyPath: m_Name
+      value: EnginePickupLvl3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
@@ -32617,19 +32669,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1270572772}
+    m_TransformParent: {fileID: 35069695}
     m_Modifications:
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -11.57
+      value: -45.23
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 16.59
+      value: 29.85
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.9
+      value: 159.1
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalRotation.x
@@ -32649,7 +32701,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1338941612224622, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_Name
@@ -38083,7 +38135,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1341884755}
+    m_TransformParent: {fileID: 1156147288}
     m_Modifications:
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.x
@@ -38115,7 +38167,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1142031567101666, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_Name
@@ -49223,7 +49275,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 574485924}
+    m_TransformParent: {fileID: 1156147288}
     m_Modifications:
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.x
@@ -49255,12 +49307,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114051739575455634, guid: f28218ea529e74dceab72d9e7d446a40,
         type: 2}
       propertyPath: m_PickupLevel
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142031567101666, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
+      propertyPath: m_Name
+      value: TirePickupLvl3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
@@ -49270,7 +49326,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2012994332}
+    m_TransformParent: {fileID: 1382293486}
     m_Modifications:
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -49302,11 +49358,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1649593261324842, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_Name
-      value: CarBodyPickupLvl3 (1)
+      value: CarBodyPickupLvl3
       objectReference: {fileID: 0}
     - target: {fileID: 114913052373385430, guid: d537bb7416718401389a9b5d10f670c1,
         type: 2}
@@ -54412,7 +54468,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2012994332}
+    m_TransformParent: {fileID: 1156147288}
     m_Modifications:
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.x
@@ -54444,11 +54500,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1142031567101666, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_Name
-      value: TirePickupLvl3 (2)
+      value: TirePickupLvl3
       objectReference: {fileID: 0}
     - target: {fileID: 114051739575455634, guid: f28218ea529e74dceab72d9e7d446a40,
         type: 2}
@@ -54594,11 +54650,11 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1270572772}
+    m_TransformParent: {fileID: 1156147288}
     m_Modifications:
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 151.64
+      value: 127.48
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.y
@@ -54626,7 +54682,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1142031567101666, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_Name
@@ -55309,7 +55365,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2012994332}
+    m_TransformParent: {fileID: 1382293486}
     m_Modifications:
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -55341,12 +55397,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114913052373385430, guid: d537bb7416718401389a9b5d10f670c1,
         type: 2}
       propertyPath: m_PickupLevel
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649593261324842, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
+      propertyPath: m_Name
+      value: CarBodyPickupLvl3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
@@ -55399,19 +55459,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1341884755}
+    m_TransformParent: {fileID: 1156147288}
     m_Modifications:
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -186.77
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 41.07
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalRotation.x
@@ -55431,11 +55491,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1142031567101666, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_Name
-      value: TirePickupLvl4 (1)
+      value: TirePickupLvl4
       objectReference: {fileID: 0}
     - target: {fileID: 114051739575455634, guid: f28218ea529e74dceab72d9e7d446a40,
         type: 2}
@@ -55455,7 +55515,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2012994332}
+    m_TransformParent: {fileID: 35069695}
     m_Modifications:
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.x
@@ -55487,16 +55547,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1338941612224622, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_Name
-      value: EnginePickupLvl3 (2)
+      value: EnginePickupLvl2
       objectReference: {fileID: 0}
     - target: {fileID: 114261508087923372, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75,
         type: 2}
       propertyPath: m_PickupLevel
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Center.y
@@ -60451,7 +60511,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1270572772}
+    m_TransformParent: {fileID: 1382293486}
     m_Modifications:
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -60483,11 +60543,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1649593261324842, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_Name
       value: CarBodyPickupLvl5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114913052373385430, guid: d537bb7416718401389a9b5d10f670c1,
+        type: 2}
+      propertyPath: m_PickupLevel
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
@@ -61726,6 +61791,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1145979223}
   m_Mesh: {fileID: 4300002, guid: 030a6667d1dcb95488e3ff6bd68ef923, type: 3}
+--- !u!1 &1156147287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1156147288}
+  m_Layer: 0
+  m_Name: Tires
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1156147288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1156147287}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 231674247}
+  - {fileID: 670061928}
+  - {fileID: 1792647445}
+  - {fileID: 1527281980}
+  - {fileID: 2069254577}
+  - {fileID: 2054907850}
+  - {fileID: 971213019}
+  - {fileID: 401726275}
+  - {fileID: 837218086}
+  - {fileID: 1053320744}
+  - {fileID: 1966023037}
+  - {fileID: 991494410}
+  m_Father: {fileID: 574485924}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1161195945
 GameObject:
   m_ObjectHideFlags: 0
@@ -61868,7 +61973,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1270572772}
+    m_TransformParent: {fileID: 35069695}
     m_Modifications:
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.x
@@ -61900,11 +62005,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1338941612224622, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_Name
-      value: EnginePickupLvl5 (1)
+      value: EnginePickupLvl4
       objectReference: {fileID: 0}
     - target: {fileID: 114261508087923372, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75,
         type: 2}
@@ -72385,46 +72490,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c3fb762214234dd3b78af75ea72829f, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1219024943
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1219024944}
-  m_Layer: 0
-  m_Name: Level2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1219024944
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1219024943}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 511442363}
-  - {fileID: 156901867}
-  - {fileID: 1527281980}
-  - {fileID: 479189087}
-  - {fileID: 682702390}
-  - {fileID: 231674247}
-  - {fileID: 2122497381}
-  - {fileID: 8819085}
-  - {fileID: 670061928}
-  - {fileID: 1754494400}
-  - {fileID: 600548911}
-  - {fileID: 1792647445}
-  m_Father: {fileID: 574485924}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1221021782 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114700371414731258, guid: 8c3fb762214234dd3b78af75ea72829f,
@@ -73175,38 +73240,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1265981300}
   m_Mesh: {fileID: 4300008, guid: 0a7d0ab1001fe44478f74c97daa81e2d, type: 3}
---- !u!1 &1270572771
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1270572772}
-  m_Layer: 0
-  m_Name: Level5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1270572772
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1270572771}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1079353621}
-  - {fileID: 801625413}
-  - {fileID: 991494410}
-  - {fileID: 1167042447}
-  m_Father: {fileID: 574485924}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1276190614
 GameObject:
   m_ObjectHideFlags: 0
@@ -73456,7 +73489,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1341884755}
+    m_TransformParent: {fileID: 35069695}
     m_Modifications:
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.x
@@ -73488,7 +73521,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1338941612224622, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_Name
@@ -73638,7 +73671,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1341884755}
+    m_TransformParent: {fileID: 35069695}
     m_Modifications:
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.x
@@ -73670,16 +73703,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1338941612224622, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_Name
-      value: EnginePickupLvl4 (1)
+      value: EnginePickupLvl5
       objectReference: {fileID: 0}
     - target: {fileID: 114261508087923372, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75,
         type: 2}
       propertyPath: m_PickupLevel
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Center.y
@@ -74361,47 +74394,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.7848291, y: 2.59123, z: 3.6577098}
   m_Center: {x: 0.39241603, y: 0.29561496, z: 0.21144092}
---- !u!1 &1341884754
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1341884755}
-  m_Layer: 0
-  m_Name: Level4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1341884755
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1341884754}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1343842716}
-  - {fileID: 1281511009}
-  - {fileID: 837218086}
-  - {fileID: 1557575851}
-  - {fileID: 1294612927}
-  - {fileID: 1053320744}
-  - {fileID: 1373593465}
-  m_Father: {fileID: 574485924}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1343842715
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1341884755}
+    m_TransformParent: {fileID: 1382293486}
     m_Modifications:
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -74433,7 +74431,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1649593261324842, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_Name
@@ -74548,7 +74546,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1341884755}
+    m_TransformParent: {fileID: 1382293486}
     m_Modifications:
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -74580,7 +74578,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114913052373385430, guid: d537bb7416718401389a9b5d10f670c1,
         type: 2}
@@ -74589,7 +74587,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1649593261324842, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_Name
-      value: CarBodyPickup (1)
+      value: CarBodyPickupLvl4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
@@ -74604,7 +74602,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2012994332}
+    m_TransformParent: {fileID: 35069695}
     m_Modifications:
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.x
@@ -74636,7 +74634,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114261508087923372, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75,
         type: 2}
@@ -74645,7 +74643,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1338941612224622, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_Name
-      value: EnginePickup (1)
+      value: EnginePickupLvl3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
@@ -74655,6 +74653,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75,
     type: 2}
   m_PrefabInternal: {fileID: 1373790302}
+--- !u!1 &1382293485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1382293486}
+  m_Layer: 0
+  m_Name: Bodies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1382293486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1382293485}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 511442363}
+  - {fileID: 2122497381}
+  - {fileID: 1754494400}
+  - {fileID: 1044543689}
+  - {fileID: 1499646428}
+  - {fileID: 919644937}
+  - {fileID: 1630900166}
+  - {fileID: 479189087}
+  - {fileID: 1343842716}
+  - {fileID: 1373593465}
+  - {fileID: 1079353621}
+  - {fileID: 1557575851}
+  m_Father: {fileID: 574485924}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1384448098
 Prefab:
   m_ObjectHideFlags: 0
@@ -76597,7 +76635,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2012994332}
+    m_TransformParent: {fileID: 1382293486}
     m_Modifications:
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -76629,7 +76667,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1649593261324842, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_Name
@@ -86218,7 +86256,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2012994332}
+    m_TransformParent: {fileID: 35069695}
     m_Modifications:
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.x
@@ -86250,11 +86288,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1338941612224622, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_Name
-      value: EnginePickupLvl3
+      value: EnginePickupLvl5
       objectReference: {fileID: 0}
     - target: {fileID: 114261508087923372, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75,
         type: 2}
@@ -86354,7 +86392,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1219024944}
+    m_TransformParent: {fileID: 1156147288}
     m_Modifications:
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.x
@@ -86386,11 +86424,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1142031567101666, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_Name
-      value: TirePickupLvl2
+      value: TirePickupLvl3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114051739575455634, guid: f28218ea529e74dceab72d9e7d446a40,
+        type: 2}
+      propertyPath: m_PickupLevel
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
@@ -91198,7 +91241,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1341884755}
+    m_TransformParent: {fileID: 1382293486}
     m_Modifications:
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -91230,11 +91273,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1649593261324842, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_Name
-      value: CarBodyPickupLvl4 (1)
+      value: CarBodyPickupLvl5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114913052373385430, guid: d537bb7416718401389a9b5d10f670c1,
+        type: 2}
+      propertyPath: m_PickupLevel
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
@@ -91776,7 +91824,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2012994332}
+    m_TransformParent: {fileID: 35069695}
     m_Modifications:
     - target: {fileID: 4080624584690328, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_LocalPosition.x
@@ -91812,7 +91860,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1338941612224622, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75, type: 2}
       propertyPath: m_Name
-      value: EnginePickupLvl3 (1)
+      value: EnginePickupLvl3
       objectReference: {fileID: 0}
     - target: {fileID: 114261508087923372, guid: 8ecb2fefc72e149bc85d37cb7c7f3f75,
         type: 2}
@@ -92148,7 +92196,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2012994332}
+    m_TransformParent: {fileID: 1382293486}
     m_Modifications:
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -92180,11 +92228,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1649593261324842, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_Name
-      value: CarBodyPickupLvl3 (2)
+      value: CarBodyPickupLvl3
       objectReference: {fileID: 0}
     - target: {fileID: 114913052373385430, guid: d537bb7416718401389a9b5d10f670c1,
         type: 2}
@@ -94271,7 +94319,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1219024944}
+    m_TransformParent: {fileID: 1382293486}
     m_Modifications:
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -94303,11 +94351,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1649593261324842, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_Name
-      value: CarBodyPickupLvl2 (3)
+      value: CarBodyPickupLvl2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114913052373385430, guid: d537bb7416718401389a9b5d10f670c1,
+        type: 2}
+      propertyPath: m_PickupLevel
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
@@ -94808,7 +94861,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1219024944}
+    m_TransformParent: {fileID: 1156147288}
     m_Modifications:
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.x
@@ -94840,11 +94893,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1142031567101666, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_Name
-      value: TirePickupLvl2 (3)
+      value: TirePickupLvl2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
@@ -112547,46 +112600,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2009405146}
   m_Mesh: {fileID: 4300010, guid: 0a7d0ab1001fe44478f74c97daa81e2d, type: 3}
---- !u!1 &2012994331
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2012994332}
-  m_Layer: 0
-  m_Name: Level3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2012994332
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2012994331}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1044543689}
-  - {fileID: 1499646428}
-  - {fileID: 1521628221}
-  - {fileID: 2069254577}
-  - {fileID: 919644937}
-  - {fileID: 1610323205}
-  - {fileID: 2054907850}
-  - {fileID: 1630900166}
-  - {fileID: 1065015045}
-  - {fileID: 971213019}
-  - {fileID: 770929832}
-  - {fileID: 1373790303}
-  m_Father: {fileID: 574485924}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2037129026
 GameObject:
   m_ObjectHideFlags: 0
@@ -112852,7 +112865,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2012994332}
+    m_TransformParent: {fileID: 1156147288}
     m_Modifications:
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.x
@@ -112860,11 +112873,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 15
+      value: 6.29
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -210
+      value: -212.8
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalRotation.x
@@ -112884,11 +112897,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1142031567101666, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_Name
-      value: TirePickupLvl3 (1)
+      value: TirePickupLvl3
       objectReference: {fileID: 0}
     - target: {fileID: 114051739575455634, guid: f28218ea529e74dceab72d9e7d446a40,
         type: 2}
@@ -113241,7 +113254,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2012994332}
+    m_TransformParent: {fileID: 1156147288}
     m_Modifications:
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_LocalPosition.x
@@ -113273,7 +113286,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4533083383841140, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1142031567101666, guid: f28218ea529e74dceab72d9e7d446a40, type: 2}
       propertyPath: m_Name
@@ -114167,7 +114180,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1219024944}
+    m_TransformParent: {fileID: 1382293486}
     m_Modifications:
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -114199,11 +114212,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151224723571048, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1649593261324842, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
       propertyPath: m_Name
-      value: CarBodyPickupLvl2 (2)
+      value: CarBodyPickupLvl2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114913052373385430, guid: d537bb7416718401389a9b5d10f670c1,
+        type: 2}
+      propertyPath: m_PickupLevel
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d537bb7416718401389a9b5d10f670c1, type: 2}
