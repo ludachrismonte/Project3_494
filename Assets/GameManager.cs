@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject UI;
-    //public GameObject GameSettings;
 
     private Image explosion;
     private Image wood;
@@ -22,7 +21,6 @@ public class GameManager : MonoBehaviour
 
     private GameObject win_box;
     private Image game_black;
-    //private Image menu_black;
 
     private GameObject player1;
     private GameObject player2;
@@ -55,12 +53,8 @@ public class GameManager : MonoBehaviour
 
         win_box = UI.transform.Find("WinBox").gameObject;
         game_black = UI.transform.Find("black").GetComponent<Image>();
-        //menu_black = GameSettings.transform.Find("black").GetComponent<Image>();
 
         game_black.color = new Color(game_black.color.r, game_black.color.g, game_black.color.b, 1f);
-        //menu_black.color = new Color(menu_black.color.r, menu_black.color.g, menu_black.color.b, 1f);
-        //GameSettings.SetActive(true);
-        //StartCoroutine(FadeIn(menu_black));
 
         player1 = GameObject.FindGameObjectWithTag("Player");
         player2 = GameObject.FindGameObjectWithTag("Player2");
@@ -79,7 +73,6 @@ public class GameManager : MonoBehaviour
 
     public void MenuSubmit(int score, int FirehoopPoints, int FirehoopPoints_NoFlag) 
     {
-        //GameSettings.SetActive(false);
         player1.GetComponent<Score>().SetGameScore(score, FirehoopPoints, FirehoopPoints_NoFlag);
         player2.GetComponent<Score>().SetGameScore(score, FirehoopPoints, FirehoopPoints_NoFlag);
         player3.GetComponent<Score>().SetGameScore(score, FirehoopPoints, FirehoopPoints_NoFlag);
