@@ -54,14 +54,9 @@ public class ControllerInput : MonoBehaviour
         float horizInput = player.LeftStick.Vector.x;
         float vertInput = player.LeftStick.Vector.y;
         float gasInput = player.Action1.Value; // A button
-        // Braking/reverse (X button)
-        if (gasInput <= 0.0f)
-        {
-            gasInput = -player.Action3.Value;
-        }
+        float brakeInput = player.Action3.Value; // X button
 
-        bool reset = player.Action4.WasPressed;
-        if (reset && this.GetComponent<RespawnReset>().stuck)
+        if (player.Action4.WasPressed && GetComponent<RespawnReset>().stuck && transform.position.y >= 2.5)
         {
             GetComponent<RespawnReset>().ResetCar();
             return;
@@ -78,10 +73,8 @@ public class ControllerInput : MonoBehaviour
                 m_Rigidbody.AddRelativeTorque(Vector3.right * vertInput * torque);
             }
         }
-        else
-        {
-            car.Move(horizInput, gasInput, gasInput, 0);
-        }
+
+        car.Move(horizInput, gasInput, brakeInput, 0);
 
         // Weapons
         if (player.Action2.WasPressed) 

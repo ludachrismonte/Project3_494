@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class scale_pulse : MonoBehaviour {
+public class ScalePulse : MonoBehaviour {
 
     private Vector3 initial;
     private float multiplier;

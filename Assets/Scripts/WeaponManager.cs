@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public enum WeaponType { rocket, landmine, none };
 
-public class WeaponManager : MonoBehaviour 
+public class WeaponManager : MonoBehaviour
 {
     public GameObject m_LeftRocket = null;
     public GameObject m_RightRocket = null;
@@ -16,9 +16,10 @@ public class WeaponManager : MonoBehaviour
     public GameObject m_CarLandmine;
     public GameObject m_LandminePrefab;
 
+    public bool HasTwoRockets { get; private set; }
+
     private AudioSource m_MechanicalNoise;
     private RocketTargeter m_RocketTargeter;
-    private bool m_HasTwoRockets = false;
     private GameObject m_RocketTarget;
     private WeaponType m_CurrentWeapon = WeaponType.none;
 
@@ -27,6 +28,7 @@ public class WeaponManager : MonoBehaviour
         m_MechanicalNoise = GetComponent<AudioSource>();
         m_RocketTargeter = GetComponent<RocketTargeter>();
 
+        HasTwoRockets = false;
         m_RightRocket.SetActive(false);
         m_LeftRocket.SetActive(false);
         m_Laser.SetActive(false);
@@ -59,7 +61,7 @@ public class WeaponManager : MonoBehaviour
         }
         if (m_CurrentWeapon == WeaponType.rocket)
         {
-            m_HasTwoRockets = true;
+            HasTwoRockets = true;
             m_LeftRocket.SetActive(true);
             m_RightRocket.SetActive(true);
         }
@@ -71,6 +73,15 @@ public class WeaponManager : MonoBehaviour
         {
             m_CurrentWeapon = WeaponType.none;
             StartCoroutine(LowerRocketShooter());
+        }
+    }
+
+    public void ReEquipRockets()
+    {
+        if (m_CurrentWeapon == WeaponType.rocket)
+        {
+            m_LeftRocket.SetActive(true);
+            HasTwoRockets = true;
         }
     }
 
@@ -96,14 +107,14 @@ public class WeaponManager : MonoBehaviour
     {
         if (m_CurrentWeapon == WeaponType.rocket && m_RocketTarget != null)
         {
-            if (m_HasTwoRockets)
+            if (HasTwoRockets)
             {
                 GameObject rocket = Instantiate(m_RocketPrefab, 
                                                 m_LeftRocket.transform.position, 
                                                 m_LeftRocket.transform.rotation
                                                ) as GameObject;
                 rocket.GetComponent<Rocket>().SetTarget(m_RocketTarget);
-                m_HasTwoRockets = false;
+                HasTwoRockets = false;
                 m_LeftRocket.SetActive(false);
             }
             else
@@ -130,7 +141,7 @@ public class WeaponManager : MonoBehaviour
     private IEnumerator RaiseRocketShooter() 
     {
         m_MechanicalNoise.Play();
-        m_HasTwoRockets = true;
+        HasTwoRockets = true;
         m_LeftRocket.SetActive(true);
         m_RightRocket.SetActive(true);
 
@@ -146,7 +157,7 @@ public class WeaponManager : MonoBehaviour
     private IEnumerator LowerRocketShooter()
     {
         m_MechanicalNoise.Play();
-        m_HasTwoRockets = false;
+        HasTwoRockets = false;
         m_LeftRocket.SetActive(false);
         m_RightRocket.SetActive(false);
 
