@@ -45,17 +45,21 @@ public class Score : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (hasFlag) 
+        if (GameManager.instance != null && !GameManager.instance.GameOver)
         {
-            timer += Time.deltaTime;
-            if (timer > 1) {
-                timer = 0.0f;
-                add_score(1);
+            if (hasFlag)
+            {
+                timer += Time.deltaTime;
+                if (timer > 1)
+                {
+                    timer = 0.0f;
+                    add_score(1);
+                }
             }
-        }
-        if (current_score >= m_ScoreToWin) 
-        {
-            manager.Win(me);
+            if (current_score >= m_ScoreToWin)
+            {
+                manager.Win(me);
+            }
         }
     }
 
