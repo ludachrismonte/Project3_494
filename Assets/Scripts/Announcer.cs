@@ -42,7 +42,7 @@ public class Announcer : MonoBehaviour {
     void Start () {
         stall = 0f;
         text_timer = 0f;
-        SetText("init");
+        SetText("");
         current_leader = "None";
         AudioSource.PlayClipAtPoint(welcome, Camera.main.transform.position);
     }

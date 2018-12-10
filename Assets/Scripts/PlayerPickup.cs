@@ -13,6 +13,21 @@ public class PlayerPickup : MonoBehaviour
     public RawImage[] m_Speedometers;
     public GameObject[] m_CarTires; // list of lists
     public Camera cam;
+
+    public GameObject UpgradesFolder;
+    private GameObject Speed5;
+    private GameObject Speed4;
+    private GameObject Speed3;
+    private GameObject Speed2;
+    private GameObject Health5;
+    private GameObject Health4;
+    private GameObject Health3;
+    private GameObject Health2;
+    private GameObject Traction5;
+    private GameObject Traction4;
+    private GameObject Traction3;
+    private GameObject Traction2;
+
     private CarController m_CarController;
     private Health m_CarHealth;
     private WeaponManager m_WeaponManager;
@@ -23,6 +38,7 @@ public class PlayerPickup : MonoBehaviour
 
     private void Start()
     {
+        SetUpgrades();
         m_CarController = GetComponent<CarController>();
         m_CarHealth = GetComponent<Health>();
         m_WeaponManager = GetComponent<WeaponManager>();
@@ -42,9 +58,9 @@ public class PlayerPickup : MonoBehaviour
 
         m_CurrentTireLevel = m_TireLevel;
 
-        UpdateCarBody();
+        UpdateCarBody(transform.position);
         UpdateEngine(transform.position);
-        UpdateTires();
+        UpdateTires(transform.position);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,7 +73,7 @@ public class PlayerPickup : MonoBehaviour
                 if (pickupLevel.m_PickupLevel > m_CarBodyLevel)
                 {
                     m_CarBodyLevel = pickupLevel.m_PickupLevel;
-                    UpdateCarBody();
+                    UpdateCarBody(other.transform.position);
                 }
                 StartCoroutine(WaitToRespawn(other.gameObject));
                 break;
@@ -75,7 +91,7 @@ public class PlayerPickup : MonoBehaviour
                 if (pickupLevel.m_PickupLevel > m_TireLevel)
                 {
                     m_TireLevel = pickupLevel.m_PickupLevel;
-                    UpdateTires();
+                    UpdateTires(other.transform.position);
                 }
                 StartCoroutine(WaitToRespawn(other.gameObject));
                 break;
@@ -100,20 +116,24 @@ public class PlayerPickup : MonoBehaviour
         }
     }
 
-    private void UpdateCarBody()
+    private void UpdateCarBody(Vector3 collision_origin)
     {
         switch (m_CarBodyLevel)
         {
             case PickupLevelEnum.two:
+                StartCoroutine(UpgradeJuice(collision_origin, Health2));
                 m_CarHealth.SetHealth(20);
                 break;
             case PickupLevelEnum.three:
+                StartCoroutine(UpgradeJuice(collision_origin, Health3));
                 m_CarHealth.SetHealth(30);
                 break;
             case PickupLevelEnum.four:
+                StartCoroutine(UpgradeJuice(collision_origin, Health4));
                 m_CarHealth.SetHealth(40);
                 break;
             case PickupLevelEnum.five:
+                StartCoroutine(UpgradeJuice(collision_origin, Health5));
                 m_CarHealth.SetHealth(50);
                 break;
             default:
@@ -129,21 +149,25 @@ public class PlayerPickup : MonoBehaviour
             case PickupLevelEnum.two:
                 m_CarController.MaxSpeed = 75;
                 m_NewSpeedometer = m_Speedometers[1];
+                StartCoroutine(UpgradeJuice(collision_origin, Speed2));
                 StartCoroutine(SpeedometerJuice(collision_origin));
                 break;
             case PickupLevelEnum.three:
                 m_CarController.MaxSpeed = 100;
                 m_NewSpeedometer = m_Speedometers[2];
+                StartCoroutine(UpgradeJuice(collision_origin, Speed3));
                 StartCoroutine(SpeedometerJuice(collision_origin));
                 break;
             case PickupLevelEnum.four:
                 m_CarController.MaxSpeed = 125;
                 m_NewSpeedometer = m_Speedometers[3];
+                StartCoroutine(UpgradeJuice(collision_origin, Speed4));
                 StartCoroutine(SpeedometerJuice(collision_origin));
                 break;
             case PickupLevelEnum.five:
                 m_CarController.MaxSpeed = 150;
                 m_NewSpeedometer = m_Speedometers[4];
+                StartCoroutine(UpgradeJuice(collision_origin, Speed5));
                 StartCoroutine(SpeedometerJuice(collision_origin));
                 break;
             default:
@@ -155,7 +179,7 @@ public class PlayerPickup : MonoBehaviour
         }
     }
 
-    private void UpdateTires()
+    private void UpdateTires(Vector3 collision_origin)
     {
         foreach (GameObject tires in m_CarTires)
         {
@@ -166,15 +190,19 @@ public class PlayerPickup : MonoBehaviour
         switch (m_TireLevel)
         {
             case PickupLevelEnum.two:
+                StartCoroutine(UpgradeJuice(collision_origin, Traction2));
                 m_CarController.SteerHelperValue = 0.7f;
                 break;
             case PickupLevelEnum.three:
+                StartCoroutine(UpgradeJuice(collision_origin, Traction3));
                 m_CarController.SteerHelperValue = 0.8f;
                 break;
             case PickupLevelEnum.four:
+                StartCoroutine(UpgradeJuice(collision_origin, Traction4));
                 m_CarController.SteerHelperValue = 0.9f;
                 break;
             case PickupLevelEnum.five:
+                StartCoroutine(UpgradeJuice(collision_origin, Traction5));
                 m_CarController.SteerHelperValue = 1.0f;
                 break;
             default:
@@ -221,9 +249,9 @@ public class PlayerPickup : MonoBehaviour
         transform.Find("Shield").GetComponent<Shield>().Deactivate();
 
         m_CarBodyLevel = PickupLevelEnum.one;
-        UpdateCarBody();
+        UpdateCarBody(transform.position);
         m_TireLevel = PickupLevelEnum.one;
-        UpdateTires();
+        UpdateTires(transform.position);
         m_EngineLevel = PickupLevelEnum.one;
         UpdateEngine(transform.position);
     }
@@ -243,5 +271,57 @@ public class PlayerPickup : MonoBehaviour
         }
         m_CurrentSpeedometer.enabled = false;
         m_CurrentSpeedometer = m_NewSpeedometer;
+    }
+
+    private IEnumerator UpgradeJuice(Vector3 collision_origin, GameObject obj)
+    {
+        obj.SetActive(true);
+        Vector3 end_position = obj.transform.position;
+        Vector3 pos = cam.WorldToScreenPoint(collision_origin);
+        float counter = 0.0f;
+        float duration = 0.75f;
+        while (counter < duration)
+        {
+            counter += Time.deltaTime;
+            obj.transform.localScale = Vector3.Lerp(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(1f, 1f, 1f), counter / duration);
+            obj.transform.position = Vector3.Lerp(pos, end_position, counter / duration);
+            yield return null;
+        }
+        yield return new WaitForSeconds(2);
+        Image img = obj.GetComponent<Image>();
+        for (float i = .5f; i > 0f; i -= Time.deltaTime)
+        {
+            img.color = new Color(img.color.r, img.color.g, img.color.b, i * 2);
+            yield return null;
+        }
+        obj.SetActive(false);
+    }
+
+    private void SetUpgrades() {
+        Speed5 = UpgradesFolder.transform.Find("Speed5").gameObject;
+        Speed4 = UpgradesFolder.transform.Find("Speed4").gameObject;
+        Speed3 = UpgradesFolder.transform.Find("Speed3").gameObject;
+        Speed2 = UpgradesFolder.transform.Find("Speed2").gameObject;
+        Traction5 = UpgradesFolder.transform.Find("Traction5").gameObject;
+        Traction4 = UpgradesFolder.transform.Find("Traction4").gameObject;
+        Traction3 = UpgradesFolder.transform.Find("Traction3").gameObject;
+        Traction2 = UpgradesFolder.transform.Find("Traction2").gameObject;
+        Health5 = UpgradesFolder.transform.Find("Health5").gameObject;
+        Health4 = UpgradesFolder.transform.Find("Health4").gameObject;
+        Health3 = UpgradesFolder.transform.Find("Health3").gameObject;
+        Health2 = UpgradesFolder.transform.Find("Health2").gameObject;
+
+        Speed5.SetActive(false);
+        Speed4.SetActive(false);
+        Speed3.SetActive(false);
+        Speed2.SetActive(false);
+        Traction5.SetActive(false);
+        Traction4.SetActive(false);
+        Traction3.SetActive(false);
+        Traction2.SetActive(false);
+        Health5.SetActive(false);
+        Health4.SetActive(false);
+        Health3.SetActive(false);
+        Health2.SetActive(false);
     }
 }
