@@ -36,7 +36,7 @@ public class MenuManager : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("DemoIsland_FireHoopBonusNoFlag"))
         {
-            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusNoFlag", 5);
+            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusNoFlag", 4);
         }
     }
 
@@ -57,12 +57,7 @@ public class MenuManager : MonoBehaviour
 
     public void OpenSettings()
     {
-        black.gameObject.SetActive(true);
         m_SettingsUI.SetActive(true);
-        for (float i = 0; i < 1; i += Time.deltaTime)
-        {
-            black.color = new Color(black.color.r, black.color.g, black.color.b, i);
-        }
         m_MainMenuUI.SetActive(false);
     }
 
@@ -76,9 +71,12 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.SetInt("DemoIsland_FireHoopBonusNoFlag", fireHoopPointsNoFlag);
         PlayerPrefs.Save();
 
-        for (float i = 0; i < 1; i += Time.deltaTime)
-        {
-            black.color = new Color(black.color.r, black.color.g, black.color.b, i);
-        }
+        black.gameObject.SetActive(false);
+    }
+
+    public void OpenMainMenu()
+    {
+        m_SettingsUI.SetActive(false);
+        m_MainMenuUI.SetActive(true);
     }
 }

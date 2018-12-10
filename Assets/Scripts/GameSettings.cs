@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameSettings : MonoBehaviour 
 {
+    public Button m_FirstButton;
     public int m_MaxTimeToWin = 300;
     public int m_MaxFireHoopPoints = 50;
 
@@ -18,6 +19,8 @@ public class GameSettings : MonoBehaviour
 
     private void Start()
     {
+        m_FirstButton.Select();
+
         m_TimeToWinText = transform.Find("Time").GetComponent<Text>();
         m_FirehoopPointsFlagText = transform.Find("FireFlag").GetComponent<Text>();
         m_FirehoopPointsNoFlagText = transform.Find("FireNoFlag").GetComponent<Text>();
@@ -88,5 +91,21 @@ public class GameSettings : MonoBehaviour
     public void Submit() 
     {
         MenuManager.instance.SubmitSettings(m_TimeToWin, m_FireHoopPointsFlag, m_FireHoopPointsNoFlag);
+    }
+
+    public void Defaults()
+    {
+        m_TimeToWin = 120;
+        m_FireHoopPointsFlag = 10;
+        m_FireHoopPointsNoFlag = 4;
+
+        m_TimeToWinText.text = m_TimeToWin.ToString();
+        m_FirehoopPointsFlagText.text = m_FireHoopPointsFlag.ToString();
+        m_FirehoopPointsNoFlagText.text = m_FireHoopPointsNoFlag.ToString();
+    }
+
+    public void Back()
+    {
+        MenuManager.instance.OpenMainMenu();
     }
 }

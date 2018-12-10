@@ -66,17 +66,29 @@ public class GameManager : MonoBehaviour
         player3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         player4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
-        // newly added
-        StartCoroutine(FadeIn(game_black));
-        StartCoroutine(GameStart());
-    }
+        int timeToWin, fireHoopPointsFlag, fireHoopPointsNoFlag;
+        if (!PlayerPrefs.HasKey("DemoIsland_TimeToWin"))
+        {
+            PlayerPrefs.SetInt("DemoIsland_TimeToWin", 120);
+        }
+        if (!PlayerPrefs.HasKey("DemoIsland_FireHoopBonusFlag"))
+        {
+            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusFlag", 10);
+        }
+        if (!PlayerPrefs.HasKey("DemoIsland_FireHoopBonusNoFlag"))
+        {
+            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusNoFlag", 4);
+        }
+        timeToWin = PlayerPrefs.GetInt("DemoIsland_TimeToWin");
+        fireHoopPointsFlag = PlayerPrefs.GetInt("DemoIsland_FireHoopBonusFlag");
+        fireHoopPointsNoFlag = PlayerPrefs.GetInt("DemoIsland_FireHoopBonusNoFlag");
 
-    public void MenuSubmit(int score, int FirehoopPoints, int FirehoopPoints_NoFlag) 
-    {
-        player1.GetComponent<Score>().SetGameScore(score, FirehoopPoints, FirehoopPoints_NoFlag);
-        player2.GetComponent<Score>().SetGameScore(score, FirehoopPoints, FirehoopPoints_NoFlag);
-        player3.GetComponent<Score>().SetGameScore(score, FirehoopPoints, FirehoopPoints_NoFlag);
-        player4.GetComponent<Score>().SetGameScore(score, FirehoopPoints, FirehoopPoints_NoFlag);
+        player1.GetComponent<Score>().SetGameScore(timeToWin, fireHoopPointsFlag, fireHoopPointsNoFlag);
+        player2.GetComponent<Score>().SetGameScore(timeToWin, fireHoopPointsFlag, fireHoopPointsNoFlag);
+        player3.GetComponent<Score>().SetGameScore(timeToWin, fireHoopPointsFlag, fireHoopPointsNoFlag);
+        player4.GetComponent<Score>().SetGameScore(timeToWin, fireHoopPointsFlag, fireHoopPointsNoFlag);
+
+        // newly added
         StartCoroutine(FadeIn(game_black));
         StartCoroutine(GameStart());
     }
