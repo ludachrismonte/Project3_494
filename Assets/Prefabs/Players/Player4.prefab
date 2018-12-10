@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 114112287632712348}
   - component: {fileID: 114625354946373292}
   - component: {fileID: 82316353535761516}
+  - component: {fileID: 114838280648722586}
   m_Layer: 0
   m_Name: Player4
   m_TagString: Player4
@@ -625,7 +626,6 @@ GameObject:
   - component: {fileID: 4666509501191222}
   - component: {fileID: 33701593166594524}
   - component: {fileID: 23822092209644518}
-  - component: {fileID: 95025093327666086}
   m_Layer: 0
   m_Name: OnCarFlag
   m_TagString: Untagged
@@ -2550,7 +2550,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 7a09c077031034feb8e16fe43bb6218e, type: 2}
-  - {fileID: 2100000, guid: 6650dec11e7a3a343904ff716f2d9bdb, type: 2}
+  - {fileID: 2100000, guid: 9a588bffc9f06f34f9d19ed96947cc8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4241,24 +4241,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &95025093327666086
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1661620443156808}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 178e236271211445f8cf082146b65461, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!108 &108022357907702868
 Light:
   m_ObjectHideFlags: 1
@@ -4523,6 +4505,9 @@ MonoBehaviour:
   - {fileID: 1224794181222696}
   - {fileID: 1097678796924776}
   cam: {fileID: 20416820854437018}
+  UpgradesFolder: {fileID: 0}
+  Fire: {fileID: 0}
+  Drop: {fileID: 0}
 --- !u!114 &114379344042732936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4592,6 +4577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 3
+  m_IsRUOrTutorial: 0
 --- !u!114 &114623951350583458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4645,6 +4631,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
+--- !u!114 &114838280648722586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419929080478526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f77318bd56e841d5b321753bf52d180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 4790267253478246}
+  shakeDuration: 0
+  shakeAmount: 0.7
+  decreaseFactor: 1
+  start: 0
 --- !u!114 &114882679328197500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4938,10 +4940,10 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1546235152369634}
   serializedVersion: 5
-  lengthInSec: 0.5
+  lengthInSec: 10
   simulationSpeed: 1
   stopAction: 0
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -5010,7 +5012,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.61
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5495,13 +5497,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100000
     size3D: 0
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5554,14 +5556,14 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 5
     enabled: 1
-    type: 0
-    angle: 25
+    type: 4
+    angle: 8.936709
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: -51.01, y: -38.36, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -5704,7 +5706,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 80
+      scalar: 150
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6143,8 +6145,8 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 0, a: 1}
-        key2: {r: 1, g: 1, b: 0, a: 0}
+        key1: {r: 0.9202858, g: 1, b: 0, a: 1}
+        key2: {r: 0.92502797, g: 1, b: 0, a: 0}
         key3: {r: 1, g: 1, b: 1, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -6152,7 +6154,7 @@ ParticleSystem:
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
         ctime1: 10601
-        ctime2: 43754
+        ctime2: 43176
         ctime3: 65535
         ctime4: 0
         ctime5: 0
@@ -7399,7 +7401,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 1
+    enabled: 0
     strength:
       serializedVersion: 2
       minMaxState: 0
