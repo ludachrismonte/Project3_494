@@ -201,7 +201,6 @@ public class GameManager : MonoBehaviour
     public void Win(string player) 
     {
         Color playerColor = Color.white;
-        playerColor.a = 0.5f;
         switch (player)
         {
             case "player 1":
@@ -222,6 +221,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
         win_box.SetActive(true);
+        playerColor.a = 0.5f;
         win_box.GetComponent<Image>().color = playerColor;
         StartCoroutine(EndGame());
     }
