@@ -187,6 +187,11 @@ public class PostGameManager : MonoBehaviour
         player2.GetComponent<Compass>().enabled = false;
         player3.GetComponent<Compass>().enabled = false;
         player4.GetComponent<Compass>().enabled = false;
+
+        player1.GetComponent<AudioSource>().enabled = false;
+        player2.GetComponent<AudioSource>().enabled = false;
+        player3.GetComponent<AudioSource>().enabled = false;
+        player4.GetComponent<AudioSource>().enabled = false;
     }
 
     IEnumerator EndScene ()
