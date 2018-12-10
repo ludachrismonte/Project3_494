@@ -80,9 +80,14 @@ public class PlayerPickup : MonoBehaviour
                 StartCoroutine(WaitToRespawn(other.gameObject));
                 break;
             case "RocketPickup":
-                if (m_WeaponManager.GetCurrentWeapon() == WeaponType.none || m_WeaponManager.GetCurrentWeapon() == WeaponType.rocket)
+                if (m_WeaponManager.GetCurrentWeapon() == WeaponType.none)
                 {
                     m_WeaponManager.EquipRocket();
+                    Destroy(other.gameObject);
+                }
+                else if (m_WeaponManager.GetCurrentWeapon() == WeaponType.rocket && !m_WeaponManager.HasTwoRockets)
+                {
+                    m_WeaponManager.ReEquipRockets();
                     Destroy(other.gameObject);
                 }
                 break;
@@ -228,7 +233,8 @@ public class PlayerPickup : MonoBehaviour
         UpdateEngine(transform.position);
     }
 
-    private IEnumerator SpeedometerJuice(Vector3 collision_origin) {
+    private IEnumerator SpeedometerJuice(Vector3 collision_origin) 
+    {
         m_NewSpeedometer.enabled = true;
         Vector3 end_position = m_NewSpeedometer.transform.position;
         Vector3 pos = cam.WorldToScreenPoint(collision_origin);
