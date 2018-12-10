@@ -31,9 +31,16 @@ public class Shield : MonoBehaviour {
         }
 	}
 
-    public void Activate() {
+    public void Activate() 
+    {
         myCollider.SetActive(true);
         StartCoroutine(Run());
+    }
+
+    public void Deactivate()
+    {
+        myCollider.SetActive(false);
+        gameObject.transform.localScale = Vector3.zero;
     }
 
     private IEnumerator Run() {

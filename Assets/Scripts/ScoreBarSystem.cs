@@ -31,9 +31,6 @@ public class ScoreBarSystem : MonoBehaviour {
 
     private bool ImOnTop;
 
-    private Vector3 TopPosition;
-    private Vector3 BottomPosition;
-
     // Use this for initialization
     void Start () {
         Mine = transform.Find("Mine").gameObject;
@@ -49,8 +46,6 @@ public class ScoreBarSystem : MonoBehaviour {
 
         ScoreToWin = GameManager.instance.TimeToWin;
         ImOnTop = true;
-        TopPosition = Mine.transform.position;
-        BottomPosition = Other.transform.position;
 
         OtherFlexBar.fillAmount = 0.0f;
         MyBar.fillAmount = 0.0f;

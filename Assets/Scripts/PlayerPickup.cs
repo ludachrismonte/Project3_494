@@ -80,7 +80,7 @@ public class PlayerPickup : MonoBehaviour
                 StartCoroutine(WaitToRespawn(other.gameObject));
                 break;
             case "RocketPickup":
-                if (m_WeaponManager.GetCurrentWeapon() == WeaponType.none)
+                if (m_WeaponManager.GetCurrentWeapon() == WeaponType.none || m_WeaponManager.GetCurrentWeapon() == WeaponType.rocket)
                 {
                     m_WeaponManager.EquipRocket();
                     Destroy(other.gameObject);
@@ -218,8 +218,7 @@ public class PlayerPickup : MonoBehaviour
     {
         m_WeaponManager.UnEquipRockets();
         m_WeaponManager.UnequipLandmine();
-        GameObject shield = transform.Find("Shield").gameObject;
-        shield.SetActive(false);
+        transform.Find("Shield").GetComponent<Shield>().Deactivate();
 
         m_CarBodyLevel = PickupLevelEnum.one;
         UpdateCarBody();

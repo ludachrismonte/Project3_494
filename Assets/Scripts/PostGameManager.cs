@@ -134,20 +134,16 @@ public class PostGameManager : MonoBehaviour {
         {
             return;
         }
-        else
+        float resetInput = player.Action1.Value; // A button
+
+        if ((canReset) && (resetInput > 0.0f))
         {
-
-            float resetInput = player.Action1.Value; // A button
-
-            if ((canReset) && (resetInput > 0.0f))
-            {
-                Destroy(player1);
-                Destroy(player2);
-                Destroy(player3);
-                Destroy(player4);
-                //Destroy(DestroyOnLoad.instance.gameObject);
-                SceneManager.LoadScene("Menu");
-            }
+            Destroy(player1);
+            Destroy(player2);
+            Destroy(player3);
+            Destroy(player4);
+            //Destroy(DestroyOnLoad.instance.gameObject);
+            SceneManager.LoadScene("Menu");
         }
     }
 
