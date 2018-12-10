@@ -12,15 +12,9 @@ public class ControllerInput : MonoBehaviour
 
     private UnityStandardAssets.Vehicles.Car.CarController car;
     private WeaponManager weapon_manager;
-    private Transform player_one;
-    private Transform player_two;
-    private Transform player_three;
-    private Transform player_four;
 
     private Rigidbody m_Rigidbody;
 
-    private int target_loc;
-    private Vector3 offset;
     private Collider m_Collider;
     private float cooldown = .2f;
     private float distToGround = 4f;
@@ -29,12 +23,6 @@ public class ControllerInput : MonoBehaviour
     {
         car = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
         weapon_manager = GetComponent<WeaponManager>();
-        player_one = GameObject.FindGameObjectWithTag("Player").transform;
-        player_two = GameObject.FindGameObjectWithTag("Player2").transform;
-        player_three = GameObject.FindGameObjectWithTag("Player3").transform;
-        player_four = GameObject.FindGameObjectWithTag("Player4").transform;
-        target_loc = -1;
-        offset = new Vector3(0, 5, 0);
 
         m_Collider = GetComponent<Collider>();
         m_Rigidbody = GetComponent<Rigidbody>();
