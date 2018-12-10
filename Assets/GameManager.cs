@@ -108,14 +108,17 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(.5f);
 
         main_text.text = "ready...";
+        StartCoroutine(Pump());
         AudioSource.PlayClipAtPoint(buzzer, Camera.main.transform.position);
         main_text.color = Color.red;
         yield return new WaitForSeconds(2);
         main_text.text = "set...";
+        StartCoroutine(Pump());
         AudioSource.PlayClipAtPoint(buzzer, Camera.main.transform.position);
         main_text.color = Color.yellow;
         yield return new WaitForSeconds(2);
         main_text.text = "go!";
+        StartCoroutine(Pump());
         AudioSource.PlayClipAtPoint(horn, Camera.main.transform.position);
         main_text.color = Color.green;
 
@@ -134,6 +137,21 @@ public class GameManager : MonoBehaviour
         }
         wood.gameObject.SetActive(false);
         explosion.gameObject.SetActive(false);
+    }
+
+    private IEnumerator Pump() {
+        Vector3 initial = main_text.gameObject.transform.localScale;
+        for (float i = 0f; i < .2f; i += Time.deltaTime) {
+            main_text.gameObject.transform.localScale = initial * (1f + i);
+            yield return null;
+        }
+        Vector3 peak = main_text.gameObject.transform.localScale;
+        for (float i = 0f; i < .2f; i += Time.deltaTime)
+        {
+            main_text.gameObject.transform.localScale = peak * (1f - i);
+            yield return null;
+        }
+        main_text.gameObject.transform.localScale = initial;
     }
 
     private IEnumerator FadeIn(Image black) 
