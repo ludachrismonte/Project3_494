@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     private GameObject player3;
     private GameObject player4;
 
+    public bool GameOver { get; private set; }
     public int TimeToWin { get; private set; }
     public int FireHoopPointsFlag { get; private set; }
     public int FireHoopPointsNoFlag { get; private set; }
@@ -201,6 +202,7 @@ public class GameManager : MonoBehaviour
 
     public void Win(string player) 
     {
+        GameOver = true;
         Color playerColor = Color.white;
         switch (player)
         {

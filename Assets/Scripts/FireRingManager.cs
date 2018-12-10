@@ -19,7 +19,6 @@ public class FireRingManager : MonoBehaviour
             fireRing.SetActive(false);
             m_ActiveFireRings.Add(fireRing, false);
         }
-        print(m_ActiveFireRings);
         m_NumberOfActive = 0;
         SpawnFireRings();
 	}
@@ -48,6 +47,5 @@ public class FireRingManager : MonoBehaviour
                 ++m_NumberOfActive;
             }
         }
-        print(m_ActiveFireRings);
     }
 }

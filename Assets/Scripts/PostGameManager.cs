@@ -5,8 +5,8 @@ using UnityEngine.UI;
 using InControl;
 using UnityEngine.SceneManagement;
 
-public class PostGameManager : MonoBehaviour {
-
+public class PostGameManager : MonoBehaviour 
+{
     GameObject player1;
     GameObject player2;
     GameObject player3;
@@ -57,20 +57,17 @@ public class PostGameManager : MonoBehaviour {
         p3tf = player3.GetComponent<Transform>();
         p4tf = player4.GetComponent<Transform>();
 
+        DisableComponents();
+
         // Deactivate controls
         player1.GetComponent<ControllerInput>().enabled = false;
-        //player1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         player1.GetComponent<Rigidbody>().isKinematic = true;
-        player1.GetComponent<WaterDamage>().enabled = false;
         player2.GetComponent<ControllerInput>().enabled = false;
         player2.GetComponent<Rigidbody>().isKinematic = true;
-        player2.GetComponent<WaterDamage>().enabled = false;
         player3.GetComponent<ControllerInput>().enabled = false;
         player3.GetComponent<Rigidbody>().isKinematic = true;
-        player3.GetComponent<WaterDamage>().enabled = false;
         player4.GetComponent<ControllerInput>().enabled = false;
         player4.GetComponent<Rigidbody>().isKinematic = true;
-        player4.GetComponent<WaterDamage>().enabled = false;
 
         // Initialize player positions
         p1tf.SetPositionAndRotation(player1Pos, player1Rot);
@@ -170,6 +167,28 @@ public class PostGameManager : MonoBehaviour {
         }
     }
 
+    private void DisableComponents()
+    {
+        player1.GetComponent<PlayerPickup>().enabled = false;
+        player2.GetComponent<PlayerPickup>().enabled = false;
+        player3.GetComponent<PlayerPickup>().enabled = false; 
+        player4.GetComponent<PlayerPickup>().enabled = false;
+
+        player1.GetComponent<CameraShake>().enabled = false;
+        player2.GetComponent<CameraShake>().enabled = false;
+        player3.GetComponent<CameraShake>().enabled = false;
+        player4.GetComponent<CameraShake>().enabled = false;
+
+        player1.GetComponent<RocketTargeter>().enabled = false;
+        player2.GetComponent<RocketTargeter>().enabled = false;
+        player3.GetComponent<RocketTargeter>().enabled = false;
+        player4.GetComponent<RocketTargeter>().enabled = false;
+
+        player1.GetComponent<Compass>().enabled = false;
+        player2.GetComponent<Compass>().enabled = false;
+        player3.GetComponent<Compass>().enabled = false;
+        player4.GetComponent<Compass>().enabled = false;
+    }
 
     IEnumerator EndScene ()
     {
