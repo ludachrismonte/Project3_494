@@ -22,16 +22,9 @@ public class Score : MonoBehaviour
 
     bool canLoseFlag = true;
 
-    private int m_ScoreToWin = 120;
-    private int m_FireHoopFlag = 20;
-    private int m_FireHoopNoFlag = 10;
-
-    public void SetGameScore(int s, int f, int nf)
-    {
-        m_ScoreToWin = s;
-        m_FireHoopFlag = f;
-        m_FireHoopNoFlag = nf;
-    }
+    private int m_ScoreToWin;
+    private int m_FireHoopFlag;
+    private int m_FireHoopNoFlag;
 
     private void Start()
     {
@@ -46,6 +39,10 @@ public class Score : MonoBehaviour
         gameObject.GetComponent<TrailRenderer>().enabled = false;
 
         timer = 0.0f;
+
+        m_ScoreToWin = GameManager.instance.TimeToWin;
+        m_FireHoopFlag = GameManager.instance.FireHoopPointsFlag;
+        m_FireHoopNoFlag = GameManager.instance.FireHoopPointsNoFlag;
     }
 
     private void LateUpdate()
@@ -150,11 +147,6 @@ public class Score : MonoBehaviour
     public int GetCurrentScore()
     {
         return current_score;
-    }
-
-    public int GetWinScore()
-    {
-        return m_ScoreToWin;
     }
 
     public bool DoesUserHaveFlag()

@@ -27,7 +27,11 @@ public class GameManager : MonoBehaviour
     private GameObject player3;
     private GameObject player4;
 
-	private void Awake () 
+    public int TimeToWin { get; private set; }
+    public int FireHoopPointsFlag { get; private set; }
+    public int FireHoopPointsNoFlag { get; private set; }
+
+    private void Awake () 
     {
         if (instance == null)
         {
@@ -37,6 +41,22 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (!PlayerPrefs.HasKey("DemoIsland_TimeToWin"))
+        {
+            PlayerPrefs.SetInt("DemoIsland_TimeToWin", 120);
+        }
+        if (!PlayerPrefs.HasKey("DemoIsland_FireHoopBonusFlag"))
+        {
+            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusFlag", 10);
+        }
+        if (!PlayerPrefs.HasKey("DemoIsland_FireHoopBonusNoFlag"))
+        {
+            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusNoFlag", 4);
+        }
+        TimeToWin = PlayerPrefs.GetInt("DemoIsland_TimeToWin");
+        FireHoopPointsFlag = PlayerPrefs.GetInt("DemoIsland_FireHoopBonusFlag");
+        FireHoopPointsNoFlag = PlayerPrefs.GetInt("DemoIsland_FireHoopBonusNoFlag");
     }
 
     private void Start()
@@ -65,28 +85,6 @@ public class GameManager : MonoBehaviour
         player2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         player3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         player4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-
-        int timeToWin, fireHoopPointsFlag, fireHoopPointsNoFlag;
-        if (!PlayerPrefs.HasKey("DemoIsland_TimeToWin"))
-        {
-            PlayerPrefs.SetInt("DemoIsland_TimeToWin", 120);
-        }
-        if (!PlayerPrefs.HasKey("DemoIsland_FireHoopBonusFlag"))
-        {
-            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusFlag", 10);
-        }
-        if (!PlayerPrefs.HasKey("DemoIsland_FireHoopBonusNoFlag"))
-        {
-            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusNoFlag", 4);
-        }
-        timeToWin = PlayerPrefs.GetInt("DemoIsland_TimeToWin");
-        fireHoopPointsFlag = PlayerPrefs.GetInt("DemoIsland_FireHoopBonusFlag");
-        fireHoopPointsNoFlag = PlayerPrefs.GetInt("DemoIsland_FireHoopBonusNoFlag");
-
-        player1.GetComponent<Score>().SetGameScore(timeToWin, fireHoopPointsFlag, fireHoopPointsNoFlag);
-        player2.GetComponent<Score>().SetGameScore(timeToWin, fireHoopPointsFlag, fireHoopPointsNoFlag);
-        player3.GetComponent<Score>().SetGameScore(timeToWin, fireHoopPointsFlag, fireHoopPointsNoFlag);
-        player4.GetComponent<Score>().SetGameScore(timeToWin, fireHoopPointsFlag, fireHoopPointsNoFlag);
 
         // newly added
         StartCoroutine(FadeIn(game_black));
