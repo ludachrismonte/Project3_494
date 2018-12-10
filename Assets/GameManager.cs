@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public AudioClip horn;
     public AudioClip crash1;
     public AudioClip crash2;
-
+    public AudioSource music;
 
     private GameObject win_box;
     private Image game_black;
@@ -154,6 +154,7 @@ public class GameManager : MonoBehaviour
         main_text.text = "go!";
         StartCoroutine(Pump());
         AudioSource.PlayClipAtPoint(horn, Camera.main.transform.position);
+        music.Play();
         main_text.color = Color.green;
 
         player1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
