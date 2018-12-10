@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class RespawnReset : MonoBehaviour
 {
-    //public Vector3 repawnPos;
-    //public object respawnPos { get; private set; }
     public float waitTime = 10;
     public float checkReset = 0.2f;
     public GameObject cameraParent;
@@ -40,14 +38,6 @@ public class RespawnReset : MonoBehaviour
             cameraRotateMain = mainCamRotate;
             cameraRotateParent = camParentRotate;
         }
-        //public void Respawn(){
-        //    this.transform.position = respawnPos;
-        //    respawnCameraMain = mainCamPos;
-        //    respawnCameraParent = camParentPos;
-        //    respawnRotate = carRotate;
-        //    cameraRotateMain = mainCamRotate;
-        //    cameraRotateParent = camParentRotate;
-        //}
     }
 
     RespawnStruct respawnStruct;
@@ -63,7 +53,6 @@ public class RespawnReset : MonoBehaviour
         StartCoroutine(FindResetPoint());
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (stuck && Input.GetKey(KeyCode.Z))
@@ -72,7 +61,8 @@ public class RespawnReset : MonoBehaviour
             return;
         }
         CheckifStuck();
-        if(gameObject.GetComponent<Rigidbody>().velocity.magnitude>15 && stuck){
+        if (gameObject.GetComponent<Rigidbody>().velocity.magnitude > 15 && stuck)
+        {
             stuck = false;
         }
     }
@@ -88,17 +78,7 @@ public class RespawnReset : MonoBehaviour
     public void ResetCar()
     {
         stuck = false;
-        StartCoroutine(ResetEnum()); //ResetEnum
-    }
-    public void ChangeRespawn()
-    {
-        //respawnPos = respawn;
-        //if(i==0){
-        respawnStruct.Set(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
-        //}
-        //else if (i==1){
-        //    resetStruct.Set(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
-        //}
+        StartCoroutine(ResetEnum());
     }
 
     public void Respawn(int i)
@@ -108,10 +88,7 @@ public class RespawnReset : MonoBehaviour
 
     void RespawnHelper()
     {
-        //cameraMain.gameObject.transform.position = respawnStruct.respawnCameraMain;
-        //cameraParent.GetComponent<CameraController>().enabled = false;
         cameraParent.gameObject.transform.position = respawnStruct.respawnCameraMain;
-        //cameraMain.gameObject.transform.rotation = respawnStruct.cameraRotateMain;
         cameraParent.gameObject.transform.rotation = respawnStruct.cameraRotateParent;
         cameraParent.GetComponent<CameraController>().enabled = false;
         transform.position = respawnStruct.respawnPos;
@@ -123,13 +100,11 @@ public class RespawnReset : MonoBehaviour
         //if i ==1 this is a reset
         gameObject.GetComponent<ControllerInput>().enabled = false;
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        //car.SetActive(false);
         RespawnHelper();
         cameraParent.GetComponent<CameraController>().enabled = true;
         this.transform.Find("SkyCar").gameObject.SetActive(true);
         if (i == 0) { gameObject.GetComponent<PlayerPickup>().Respawn(); }
         yield return new WaitForSeconds(1);
-        //car.SetActive(true);
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
         gameObject.GetComponent<ControllerInput>().enabled = true;
         checkingStuck = false;
@@ -138,8 +113,8 @@ public class RespawnReset : MonoBehaviour
 
     IEnumerator CheckifStuckHelper()
     {
-        //Check this!!
         checkingStuck = true;
+
         Vector3 pos1 = transform.position;
         float vel = carRb.velocity.magnitude;
         yield return new WaitForSeconds((int)waitTime / 2);
@@ -148,14 +123,14 @@ public class RespawnReset : MonoBehaviour
         yield return new WaitForSeconds((int)waitTime / 2);
         if ((int)vel == (int)carRb.velocity.magnitude && (int)vel == 0 && (int)vel == (int)vel2)
         {
-            if(Check(pos1,pos2,transform.position))
-            {
-                stuck = true; 
-            }            
+            stuck = Check(pos1, pos2, transform.position);        
         }
+
         checkingStuck = false;
     }
-    IEnumerator FindResetPoint(){
+
+    private IEnumerator FindResetPoint()
+    {
         while(true)
         {
             yield return new WaitForSeconds(checkReset);
@@ -166,7 +141,9 @@ public class RespawnReset : MonoBehaviour
             }
         }       
     }
-    bool Check(Vector3 pos1,Vector3 pos2,Vector3 pos3){
+
+    private bool Check(Vector3 pos1,Vector3 pos2,Vector3 pos3)
+    {
         bool xStationary = false; bool zStationary = false;
         if((int)pos1.x==(int)pos2.x && (int)pos1.x == (int)pos3.x && (int)pos3.x == (int)pos2.x ){
             xStationary = true;
@@ -175,13 +152,11 @@ public class RespawnReset : MonoBehaviour
         {
             zStationary = true;
         }
-        if (xStationary && zStationary) { return true; }
-        return false;
+        return xStationary && zStationary;
     }
 
-    IEnumerator ResetEnum()
+    private IEnumerator ResetEnum()
     {
-        //have car flash
         for (int i = 0; i < 4; i++)
         {
             this.transform.Find("SkyCar").gameObject.SetActive(true);
@@ -189,7 +164,6 @@ public class RespawnReset : MonoBehaviour
             this.transform.Find("SkyCar").gameObject.SetActive(false);
             yield return new WaitForSeconds(.15f);
         }
-        //yield return new WaitForSeconds(2);
         resetStruct.Set(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
         RespawnStruct temp = respawnStruct;
         respawnStruct = resetStruct2;
