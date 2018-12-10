@@ -19,17 +19,18 @@ public class FireRingManager : MonoBehaviour
             fireRing.SetActive(false);
             m_ActiveFireRings.Add(fireRing, false);
         }
-
+        print(m_ActiveFireRings);
         m_NumberOfActive = 0;
         SpawnFireRings();
 	}
 
     public IEnumerator FireRingHit(GameObject fireRingObject)
     {
+
         --m_NumberOfActive;
         m_ActiveFireRings[fireRingObject] = false;
         fireRingObject.GetComponent<FireRing>().Deactivate();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         fireRingObject.SetActive(false);
         SpawnFireRings();
     }
@@ -47,5 +48,6 @@ public class FireRingManager : MonoBehaviour
                 ++m_NumberOfActive;
             }
         }
+        print(m_ActiveFireRings);
     }
 }

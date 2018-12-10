@@ -129,11 +129,13 @@ public class Score : MonoBehaviour
         }
         if (other.tag == "FireRing" && hasFlag)
         {
+            other.gameObject.GetComponent<Collider>().enabled = false;
             StartCoroutine(m_FireRingsManager.FireRingHit(other.gameObject));
             add_score(m_FireHoopFlag);
         }
         else if (other.tag == "FireRing" && !hasFlag)
         {
+            other.gameObject.GetComponent<Collider>().enabled = false;
             StartCoroutine(m_FireRingsManager.FireRingHit(other.gameObject));
             add_score(m_FireHoopNoFlag);
         }
