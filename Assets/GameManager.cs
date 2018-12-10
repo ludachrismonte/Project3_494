@@ -44,15 +44,15 @@ public class GameManager : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("DemoIsland_TimeToWin"))
         {
-            PlayerPrefs.SetInt("DemoIsland_TimeToWin", 120);
+            PlayerPrefs.SetInt("DemoIsland_TimeToWin", Constants.GameSettingsDefaults.TimeToWin);
         }
         if (!PlayerPrefs.HasKey("DemoIsland_FireHoopBonusFlag"))
         {
-            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusFlag", 10);
+            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusFlag", Constants.GameSettingsDefaults.FireHoopBonusFlag);
         }
         if (!PlayerPrefs.HasKey("DemoIsland_FireHoopBonusNoFlag"))
         {
-            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusNoFlag", 4);
+            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusNoFlag", Constants.GameSettingsDefaults.FireHoopBonusNoFlag);
         }
         TimeToWin = PlayerPrefs.GetInt("DemoIsland_TimeToWin");
         FireHoopPointsFlag = PlayerPrefs.GetInt("DemoIsland_FireHoopBonusFlag");
