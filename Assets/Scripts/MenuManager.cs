@@ -26,17 +26,17 @@ public class MenuManager : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("DemoIsland_TimeToWin"))
         {
-            PlayerPrefs.SetInt("DemoIsland_TimeToWin", 120);
+            PlayerPrefs.SetInt("DemoIsland_TimeToWin", Constants.GameSettingsDefaults.TimeToWin);
         }
 
         if (!PlayerPrefs.HasKey("DemoIsland_FireHoopBonusFlag"))
         {
-            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusFlag", 10);
+            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusFlag", Constants.GameSettingsDefaults.FireHoopBonusFlag);
         }
 
         if (!PlayerPrefs.HasKey("DemoIsland_FireHoopBonusNoFlag"))
         {
-            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusNoFlag", 4);
+            PlayerPrefs.SetInt("DemoIsland_FireHoopBonusNoFlag", Constants.GameSettingsDefaults.FireHoopBonusNoFlag);
         }
     }
 
@@ -59,6 +59,7 @@ public class MenuManager : MonoBehaviour
     {
         m_SettingsUI.SetActive(true);
         m_MainMenuUI.SetActive(false);
+        m_SettingsUI.GetComponent<GameSettings>().m_FirstButton.Select();
     }
 
     public void SubmitSettings(int timeToWin, int fireHoopPointsFlag, int fireHoopPointsNoFlag)
