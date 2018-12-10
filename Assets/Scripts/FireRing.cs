@@ -11,15 +11,13 @@ public class FireRing : MonoBehaviour {
     {
         m_WhooshSound = GetComponent<AudioSource>();
         m_InitScale = transform.localScale;
+    }
+
+    public void Activate() 
+    {
         m_WhooshSound.Play();
         StartCoroutine(Grow());
     }
-
-    //public void Activate() 
-    //{
-    //    m_WhooshSound.Play();
-    //    StartCoroutine(Grow());
-    //}
 
     public void Deactivate()
     {

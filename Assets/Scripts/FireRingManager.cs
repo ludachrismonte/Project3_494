@@ -41,6 +41,7 @@ public class FireRingManager : MonoBehaviour
             if (m_ActiveFireRings[m_FireRings[newFireRing]] == false)
             {
                 m_FireRings[newFireRing].SetActive(true);
+                m_FireRings[newFireRing].GetComponent<FireRing>().Activate();
                 m_ActiveFireRings[m_FireRings[newFireRing]] = true;
                 ++m_NumberOfActive;
             }
