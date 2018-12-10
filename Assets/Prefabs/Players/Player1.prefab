@@ -4106,6 +4106,9 @@ MonoBehaviour:
   - {fileID: 1677363242336176}
   - {fileID: 1171175604935222}
   cam: {fileID: 20177843288865420}
+  UpgradesFolder: {fileID: 0}
+  Fire: {fileID: 0}
+  Drop: {fileID: 0}
 --- !u!114 &114172422275512896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4302,6 +4305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 0
+  m_IsRUOrTutorial: 0
 --- !u!114 &114552677962204682
 MonoBehaviour:
   m_ObjectHideFlags: 1
