@@ -58,6 +58,7 @@ public class Announcer : MonoBehaviour {
 
         text_timer -= Time.deltaTime;
         if (text_timer < 0 && text_fields[0].text != "") {
+            SetText("");
             //StartCoroutine(FadeOut());
         }
 
