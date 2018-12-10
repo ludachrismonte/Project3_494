@@ -43,7 +43,7 @@ public class Score : MonoBehaviour
 
         manager = GameManager.instance;
         current_score = 0;
-        gameObject.GetComponent<TrailRenderer>().enabled = false;
+        //gameObject.GetComponent<TrailRenderer>().enabled = false;
 
         timer = 0.0f;
     }
