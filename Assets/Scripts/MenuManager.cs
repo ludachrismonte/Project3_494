@@ -72,11 +72,13 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.Save();
 
         black.gameObject.SetActive(false);
+        m_StartButton.Select();
     }
 
     public void OpenMainMenu()
     {
         m_SettingsUI.SetActive(false);
         m_MainMenuUI.SetActive(true);
+        m_StartButton.Select();
     }
 }
