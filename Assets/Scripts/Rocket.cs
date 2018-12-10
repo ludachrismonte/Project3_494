@@ -33,12 +33,7 @@ public class Rocket : MonoBehaviour
             AudioSource.PlayClipAtPoint(m_ExplosionAudio, transform.position);
             Destroy(gameObject);
             Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
-            GameObject shield = target.gameObject.transform.Find("Shield").gameObject;
-
-            if (shield.activeSelf)
-                shield.SetActive(false);
-            else
-                collision.gameObject.GetComponent<Health>().AlterHealth(-m_RocketDamage);
+            collision.gameObject.GetComponent<Health>().AlterHealth(-m_RocketDamage);
         }
     }
 
