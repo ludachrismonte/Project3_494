@@ -143,12 +143,21 @@ public class PostGameManager : MonoBehaviour {
     void Update()
     {
         // Have the winning player control reset
-        var player = (InputManager.Devices.Count > winNum) ? InputManager.Devices[winNum] : null;
-        if (player == null)
-        {
-            return;
-        }
-        float resetInput = player.Action1.Value; // A button
+        var p1 = (InputManager.Devices.Count > 0) ? InputManager.Devices[0] : null;
+        var p2 = (InputManager.Devices.Count > 1) ? InputManager.Devices[1] : null;
+        var p3 = (InputManager.Devices.Count > 2) ? InputManager.Devices[2] : null;
+        var p4 = (InputManager.Devices.Count > 3) ? InputManager.Devices[3] : null;
+
+        float resetInput = 0;
+        if (p1 != null)
+            resetInput = p1.Action1.Value; // A button
+        if (p2 != null)
+            resetInput += p2.Action1.Value;
+        if (p3 != null)
+            resetInput += p3.Action1.Value;
+        if (p4 != null)
+            resetInput += p4.Action1.Value;
+        Debug.Log(resetInput);
 
         if ((canReset) && (resetInput > 0.0f))
         {
