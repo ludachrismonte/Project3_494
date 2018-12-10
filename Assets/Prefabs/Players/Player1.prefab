@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4779860744232382}
   - component: {fileID: 33049337360377580}
   - component: {fileID: 23526272947052142}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: car_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 146026562592931176}
   - component: {fileID: 82955308696322132}
   - component: {fileID: 114952396380968828}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WheelHubRearLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4510035723638412}
   - component: {fileID: 198882472128214174}
   - component: {fileID: 199659499949915996}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ParticleBurnoutSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 4842271363417732}
   - component: {fileID: 33713158929416670}
   - component: {fileID: 23867774697898548}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 95275661189827532}
   - component: {fileID: 198917735157786686}
   - component: {fileID: 199417109586616626}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: OnCarFlag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 4578269836745728}
   - component: {fileID: 33899033942687084}
   - component: {fileID: 23305833535786294}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4912955797845738}
   - component: {fileID: 135300593283004754}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: ShieldCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4526150548575756}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CameraFocusPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4440180537222194}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SkyCarWheelRearLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 4106113785998970}
   - component: {fileID: 33319491358157118}
   - component: {fileID: 23287304342893224}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: car_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 4360353178484236}
   - component: {fileID: 33791717733089692}
   - component: {fileID: 23476572447121668}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4439237957934106}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SkyCarWheelRearRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 23081644913261550}
   - component: {fileID: 114921431126106784}
   - component: {fileID: 114344595272335670}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SkyCarMudGuardFrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4166134822235418}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 4038960051629676}
   - component: {fileID: 33657445234450654}
   - component: {fileID: 23289563743086976}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4052914453436754}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WheelsHubs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 4311077060653772}
   - component: {fileID: 33986273813944366}
   - component: {fileID: 23184447750362578}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: car_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,8 +319,8 @@ GameObject:
   - component: {fileID: 114024869367106246}
   - component: {fileID: 114793462209644130}
   - component: {fileID: 82096486339601280}
-  - component: {fileID: 114046454799002056}
-  m_Layer: 0
+  - component: {fileID: 114898867223760524}
+  m_Layer: 11
   m_Name: Player1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 4457150376399662}
   - component: {fileID: 33405533102084614}
   - component: {fileID: 23313915301177964}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4873444554761522}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SkyCarWheelFrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 146600677658671116}
   - component: {fileID: 82111074718340622}
   - component: {fileID: 114447032902808510}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WheelHubFrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 4777272839379386}
   - component: {fileID: 33947668732429602}
   - component: {fileID: 23156751530168728}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4364387227341174}
   - component: {fileID: 114005175469835210}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 4649334978493924}
   - component: {fileID: 33536789483608738}
   - component: {fileID: 23368011847305610}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SkyCarSuspensionFrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 4368451911021658}
   - component: {fileID: 33145834334241002}
   - component: {fileID: 23082611942165554}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 4955532233098610}
   - component: {fileID: 33250459849992732}
   - component: {fileID: 23394088424067008}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SkyCarSuspensionFrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 4119862175727412}
   - component: {fileID: 33429233362140490}
   - component: {fileID: 23865773274538866}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 4312685270254034}
   - component: {fileID: 33396024663262728}
   - component: {fileID: 23839808659615750}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 4821416091900490}
   - component: {fileID: 20177843288865420}
   - component: {fileID: 124875023830014820}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4572258846719316}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RightRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 4724307024764932}
   - component: {fileID: 33082343435528182}
   - component: {fileID: 23860763399062876}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Landmine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 23353318994512972}
   - component: {fileID: 114556479378900732}
   - component: {fileID: 114393944036810050}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SkyCarMudGuardFrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4472446884403874}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WaypointTargetObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 4186872166468814}
   - component: {fileID: 33396380728812410}
   - component: {fileID: 23967672024446826}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,7 +604,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4789448184515884}
   - component: {fileID: 108222156871889552}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HeadlightLeftSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,7 +621,7 @@ GameObject:
   - component: {fileID: 4862132988904276}
   - component: {fileID: 33499709860757112}
   - component: {fileID: 23967845981291134}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 4225558912778826}
   - component: {fileID: 33394725735474170}
   - component: {fileID: 23584325853763852}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4594180743840452}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SkyCarWheelFrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 4064264244465208}
   - component: {fileID: 198610718583697968}
   - component: {fileID: 199046654810453840}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4352937444878692}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SkyCar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 33872267933718470}
   - component: {fileID: 23369582361079508}
   - component: {fileID: 114382407237862356}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,7 +719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4968480852918438}
   - component: {fileID: 108473935913660824}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HeadlighRightSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,7 +734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4225552279144246}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 4476090754579112}
   - component: {fileID: 33269806625703434}
   - component: {fileID: 23192631556409220}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 4463155426053968}
   - component: {fileID: 33540897462010402}
   - component: {fileID: 23846980257199448}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 4267704152632512}
   - component: {fileID: 33112861394680662}
   - component: {fileID: 23104016010307288}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 4124482570076250}
   - component: {fileID: 33271405153323346}
   - component: {fileID: 23458220672481646}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -819,7 +819,7 @@ GameObject:
   - component: {fileID: 4112437878517296}
   - component: {fileID: 33848787876583566}
   - component: {fileID: 23504369470709292}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -836,7 +836,7 @@ GameObject:
   - component: {fileID: 4610680089264652}
   - component: {fileID: 33100478273733074}
   - component: {fileID: 23836843669183362}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 146663406637429178}
   - component: {fileID: 82601440498699434}
   - component: {fileID: 114216609189738862}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WheelHubFrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 146001382041231224}
   - component: {fileID: 82084951377119864}
   - component: {fileID: 114947558011292888}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WheelHubRearRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 4722975767216502}
   - component: {fileID: 33092795926371598}
   - component: {fileID: 23278729445693524}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: car_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +904,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4142566587904190}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Helpers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -921,7 +921,7 @@ GameObject:
   - component: {fileID: 4592072332760104}
   - component: {fileID: 33724475924383848}
   - component: {fileID: 23778653223096152}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,7 +936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4792566431952208}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LeftRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -953,7 +953,7 @@ GameObject:
   - component: {fileID: 4611469608973406}
   - component: {fileID: 33716320784087904}
   - component: {fileID: 23650167124669808}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -970,7 +970,7 @@ GameObject:
   - component: {fileID: 4482057905604896}
   - component: {fileID: 33464965565279244}
   - component: {fileID: 23762889564041022}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tire_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -987,7 +987,7 @@ GameObject:
   - component: {fileID: 4995792496235142}
   - component: {fileID: 33274483509163852}
   - component: {fileID: 23709309076293586}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: car_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,7 +1003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4220653650458164}
   - component: {fileID: 120714279068287900}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1020,7 +1020,7 @@ GameObject:
   - component: {fileID: 4537052053649320}
   - component: {fileID: 33671118143434736}
   - component: {fileID: 23054027719086140}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1037,7 +1037,7 @@ GameObject:
   - component: {fileID: 4743413169872134}
   - component: {fileID: 23692041325943726}
   - component: {fileID: 33367726676149260}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RocketShooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1926,7 +1926,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 823
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -4080,22 +4080,6 @@ MonoBehaviour:
   - {fileID: 0}
   m_PlayerCamera: {fileID: 20177843288865420}
   m_Crosshairs: {fileID: 0}
---- !u!114 &114046454799002056
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404042233479764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f77318bd56e841d5b321753bf52d180, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camTransform: {fileID: 4821416091900490}
-  shakeDuration: 0
-  shakeAmount: 0.7
-  decreaseFactor: 1
-  start: 0
 --- !u!114 &114104100739699876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4389,6 +4373,22 @@ MonoBehaviour:
   UI_Folder: {fileID: 0}
   my_num: 1
   cam: {fileID: 20177843288865420}
+--- !u!114 &114898867223760524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404042233479764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f77318bd56e841d5b321753bf52d180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 4821416091900490}
+  shakeDuration: 0
+  shakeAmount: 0.7
+  decreaseFactor: 1
+  start: 0
 --- !u!114 &114921431126106784
 MonoBehaviour:
   m_ObjectHideFlags: 1
