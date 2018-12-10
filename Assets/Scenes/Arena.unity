@@ -12717,6 +12717,11 @@ Prefab:
       propertyPath: m_Crosshairs
       value: 
       objectReference: {fileID: 465333856}
+    - target: {fileID: 114052536032586462, guid: 77bb515709b6c4f869b5791cd86e4a6f,
+        type: 2}
+      propertyPath: UpgradesFolder
+      value: 
+      objectReference: {fileID: 1215667625}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77bb515709b6c4f869b5791cd86e4a6f, type: 2}
   m_IsPrefabAsset: 0
@@ -15370,6 +15375,11 @@ Prefab:
       propertyPath: UI_Folder
       value: 
       objectReference: {fileID: 1564195678}
+    - target: {fileID: 114601955417205988, guid: 67a5e1cf0ac7d4dc6b5c04e846a06892,
+        type: 2}
+      propertyPath: UpgradesFolder
+      value: 
+      objectReference: {fileID: 1215667624}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67a5e1cf0ac7d4dc6b5c04e846a06892, type: 2}
   m_IsPrefabAsset: 0
@@ -60931,6 +60941,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114328625063999082, guid: ad8140b2e81dc406db18bce5a92b6d51,
+        type: 2}
+      propertyPath: UpgradesFolder
+      value: 
+      objectReference: {fileID: 1215667626}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad8140b2e81dc406db18bce5a92b6d51, type: 2}
   m_IsPrefabAsset: 0
@@ -72523,6 +72538,21 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c3fb762214234dd3b78af75ea72829f, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1215667624 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1663360627969686, guid: 8c3fb762214234dd3b78af75ea72829f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1215667623}
+--- !u!1 &1215667625 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1634451547393662, guid: 8c3fb762214234dd3b78af75ea72829f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1215667623}
+--- !u!1 &1215667626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1774780830711706, guid: 8c3fb762214234dd3b78af75ea72829f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1215667623}
 --- !u!114 &1221021782 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114700371414731258, guid: 8c3fb762214234dd3b78af75ea72829f,
