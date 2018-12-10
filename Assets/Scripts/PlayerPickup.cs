@@ -28,6 +28,11 @@ public class PlayerPickup : MonoBehaviour
     private GameObject Traction3;
     private GameObject Traction2;
 
+    public GameObject Fire;
+    public GameObject Drop;
+    private bool drop_done = false;
+    private bool fire_done = false;
+
     private CarController m_CarController;
     private Health m_CarHealth;
     private WeaponManager m_WeaponManager;
@@ -39,6 +44,8 @@ public class PlayerPickup : MonoBehaviour
     private void Start()
     {
         SetUpgrades();
+        Fire.SetActive(false);
+        Drop.SetActive(false);
         m_CarController = GetComponent<CarController>();
         m_CarHealth = GetComponent<Health>();
         m_WeaponManager = GetComponent<WeaponManager>();
@@ -98,6 +105,10 @@ public class PlayerPickup : MonoBehaviour
             case "RocketPickup":
                 if (m_WeaponManager.GetCurrentWeapon() == WeaponType.none)
                 {
+                    if (!fire_done) {
+                        StartCoroutine(UpgradeJuice(other.transform.position, Fire));
+                        fire_done = true;
+                    }
                     m_WeaponManager.EquipRocket();
                     Destroy(other.gameObject);
                 }
@@ -114,6 +125,11 @@ public class PlayerPickup : MonoBehaviour
             case "LandminePickup":
                 if (m_WeaponManager.GetCurrentWeapon() == WeaponType.none)
                 {
+                    if (!drop_done)
+                    {
+                        StartCoroutine(UpgradeJuice(other.transform.position, Drop));
+                        drop_done = true;
+                    }
                     m_WeaponManager.EquipLandmine();
                     Destroy(other.gameObject);
                 }
