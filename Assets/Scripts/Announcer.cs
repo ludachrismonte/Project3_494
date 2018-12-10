@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Announcer : MonoBehaviour {
 
@@ -33,9 +35,13 @@ public class Announcer : MonoBehaviour {
     private bool[] fif_yes = { true, true, true, true };
     private bool[] win_yes = { true, true, true, true };
 
+    public Text[] text_fields;
+    private float text_timer;
+
     // Use this for initialization
     void Start () {
         stall = 0f;
+        text_timer = 0f;
         current_leader = "None";
         AudioSource.PlayClipAtPoint(welcome, Camera.main.transform.position);
     }
@@ -47,6 +53,11 @@ public class Announcer : MonoBehaviour {
             AudioClip clip = toPlay.Dequeue();
             AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position);
             stall = clip.length;
+        }
+
+        text_timer -= Time.deltaTime;
+        if (text_timer < 0 && text_fields[0].text != "") {
+            StartCoroutine(FadeIn());
         }
 
         scoretowin = p1.GetWinScore();
@@ -103,6 +114,44 @@ public class Announcer : MonoBehaviour {
                 toPlay.Enqueue(wins[i]);
             }
         }
+    }
+
+    private void SetText(string s) {
+        text_timer = 3;
+        if (text_fields[0].text == "") {
+            StartCoroutine(FadeIn());
+        }
+        text_fields[0].text = s;
+        text_fields[1].text = s;
+        text_fields[2].text = s;
+        text_fields[3].text = s;
+    }
+
+    private IEnumerator FadeIn() {
+        for (float i = 0f; i < .5f; i -= Time.deltaTime)
+        {
+            text_fields[0].color = new Color(text_fields[0].color.r, text_fields[0].color.g, text_fields[0].color.b, i * 2);
+            text_fields[1].color = new Color(text_fields[1].color.r, text_fields[1].color.g, text_fields[1].color.b, i * 2);
+            text_fields[2].color = new Color(text_fields[2].color.r, text_fields[2].color.g, text_fields[2].color.b, i * 2);
+            text_fields[3].color = new Color(text_fields[3].color.r, text_fields[3].color.g, text_fields[3].color.b, i * 2);
+            yield return null;
+        }
+    }
+
+    private IEnumerator FadeOut()
+    {
+        for (float i = 0f; i < .5f; i -= Time.deltaTime)
+        {
+            text_fields[0].color = new Color(text_fields[0].color.r, text_fields[0].color.g, text_fields[0].color.b, i * 2);
+            text_fields[1].color = new Color(text_fields[1].color.r, text_fields[1].color.g, text_fields[1].color.b, i * 2);
+            text_fields[2].color = new Color(text_fields[2].color.r, text_fields[2].color.g, text_fields[2].color.b, i * 2);
+            text_fields[3].color = new Color(text_fields[3].color.r, text_fields[3].color.g, text_fields[3].color.b, i * 2);
+            yield return null;
+        }
+        text_fields[0].text = "";
+        text_fields[1].text = "";
+        text_fields[2].text = "";
+        text_fields[3].text = "";
     }
 
     public void TriggerReset()
