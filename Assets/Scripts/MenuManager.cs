@@ -82,4 +82,9 @@ public class MenuManager : MonoBehaviour
         m_MainMenuUI.SetActive(true);
         m_StartButton.Select();
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
