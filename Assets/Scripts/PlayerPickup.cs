@@ -297,7 +297,7 @@ public class PlayerPickup : MonoBehaviour
 
     private IEnumerator UpgradeJuice(Vector3 collision_origin, GameObject obj)
     {
-        obj.SetActive(true);
+        obj.GetComponent<Image>().enabled = true;
         Vector3 end_position = obj.transform.position;
         Vector3 pos = cam.WorldToScreenPoint(collision_origin);
         float counter = 0.0f;
@@ -309,6 +309,8 @@ public class PlayerPickup : MonoBehaviour
             obj.transform.position = Vector3.Lerp(pos, end_position, counter / duration);
             yield return null;
         }
+        obj.transform.localScale = new Vector3(1f, 1f, 1f);
+        obj.transform.position = end_position;
         yield return new WaitForSeconds(2);
         Image img = obj.GetComponent<Image>();
         for (float i = .5f; i > 0f; i -= Time.deltaTime)
@@ -316,7 +318,8 @@ public class PlayerPickup : MonoBehaviour
             img.color = new Color(img.color.r, img.color.g, img.color.b, i * 2);
             yield return null;
         }
-        obj.SetActive(false);
+        img.color = new Color(img.color.r, img.color.g, img.color.b, 1);
+        obj.GetComponent<Image>().enabled = false;
     }
 
     private void SetUpgrades() {
@@ -333,17 +336,17 @@ public class PlayerPickup : MonoBehaviour
         Health3 = UpgradesFolder.transform.Find("Health3").gameObject;
         Health2 = UpgradesFolder.transform.Find("Health2").gameObject;
 
-        Speed5.SetActive(false);
-        Speed4.SetActive(false);
-        Speed3.SetActive(false);
-        Speed2.SetActive(false);
-        Traction5.SetActive(false);
-        Traction4.SetActive(false);
-        Traction3.SetActive(false);
-        Traction2.SetActive(false);
-        Health5.SetActive(false);
-        Health4.SetActive(false);
-        Health3.SetActive(false);
-        Health2.SetActive(false);
+        Speed5.GetComponent<Image>().enabled = false;
+        Speed4.GetComponent<Image>().enabled = false;
+        Speed3.GetComponent<Image>().enabled = false;
+        Speed2.GetComponent<Image>().enabled = false;
+        Traction5.GetComponent<Image>().enabled = false;
+        Traction4.GetComponent<Image>().enabled = false;
+        Traction3.GetComponent<Image>().enabled = false;
+        Traction2.GetComponent<Image>().enabled = false;
+        Health5.GetComponent<Image>().enabled = false;
+        Health4.GetComponent<Image>().enabled = false;
+        Health3.GetComponent<Image>().enabled = false;
+        Health2.GetComponent<Image>().enabled = false;
     }
 }
