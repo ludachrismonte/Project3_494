@@ -18,7 +18,9 @@ public class Announcer : MonoBehaviour {
     public AudioClip gameover;
 
     private Queue<AudioClip> toPlay = new Queue<AudioClip>();
+    private Queue<string> toDisplay = new Queue<string>();
     private float stall;
+    public Text[] text_fields;
 
     public Score p1;
     public Score p2;
@@ -34,13 +36,9 @@ public class Announcer : MonoBehaviour {
     private bool[] fif_yes = { true, true, true, true };
     private bool[] win_yes = { true, true, true, true };
 
-    public Text[] text_fields;
-    private float text_timer;
-
     // Use this for initialization
     void Start () {
         stall = 0f;
-        text_timer = 0f;
         SetText("");
         current_leader = "None";
     }
@@ -51,11 +49,12 @@ public class Announcer : MonoBehaviour {
         if (stall < 0 && toPlay.Count > 0) {
             AudioClip clip = toPlay.Dequeue();
             AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position);
+            string temp = toDisplay.Dequeue();
+            SetText(temp);
             stall = clip.length;
         }
 
-        text_timer -= Time.deltaTime;
-        if (text_timer < 0 && text_fields[0].text != "") {
+        if (stall < 0) {
             SetText("");
         }
 
@@ -67,25 +66,25 @@ public class Announcer : MonoBehaviour {
 
         if (scores[0] > scores[1] && scores[0] > scores[2] && scores[0] > scores[3] && current_leader != "Player 1") {
             current_leader = "Player 1";
-            SetText("Blue took the lead.");
             toPlay.Enqueue(leads[0]);
+            toDisplay.Enqueue("Blue took the lead.");
         }
         else if (scores[1] > scores[0] && scores[1] > scores[2] && scores[1] > scores[3] && current_leader != "Player 2")
         {
             current_leader = "Player 2";
-            SetText("Red took the lead.");
+            toDisplay.Enqueue("Red took the lead.");
             toPlay.Enqueue(leads[1]);
         }
         else if (scores[2] > scores[0] && scores[2] > scores[1] && scores[2] > scores[3] && current_leader != "Player 3")
         {
             current_leader = "Player 3";
-            SetText("Green took the lead.");
+            toDisplay.Enqueue("Green took the lead.");
             toPlay.Enqueue(leads[2]);
         }
         else if (scores[3] > scores[0] && scores[3] > scores[1] && scores[3] > scores[2] && current_leader != "Player 4")
         {
             current_leader = "Player 4";
-            SetText("Yellow took the lead.");
+            toDisplay.Enqueue("Yellow took the lead.");
             toPlay.Enqueue(leads[3]);
         }
 
@@ -95,10 +94,10 @@ public class Announcer : MonoBehaviour {
             {
                 min_yes[i] = false;
                 toPlay.Enqueue(minute[i]);
-                if (i == 0) {  SetText("Blue needs a minute to win!"); }
-                else if (i == 1) {  SetText("Red needs a minute to win!"); }
-                else if (i == 2) {  SetText("Green needs a minute to win!"); }
-                else if (i == 3) {  SetText("Yellow needs a minute to win!"); }
+                if (i == 0) { toDisplay.Enqueue("Blue needs a minute to win!."); }
+                else if (i == 1) { toDisplay.Enqueue("Red needs a minute to win!."); }
+                else if (i == 2) { toDisplay.Enqueue("Green needs a minute to win!."); }
+                else if (i == 3) { toDisplay.Enqueue("Yellow needs a minute to win!."); }
             }
         }
 
@@ -109,10 +108,10 @@ public class Announcer : MonoBehaviour {
             {
                 fif_yes[i] = false;
                 toPlay.Enqueue(fifteen[i]);
-                if (i == 0) { SetText("Blue needs 15 seconds to win!"); }
-                else if (i == 1) { SetText("Red needs 15 seconds to win!"); }
-                else if (i == 2) { SetText("Green needs 15 seconds to win!"); }
-                else if (i == 3) { SetText("Yellow needs 15 seconds to win!"); }
+                if (i == 0) { toDisplay.Enqueue("Blue needs 15 seconds to win!."); }
+                else if (i == 1) { toDisplay.Enqueue("Red needs 15 seconds to win!."); }
+                else if (i == 2) { toDisplay.Enqueue("Green needs 15 seconds to win!."); }
+                else if (i == 3) { toDisplay.Enqueue("Yellow needs 15 seconds to win!."); }
             }
         }
 
@@ -128,8 +127,6 @@ public class Announcer : MonoBehaviour {
     }
 
     private void SetText(string s) {
-        text_timer = 3;
-        string temp = text_fields[0].text;
         text_fields[0].text = s;
         text_fields[1].text = s;
         text_fields[2].text = s;
@@ -145,42 +142,43 @@ public class Announcer : MonoBehaviour {
     {
         if (who == "player 1")
         {
-            SetText("Blue dropped the flag!");
+            toDisplay.Enqueue("Blue dropped the flag!");
             toPlay.Enqueue(drops[0]);
         }
         else if (who == "player 2")
         {
-            SetText("Red dropped the flag!");
+            toDisplay.Enqueue("Red dropped the flag!");
             toPlay.Enqueue(drops[1]);
         }
-        else if (who == "player 2")
+        else if (who == "player 3")
         {
-            SetText("Green dropped the flag!");
+            toDisplay.Enqueue("Green dropped the flag!");
             toPlay.Enqueue(drops[2]);
         }
-        else if (who == "player 2")
+        else if (who == "player 4")
         {
-            SetText("Yellow dropped the flag!");
+            toDisplay.Enqueue("Yellow dropped the flag!");
             toPlay.Enqueue(drops[3]);
         }
     }
 
     public void Trigger(string who)
     {
+        Debug.Log(who + " took it");
         if (who == "player 1") {
-            SetText("Blue took the flag!");
+            toDisplay.Enqueue("Blue took the flag!");
             toPlay.Enqueue(flags[0]);
         }
         else if (who == "player 2") {
-            SetText("Red took the flag!");
+            toDisplay.Enqueue("Red took the flag!");
             toPlay.Enqueue(flags[1]);
         }
-        else if (who == "player 2") {
-            SetText("Green took the flag!");
+        else if (who == "player 3") {
+            toDisplay.Enqueue("Green took the flag!");
             toPlay.Enqueue(flags[2]);
         }
-        else if (who == "player 2") {
-            SetText("Yellow took the flag!");
+        else if (who == "player 4") {
+            toDisplay.Enqueue("Yellow took the flag!");
             toPlay.Enqueue(flags[3]);
         }
     }
