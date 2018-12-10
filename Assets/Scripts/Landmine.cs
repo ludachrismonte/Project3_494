@@ -35,6 +35,7 @@ public class Landmine : MonoBehaviour {
                 Collider[] affected = Physics.OverlapSphere(transform.position, exp_radius);
                 for (int i = 0; i < affected.Length; i++) {
                     if (affected[i].tag == "Player" || affected[i].tag == "Player2" || affected[i].tag == "Player3" || affected[i].tag == "Player4") {
+                        affected[i].gameObject.GetComponent<CameraShake>().Shake(7.0f, 2.0f);
                         affected[i].gameObject.GetComponent<Health>().AlterHealth(-5);
                         Rigidbody rb = affected[i].GetComponent<Rigidbody>();
 
