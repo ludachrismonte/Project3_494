@@ -12,6 +12,8 @@ public class RespawnReset : MonoBehaviour
     bool checkingStuck = false;
     public bool stuck = false;
 
+    private float timer = 0f;
+
     public struct RespawnStruct
     {
         public Vector3 respawnPos;
@@ -55,6 +57,10 @@ public class RespawnReset : MonoBehaviour
 
     void Update()
     {
+        timer += Time.deltaTime;
+        if (timer < 20) {
+            return;
+        }
         if (stuck && Input.GetKey(KeyCode.Z))
         {
             ResetCar();
