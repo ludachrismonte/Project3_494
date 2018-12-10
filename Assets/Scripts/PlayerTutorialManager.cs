@@ -220,19 +220,6 @@ public class PlayerTutorialManager : MonoBehaviour
         }
     }
 
-    public void Respawn()
-    {
-        GameObject shield = transform.Find("Shield").gameObject;
-        shield.SetActive(false);
-
-        m_CarBodyLevel = PickupLevelEnum.one;
-        UpdateCarBody();
-        m_TireLevel = PickupLevelEnum.one;
-        UpdateTires();
-        m_EngineLevel = PickupLevelEnum.one;
-        UpdateEngine();
-    }
-
     private IEnumerator ControlsText()
     {
         m_Rigidbody.constraints = RigidbodyConstraints.FreezeAll;

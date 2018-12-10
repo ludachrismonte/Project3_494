@@ -19,8 +19,6 @@ public class Compass : MonoBehaviour
 
     private Transform left_loc;
     private Transform right_loc;
-    private float left_bound;
-    private float right_bound;
     private Image i1;
     private Image i2;
     private Image i3;
@@ -34,9 +32,7 @@ public class Compass : MonoBehaviour
         m_FlagManager = GameObject.FindWithTag("Flags").GetComponent<FlagManager>();
 
         left_loc = UI_Folder.transform.Find("Left").transform;
-        left_bound = left_loc.position.x;
         right_loc = UI_Folder.transform.Find("Right").transform;
-        right_bound = right_loc.position.x;
 
         player1 = GameObject.FindWithTag("Player").transform;
         player2 = GameObject.FindWithTag("Player2").transform;

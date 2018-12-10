@@ -10,14 +10,12 @@ public class Credits : MonoBehaviour
 
     public float speed = 120f;
     private Rigidbody stuff;
-    private RectTransform position;
     public RawImage Black;
 
     // Use this for initialization
     void Start()
     {
         stuff = GetComponent<Rigidbody>();
-        position = GetComponent<RectTransform>();
         Black.color = new Color(Black.color.r, Black.color.g, Black.color.b, 1f);
         StartCoroutine(In());
     }

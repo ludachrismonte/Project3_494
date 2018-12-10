@@ -13,8 +13,6 @@ public class RespawnReset : MonoBehaviour
     Rigidbody carRb;
     bool checkingStuck = false;
     public bool stuck = false;
-    private Health health;
-    // Use this for initialization
 
     public struct RespawnStruct
     {
@@ -58,7 +56,6 @@ public class RespawnReset : MonoBehaviour
 
     void Awake()
     {
-        health = GetComponent<Health>();
         carRb = GetComponent<Rigidbody>();
         respawnStruct = new RespawnStruct(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
         resetStruct = new RespawnStruct(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);

@@ -218,8 +218,7 @@ public class PlayerPickup : MonoBehaviour
     {
         m_WeaponManager.UnEquipRockets();
         m_WeaponManager.UnequipLandmine();
-        GameObject shield = transform.Find("Shield").gameObject;
-        shield.SetActive(false);
+        transform.Find("Shield").GetComponent<Shield>().Deactivate();
 
         m_CarBodyLevel = PickupLevelEnum.one;
         UpdateCarBody();
