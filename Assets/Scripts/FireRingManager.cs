@@ -30,6 +30,7 @@ public class FireRingManager : MonoBehaviour
         m_ActiveFireRings[fireRingObject] = false;
         fireRingObject.GetComponent<FireRing>().Deactivate();
         yield return new WaitForSeconds(3);
+        fireRingObject.SetActive(false);
         SpawnFireRings();
     }
 
