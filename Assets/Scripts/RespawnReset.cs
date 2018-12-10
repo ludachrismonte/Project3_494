@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class RespawnReset : MonoBehaviour
 {
-    //public Vector3 repawnPos;
-    //public object respawnPos { get; private set; }
     public float waitTime = 10;
     public float checkReset = 0.2f;
     public GameObject cameraParent;
@@ -40,14 +38,6 @@ public class RespawnReset : MonoBehaviour
             cameraRotateMain = mainCamRotate;
             cameraRotateParent = camParentRotate;
         }
-        //public void Respawn(){
-        //    this.transform.position = respawnPos;
-        //    respawnCameraMain = mainCamPos;
-        //    respawnCameraParent = camParentPos;
-        //    respawnRotate = carRotate;
-        //    cameraRotateMain = mainCamRotate;
-        //    cameraRotateParent = camParentRotate;
-        //}
     }
 
     RespawnStruct respawnStruct;
@@ -57,9 +47,24 @@ public class RespawnReset : MonoBehaviour
     void Awake()
     {
         carRb = GetComponent<Rigidbody>();
-        respawnStruct = new RespawnStruct(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
-        resetStruct = new RespawnStruct(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
-        resetStruct2 = new RespawnStruct(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
+        respawnStruct = new RespawnStruct(transform.position, 
+                                          cameraMain.gameObject.transform.position, 
+                                          cameraParent.gameObject.transform.position, 
+                                          transform.rotation, 
+                                          cameraMain.gameObject.transform.rotation, 
+                                          cameraParent.gameObject.transform.rotation);
+        resetStruct = new RespawnStruct(transform.position, 
+                                        cameraMain.gameObject.transform.position, 
+                                        cameraParent.gameObject.transform.position, 
+                                        transform.rotation, 
+                                        cameraMain.gameObject.transform.rotation, 
+                                        cameraParent.gameObject.transform.rotation);
+        resetStruct2 = new RespawnStruct(transform.position, 
+                                         cameraMain.gameObject.transform.position, 
+                                         cameraParent.gameObject.transform.position, 
+                                         transform.rotation, 
+                                         cameraMain.gameObject.transform.rotation, 
+                                         cameraParent.gameObject.transform.rotation);
         StartCoroutine(FindResetPoint());
     }
 
@@ -90,16 +95,6 @@ public class RespawnReset : MonoBehaviour
         stuck = false;
         StartCoroutine(ResetEnum()); //ResetEnum
     }
-    public void ChangeRespawn()
-    {
-        //respawnPos = respawn;
-        //if(i==0){
-        respawnStruct.Set(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
-        //}
-        //else if (i==1){
-        //    resetStruct.Set(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
-        //}
-    }
 
     public void Respawn(int i)
     {
@@ -108,10 +103,7 @@ public class RespawnReset : MonoBehaviour
 
     void RespawnHelper()
     {
-        //cameraMain.gameObject.transform.position = respawnStruct.respawnCameraMain;
-        //cameraParent.GetComponent<CameraController>().enabled = false;
         cameraParent.gameObject.transform.position = respawnStruct.respawnCameraMain;
-        //cameraMain.gameObject.transform.rotation = respawnStruct.cameraRotateMain;
         cameraParent.gameObject.transform.rotation = respawnStruct.cameraRotateParent;
         cameraParent.GetComponent<CameraController>().enabled = false;
         transform.position = respawnStruct.respawnPos;
@@ -123,13 +115,11 @@ public class RespawnReset : MonoBehaviour
         //if i ==1 this is a reset
         gameObject.GetComponent<ControllerInput>().enabled = false;
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        //car.SetActive(false);
         RespawnHelper();
         cameraParent.GetComponent<CameraController>().enabled = true;
         this.transform.Find("SkyCar").gameObject.SetActive(true);
         if (i == 0) { gameObject.GetComponent<PlayerPickup>().Respawn(); }
         yield return new WaitForSeconds(1);
-        //car.SetActive(true);
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         gameObject.GetComponent<ControllerInput>().enabled = true;
         checkingStuck = false;
@@ -138,7 +128,6 @@ public class RespawnReset : MonoBehaviour
 
     IEnumerator CheckifStuckHelper()
     {
-        //Check this!!
         checkingStuck = true;
         Vector3 pos1 = transform.position;
         float vel = carRb.velocity.magnitude;
@@ -155,6 +144,7 @@ public class RespawnReset : MonoBehaviour
         }
         checkingStuck = false;
     }
+
     IEnumerator FindResetPoint(){
         while(true)
         {
@@ -166,22 +156,22 @@ public class RespawnReset : MonoBehaviour
             }
         }       
     }
+
     bool Check(Vector3 pos1,Vector3 pos2,Vector3 pos3){
         bool xStationary = false; bool zStationary = false;
         if((int)pos1.x==(int)pos2.x && (int)pos1.x == (int)pos3.x && (int)pos3.x == (int)pos2.x ){
             xStationary = true;
         }
-        if ((int)pos1.z == (int)pos2.z && (int)pos1.z== (int)pos3.z && (int)pos3.z == (int)pos2.z)
+        if ((int)pos1.z == (int)pos2.z && (int)pos1.z == (int)pos3.z && (int)pos3.z == (int)pos2.z)
         {
             zStationary = true;
         }
-        if (xStationary && zStationary) { return true; }
-        return false;
+
+        return xStationary && zStationary;
     }
 
     IEnumerator ResetEnum()
     {
-        //have car flash
         for (int i = 0; i < 4; i++)
         {
             this.transform.Find("SkyCar").gameObject.SetActive(true);
@@ -189,7 +179,6 @@ public class RespawnReset : MonoBehaviour
             this.transform.Find("SkyCar").gameObject.SetActive(false);
             yield return new WaitForSeconds(.15f);
         }
-        //yield return new WaitForSeconds(2);
         resetStruct.Set(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
         RespawnStruct temp = respawnStruct;
         respawnStruct = resetStruct2;
@@ -198,6 +187,5 @@ public class RespawnReset : MonoBehaviour
         resetStruct = temp;
         resetStruct2 = temp;
     }
-
 }
 
