@@ -145,6 +145,7 @@ public class PostGameManager : MonoBehaviour {
                 Destroy(player2);
                 Destroy(player3);
                 Destroy(player4);
+                //Destroy(DestroyOnLoad.instance.gameObject);
                 SceneManager.LoadScene("Menu");
             }
         }

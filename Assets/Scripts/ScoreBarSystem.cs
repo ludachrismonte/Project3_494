@@ -47,7 +47,7 @@ public class ScoreBarSystem : MonoBehaviour {
         OtherNumberBar = Other.transform.Find("OtherNumberBar").gameObject.GetComponent<Image>();
         OtherText = Other.transform.Find("Text").gameObject.GetComponent<Text>();
 
-        ScoreToWin = MyScore.GetWinScore();
+        ScoreToWin = GameManager.instance.TimeToWin;
         ImOnTop = true;
         TopPosition = Mine.transform.position;
         BottomPosition = Other.transform.position;

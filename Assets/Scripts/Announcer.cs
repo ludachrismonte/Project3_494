@@ -42,6 +42,7 @@ public class Announcer : MonoBehaviour {
     void Start () {
         stall = 0f;
         text_timer = 0f;
+        SetText("init");
         current_leader = "None";
         AudioSource.PlayClipAtPoint(welcome, Camera.main.transform.position);
     }
@@ -57,10 +58,11 @@ public class Announcer : MonoBehaviour {
 
         text_timer -= Time.deltaTime;
         if (text_timer < 0 && text_fields[0].text != "") {
-            StartCoroutine(FadeIn());
+            SetText("");
+            //StartCoroutine(FadeOut());
         }
 
-        scoretowin = p1.GetWinScore();
+        scoretowin = GameManager.instance.TimeToWin;
         scores[0] = p1.GetCurrentScore();
         scores[1] = p2.GetCurrentScore();
         scores[2] = p3.GetCurrentScore();
@@ -68,21 +70,25 @@ public class Announcer : MonoBehaviour {
 
         if (scores[0] > scores[1] && scores[0] > scores[2] && scores[0] > scores[3] && current_leader != "Player 1") {
             current_leader = "Player 1";
+            SetText("Blue took the lead.");
             toPlay.Enqueue(leads[0]);
         }
         else if (scores[1] > scores[0] && scores[1] > scores[2] && scores[1] > scores[3] && current_leader != "Player 2")
         {
             current_leader = "Player 2";
+            SetText("Red took the lead.");
             toPlay.Enqueue(leads[1]);
         }
         else if (scores[2] > scores[0] && scores[2] > scores[1] && scores[2] > scores[3] && current_leader != "Player 3")
         {
             current_leader = "Player 3";
+            SetText("Green took the lead.");
             toPlay.Enqueue(leads[2]);
         }
         else if (scores[3] > scores[0] && scores[3] > scores[1] && scores[3] > scores[2] && current_leader != "Player 4")
         {
             current_leader = "Player 4";
+            SetText("Yellow took the lead.");
             toPlay.Enqueue(leads[3]);
         }
 
@@ -92,6 +98,10 @@ public class Announcer : MonoBehaviour {
             {
                 min_yes[i] = false;
                 toPlay.Enqueue(minute[i]);
+                if (i == 0) {  SetText("Blue needs a minute to win!"); }
+                else if (i == 1) {  SetText("Red needs a minute to win!"); }
+                else if (i == 2) {  SetText("Green needs a minute to win!"); }
+                else if (i == 3) {  SetText("Yellow needs a minute to win!"); }
             }
         }
 
@@ -102,6 +112,10 @@ public class Announcer : MonoBehaviour {
             {
                 fif_yes[i] = false;
                 toPlay.Enqueue(fifteen[i]);
+                if (i == 0) { SetText("Blue needs 15 seconds to win!"); }
+                else if (i == 1) { SetText("Red needs 15 seconds to win!"); }
+                else if (i == 2) { SetText("Green needs 15 seconds to win!"); }
+                else if (i == 3) { SetText("Yellow needs 15 seconds to win!"); }
             }
         }
 
@@ -118,42 +132,44 @@ public class Announcer : MonoBehaviour {
 
     private void SetText(string s) {
         text_timer = 3;
-        if (text_fields[0].text == "") {
-            StartCoroutine(FadeIn());
-        }
+        string temp = text_fields[0].text;
         text_fields[0].text = s;
         text_fields[1].text = s;
         text_fields[2].text = s;
         text_fields[3].text = s;
+        //if (temp == "") {
+        //StartCoroutine(FadeIn());
+        //}
     }
-
-    private IEnumerator FadeIn() {
-        for (float i = 0f; i < .5f; i -= Time.deltaTime)
-        {
-            text_fields[0].color = new Color(text_fields[0].color.r, text_fields[0].color.g, text_fields[0].color.b, i * 2);
-            text_fields[1].color = new Color(text_fields[1].color.r, text_fields[1].color.g, text_fields[1].color.b, i * 2);
-            text_fields[2].color = new Color(text_fields[2].color.r, text_fields[2].color.g, text_fields[2].color.b, i * 2);
-            text_fields[3].color = new Color(text_fields[3].color.r, text_fields[3].color.g, text_fields[3].color.b, i * 2);
-            yield return null;
-        }
-    }
-
-    private IEnumerator FadeOut()
+    /*
+private IEnumerator FadeIn() {
+    for (float i = 0f; i < .5f; i -= Time.deltaTime)
     {
-        for (float i = 0f; i < .5f; i -= Time.deltaTime)
-        {
-            text_fields[0].color = new Color(text_fields[0].color.r, text_fields[0].color.g, text_fields[0].color.b, i * 2);
-            text_fields[1].color = new Color(text_fields[1].color.r, text_fields[1].color.g, text_fields[1].color.b, i * 2);
-            text_fields[2].color = new Color(text_fields[2].color.r, text_fields[2].color.g, text_fields[2].color.b, i * 2);
-            text_fields[3].color = new Color(text_fields[3].color.r, text_fields[3].color.g, text_fields[3].color.b, i * 2);
-            yield return null;
-        }
-        text_fields[0].text = "";
-        text_fields[1].text = "";
-        text_fields[2].text = "";
-        text_fields[3].text = "";
+        //text_fields[0].color = new Color(text_fields[0].color.r, text_fields[0].color.g, text_fields[0].color.b, i * 2);
+        //text_fields[1].color = new Color(text_fields[1].color.r, text_fields[1].color.g, text_fields[1].color.b, i * 2);
+        //text_fields[2].color = new Color(text_fields[2].color.r, text_fields[2].color.g, text_fields[2].color.b, i * 2);
+        //text_fields[3].color = new Color(text_fields[3].color.r, text_fields[3].color.g, text_fields[3].color.b, i * 2);
+        yield return null;
     }
+}
 
+
+private IEnumerator FadeOut()
+{
+    for (float i = .5f; i > 0f; i -= Time.deltaTime)
+    {
+        text_fields[0].color = new Color(text_fields[0].color.r, text_fields[0].color.g, text_fields[0].color.b, i * 2);
+        text_fields[1].color = new Color(text_fields[1].color.r, text_fields[1].color.g, text_fields[1].color.b, i * 2);
+        text_fields[2].color = new Color(text_fields[2].color.r, text_fields[2].color.g, text_fields[2].color.b, i * 2);
+        text_fields[3].color = new Color(text_fields[3].color.r, text_fields[3].color.g, text_fields[3].color.b, i * 2);
+        yield return null;
+    }
+    text_fields[0].text = "";
+    text_fields[1].text = "";
+    text_fields[2].text = "";
+    text_fields[3].text = "";
+}
+*/
     public void TriggerReset()
     {
         toPlay.Enqueue(reset);
@@ -163,18 +179,22 @@ public class Announcer : MonoBehaviour {
     {
         if (who == "player 1")
         {
+            SetText("Blue dropped the flag!");
             toPlay.Enqueue(drops[0]);
         }
         else if (who == "player 2")
         {
+            SetText("Red dropped the flag!");
             toPlay.Enqueue(drops[1]);
         }
         else if (who == "player 2")
         {
+            SetText("Green dropped the flag!");
             toPlay.Enqueue(drops[2]);
         }
         else if (who == "player 2")
         {
+            SetText("Yellow dropped the flag!");
             toPlay.Enqueue(drops[3]);
         }
     }
@@ -182,15 +202,19 @@ public class Announcer : MonoBehaviour {
     public void Trigger(string who)
     {
         if (who == "player 1") {
+            SetText("Blue took the flag!");
             toPlay.Enqueue(flags[0]);
         }
         else if (who == "player 2") {
+            SetText("Red took the flag!");
             toPlay.Enqueue(flags[1]);
         }
         else if (who == "player 2") {
+            SetText("Green took the flag!");
             toPlay.Enqueue(flags[2]);
         }
         else if (who == "player 2") {
+            SetText("Yellow took the flag!");
             toPlay.Enqueue(flags[3]);
         }
     }

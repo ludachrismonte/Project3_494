@@ -3,70 +3,109 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameSettings : MonoBehaviour {
+public class GameSettings : MonoBehaviour 
+{
+    public Button m_FirstButton;
+    public int m_MaxTimeToWin = 300;
+    public int m_MaxFireHoopPoints = 50;
 
-    private int TimeToWin = 120;
-    private int FirehoopPoints = 20;
-    private int FirehoopPoints_NoFlag = 10;
-    private Text TimeToWinText;
-    private Text FirehoopPointsText;
-    private Text FirehoopPoints_NoFlagText;
-    private GameManager manager;
+    private int m_TimeToWin;
+    private int m_FireHoopPointsFlag;
+    private int m_FireHoopPointsNoFlag;
+
+    private Text m_TimeToWinText;
+    private Text m_FirehoopPointsFlagText;
+    private Text m_FirehoopPointsNoFlagText;
 
     private void Start()
     {
-        manager = GameManager.instance;
-        TimeToWinText = transform.Find("Time").GetComponent<Text>();
-        FirehoopPointsText = transform.Find("FireFlag").GetComponent<Text>();
-        FirehoopPoints_NoFlagText = transform.Find("FireNoFlag").GetComponent<Text>();
-        TimeToWinText.text = TimeToWin.ToString();
-        FirehoopPointsText.text = FirehoopPoints.ToString();
-        FirehoopPoints_NoFlagText.text = FirehoopPoints_NoFlag.ToString();
+        m_FirstButton.Select();
+
+        m_TimeToWinText = transform.Find("Time").GetComponent<Text>();
+        m_FirehoopPointsFlagText = transform.Find("FireFlag").GetComponent<Text>();
+        m_FirehoopPointsNoFlagText = transform.Find("FireNoFlag").GetComponent<Text>();
+
+        m_TimeToWin = PlayerPrefs.GetInt("DemoIsland_TimeToWin");
+        m_FireHoopPointsFlag = PlayerPrefs.GetInt("DemoIsland_FireHoopBonusFlag");
+        m_FireHoopPointsNoFlag = PlayerPrefs.GetInt("DemoIsland_FireHoopBonusNoFlag");
+
+        m_TimeToWinText.text = m_TimeToWin.ToString();
+        m_FirehoopPointsFlagText.text = m_FireHoopPointsFlag.ToString();
+        m_FirehoopPointsNoFlagText.text = m_FireHoopPointsNoFlag.ToString();
     }
 
-    public void Inc_TimeToWin() {
-        TimeToWin += 10;
-        TimeToWinText.text = TimeToWin.ToString();
+    public void Inc_TimeToWin() 
+    {
+        if (m_TimeToWin < m_MaxTimeToWin)
+        {
+            m_TimeToWin += 10;
+            m_TimeToWinText.text = m_TimeToWin.ToString();
+        }
     }
 
     public void Dec_TimeToWin()
     {
-        if (TimeToWin > 10) {
-            TimeToWin -= 10;
+        if (m_TimeToWin > 10) 
+        {
+            m_TimeToWin -= 10;
+            m_TimeToWinText.text = m_TimeToWin.ToString();
         }
-        TimeToWinText.text = TimeToWin.ToString();
     }
 
     public void Inc_FirehoopPoints()
     {
-        FirehoopPoints += 2;
-        FirehoopPointsText.text = FirehoopPoints.ToString();
+        if (m_FireHoopPointsFlag < m_MaxFireHoopPoints)
+        {
+            m_FireHoopPointsFlag += 2;
+            m_FirehoopPointsFlagText.text = m_FireHoopPointsFlag.ToString();
+        }
     }
 
     public void Dec_FirehoopPoints()
     {
-        if (FirehoopPoints >= 2) {
-            FirehoopPoints -= 2;
+        if (m_FireHoopPointsFlag >= 2) 
+        {
+            m_FireHoopPointsFlag -= 2;
+            m_FirehoopPointsFlagText.text = m_FireHoopPointsFlag.ToString();
         }
-        FirehoopPointsText.text = FirehoopPoints.ToString();
     }
 
     public void Inc_FirehoopPoints_NoFlag()
     {
-        FirehoopPoints_NoFlag += 2;
-        FirehoopPoints_NoFlagText.text = FirehoopPoints_NoFlag.ToString();
+        if (m_FireHoopPointsNoFlag < m_MaxFireHoopPoints)
+        {
+            m_FireHoopPointsNoFlag += 2;
+            m_FirehoopPointsNoFlagText.text = m_FireHoopPointsNoFlag.ToString();
+        }
     }
 
     public void Dec_FirehoopPoints_NoFlag()
     {
-        if (FirehoopPoints_NoFlag >= 2)
+        if (m_FireHoopPointsNoFlag >= 2)
         {
-            FirehoopPoints_NoFlag -= 2;
+            m_FireHoopPointsNoFlag -= 2;
+            m_FirehoopPointsNoFlagText.text = m_FireHoopPointsNoFlag.ToString();
         }
-        FirehoopPoints_NoFlagText.text = FirehoopPoints_NoFlag.ToString();
     }
 
-    public void Submit() {
-        manager.MenuSubmit(TimeToWin, FirehoopPoints, FirehoopPoints_NoFlag);
+    public void Submit() 
+    {
+        MenuManager.instance.SubmitSettings(m_TimeToWin, m_FireHoopPointsFlag, m_FireHoopPointsNoFlag);
+    }
+
+    public void Defaults()
+    {
+        m_TimeToWin = 120;
+        m_FireHoopPointsFlag = 10;
+        m_FireHoopPointsNoFlag = 4;
+
+        m_TimeToWinText.text = m_TimeToWin.ToString();
+        m_FirehoopPointsFlagText.text = m_FireHoopPointsFlag.ToString();
+        m_FirehoopPointsNoFlagText.text = m_FireHoopPointsNoFlag.ToString();
+    }
+
+    public void Back()
+    {
+        MenuManager.instance.OpenMainMenu();
     }
 }
