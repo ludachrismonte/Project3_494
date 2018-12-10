@@ -74,8 +74,8 @@ public class PlayerPickup : MonoBehaviour
                 {
                     m_CarBodyLevel = pickupLevel.m_PickupLevel;
                     UpdateCarBody(other.transform.position);
+                    StartCoroutine(WaitToRespawn(other.gameObject));
                 }
-                StartCoroutine(WaitToRespawn(other.gameObject));
                 break;
             case "EnginePickup":
                 pickupLevel = other.GetComponent<PickupLevel>();
@@ -83,8 +83,8 @@ public class PlayerPickup : MonoBehaviour
                 {
                     m_EngineLevel = pickupLevel.m_PickupLevel;
                     UpdateEngine(other.transform.position);
+                    StartCoroutine(WaitToRespawn(other.gameObject));
                 }
-                StartCoroutine(WaitToRespawn(other.gameObject));
                 break;
             case "TirePickup":
                 pickupLevel = other.GetComponent<PickupLevel>();
@@ -92,8 +92,8 @@ public class PlayerPickup : MonoBehaviour
                 {
                     m_TireLevel = pickupLevel.m_PickupLevel;
                     UpdateTires(other.transform.position);
+                    StartCoroutine(WaitToRespawn(other.gameObject));
                 }
-                StartCoroutine(WaitToRespawn(other.gameObject));
                 break;
             case "RocketPickup":
                 if (m_WeaponManager.GetCurrentWeapon() == WeaponType.none)

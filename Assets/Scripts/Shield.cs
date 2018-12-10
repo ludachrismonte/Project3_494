@@ -43,8 +43,10 @@ public class Shield : MonoBehaviour {
         gameObject.transform.localScale = Vector3.zero;
     }
 
-    private IEnumerator Run() {
-        for (float i = 0; i < 1f; i += Time.deltaTime) {
+    private IEnumerator Run() 
+    {
+        for (float i = 0; i < 1f; i += Time.deltaTime) 
+        {
             gameObject.transform.localScale = initial * i;
             yield return null;
         }
