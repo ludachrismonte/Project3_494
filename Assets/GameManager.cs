@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public AudioClip welcome;
     public GameObject IntroCam;
     public Transform End;
+    public GameObject Demolition;
+    public GameObject Island;
 
     private Image explosion;
     private Image wood;
@@ -22,6 +24,9 @@ public class GameManager : MonoBehaviour
     public AudioClip blow;
     public AudioClip buzzer;
     public AudioClip horn;
+    public AudioClip crash1;
+    public AudioClip crash2;
+
 
     private GameObject win_box;
     private Image game_black;
@@ -90,6 +95,9 @@ public class GameManager : MonoBehaviour
         player3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         player4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
+        Demolition.SetActive(false);
+        Island.SetActive(false);
+
         // newly added
         StartCoroutine(FadeIn(game_black));
         StartCoroutine(GameStart());
@@ -99,7 +107,15 @@ public class GameManager : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(welcome, IntroCam.transform.position);
         UI.GetComponent<Canvas>().enabled = false;
-        yield return new WaitForSeconds(welcome.length);
+        yield return new WaitForSeconds(2.1f);
+        AudioSource.PlayClipAtPoint(crash1, IntroCam.transform.position);
+        IntroCam.GetComponent<CameraShake>().Shake(0.7f, 2.0f);
+        Demolition.SetActive(true);
+        yield return new WaitForSeconds(1.1f);
+        AudioSource.PlayClipAtPoint(crash2, IntroCam.transform.position);
+        IntroCam.GetComponent<CameraShake>().Shake(0.7f, 2.0f);
+        Island.SetActive(true);
+        yield return new WaitForSeconds(2);
         float counter = 0.0f;
         float duration = 2f;
         while (counter < duration)
