@@ -67,7 +67,7 @@ public class RespawnReset : MonoBehaviour
         }
     }
 
-    void CheckifStuck()
+    private void CheckifStuck()
     {
         if (!checkingStuck && gameObject.GetComponent<ControllerInput>().enabled)
         {
@@ -144,14 +144,8 @@ public class RespawnReset : MonoBehaviour
 
     private bool Check(Vector3 pos1,Vector3 pos2,Vector3 pos3)
     {
-        bool xStationary = false; bool zStationary = false;
-        if((int)pos1.x==(int)pos2.x && (int)pos1.x == (int)pos3.x && (int)pos3.x == (int)pos2.x ){
-            xStationary = true;
-        }
-        if ((int)pos1.z == (int)pos2.z && (int)pos1.z== (int)pos3.z && (int)pos3.z == (int)pos2.z)
-        {
-            zStationary = true;
-        }
+        bool xStationary = (int)pos1.x == (int)pos2.x && (int)pos1.x == (int)pos3.x && (int)pos3.x == (int)pos2.x;
+        bool zStationary = (int)pos1.z == (int)pos2.z && (int)pos1.z == (int)pos3.z && (int)pos3.z == (int)pos2.z;
         return xStationary && zStationary;
     }
 
@@ -159,10 +153,10 @@ public class RespawnReset : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            this.transform.Find("SkyCar").gameObject.SetActive(true);
-            yield return new WaitForSeconds(.15f);
-            this.transform.Find("SkyCar").gameObject.SetActive(false);
-            yield return new WaitForSeconds(.15f);
+            transform.Find("SkyCar").gameObject.SetActive(true);
+            yield return new WaitForSeconds(.1f);
+            transform.Find("SkyCar").gameObject.SetActive(false);
+            yield return new WaitForSeconds(.1f);
         }
         resetStruct.Set(transform.position, cameraMain.gameObject.transform.position, cameraParent.gameObject.transform.position, transform.rotation, cameraMain.gameObject.transform.rotation, cameraParent.gameObject.transform.rotation);
         RespawnStruct temp = respawnStruct;
@@ -172,6 +166,5 @@ public class RespawnReset : MonoBehaviour
         resetStruct = temp;
         resetStruct2 = temp;
     }
-
 }
 
