@@ -124,6 +124,8 @@ public class GameManager : MonoBehaviour
             IntroCam.transform.position = Vector3.Lerp(IntroCam.transform.position, End.position, counter / duration);
             yield return null;
         }
+        //IntroCam.transform.position = End.position;
+        //yield return new WaitForSeconds(1);
         Destroy(IntroCam);
         UI.GetComponent<Canvas>().enabled = true;
         wood.gameObject.SetActive(true);
