@@ -154,7 +154,6 @@ public class PostGameManager : MonoBehaviour
             resetInput += p3.Action1.Value;
         if (p4 != null)
             resetInput += p4.Action1.Value;
-        Debug.Log(resetInput);
 
         if ((canReset) && (resetInput > 0.0f))
         {
