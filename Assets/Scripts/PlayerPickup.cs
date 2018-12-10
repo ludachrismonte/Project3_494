@@ -30,8 +30,8 @@ public class PlayerPickup : MonoBehaviour
 
     public GameObject Fire;
     public GameObject Drop;
-    private bool drop_done = false;
-    private bool fire_done = false;
+    private int drop_seq = 0;
+    private int fire_seq = 0;
 
     private CarController m_CarController;
     private Health m_CarHealth;
@@ -44,8 +44,8 @@ public class PlayerPickup : MonoBehaviour
     private void Start()
     {
         SetUpgrades();
-        Fire.SetActive(false);
-        Drop.SetActive(false);
+        Fire.GetComponent<Image>().enabled = false;
+        Drop.GetComponent<Image>().enabled = false;
         m_CarController = GetComponent<CarController>();
         m_CarHealth = GetComponent<Health>();
         m_WeaponManager = GetComponent<WeaponManager>();
@@ -68,6 +68,20 @@ public class PlayerPickup : MonoBehaviour
         UpdateCarBody(transform.position);
         UpdateEngine(transform.position);
         UpdateTires(transform.position);
+    }
+
+    private void Update()
+    {
+        if (fire_seq == 1 && m_WeaponManager.GetCurrentWeapon() == WeaponType.none)
+        {
+            StartCoroutine(Down(Fire));
+            fire_seq = 2;
+        }
+        if (drop_seq == 1 && m_WeaponManager.GetCurrentWeapon() == WeaponType.none)
+        {
+            StartCoroutine(Down(Drop));
+            drop_seq = 2;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -105,9 +119,9 @@ public class PlayerPickup : MonoBehaviour
             case "RocketPickup":
                 if (m_WeaponManager.GetCurrentWeapon() == WeaponType.none)
                 {
-                    if (!fire_done) {
-                        StartCoroutine(UpgradeJuice(other.transform.position, Fire));
-                        fire_done = true;
+                    if (fire_seq == 0) {
+                        StartCoroutine(Up(other.transform.position, Fire));
+                        fire_seq = 1;
                     }
                     m_WeaponManager.EquipRocket();
                     Destroy(other.gameObject);
@@ -125,10 +139,10 @@ public class PlayerPickup : MonoBehaviour
             case "LandminePickup":
                 if (m_WeaponManager.GetCurrentWeapon() == WeaponType.none)
                 {
-                    if (!drop_done)
+                    if (drop_seq == 0)
                     {
-                        StartCoroutine(UpgradeJuice(other.transform.position, Drop));
-                        drop_done = true;
+                        StartCoroutine(Up(other.transform.position, Drop));
+                        drop_seq = 1;
                     }
                     m_WeaponManager.EquipLandmine();
                     Destroy(other.gameObject);
@@ -312,6 +326,36 @@ public class PlayerPickup : MonoBehaviour
         obj.transform.localScale = new Vector3(1f, 1f, 1f);
         obj.transform.position = end_position;
         yield return new WaitForSeconds(2);
+        Image img = obj.GetComponent<Image>();
+        for (float i = .5f; i > 0f; i -= Time.deltaTime)
+        {
+            img.color = new Color(img.color.r, img.color.g, img.color.b, i * 2);
+            yield return null;
+        }
+        img.color = new Color(img.color.r, img.color.g, img.color.b, 1);
+        obj.GetComponent<Image>().enabled = false;
+    }
+
+    private IEnumerator Up(Vector3 collision_origin, GameObject obj)
+    {
+        obj.GetComponent<Image>().enabled = true;
+        Vector3 end_position = obj.transform.position;
+        Vector3 pos = cam.WorldToScreenPoint(collision_origin);
+        float counter = 0.0f;
+        float duration = 0.75f;
+        while (counter < duration)
+        {
+            counter += Time.deltaTime;
+            obj.transform.localScale = Vector3.Lerp(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(1f, 1f, 1f), counter / duration);
+            obj.transform.position = Vector3.Lerp(pos, end_position, counter / duration);
+            yield return null;
+        }
+        obj.transform.localScale = new Vector3(1f, 1f, 1f);
+        obj.transform.position = end_position;
+    }
+
+    private IEnumerator Down(GameObject obj)
+    {
         Image img = obj.GetComponent<Image>();
         for (float i = .5f; i > 0f; i -= Time.deltaTime)
         {
