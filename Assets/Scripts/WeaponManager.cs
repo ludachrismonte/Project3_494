@@ -54,8 +54,14 @@ public class WeaponManager : MonoBehaviour
     {
         if (m_CurrentWeapon == WeaponType.none)
         {
-            m_CurrentWeapon = WeaponType.rocket;
             StartCoroutine(RaiseRocketShooter());
+            m_CurrentWeapon = WeaponType.rocket;
+        }
+        if (m_CurrentWeapon == WeaponType.rocket)
+        {
+            m_HasTwoRockets = true;
+            m_LeftRocket.SetActive(true);
+            m_RightRocket.SetActive(true);
         }
     }
 

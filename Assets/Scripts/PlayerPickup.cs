@@ -80,7 +80,7 @@ public class PlayerPickup : MonoBehaviour
                 StartCoroutine(WaitToRespawn(other.gameObject));
                 break;
             case "RocketPickup":
-                if (m_WeaponManager.GetCurrentWeapon() == WeaponType.none)
+                if (m_WeaponManager.GetCurrentWeapon() == WeaponType.none || m_WeaponManager.GetCurrentWeapon() == WeaponType.rocket)
                 {
                     m_WeaponManager.EquipRocket();
                     Destroy(other.gameObject);
