@@ -110,7 +110,6 @@ public class GameManager : MonoBehaviour
         }
         Destroy(IntroCam);
         UI.GetComponent<Canvas>().enabled = true;
-        yield return new WaitForSeconds(1);
         wood.gameObject.SetActive(true);
         explosion.gameObject.SetActive(true);
         AudioSource.PlayClipAtPoint(blow, Camera.main.transform.position);
