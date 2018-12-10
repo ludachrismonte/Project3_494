@@ -33,6 +33,7 @@ public class Rocket : MonoBehaviour
             AudioSource.PlayClipAtPoint(m_ExplosionAudio, transform.position);
             Destroy(gameObject);
             Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
+            collision.gameObject.GetComponent<CameraShake>().Shake(0.7f, 2.0f);
             collision.gameObject.GetComponent<Health>().AlterHealth(-m_RocketDamage);
         }
     }
