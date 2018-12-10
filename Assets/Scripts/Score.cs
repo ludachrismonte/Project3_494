@@ -36,8 +36,6 @@ public class Score : MonoBehaviour
 
         manager = GameManager.instance;
         current_score = 0;
-        gameObject.GetComponent<TrailRenderer>().enabled = false;
-
         timer = 0.0f;
 
         m_ScoreToWin = GameManager.instance.TimeToWin;
@@ -65,7 +63,6 @@ public class Score : MonoBehaviour
     {
         manager.GetComponent<Announcer>().Trigger(me);
         Flag.SetActive(true);
-        gameObject.GetComponent<TrailRenderer>().enabled = true;
 
         hasFlag = true;
 
@@ -93,8 +90,6 @@ public class Score : MonoBehaviour
     public void lose_flag()
     {
         Flag.SetActive(false);
-        gameObject.GetComponent<TrailRenderer>().enabled = false;
-
         hasFlag = false;
         m_ObjectiveTracker.SetFlagHolder(FlagHolder.none);
     }
