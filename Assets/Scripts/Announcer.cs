@@ -62,7 +62,7 @@ public class Announcer : MonoBehaviour {
             //StartCoroutine(FadeOut());
         }
 
-        scoretowin = p1.GetWinScore();
+        scoretowin = GameManager.instance.TimeToWin;
         scores[0] = p1.GetCurrentScore();
         scores[1] = p2.GetCurrentScore();
         scores[2] = p3.GetCurrentScore();
