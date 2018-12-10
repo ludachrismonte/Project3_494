@@ -201,6 +201,7 @@ public class GameManager : MonoBehaviour
     public void Win(string player) 
     {
         Color playerColor = Color.white;
+        playerColor.a = 0.5f;
         switch (player)
         {
             case "player 1":

@@ -7,14 +7,10 @@ public class FireRing : MonoBehaviour {
     private Vector3 m_InitScale;
     private AudioSource m_WhooshSound;
 
-	void Start () 
-    {
-        m_WhooshSound = GetComponent<AudioSource>();
-        m_InitScale = transform.localScale;
-    }
-
     public void Activate() 
     {
+        m_InitScale = transform.localScale;
+        m_WhooshSound = GetComponent<AudioSource>();
         m_WhooshSound.Play();
         StartCoroutine(Grow());
     }
