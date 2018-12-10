@@ -122,7 +122,7 @@ public class RespawnReset : MonoBehaviour
     {
         //if i ==1 this is a reset
         gameObject.GetComponent<ControllerInput>().enabled = false;
-        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
         //car.SetActive(false);
         RespawnHelper();
         cameraParent.GetComponent<CameraController>().enabled = true;
@@ -130,7 +130,7 @@ public class RespawnReset : MonoBehaviour
         if (i == 0) { gameObject.GetComponent<PlayerPickup>().Respawn(); }
         yield return new WaitForSeconds(1);
         //car.SetActive(true);
-        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        gameObject.GetComponent<Rigidbody>().isKinematic = false;
         gameObject.GetComponent<ControllerInput>().enabled = true;
         checkingStuck = false;
         stuck = false;
