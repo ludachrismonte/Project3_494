@@ -2988,25 +2988,13 @@ GameObject:
   m_Component:
   - component: {fileID: 448863075}
   - component: {fileID: 448863074}
-  - component: {fileID: 448863073}
   m_Layer: 0
-  m_Name: InControl
+  m_Name: InControlMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &448863073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 448863072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5496b2b6e921d46d09633436bcec990a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &448863074
 MonoBehaviour:
   m_ObjectHideFlags: 0
