@@ -13,10 +13,7 @@ public class PlayerTutorialManager : MonoBehaviour
     public GameObject m_Flag;
     public PlayerNumber player;
 
-    private CarController m_CarController;
-    private Health m_CarHealth;
     private Rigidbody m_Rigidbody;
-    private WeaponManager m_WeaponManager;
 
     private string m_CurrentMessage;
     private bool m_HasMoved;
@@ -24,10 +21,7 @@ public class PlayerTutorialManager : MonoBehaviour
     
     private void Start()
     {
-        m_CarController = GetComponent<CarController>();
-        m_CarHealth = GetComponent<Health>();
         m_Rigidbody = GetComponent<Rigidbody>();
-        m_WeaponManager = GetComponent<WeaponManager>();
 
         m_CurrentMessage = "grab the flag!";
         m_PlayerMainText.text = "";
