@@ -111,6 +111,20 @@ public class PostGameManager : MonoBehaviour {
         winNum = winner.GetComponent<ControllerInput>().playerNum;
         winner.transform.SetPositionAndRotation(winVec, winRot);
         winText.text = "player " + (winNum + 1) + " wins!";
+        switch(winNum){
+            case 0:
+                winText.color = Color.blue;
+                break;
+            case 1:
+                winText.color = Color.red;
+                break;
+            case 2:
+                winText.color = Color.green;
+                break;
+            case 3:
+                winText.color = Color.yellow;
+                break;
+        }
 
 
         // Deactivate fire

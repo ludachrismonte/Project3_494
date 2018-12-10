@@ -13,7 +13,6 @@ public class Announcer : MonoBehaviour {
     public AudioClip[] fifteen;
     public AudioClip[] minute;
     public AudioClip[] wins;
-    public AudioClip welcome;
     public AudioClip knocked;
     public AudioClip reset;
     public AudioClip gameover;
@@ -44,7 +43,6 @@ public class Announcer : MonoBehaviour {
         text_timer = 0f;
         SetText("");
         current_leader = "None";
-        AudioSource.PlayClipAtPoint(welcome, Camera.main.transform.position);
     }
 
     // Update is called once per frame
@@ -59,7 +57,6 @@ public class Announcer : MonoBehaviour {
         text_timer -= Time.deltaTime;
         if (text_timer < 0 && text_fields[0].text != "") {
             SetText("");
-            //StartCoroutine(FadeOut());
         }
 
         scoretowin = GameManager.instance.TimeToWin;
@@ -137,39 +134,8 @@ public class Announcer : MonoBehaviour {
         text_fields[1].text = s;
         text_fields[2].text = s;
         text_fields[3].text = s;
-        //if (temp == "") {
-        //StartCoroutine(FadeIn());
-        //}
     }
-    /*
-private IEnumerator FadeIn() {
-    for (float i = 0f; i < .5f; i -= Time.deltaTime)
-    {
-        //text_fields[0].color = new Color(text_fields[0].color.r, text_fields[0].color.g, text_fields[0].color.b, i * 2);
-        //text_fields[1].color = new Color(text_fields[1].color.r, text_fields[1].color.g, text_fields[1].color.b, i * 2);
-        //text_fields[2].color = new Color(text_fields[2].color.r, text_fields[2].color.g, text_fields[2].color.b, i * 2);
-        //text_fields[3].color = new Color(text_fields[3].color.r, text_fields[3].color.g, text_fields[3].color.b, i * 2);
-        yield return null;
-    }
-}
 
-
-private IEnumerator FadeOut()
-{
-    for (float i = .5f; i > 0f; i -= Time.deltaTime)
-    {
-        text_fields[0].color = new Color(text_fields[0].color.r, text_fields[0].color.g, text_fields[0].color.b, i * 2);
-        text_fields[1].color = new Color(text_fields[1].color.r, text_fields[1].color.g, text_fields[1].color.b, i * 2);
-        text_fields[2].color = new Color(text_fields[2].color.r, text_fields[2].color.g, text_fields[2].color.b, i * 2);
-        text_fields[3].color = new Color(text_fields[3].color.r, text_fields[3].color.g, text_fields[3].color.b, i * 2);
-        yield return null;
-    }
-    text_fields[0].text = "";
-    text_fields[1].text = "";
-    text_fields[2].text = "";
-    text_fields[3].text = "";
-}
-*/
     public void TriggerReset()
     {
         toPlay.Enqueue(reset);

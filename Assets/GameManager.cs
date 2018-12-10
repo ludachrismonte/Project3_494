@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject UI;
 
+    public AudioClip welcome;
+    public GameObject IntroCam;
+    public Transform End;
+
     private Image explosion;
     private Image wood;
     private Text main_text;
@@ -93,6 +97,19 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator GameStart()
     {
+        AudioSource.PlayClipAtPoint(welcome, IntroCam.transform.position);
+        UI.GetComponent<Canvas>().enabled = false;
+        yield return new WaitForSeconds(welcome.length);
+        float counter = 0.0f;
+        float duration = 2f;
+        while (counter < duration)
+        {
+            counter += Time.deltaTime;
+            IntroCam.transform.position = Vector3.Lerp(IntroCam.transform.position, End.position, counter / duration);
+            yield return null;
+        }
+        Destroy(IntroCam);
+        UI.GetComponent<Canvas>().enabled = true;
         yield return new WaitForSeconds(1);
         wood.gameObject.SetActive(true);
         explosion.gameObject.SetActive(true);
