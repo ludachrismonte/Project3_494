@@ -180,9 +180,30 @@ public class GameManager : MonoBehaviour
         black.gameObject.SetActive(false);
     }
 
-    public void Win(string s) 
+    public void Win(string player) 
     {
+        Color playerColor = Color.white;
+        switch (player)
+        {
+            case "player 1":
+                playerColor = Color.blue;
+                break;
+            case "player 2":
+                playerColor = Color.red; 
+                break;
+            case "player 3":
+                playerColor = Color.green;
+                break;
+            case "player 4":
+                playerColor = Color.yellow;
+                break;
+            default:
+                Debug.Log("ERROR IN Score.cs: player not set");
+                Application.Quit();
+                break;
+        }
         win_box.SetActive(true);
+        win_box.GetComponent<Image>().color = playerColor;
         StartCoroutine(EndGame());
     }
 
