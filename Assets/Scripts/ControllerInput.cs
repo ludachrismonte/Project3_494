@@ -65,7 +65,6 @@ public class ControllerInput : MonoBehaviour
 
         float horizInput = player.LeftStick.Vector.x;
         float vertInput = player.LeftStick.Vector.y;
-        float rightHorizInput = player.RightStick.Vector.x;
         float gasInput = player.Action1.Value; // A button
         // Braking/reverse (X button)
         if (gasInput <= 0.0f)
